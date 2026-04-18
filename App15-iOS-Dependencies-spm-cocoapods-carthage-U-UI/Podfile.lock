@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (5.11.2)
+  - Factory (2.5.2)
+  - GRDB.swift (6.24.1):
+    - GRDB.swift/standard (= 6.24.1)
+  - GRDB.swift/standard (6.24.1)
+  - lottie-ios (4.6.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0)
+  - Factory (~> 2.0)
+  - GRDB.swift (~> 6.0)
+  - lottie-ios (~> 4.0)
+  - Moya (~> 15.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Factory
+    - GRDB.swift
+    - lottie-ios
+    - Moya
+
+SPEC CHECKSUMS:
+  Alamofire: 400275dd1c6d87d95a041861d2a59da4b520a203
+  Factory: bfc0d3ec51e8f1b0c91e715ea9b541bb2e1a6f85
+  GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
+  lottie-ios: 8f959969761e9c45d70353667d00af0e5b9cadb3
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+
+PODFILE CHECKSUM: a15d3caa7a6cadbd571243437244fb8b348c74be
+
+COCOAPODS: 1.16.2

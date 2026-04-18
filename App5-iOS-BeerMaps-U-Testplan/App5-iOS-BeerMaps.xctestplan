@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "id": "01234567-89AB-CDEF-0123-456789ABCDEF",
+      "name": "Test Scheme Action",
+      "options": {}
+    }
+  ],
+  "defaultOptions": {
+    "codeCoverage": true,
+    "language": "en",
+    "region": "US"
+  },
+  "testTargets": [
+    {
+      "target": {
+        "containerPath": "container:App5-iOS-BeerMaps.xcodeproj",
+        "identifier": "App5-iOS-BeerMapsTests",
+        "name": "App5-iOS-BeerMapsTests"
+      }
+    }
+  ],
+  "version": 1
+}

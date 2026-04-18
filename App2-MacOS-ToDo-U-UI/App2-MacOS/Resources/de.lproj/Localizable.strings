@@ -1,0 +1,52 @@
+/* App2 - macOS Task Manager - German */
+
+/* Navigation */
+"tasks_nav_title" = "Aufgaben";
+"new_task" = "Neue Aufgabe";
+
+/* Buttons & Actions */
+"cancel" = "Abbrechen";
+"add" = "Hinzufügen";
+"delete" = "Löschen";
+"show_all" = "Alle anzeigen";
+"filter" = "Filter";
+
+/* Tooltips */
+"delete_task_tooltip" = "Aufgabe löschen";
+"new_task_tooltip" = "Neue Aufgabe anlegen (⌘N)";
+"filter_tasks_tooltip" = "Aufgaben filtern";
+
+/* Form Sections */
+"section_title_required" = "Titel *";
+"section_description" = "Beschreibung";
+"section_priority" = "Priorität";
+
+/* Placeholders */
+"task_title_placeholder" = "Aufgabentitel eingeben…";
+
+/* Empty States */
+"no_task_selected" = "Keine Aufgabe ausgewählt";
+"no_task_selected_hint" = "Wähle eine Aufgabe aus der Liste oder erstelle eine neue mit ⌘N.";
+"no_tasks" = "Keine Aufgaben";
+"no_tasks_hint" = "Erstelle eine neue Aufgabe mit ⌘N.";
+
+/* Detail View */
+"priority_label" = "Priorität: %@";
+"created_label" = "Erstellt: %@";
+"change_status" = "Status ändern";
+
+/* Priority */
+"priority_low" = "Niedrig";
+"priority_medium" = "Mittel";
+"priority_high" = "Hoch";
+
+/* Status */
+"status_open" = "Offen";
+"status_in_progress" = "In Bearbeitung";
+"status_done" = "Erledigt";
+
+/* Accessibility */
+"accessibility_task_label" = "%@, Priorität %@, %@";
+
+/* Errors */
+"error_empty_title" = "Der Titel darf nicht leer sein.";

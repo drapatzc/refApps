@@ -1,0 +1,95 @@
+/* App */
+"app_title" = "Benutzerverwaltung";
+"loading_database" = "Datenbank wird initialisiert...";
+"startup_error_title" = "Startfehler";
+
+/* Salutation */
+"salutation_mr" = "Herr";
+"salutation_ms" = "Frau";
+"salutation_mx" = "Divers";
+
+/* Fields */
+"field_salutation" = "Anrede";
+"field_first_name" = "Vorname";
+"field_last_name" = "Nachname";
+"field_street" = "Straße";
+"field_house_number" = "Nr.";
+"field_postal_code" = "PLZ";
+"field_city" = "Stadt";
+"field_country" = "Land";
+"field_email" = "E-Mail";
+"field_postal_code_city" = "PLZ / Stadt";
+
+/* Placeholders */
+"placeholder_first_name" = "Vorname eingeben";
+"placeholder_last_name" = "Nachname eingeben";
+"placeholder_street" = "Straße eingeben";
+"placeholder_house_number" = "Nr.";
+"placeholder_postal_code" = "12345";
+"placeholder_city" = "Stadt eingeben";
+"placeholder_country" = "Land eingeben";
+"placeholder_email" = "name@beispiel.de";
+
+/* Sections */
+"section_salutation" = "Anrede";
+"section_name" = "Name";
+"section_address" = "Adresse";
+"section_contact" = "Kontakt";
+
+/* Buttons */
+"button_cancel" = "Abbrechen";
+"button_save" = "Speichern";
+"button_edit" = "Bearbeiten";
+"button_delete" = "Löschen";
+"button_ok" = "OK";
+"button_new_user" = "Neuer Benutzer";
+
+/* Form Titles */
+"form_title_new" = "Neuer Benutzer";
+"form_title_edit" = "Benutzer bearbeiten";
+
+/* List */
+"search_placeholder" = "Benutzer suchen...";
+"user_count" = "%d Benutzer";
+
+/* Empty States */
+"empty_state_title" = "Keine Benutzer";
+"empty_state_subtitle" = "Tippen Sie auf +, um den ersten Benutzer anzulegen.";
+"empty_search_title" = "Keine Ergebnisse";
+"empty_search_subtitle" = "Es wurden keine Benutzer gefunden, die Ihrer Suche entsprechen.";
+"detail_empty_title" = "Kein Benutzer ausgewählt";
+"detail_empty_subtitle" = "Wählen Sie einen Benutzer aus der Liste, um Details anzuzeigen.";
+
+/* Detail */
+"no_email" = "Keine E-Mail-Adresse";
+
+/* Hints */
+"email_optional_hint" = "E-Mail ist optional.";
+
+/* Delete Confirmation */
+"delete_confirmation_title" = "Benutzer löschen?";
+"delete_confirmation_message" = "Diese Aktion kann nicht rückgängig gemacht werden.";
+"delete_user_message" = "Möchten Sie \"%@\" wirklich löschen?";
+
+/* Errors */
+"error_title" = "Fehler";
+"error_db_open" = "Datenbank konnte nicht geöffnet werden";
+"error_db_query" = "Datenbankabfrage fehlgeschlagen";
+"error_db_insert" = "Einfügen fehlgeschlagen";
+"error_db_update" = "Aktualisierung fehlgeschlagen";
+"error_db_delete" = "Löschen fehlgeschlagen";
+"error_record_not_found" = "Datensatz nicht gefunden";
+"error_unknown" = "Ein unbekannter Fehler ist aufgetreten";
+
+/* Validation */
+"validation_required_first_name" = "Vorname ist erforderlich.";
+"validation_required_last_name" = "Nachname ist erforderlich.";
+"validation_required_street" = "Straße ist erforderlich.";
+"validation_required_house_number" = "Hausnummer ist erforderlich.";
+"validation_required_postal_code" = "PLZ ist erforderlich.";
+"validation_required_city" = "Stadt ist erforderlich.";
+"validation_required_country" = "Land ist erforderlich.";
+"validation_postal_code_digits_only" = "PLZ darf nur Ziffern enthalten.";
+"validation_postal_code_length" = "PLZ muss zwischen %d und %d Zeichen lang sein.";
+"validation_email_invalid" = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+"validation_max_length" = "Maximale Länge beträgt %d Zeichen.";

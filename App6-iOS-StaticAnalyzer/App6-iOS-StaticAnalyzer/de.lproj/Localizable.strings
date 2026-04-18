@@ -1,0 +1,17 @@
+/* App-Titel */
+"lotto_title" = "Lotterie";
+
+/* Untertitel unter dem App-Titel */
+"lotto_subtitle" = "6 aus 49";
+
+/* Beschriftung über den Hauptzahlen-Kugeln */
+"main_numbers_label" = "Hauptzahlen";
+
+/* Beschriftung für die Superzahl */
+"super_number_label" = "Superzahl";
+
+/* Hinweistext unter der Superzahl-Beschriftung */
+"super_number_hint" = "0 – 9";
+
+/* Schaltfläche zum Ziehen neuer Lottozahlen */
+"generate_button" = "Zahlen ziehen";

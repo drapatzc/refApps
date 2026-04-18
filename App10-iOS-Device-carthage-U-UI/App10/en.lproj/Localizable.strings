@@ -1,0 +1,43 @@
+/* App */
+"app_title" = "Device Info";
+
+/* Sections */
+"section_system" = "System";
+"section_battery" = "Battery";
+"section_orientation" = "Orientation";
+"section_screen" = "Display";
+"section_features" = "Features";
+
+/* Labels */
+"label_device_name" = "Device Name";
+"label_system" = "System";
+"label_battery_level" = "Battery Level";
+"label_battery_state" = "Battery Status";
+"label_orientation" = "Orientation";
+"label_diagonal" = "Diagonal";
+
+/* Battery states */
+"battery_full" = "Full";
+"battery_charging" = "Charging (%d%%)";
+"battery_unplugged" = "Unplugged (%d%%)";
+"battery_unknown" = "Unknown";
+
+/* Orientations */
+"orientation_portrait" = "Portrait";
+"orientation_portrait_upside_down" = "Portrait Upside Down";
+"orientation_landscape_left" = "Landscape Left";
+"orientation_landscape_right" = "Landscape Right";
+"orientation_face_up" = "Face Up";
+"orientation_face_down" = "Face Down";
+"orientation_unknown" = "Unknown";
+
+/* Features */
+"feature_biometric" = "Biometric Sensor";
+"feature_true_depth" = "True Depth Camera";
+"feature_lidar" = "LiDAR Scanner";
+"feature_nfc" = "NFC";
+"feature_usbc" = "USB-C Connectivity";
+"feature_dynamic_island" = "Dynamic Island";
+
+/* Misc */
+"simulator" = "Running in Simulator";

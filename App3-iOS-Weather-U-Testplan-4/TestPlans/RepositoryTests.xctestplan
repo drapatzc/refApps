@@ -1,0 +1,67 @@
+{
+  "configurations" : [
+    {
+      "id" : "A3000001-0000-0000-0000-000000000002",
+      "name" : "Repository-Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "WeatherRepositoryTests",
+            "testFunctions" : [
+              "aktuellesWetterFeelsLikeTemperatureInPlausibleRange()",
+              "aktuellesWetterHumidityInValidRange()",
+              "aktuellesWetterIsDeterministic()",
+              "aktuellesWetterReturnsWeatherForBerlin()",
+              "aktuellesWetterSunriseBeforeSunset()",
+              "aktuellesWetterTemperatureInPlausibleRange()",
+              "aktuellesWetterThrowsErrorForUnknownCity()",
+              "aktuellesWetterThrowsErrorForUnknownID()",
+              "aktuellesWetterUvIndexInValidRange()",
+              "aktuellesWetterVisibilityIsPositive()",
+              "aktuellesWetterWindDirectionNotEmpty()",
+              "aktuellesWetterWindSpeedNotNegative()",
+              "alleCitiesContainsBerlin()",
+              "alleCitiesContainsMunich()",
+              "alleCitiesContainsNoDuplicateIDs()",
+              "alleCitiesContainsNoEmptyNames()",
+              "alleCitiesReturnsTenCities()",
+              "citiesSuchenFindsBerlinByName()",
+              "citiesSuchenFindsCitiesByCountry()",
+              "citiesSuchenIsCaseInsensitive()",
+              "citiesSuchenReturnsEmptyListForNonExistentCity()",
+              "citiesSuchenWithEmptyTermReturnsAllCities()",
+              "citiesSuchenWithWhitespaceOnlyReturnsAllCities()",
+              "wochenvorhersageBelongsToRequestedCity()",
+              "wochenvorhersageHumidityOfAllDaysValid()",
+              "wochenvorhersageMinTempLessOrEqualMaxTemp()",
+              "wochenvorhersageRainProbabilityInValidRange()",
+              "wochenvorhersageReturnsSevenDays()",
+              "wochenvorhersageThrowsErrorForUnknownCity()"
+            ]
+          }
+        ],
+        "xctestClasses" : [
+          {
+            "name" : "WeatherRepositoryTests"
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App3-iOS.xcodeproj",
+        "identifier" : "A30500000000000000000002",
+        "name" : "App3-iOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "A1200006-0000-0000-0000-000000000006",
+      "name" : "Moya Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "MoyaTests",
+            "testFunctions" : [
+              "testMoyaImportWorks()"
+            ]
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App15.xcodeproj",
+        "identifier" : "BB12060000000000000001",
+        "name" : "App15Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

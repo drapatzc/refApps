@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A50200000000000000000001 /* App5_iOS_BeerMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000001 /* App5_iOS_BeerMapsApp.swift */; };
+		A50200000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000002 /* ContentView.swift */; };
+		A50200000000000000000003 /* DrinkEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000003 /* DrinkEntry.swift */; };
+		A50200000000000000000004 /* DrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000004 /* DrinkType.swift */; };
+		A50200000000000000000005 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000005 /* KeychainService.swift */; };
+		A50200000000000000000006 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000006 /* LocationService.swift */; };
+		A50200000000000000000007 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000007 /* NotificationService.swift */; };
+		A50200000000000000000008 /* UsernameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000008 /* UsernameGenerator.swift */; };
+		A50200000000000000000009 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000009 /* MapViewModel.swift */; };
+		A5020000000000000000000A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501000000000000000000A /* SettingsViewModel.swift */; };
+		A5020000000000000000000B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501000000000000000000B /* MapView.swift */; };
+		A5020000000000000000000C /* DrinkSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501000000000000000000C /* DrinkSelectorView.swift */; };
+		A5020000000000000000000D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501000000000000000000D /* SettingsView.swift */; };
+		A5020000000000000000000E /* DrinkMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501000000000000000000E /* DrinkMarkerView.swift */; };
+		A50200000000000000000010 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000010 /* PrivacyInfo.xcprivacy */; };
+		A50200000000000000000011 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000011 /* Localizable.strings */; };
+		A50200000000000000000020 /* MockKeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000020 /* MockKeychainService.swift */; };
+		A50200000000000000000021 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000021 /* MockLocationService.swift */; };
+		A50200000000000000000022 /* App5_iOS_BeerMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000022 /* App5_iOS_BeerMapsTests.swift */; };
+		A50200000000000000000023 /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000023 /* KeychainServiceTests.swift */; };
+		A50200000000000000000024 /* UsernameGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000024 /* UsernameGeneratorTests.swift */; };
+		A50200000000000000000025 /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50100000000000000000025 /* MapViewModelTests.swift */; };
+		A50200000000000000000030 /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50100000000000000000030 /* SwiftData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A50A00000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A50800000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A50500000000000000000001;
+			remoteInfo = "App5-iOS-BeerMaps";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A50100000000000000000001 /* App5_iOS_BeerMapsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App5_iOS_BeerMapsApp.swift; sourceTree = "<group>"; };
+		A50100000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A50100000000000000000003 /* DrinkEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkEntry.swift; sourceTree = "<group>"; };
+		A50100000000000000000004 /* DrinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkType.swift; sourceTree = "<group>"; };
+		A50100000000000000000005 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		A50100000000000000000006 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		A50100000000000000000007 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		A50100000000000000000008 /* UsernameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameGenerator.swift; sourceTree = "<group>"; };
+		A50100000000000000000009 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		A50100000000000000000010 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		A50100000000000000000012 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A50100000000000000000013 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A50100000000000000000014 /* App5-iOS-BeerMaps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "App5-iOS-BeerMaps.entitlements"; sourceTree = "<group>"; };
+		A50100000000000000000020 /* MockKeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychainService.swift; sourceTree = "<group>"; };
+		A50100000000000000000021 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
+		A50100000000000000000022 /* App5_iOS_BeerMapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App5_iOS_BeerMapsTests.swift; sourceTree = "<group>"; };
+		A50100000000000000000023 /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
+		A50100000000000000000024 /* UsernameGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameGeneratorTests.swift; sourceTree = "<group>"; };
+		A50100000000000000000025 /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
+		A50100000000000000000030 /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
+		A50100000000000000000040 /* App5-iOS-BeerMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App5-iOS-BeerMaps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50100000000000000000041 /* App5-iOS-BeerMapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App5-iOS-BeerMapsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A501000000000000000000A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A501000000000000000000B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A501000000000000000000C /* DrinkSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkSelectorView.swift; sourceTree = "<group>"; };
+		A501000000000000000000D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A501000000000000000000E /* DrinkMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkMarkerView.swift; sourceTree = "<group>"; };
+		A501000000000000000000F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A50400000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50200000000000000000030 /* SwiftData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A50400000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A50300000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A50300000000000000000002 /* App5-iOS-BeerMaps */,
+				A50300000000000000000020 /* App5-iOS-BeerMapsTests */,
+				A50300000000000000000030 /* Products */,
+				A50300000000000000000031 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A50300000000000000000002 /* App5-iOS-BeerMaps */ = {
+			isa = PBXGroup;
+			children = (
+				A50100000000000000000001 /* App5_iOS_BeerMapsApp.swift */,
+				A50100000000000000000002 /* ContentView.swift */,
+				A50300000000000000000003 /* Models */,
+				A50300000000000000000004 /* Services */,
+				A50300000000000000000005 /* ViewModels */,
+				A50300000000000000000006 /* Views */,
+				A50300000000000000000007 /* Resources */,
+				A501000000000000000000F /* Info.plist */,
+				A50100000000000000000014 /* App5-iOS-BeerMaps.entitlements */,
+				A50100000000000000000010 /* PrivacyInfo.xcprivacy */,
+			);
+			path = "App5-iOS-BeerMaps";
+			sourceTree = "<group>";
+		};
+		A50300000000000000000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A50100000000000000000003 /* DrinkEntry.swift */,
+				A50100000000000000000004 /* DrinkType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A50300000000000000000004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A50100000000000000000005 /* KeychainService.swift */,
+				A50100000000000000000006 /* LocationService.swift */,
+				A50100000000000000000007 /* NotificationService.swift */,
+				A50100000000000000000008 /* UsernameGenerator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A50300000000000000000005 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A50100000000000000000009 /* MapViewModel.swift */,
+				A501000000000000000000A /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A50300000000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A501000000000000000000B /* MapView.swift */,
+				A501000000000000000000C /* DrinkSelectorView.swift */,
+				A501000000000000000000D /* SettingsView.swift */,
+				A501000000000000000000E /* DrinkMarkerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A50300000000000000000007 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A50100000000000000000011 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A50300000000000000000020 /* App5-iOS-BeerMapsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A50300000000000000000021 /* Mocks */,
+				A50100000000000000000022 /* App5_iOS_BeerMapsTests.swift */,
+				A50100000000000000000023 /* KeychainServiceTests.swift */,
+				A50100000000000000000024 /* UsernameGeneratorTests.swift */,
+				A50100000000000000000025 /* MapViewModelTests.swift */,
+			);
+			path = "App5-iOS-BeerMapsTests";
+			sourceTree = "<group>";
+		};
+		A50300000000000000000021 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A50100000000000000000020 /* MockKeychainService.swift */,
+				A50100000000000000000021 /* MockLocationService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		A50300000000000000000030 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A50100000000000000000040 /* App5-iOS-BeerMaps.app */,
+				A50100000000000000000041 /* App5-iOS-BeerMapsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A50300000000000000000031 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A50100000000000000000030 /* SwiftData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A50500000000000000000001 /* App5-iOS-BeerMaps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A50700000000000000000001 /* Build configuration list for PBXNativeTarget "App5-iOS-BeerMaps" */;
+			buildPhases = (
+				A50400000000000000000001 /* Frameworks */,
+				A50800000000000000000002 /* Sources */,
+				A50800000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "App5-iOS-BeerMaps";
+			productName = "App5-iOS-BeerMaps";
+			productReference = A50100000000000000000040 /* App5-iOS-BeerMaps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A50500000000000000000002 /* App5-iOS-BeerMapsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A50700000000000000000002 /* Build configuration list for PBXNativeTarget "App5-iOS-BeerMapsTests" */;
+			buildPhases = (
+				A50400000000000000000002 /* Frameworks */,
+				A50800000000000000000004 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A50900000000000000000001 /* PBXTargetDependency */,
+			);
+			name = "App5-iOS-BeerMapsTests";
+			productName = "App5-iOS-BeerMapsTests";
+			productReference = A50100000000000000000041 /* App5-iOS-BeerMapsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A50800000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A50500000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					A50500000000000000000002 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A50500000000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = A50700000000000000000004 /* Build configuration list for PBXProject "App5-iOS-BeerMaps" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				de,
+				Base,
+			);
+			mainGroup = A50300000000000000000001;
+			productRefGroup = A50300000000000000000030 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A50500000000000000000001 /* App5-iOS-BeerMaps */,
+				A50500000000000000000002 /* App5-iOS-BeerMapsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A50800000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50200000000000000000010 /* PrivacyInfo.xcprivacy in Resources */,
+				A50200000000000000000011 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A50800000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50200000000000000000001 /* App5_iOS_BeerMapsApp.swift in Sources */,
+				A50200000000000000000002 /* ContentView.swift in Sources */,
+				A50200000000000000000003 /* DrinkEntry.swift in Sources */,
+				A50200000000000000000004 /* DrinkType.swift in Sources */,
+				A50200000000000000000005 /* KeychainService.swift in Sources */,
+				A50200000000000000000006 /* LocationService.swift in Sources */,
+				A50200000000000000000007 /* NotificationService.swift in Sources */,
+				A50200000000000000000008 /* UsernameGenerator.swift in Sources */,
+				A50200000000000000000009 /* MapViewModel.swift in Sources */,
+				A5020000000000000000000A /* SettingsViewModel.swift in Sources */,
+				A5020000000000000000000B /* MapView.swift in Sources */,
+				A5020000000000000000000C /* DrinkSelectorView.swift in Sources */,
+				A5020000000000000000000D /* SettingsView.swift in Sources */,
+				A5020000000000000000000E /* DrinkMarkerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A50800000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50200000000000000000020 /* MockKeychainService.swift in Sources */,
+				A50200000000000000000021 /* MockLocationService.swift in Sources */,
+				A50200000000000000000022 /* App5_iOS_BeerMapsTests.swift in Sources */,
+				A50200000000000000000023 /* KeychainServiceTests.swift in Sources */,
+				A50200000000000000000024 /* UsernameGeneratorTests.swift in Sources */,
+				A50200000000000000000025 /* MapViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A50900000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A50500000000000000000001 /* App5-iOS-BeerMaps */;
+			targetProxy = A50A00000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A50100000000000000000011 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A50100000000000000000012 /* en */,
+				A50100000000000000000013 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A50600000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A50600000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A50600000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "App5-iOS-BeerMaps/App5-iOS-BeerMaps.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "App5-iOS-BeerMaps/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A50600000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "App5-iOS-BeerMaps/App5-iOS-BeerMaps.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "App5-iOS-BeerMaps/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A50600000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp5.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App5-iOS-BeerMaps.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/App5-iOS-BeerMaps";
+			};
+			name = Debug;
+		};
+		A50600000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp5.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App5-iOS-BeerMaps.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/App5-iOS-BeerMaps";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A50700000000000000000001 /* Build configuration list for PBXNativeTarget "App5-iOS-BeerMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A50600000000000000000003 /* Debug */,
+				A50600000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A50700000000000000000002 /* Build configuration list for PBXNativeTarget "App5-iOS-BeerMapsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A50600000000000000000005 /* Debug */,
+				A50600000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A50700000000000000000004 /* Build configuration list for PBXProject "App5-iOS-BeerMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A50600000000000000000001 /* Debug */,
+				A50600000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A50800000000000000000001 /* Project object */;
+}

@@ -1,0 +1,10 @@
+platform :ios, '18.0'
+use_frameworks!
+
+target 'App8' do
+  pod 'DeviceKit', '~> 5.0'
+
+  target 'App8Tests' do
+    inherit! :search_paths
+  end
+end

@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "A120000A-0000-0000-0000-00000000000A",
+      "name" : "Dependencies Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "DependenciesTests",
+            "testFunctions" : [
+              "testWithDependenciesWorks()"
+            ]
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App15.xcodeproj",
+        "identifier" : "BB12060000000000000001",
+        "name" : "App15Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

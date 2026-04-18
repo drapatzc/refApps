@@ -1,0 +1,48 @@
+/* App3 - iOS Weather App - German */
+
+/* Navigation */
+"weather_app_title" = "Wetter-App";
+"forecast_title" = "7-Tage-Vorhersage";
+
+/* Search */
+"search_prompt" = "Stadt oder Land suchen";
+
+/* Empty States */
+"no_cities_available" = "Keine Städte verfügbar";
+"no_results_for" = "Keine Treffer für \"%@\"";
+"no_weather_data" = "Keine Wetterdaten verfügbar.";
+"no_forecast" = "Keine Vorhersage verfügbar.";
+
+/* Loading */
+"loading_weather" = "Wetter wird geladen…";
+"loading_forecast" = "Vorhersage wird geladen…";
+
+/* Alerts */
+"error_title" = "Fehler";
+"ok" = "OK";
+
+/* Current Weather */
+"feels_like" = "Gefühlt %@";
+"humidity" = "Luftfeuchtigkeit";
+"wind" = "Wind";
+"visibility" = "Sichtweite";
+"uv_index" = "UV-Index";
+
+/* Forecast Button */
+"forecast_button_label" = "7-Tage-Vorhersage";
+
+/* Weather Conditions */
+"weather_sunny" = "Sonnig";
+"weather_partly_cloudy" = "Teilweise bewölkt";
+"weather_cloudy" = "Bewölkt";
+"weather_rainy" = "Regnerisch";
+"weather_heavy_rain" = "Starker Regen";
+"weather_thunderstorm" = "Gewitter";
+"weather_snowy" = "Schnee";
+"weather_foggy" = "Neblig";
+"weather_windy" = "Windig";
+
+/* Errors */
+"error_city_not_found" = "Die gewählte Stadt konnte nicht gefunden werden.";
+"error_data_unavailable" = "Die Wetterdaten sind derzeit nicht verfügbar.";
+"unknown_error" = "Ein unbekannter Fehler ist aufgetreten.";

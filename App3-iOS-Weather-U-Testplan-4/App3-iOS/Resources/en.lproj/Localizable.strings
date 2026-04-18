@@ -1,0 +1,48 @@
+/* App3 - iOS Weather App - English */
+
+/* Navigation */
+"weather_app_title" = "Weather App";
+"forecast_title" = "7-Day Forecast";
+
+/* Search */
+"search_prompt" = "Search city or country";
+
+/* Empty States */
+"no_cities_available" = "No Cities Available";
+"no_results_for" = "No results for \"%@\"";
+"no_weather_data" = "No weather data available.";
+"no_forecast" = "No forecast available.";
+
+/* Loading */
+"loading_weather" = "Loading weather…";
+"loading_forecast" = "Loading forecast…";
+
+/* Alerts */
+"error_title" = "Error";
+"ok" = "OK";
+
+/* Current Weather */
+"feels_like" = "Feels like %@";
+"humidity" = "Humidity";
+"wind" = "Wind";
+"visibility" = "Visibility";
+"uv_index" = "UV Index";
+
+/* Forecast Button */
+"forecast_button_label" = "7-Day Forecast";
+
+/* Weather Conditions */
+"weather_sunny" = "Sunny";
+"weather_partly_cloudy" = "Partly Cloudy";
+"weather_cloudy" = "Cloudy";
+"weather_rainy" = "Rainy";
+"weather_heavy_rain" = "Heavy Rain";
+"weather_thunderstorm" = "Thunderstorm";
+"weather_snowy" = "Snow";
+"weather_foggy" = "Foggy";
+"weather_windy" = "Windy";
+
+/* Errors */
+"error_city_not_found" = "The selected city could not be found.";
+"error_data_unavailable" = "Weather data is currently unavailable.";
+"unknown_error" = "An unknown error occurred.";

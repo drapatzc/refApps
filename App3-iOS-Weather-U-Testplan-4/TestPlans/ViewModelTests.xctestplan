@@ -1,0 +1,99 @@
+{
+  "configurations" : [
+    {
+      "id" : "A3000001-0000-0000-0000-000000000004",
+      "name" : "ViewModel-Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "CitySearchViewModelTests",
+            "testFunctions" : [
+              "alleStaedteLadenCallsServiceOnce()",
+              "alleStaedteLadenPopulatesList()",
+              "alleStaedteLadenPopulatesSearchResults()",
+              "alleStaedteLadenWithEmptyServiceResultsInEmptyList()",
+              "angezeigteStädteIsEmptyWithNoResults()",
+              "angezeigteStädteReturnsAllCitiesWithoutSearchTerm()",
+              "angezeigteStädteReturnsSearchResultsWithTerm()",
+              "fehlerZurücksetzenRemovesErrorMessage()",
+              "fehlerZurücksetzenWithNilErrorIsSafe()",
+              "hatFehlerIsFalseWhenErrorIsNil()",
+              "hatFehlerIsTrueWhenErrorIsSet()",
+              "suchenPassesSearchTermToService()",
+              "suchenSetsErrorNilOnSuccess()",
+              "suchenSetsIsLoadingFalseAfterCompletion()",
+              "suchenUpdatesSuchErgebnisse()",
+              "suchenWithEmptyTermPassesEmptyStringToService()",
+              "viewModelHasCorrectInitialState()"
+            ]
+          },
+          {
+            "name" : "CurrentWeatherViewModelTests",
+            "testFunctions" : [
+              "aktuellesWetterRemainsNilOnError()",
+              "fehlerZurücksetzenClearsErrorMessage()",
+              "fehlerZurücksetzenIsIdempotentWhenAlreadyNil()",
+              "hatFehlerIsFalseAfterSuccess()",
+              "hatFehlerIsTrueWhenErrorIsSet()",
+              "viewModelHasCorrectInitialState()",
+              "wetterLadenPassesCorrectCityToService()",
+              "wetterLadenSetsCurrentWeatherOnSuccess()",
+              "wetterLadenSetsErrorNilOnSuccess()",
+              "wetterLadenSetsErrorOnCityNotFound()",
+              "wetterLadenSetsErrorOnDataUnavailable()",
+              "wetterLadenSetsIsLoadingFalseAfterCompletion()",
+              "wetterLadenSetsIsLoadingFalseAfterError()",
+              "wetterLadenSetsWeatherConditionCorrectly()"
+            ]
+          },
+          {
+            "name" : "ForecastViewModelTests",
+            "testFunctions" : [
+              "fehlerZurücksetzenClearsErrorMessage()",
+              "hatFehlerIsTrueWhenErrorIsSet()",
+              "viewModelHasCorrectInitialState()",
+              "vorhersageLadenForecastsContainSevenDays()",
+              "vorhersageLadenPassesCorrectCityToService()",
+              "vorhersageLadenSetsErrorNilOnSuccess()",
+              "vorhersageLadenSetsErrorOnCityNotFound()",
+              "vorhersageLadenSetsErrorOnDataUnavailable()",
+              "vorhersageLadenSetsIsLoadingFalseAfterCompletion()",
+              "vorhersageLadenSetsIsLoadingFalseAfterError()",
+              "vorhersageLadenSetsWeeklyForecastOnSuccess()",
+              "vorhersagenContainsCorrectTemperatureData()",
+              "vorhersagenIsEmptyOnLoadError()",
+              "vorhersagenIsEmptyWithoutLoadedData()"
+            ]
+          }
+        ],
+        "xctestClasses" : [
+          {
+            "name" : "CitySearchViewModelTests"
+          },
+          {
+            "name" : "CurrentWeatherViewModelTests"
+          },
+          {
+            "name" : "ForecastViewModelTests"
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App3-iOS.xcodeproj",
+        "identifier" : "A30500000000000000000002",
+        "name" : "App3-iOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}

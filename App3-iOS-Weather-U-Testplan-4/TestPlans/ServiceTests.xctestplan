@@ -1,0 +1,52 @@
+{
+  "configurations" : [
+    {
+      "id" : "A3000001-0000-0000-0000-000000000003",
+      "name" : "Service-Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "WeatherServiceTests",
+            "testFunctions" : [
+              "aktuellesWetterDelegatesToRepository()",
+              "aktuellesWetterForwardsCityNotFoundError()",
+              "aktuellesWetterForwardsDataUnavailableError()",
+              "aktuellesWetterReturnsCorrectWeatherObject()",
+              "alleCitiesDelegatestoRepository()",
+              "alleCitiesReturnsEmptyListForEmptyRepository()",
+              "alleCitiesReturnsMultipleCitiesCorrectly()",
+              "citiesSuchenDelegatesTrimmedTerm()",
+              "citiesSuchenWithEmptyTermReturnsAllCities()",
+              "citiesSuchenWithWhitespaceOnlyTermIsTrimmmed()",
+              "wochenvorhersageDelegatesToRepository()",
+              "wochenvorhersageForwardsCityNotFoundError()",
+              "wochenvorhersageForwardsDataUnavailableError()",
+              "wochenvorhersageReturnsSevenDays()"
+            ]
+          }
+        ],
+        "xctestClasses" : [
+          {
+            "name" : "WeatherServiceTests"
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App3-iOS.xcodeproj",
+        "identifier" : "A30500000000000000000002",
+        "name" : "App3-iOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,0 +1,12 @@
+{
+  "description" : "Localizable",
+  "repositories" : [
+    {
+      "base" : "\/Users\/drapatz\/Downloads\/tempApps",
+      "destination" : "localizable",
+      "initialized" : true,
+      "name" : "Localizable-Repository",
+      "url" : "git@github.com:drapatzc\/Localizable.git"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "A120000C-0000-0000-0000-00000000000C",
+      "name" : "Charts Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "ChartsTests",
+            "testFunctions" : [
+              "testChartsImportWorks()"
+            ]
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App12.xcodeproj",
+        "identifier" : "BB12060000000000000001",
+        "name" : "App12Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

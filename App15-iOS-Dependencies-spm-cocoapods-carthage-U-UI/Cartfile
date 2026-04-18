@@ -1,0 +1,13 @@
+# Cartfile — Carthage Dependencies for App15
+# Run: carthage update --use-xcframeworks --platform iOS
+# Then: Drag built .xcframeworks from Carthage/Build/ into Xcode project
+#       (Targets → App15 → Frameworks, Libraries, and Embedded Content)
+
+# Image Loading
+github "onevcat/Kingfisher" ~> 7.0
+
+# UI & Charts
+github "danielgindi/Charts" ~> 5.0
+
+# Authentication
+github "openid/AppAuth-iOS" ~> 1.0

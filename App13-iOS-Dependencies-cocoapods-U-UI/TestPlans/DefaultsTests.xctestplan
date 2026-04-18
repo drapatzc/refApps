@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "A1200009-0000-0000-0000-000000000009",
+      "name" : "Defaults Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "DefaultsTests",
+            "testFunctions" : [
+              "testDefaultsImportWorks()"
+            ]
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App12.xcodeproj",
+        "identifier" : "BB12060000000000000001",
+        "name" : "App12Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

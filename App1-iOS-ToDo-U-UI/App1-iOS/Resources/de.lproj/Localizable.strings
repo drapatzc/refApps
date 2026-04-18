@@ -1,0 +1,25 @@
+/* App1 - iOS Todo App - German */
+
+/* Navigation */
+"todo_list_title" = "Meine Todos";
+"new_todo_title" = "Neues Todo";
+
+/* Buttons */
+"add_button_label" = "Hinzufügen";
+"cancel" = "Abbrechen";
+"save" = "Speichern";
+
+/* Form */
+"section_title" = "Titel";
+"todo_placeholder" = "Todo eingeben…";
+
+/* Empty State */
+"empty_title" = "Keine Todos vorhanden";
+"empty_description" = "Tippe auf +, um ein neues Todo hinzuzufügen.";
+
+/* Accessibility */
+"status_completed" = "Erledigt";
+"status_open" = "Offen";
+
+/* Errors */
+"error_empty_title" = "Der Titel darf nicht leer sein.";

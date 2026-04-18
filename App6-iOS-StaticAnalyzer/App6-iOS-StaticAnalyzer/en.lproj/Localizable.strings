@@ -1,0 +1,17 @@
+/* App title */
+"lotto_title" = "Lottery";
+
+/* Subtitle under the app title */
+"lotto_subtitle" = "6 from 49";
+
+/* Label above the main number balls */
+"main_numbers_label" = "Main Numbers";
+
+/* Label for the super number */
+"super_number_label" = "Super Number";
+
+/* Hint text below the super number label */
+"super_number_hint" = "0 – 9";
+
+/* Button to generate new lottery numbers */
+"generate_button" = "Draw Numbers";

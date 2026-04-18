@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "A120000E-0000-0000-0000-00000000000E",
+      "name" : "Logging Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "LoggingTests",
+            "testFunctions" : [
+              "testLoggerCreation()"
+            ]
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App15.xcodeproj",
+        "identifier" : "BB12060000000000000001",
+        "name" : "App15Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

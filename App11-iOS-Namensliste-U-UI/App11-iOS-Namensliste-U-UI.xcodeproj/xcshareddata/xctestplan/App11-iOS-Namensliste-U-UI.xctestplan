@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "A1B2C3D4-0001-0001-0001-A1B2C3D40001",
+      "name" : "Testkonfiguration",
+      "options" : {
+        "language" : "de"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverageEnabled" : true,
+    "language" : "de"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:App11-iOS-Namensliste-U-UI.xcodeproj",
+        "identifier" : "600000000000000000000002",
+        "name" : "App11-iOS-Namensliste-U-UITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:App11-iOS-Namensliste-U-UI.xcodeproj",
+        "identifier" : "600000000000000000000003",
+        "name" : "App11-iOS-Namensliste-U-UIUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

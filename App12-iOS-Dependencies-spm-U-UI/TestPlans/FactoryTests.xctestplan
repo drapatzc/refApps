@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "A120000F-0000-0000-0000-00000000000F",
+      "name" : "Factory Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : {
+        "suites" : [
+          {
+            "name" : "FactoryTests",
+            "testFunctions" : [
+              "testContainerResolves()"
+            ]
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App12.xcodeproj",
+        "identifier" : "BB12060000000000000001",
+        "name" : "App12Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

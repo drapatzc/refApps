@@ -1,0 +1,20 @@
+# Cartfile für App14-iOS-Dependencies-carthage-U-UI
+# Entspricht App12-iOS-Dependencies-U-UI (SPM) – hier mit Carthage als Package Manager
+
+# Pakete die NICHT über Carthage verfügbar sind (nur SPM):
+#   - MarkdownUI (gonzalezreal/swift-markdown-ui)
+#   - Defaults (sindresorhus/Defaults)
+#   - swift-dependencies (pointfreeco/swift-dependencies)
+#   - swift-collections (apple/swift-collections)
+#   - swift-log (apple/swift-log)
+#   - Factory (hmlongco/Factory)
+
+github "airbnb/lottie-ios"                       ~> 4.0
+github "onevcat/Kingfisher"                       ~> 7.0
+github "kean/Nuke"                                ~> 12.0
+github "Alamofire/Alamofire"                      ~> 5.0
+github "Moya/Moya"                                ~> 15.0
+github "groue/GRDB.swift"                         ~> 6.0
+github "danielgindi/Charts"                       ~> 5.0
+github "openid/AppAuth-iOS"                       ~> 1.0
+github "pointfreeco/swift-snapshot-testing"       ~> 1.0

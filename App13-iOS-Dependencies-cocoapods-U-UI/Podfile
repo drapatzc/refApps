@@ -1,0 +1,29 @@
+# Podfile für App13-iOS-Dependencies-cocoapods-U-UI
+# Entspricht App12-iOS-Dependencies-U-UI (SPM) – hier mit CocoaPods als Package Manager
+
+platform :ios, '18.0'
+use_frameworks!
+
+# Pakete die NICHT über CocoaPods verfügbar sind (nur SPM):
+#   - Nuke (kean/Nuke)
+#   - MarkdownUI (gonzalezreal/swift-markdown-ui)
+#   - Defaults (sindresorhus/Defaults)
+#   - swift-dependencies (pointfreeco/swift-dependencies)
+#   - swift-collections (apple/swift-collections)
+#   - swift-log (apple/swift-log)
+
+target 'App13' do
+  pod 'lottie-ios',   '~> 4.0'
+  pod 'Kingfisher',   '~> 7.0'
+  pod 'Alamofire',    '~> 5.0'
+  pod 'Moya',         '~> 15.0'
+  pod 'GRDB.swift',   '~> 6.0'
+  pod 'DGCharts',     '~> 5.0'
+  pod 'AppAuth',      '~> 1.0'
+  pod 'Factory',      '~> 2.0'
+end
+
+target 'App13Tests' do
+  inherit! :search_paths
+  pod 'SnapshotTesting', '~> 1.0'
+end

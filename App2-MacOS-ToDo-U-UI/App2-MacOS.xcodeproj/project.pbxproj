@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A20200000000000000000001 /* App2_MacOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000001 /* App2_MacOSApp.swift */; };
+		A20200000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000002 /* ContentView.swift */; };
+		A20200000000000000000003 /* WorkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000003 /* WorkTask.swift */; };
+		A20200000000000000000004 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000004 /* AppState.swift */; };
+		A20200000000000000000005 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000005 /* AppAction.swift */; };
+		A20200000000000000000006 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000006 /* AppReducer.swift */; };
+		A20200000000000000000007 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000007 /* AppStore.swift */; };
+		A20200000000000000000008 /* PersistenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000008 /* PersistenceProtocol.swift */; };
+		A20200000000000000000009 /* InMemoryPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000009 /* InMemoryPersistence.swift */; };
+		A2020000000000000000000A /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2010000000000000000000A /* TaskListView.swift */; };
+		A2020000000000000000000B /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2010000000000000000000B /* TaskDetailView.swift */; };
+		A2020000000000000000000C /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2010000000000000000000C /* AddTaskView.swift */; };
+		A2020000000000000000000D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2010000000000000000000D /* Assets.xcassets */; };
+		A2020000000000000000000F /* MockPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2010000000000000000000F /* MockPersistence.swift */; };
+		A20200000000000000000010 /* AppReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000010 /* AppReducerTests.swift */; };
+		A20200000000000000000011 /* AppStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000011 /* AppStoreTests.swift */; };
+		A20200000000000000000012 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000012 /* AppStateTests.swift */; };
+		A20200000000000000000013 /* App2_MacOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20100000000000000000013 /* App2_MacOSUITests.swift */; };
+		C62AB4D52F88D71500D653D1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C62AB4D22F88D71500D653D1 /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A20A00000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A20800000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A20500000000000000000001;
+			remoteInfo = "App2-MacOS";
+		};
+		A20A00000000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A20800000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A20500000000000000000001;
+			remoteInfo = "App2-MacOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A20100000000000000000001 /* App2_MacOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App2_MacOSApp.swift; sourceTree = "<group>"; };
+		A20100000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A20100000000000000000003 /* WorkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTask.swift; sourceTree = "<group>"; };
+		A20100000000000000000004 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A20100000000000000000005 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		A20100000000000000000006 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		A20100000000000000000007 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		A20100000000000000000008 /* PersistenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceProtocol.swift; sourceTree = "<group>"; };
+		A20100000000000000000009 /* InMemoryPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryPersistence.swift; sourceTree = "<group>"; };
+		A2010000000000000000000A /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		A2010000000000000000000B /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
+		A2010000000000000000000C /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		A2010000000000000000000D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2010000000000000000000E /* App2_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App2_MacOS.entitlements; sourceTree = "<group>"; };
+		A2010000000000000000000F /* MockPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersistence.swift; sourceTree = "<group>"; };
+		A20100000000000000000010 /* AppReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducerTests.swift; sourceTree = "<group>"; };
+		A20100000000000000000011 /* AppStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTests.swift; sourceTree = "<group>"; };
+		A20100000000000000000012 /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
+		A20100000000000000000013 /* App2_MacOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App2_MacOSUITests.swift; sourceTree = "<group>"; };
+		A20100000000000000000020 /* App2-MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App2-MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20100000000000000000021 /* App2-MacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App2-MacOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20100000000000000000022 /* App2-MacOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App2-MacOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C62AB4D32F88D71500D653D1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C62AB4D42F88D71500D653D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A20400000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20400000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20400000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A20300000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A20300000000000000000002 /* App2-MacOS */,
+				A20300000000000000000009 /* App2-MacOSTests */,
+				A2030000000000000000000C /* App2-MacOSUITests */,
+				A20300000000000000000010 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A20300000000000000000002 /* App2-MacOS */ = {
+			isa = PBXGroup;
+			children = (
+				A20100000000000000000001 /* App2_MacOSApp.swift */,
+				A20300000000000000000003 /* Core */,
+				A20300000000000000000006 /* Features */,
+				A2010000000000000000000D /* Assets.xcassets */,
+				C62AB4D22F88D71500D653D1 /* Localizable.strings */,
+				A2010000000000000000000E /* App2_MacOS.entitlements */,
+			);
+			path = "App2-MacOS";
+			sourceTree = "<group>";
+		};
+		A20300000000000000000003 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A20300000000000000000004 /* Models */,
+				A20300000000000000000005 /* Store */,
+				A2030000000000000000000D /* Persistence */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A20300000000000000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20100000000000000000003 /* WorkTask.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A20300000000000000000005 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				A20100000000000000000004 /* AppState.swift */,
+				A20100000000000000000005 /* AppAction.swift */,
+				A20100000000000000000006 /* AppReducer.swift */,
+				A20100000000000000000007 /* AppStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		A20300000000000000000006 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A20100000000000000000002 /* ContentView.swift */,
+				A20300000000000000000007 /* TaskList */,
+				A20300000000000000000008 /* TaskDetail */,
+				A2030000000000000000000E /* AddTask */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A20300000000000000000007 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				A2010000000000000000000A /* TaskListView.swift */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
+		A20300000000000000000008 /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A2010000000000000000000B /* TaskDetailView.swift */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		A20300000000000000000009 /* App2-MacOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2030000000000000000000F /* Mocks */,
+				A20100000000000000000010 /* AppReducerTests.swift */,
+				A20100000000000000000011 /* AppStoreTests.swift */,
+				A20100000000000000000012 /* AppStateTests.swift */,
+			);
+			path = "App2-MacOSTests";
+			sourceTree = "<group>";
+		};
+		A2030000000000000000000C /* App2-MacOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A20100000000000000000013 /* App2_MacOSUITests.swift */,
+			);
+			path = "App2-MacOSUITests";
+			sourceTree = "<group>";
+		};
+		A2030000000000000000000D /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				A20100000000000000000008 /* PersistenceProtocol.swift */,
+				A20100000000000000000009 /* InMemoryPersistence.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		A2030000000000000000000E /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				A2010000000000000000000C /* AddTaskView.swift */,
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
+		A2030000000000000000000F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A2010000000000000000000F /* MockPersistence.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		A20300000000000000000010 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20100000000000000000020 /* App2-MacOS.app */,
+				A20100000000000000000021 /* App2-MacOSTests.xctest */,
+				A20100000000000000000022 /* App2-MacOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A20500000000000000000001 /* App2-MacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20700000000000000000001 /* Build configuration list for PBXNativeTarget "App2-MacOS" */;
+			buildPhases = (
+				A20400000000000000000001 /* Frameworks */,
+				A20800000000000000000002 /* Sources */,
+				A20800000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "App2-MacOS";
+			productName = "App2-MacOS";
+			productReference = A20100000000000000000020 /* App2-MacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A20500000000000000000002 /* App2-MacOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20700000000000000000002 /* Build configuration list for PBXNativeTarget "App2-MacOSTests" */;
+			buildPhases = (
+				A20400000000000000000002 /* Frameworks */,
+				A20800000000000000000004 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A20900000000000000000001 /* PBXTargetDependency */,
+			);
+			name = "App2-MacOSTests";
+			productName = "App2-MacOSTests";
+			productReference = A20100000000000000000021 /* App2-MacOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A20500000000000000000003 /* App2-MacOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20700000000000000000003 /* Build configuration list for PBXNativeTarget "App2-MacOSUITests" */;
+			buildPhases = (
+				A20400000000000000000003 /* Frameworks */,
+				A20800000000000000000005 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A20900000000000000000002 /* PBXTargetDependency */,
+			);
+			name = "App2-MacOSUITests";
+			productName = "App2-MacOSUITests";
+			productReference = A20100000000000000000022 /* App2-MacOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A20800000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A20500000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					A20500000000000000000002 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A20500000000000000000001;
+					};
+					A20500000000000000000003 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A20500000000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = A20700000000000000000004 /* Build configuration list for PBXProject "App2-MacOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = de;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				de,
+				en,
+				Base,
+			);
+			mainGroup = A20300000000000000000001;
+			productRefGroup = A20300000000000000000010 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A20500000000000000000001 /* App2-MacOS */,
+				A20500000000000000000002 /* App2-MacOSTests */,
+				A20500000000000000000003 /* App2-MacOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A20800000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2020000000000000000000D /* Assets.xcassets in Resources */,
+				C62AB4D52F88D71500D653D1 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A20800000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20200000000000000000001 /* App2_MacOSApp.swift in Sources */,
+				A20200000000000000000002 /* ContentView.swift in Sources */,
+				A20200000000000000000003 /* WorkTask.swift in Sources */,
+				A20200000000000000000004 /* AppState.swift in Sources */,
+				A20200000000000000000005 /* AppAction.swift in Sources */,
+				A20200000000000000000006 /* AppReducer.swift in Sources */,
+				A20200000000000000000007 /* AppStore.swift in Sources */,
+				A20200000000000000000008 /* PersistenceProtocol.swift in Sources */,
+				A20200000000000000000009 /* InMemoryPersistence.swift in Sources */,
+				A2020000000000000000000A /* TaskListView.swift in Sources */,
+				A2020000000000000000000B /* TaskDetailView.swift in Sources */,
+				A2020000000000000000000C /* AddTaskView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20800000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2020000000000000000000F /* MockPersistence.swift in Sources */,
+				A20200000000000000000010 /* AppReducerTests.swift in Sources */,
+				A20200000000000000000011 /* AppStoreTests.swift in Sources */,
+				A20200000000000000000012 /* AppStateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20800000000000000000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20200000000000000000013 /* App2_MacOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A20900000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A20500000000000000000001 /* App2-MacOS */;
+			targetProxy = A20A00000000000000000001 /* PBXContainerItemProxy */;
+		};
+		A20900000000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A20500000000000000000001 /* App2-MacOS */;
+			targetProxy = A20A00000000000000000002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C62AB4D22F88D71500D653D1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C62AB4D32F88D71500D653D1 /* de */,
+				C62AB4D42F88D71500D653D1 /* en */,
+			);
+			name = Localizable.strings;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A20600000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A20600000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A20600000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "App2-MacOS/App2_MacOS.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A20600000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "App2-MacOS/App2_MacOS.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A20600000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App2-MacOS.app/Contents/MacOS/App2-MacOS";
+			};
+			name = Debug;
+		};
+		A20600000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App2-MacOS.app/Contents/MacOS/App2-MacOS";
+			};
+			name = Release;
+		};
+		A20600000000000000000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.referenzapp.app2macos.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "App2-MacOS";
+			};
+			name = Debug;
+		};
+		A20600000000000000000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.referenzapp.app2macos.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "App2-MacOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A20700000000000000000001 /* Build configuration list for PBXNativeTarget "App2-MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20600000000000000000003 /* Debug */,
+				A20600000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A20700000000000000000002 /* Build configuration list for PBXNativeTarget "App2-MacOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20600000000000000000005 /* Debug */,
+				A20600000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A20700000000000000000003 /* Build configuration list for PBXNativeTarget "App2-MacOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20600000000000000000007 /* Debug */,
+				A20600000000000000000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A20700000000000000000004 /* Build configuration list for PBXProject "App2-MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20600000000000000000001 /* Debug */,
+				A20600000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A20800000000000000000001 /* Project object */;
+}

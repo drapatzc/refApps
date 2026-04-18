@@ -1,0 +1,801 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001000001000001 /* App4_iOS_UserManagementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000001000001 /* App4_iOS_UserManagementApp.swift */; };
+		A1000002000001000002 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002000001000002 /* User.swift */; };
+		A1000003000001000003 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000003000001000003 /* DatabaseManager.swift */; };
+		A1000004000001000004 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000004000001000004 /* AppError.swift */; };
+		A1000005000001000005 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000005000001000005 /* ValidationResult.swift */; };
+		A1000006000001000006 /* UserValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000006000001000006 /* UserValidator.swift */; };
+		A1000007000001000007 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000007000001000007 /* UserRepositoryProtocol.swift */; };
+		A1000008000001000008 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000008000001000008 /* UserRepository.swift */; };
+		A1000009000001000009 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000009000001000009 /* UserService.swift */; };
+		A100000A00000100000A /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000A00000100000A /* UserListViewModel.swift */; };
+		A100000B00000100000B /* UserFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000B00000100000B /* UserFormViewModel.swift */; };
+		A100000C00000100000C /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000C00000100000C /* UserListView.swift */; };
+		A100000D00000100000D /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000D00000100000D /* UserRowView.swift */; };
+		A100000E00000100000E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000E00000100000E /* UserDetailView.swift */; };
+		A100000F00000100000F /* UserFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000F00000100000F /* UserFormView.swift */; };
+		A1000010000001000010 /* FormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000010000001000010 /* FormFieldView.swift */; };
+		A1000011000001000011 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000011000001000011 /* EmptyStateView.swift */; };
+		A1000012000001000012 /* ValidationErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000012000001000012 /* ValidationErrorView.swift */; };
+		A1000013000001000013 /* en in Resources */ = {isa = PBXBuildFile; fileRef = A2000013000001000013 /* en */; };
+		A1000014000001000014 /* de in Resources */ = {isa = PBXBuildFile; fileRef = A2000014000001000014 /* de */; };
+		A1000015000001000015 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000015000001000015 /* libsqlite3.tbd */; };
+		A1000020000001000020 /* UserValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000020000001000020 /* UserValidatorTests.swift */; };
+		A1000021000001000021 /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000021000001000021 /* UserRepositoryTests.swift */; };
+		A1000022000001000022 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000022000001000022 /* UserServiceTests.swift */; };
+		A1000023000001000023 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000023000001000023 /* UserListViewModelTests.swift */; };
+		A1000024000001000024 /* UserFormViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000024000001000024 /* UserFormViewModelTests.swift */; };
+		A1000025000001000025 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000025000001000025 /* MockUserRepository.swift */; };
+		C639073A2F87E36E002DA1EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A40000801000010008A1 /* Localizable.strings */; };
+		B1000001000001000001 /* UserListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2000001000001000001 /* UserListUITests.swift */; };
+		B1000002000001000002 /* UserFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2000002000001000002 /* UserFormUITests.swift */; };
+		B1000003000001000003 /* UserDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2000003000001000003 /* UserDetailUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5000004000001000004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0000001000001000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5000001000001000001;
+			remoteInfo = "App4-iOS-UserManagement";
+		};
+		B5000002000001000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0000001000001000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5000001000001000001;
+			remoteInfo = "App4-iOS-UserManagement";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A2000001000001000001 /* App4_iOS_UserManagementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App4_iOS_UserManagementApp.swift; sourceTree = "<group>"; };
+		A2000002000001000002 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A2000003000001000003 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		A2000004000001000004 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		A2000005000001000005 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
+		A2000006000001000006 /* UserValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidator.swift; sourceTree = "<group>"; };
+		A2000007000001000007 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A2000008000001000008 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		A2000009000001000009 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A200000A00000100000A /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		A200000B00000100000B /* UserFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewModel.swift; sourceTree = "<group>"; };
+		A200000C00000100000C /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		A200000D00000100000D /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
+		A200000E00000100000E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		A200000F00000100000F /* UserFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormView.swift; sourceTree = "<group>"; };
+		A2000010000001000010 /* FormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldView.swift; sourceTree = "<group>"; };
+		A2000011000001000011 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		A2000012000001000012 /* ValidationErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorView.swift; sourceTree = "<group>"; };
+		A2000013000001000013 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000014000001000014 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000015000001000015 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A2000016000001000016 /* App4-iOS-UserManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App4-iOS-UserManagement.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000017000001000017 /* App4-iOS-UserManagementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App4-iOS-UserManagementTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000018000001000018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000020000001000020 /* UserValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidatorTests.swift; sourceTree = "<group>"; };
+		A2000021000001000021 /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
+		A2000022000001000022 /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
+		A2000023000001000023 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
+		A2000024000001000024 /* UserFormViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewModelTests.swift; sourceTree = "<group>"; };
+		A2000025000001000025 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
+		B2000001000001000001 /* UserListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUITests.swift; sourceTree = "<group>"; };
+		B2000002000001000002 /* UserFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormUITests.swift; sourceTree = "<group>"; };
+		B2000003000001000003 /* UserDetailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailUITests.swift; sourceTree = "<group>"; };
+		B2000004000001000004 /* App4-iOS-UserManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App4-iOS-UserManagementUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3000001000001000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000015000001000015 /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3000002000001000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3000001000001000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4000001000001000001 = {
+			isa = PBXGroup;
+			children = (
+				A4000002000001000002 /* App4-iOS-UserManagement */,
+				A4000003000001000003 /* App4-iOS-UserManagementTests */,
+				B4000001000001000001 /* App4-iOS-UserManagementUITests */,
+				A4000004000001000004 /* Products */,
+				A4000005000001000005 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A4000002000001000002 /* App4-iOS-UserManagement */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001000001000001 /* App4_iOS_UserManagementApp.swift */,
+				A2000018000001000018 /* Info.plist */,
+				A4000010000001000010 /* Models */,
+				A4000020000001000020 /* Core */,
+				A4000030000001000030 /* Validation */,
+				A4000040000001000040 /* Repository */,
+				A4000050000001000050 /* Services */,
+				A4000060000001000060 /* ViewModels */,
+				A4000070000001000070 /* Views */,
+				A4000080000001000080 /* Resources */,
+			);
+			path = "App4-iOS-UserManagement";
+			sourceTree = "<group>";
+		};
+		A4000003000001000003 /* App4-iOS-UserManagementTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2000020000001000020 /* UserValidatorTests.swift */,
+				A2000021000001000021 /* UserRepositoryTests.swift */,
+				A2000022000001000022 /* UserServiceTests.swift */,
+				A2000023000001000023 /* UserListViewModelTests.swift */,
+				A2000024000001000024 /* UserFormViewModelTests.swift */,
+				A4000090000001000090 /* Mocks */,
+			);
+			path = "App4-iOS-UserManagementTests";
+			sourceTree = "<group>";
+		};
+		A4000004000001000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2000016000001000016 /* App4-iOS-UserManagement.app */,
+				A2000017000001000017 /* App4-iOS-UserManagementTests.xctest */,
+				B2000004000001000004 /* App4-iOS-UserManagementUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4000001000001000001 /* App4-iOS-UserManagementUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B2000001000001000001 /* UserListUITests.swift */,
+				B2000002000001000002 /* UserFormUITests.swift */,
+				B2000003000001000003 /* UserDetailUITests.swift */,
+			);
+			path = "App4-iOS-UserManagementUITests";
+			sourceTree = "<group>";
+		};
+		A4000005000001000005 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2000015000001000015 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4000010000001000010 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2000002000001000002 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4000020000001000020 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A4000021000001000021 /* Database */,
+				A4000022000001000022 /* Errors */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A4000021000001000021 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A2000003000001000003 /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		A4000022000001000022 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				A2000004000001000004 /* AppError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		A4000030000001000030 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				A2000005000001000005 /* ValidationResult.swift */,
+				A2000006000001000006 /* UserValidator.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		A4000040000001000040 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A2000007000001000007 /* UserRepositoryProtocol.swift */,
+				A2000008000001000008 /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A4000050000001000050 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A2000009000001000009 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A4000060000001000060 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A200000A00000100000A /* UserListViewModel.swift */,
+				A200000B00000100000B /* UserFormViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4000070000001000070 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4000071000001000071 /* UserList */,
+				A4000072000001000072 /* UserDetail */,
+				A4000073000001000073 /* UserForm */,
+				A4000074000001000074 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4000071000001000071 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				A200000C00000100000C /* UserListView.swift */,
+				A200000D00000100000D /* UserRowView.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		A4000072000001000072 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A200000E00000100000E /* UserDetailView.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		A4000073000001000073 /* UserForm */ = {
+			isa = PBXGroup;
+			children = (
+				A200000F00000100000F /* UserFormView.swift */,
+				A2000010000001000010 /* FormFieldView.swift */,
+			);
+			path = UserForm;
+			sourceTree = "<group>";
+		};
+		A4000074000001000074 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A2000011000001000011 /* EmptyStateView.swift */,
+				A2000012000001000012 /* ValidationErrorView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A4000080000001000080 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A40000801000010008A1 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A4000090000001000090 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A2000025000001000025 /* MockUserRepository.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5000001000001000001 /* App4-iOS-UserManagement */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7000001000001000001 /* Build configuration list for PBXNativeTarget "App4-iOS-UserManagement" */;
+			buildPhases = (
+				A6000001000001000001 /* Sources */,
+				A3000001000001000001 /* Frameworks */,
+				A6000002000001000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "App4-iOS-UserManagement";
+			productName = "App4-iOS-UserManagement";
+			productReference = A2000016000001000016 /* App4-iOS-UserManagement.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A5000002000001000002 /* App4-iOS-UserManagementTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7000002000001000002 /* Build configuration list for PBXNativeTarget "App4-iOS-UserManagementTests" */;
+			buildPhases = (
+				A6000003000001000003 /* Sources */,
+				A3000002000001000002 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5000003000001000003 /* PBXTargetDependency */,
+			);
+			name = "App4-iOS-UserManagementTests";
+			productName = "App4-iOS-UserManagementTests";
+			productReference = A2000017000001000017 /* App4-iOS-UserManagementTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B5000001000001000001 /* App4-iOS-UserManagementUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7000001000001000001 /* Build configuration list for PBXNativeTarget "App4-iOS-UserManagementUITests" */;
+			buildPhases = (
+				B6000001000001000001 /* Sources */,
+				B3000001000001000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5000003000001000003 /* PBXTargetDependency */,
+			);
+			name = "App4-iOS-UserManagementUITests";
+			productName = "App4-iOS-UserManagementUITests";
+			productReference = B2000004000001000004 /* App4-iOS-UserManagementUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0000001000001000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A5000001000001000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A5000002000001000002 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A5000001000001000001;
+					};
+					B5000001000001000001 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A5000001000001000001;
+					};
+				};
+			};
+			buildConfigurationList = A7000003000001000003 /* Build configuration list for PBXProject "App4-iOS-UserManagement" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				de,
+				Base,
+			);
+			mainGroup = A4000001000001000001;
+			productRefGroup = A4000004000001000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5000001000001000001 /* App4-iOS-UserManagement */,
+				A5000002000001000002 /* App4-iOS-UserManagementTests */,
+				B5000001000001000001 /* App4-iOS-UserManagementUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6000002000001000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C639073A2F87E36E002DA1EB /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6000001000001000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001000001000001 /* App4_iOS_UserManagementApp.swift in Sources */,
+				A1000002000001000002 /* User.swift in Sources */,
+				A1000003000001000003 /* DatabaseManager.swift in Sources */,
+				A1000004000001000004 /* AppError.swift in Sources */,
+				A1000005000001000005 /* ValidationResult.swift in Sources */,
+				A1000006000001000006 /* UserValidator.swift in Sources */,
+				A1000007000001000007 /* UserRepositoryProtocol.swift in Sources */,
+				A1000008000001000008 /* UserRepository.swift in Sources */,
+				A1000009000001000009 /* UserService.swift in Sources */,
+				A100000A00000100000A /* UserListViewModel.swift in Sources */,
+				A100000B00000100000B /* UserFormViewModel.swift in Sources */,
+				A100000C00000100000C /* UserListView.swift in Sources */,
+				A100000D00000100000D /* UserRowView.swift in Sources */,
+				A100000E00000100000E /* UserDetailView.swift in Sources */,
+				A100000F00000100000F /* UserFormView.swift in Sources */,
+				A1000010000001000010 /* FormFieldView.swift in Sources */,
+				A1000011000001000011 /* EmptyStateView.swift in Sources */,
+				A1000012000001000012 /* ValidationErrorView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6000003000001000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000020000001000020 /* UserValidatorTests.swift in Sources */,
+				A1000021000001000021 /* UserRepositoryTests.swift in Sources */,
+				A1000022000001000022 /* UserServiceTests.swift in Sources */,
+				A1000023000001000023 /* UserListViewModelTests.swift in Sources */,
+				A1000024000001000024 /* UserFormViewModelTests.swift in Sources */,
+				A1000025000001000025 /* MockUserRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6000001000001000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1000001000001000001 /* UserListUITests.swift in Sources */,
+				B1000002000001000002 /* UserFormUITests.swift in Sources */,
+				B1000003000001000003 /* UserDetailUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5000003000001000003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5000001000001000001 /* App4-iOS-UserManagement */;
+			targetProxy = A5000004000001000004 /* PBXContainerItemProxy */;
+		};
+		B5000003000001000003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5000001000001000001 /* App4-iOS-UserManagement */;
+			targetProxy = B5000002000001000002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A40000801000010008A1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2000013000001000013 /* en */,
+				A2000014000001000014 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A8000001000001000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A8000002000001000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A8000003000001000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App4-iOS-UserManagement/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lsqlite3";
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A8000004000001000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App4-iOS-UserManagement/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lsqlite3";
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A8000005000001000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp4.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App4-iOS-UserManagement.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/App4-iOS-UserManagement";
+			};
+			name = Debug;
+		};
+		A8000006000001000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.referenzApp4.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App4-iOS-UserManagement.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/App4-iOS-UserManagement";
+			};
+			name = Release;
+		};
+		B8000001000001000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.drapatz.referenzApp4.uitests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "App4-iOS-UserManagement";
+			};
+			name = Debug;
+		};
+		B8000002000001000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.drapatz.referenzApp4.uitests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "App4-iOS-UserManagement";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7000001000001000001 /* Build configuration list for PBXNativeTarget "App4-iOS-UserManagement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8000003000001000003 /* Debug */,
+				A8000004000001000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7000001000001000001 /* Build configuration list for PBXNativeTarget "App4-iOS-UserManagementUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8000001000001000001 /* Debug */,
+				B8000002000001000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7000002000001000002 /* Build configuration list for PBXNativeTarget "App4-iOS-UserManagementTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8000005000001000005 /* Debug */,
+				A8000006000001000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7000003000001000003 /* Build configuration list for PBXProject "App4-iOS-UserManagement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8000001000001000001 /* Debug */,
+				A8000002000001000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A0000001000001000001 /* Project object */;
+}

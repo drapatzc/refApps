@@ -1,0 +1,43 @@
+{
+  "configurations" : [
+    {
+      "id" : "A3000001-0000-0000-0000-000000000001",
+      "name" : "Alle Tests",
+      "options" : {
+        "codeCoverage" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : {
+        "suites" : [
+          {
+            "name" : "CitySearchViewModelTests"
+          },
+          {
+            "name" : "CurrentWeatherViewModelTests"
+          },
+          {
+            "name" : "ForecastViewModelTests"
+          },
+          {
+            "name" : "WeatherRepositoryTests"
+          },
+          {
+            "name" : "WeatherServiceTests"
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:App3-iOS.xcodeproj",
+        "identifier" : "A30500000000000000000002",
+        "name" : "App3-iOSTests"
+      }
+    }
+  ],
+  "version" : 2
+}

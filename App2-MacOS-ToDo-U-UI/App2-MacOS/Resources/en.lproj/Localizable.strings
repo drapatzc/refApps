@@ -1,0 +1,52 @@
+/* App2 - macOS Task Manager - English */
+
+/* Navigation */
+"tasks_nav_title" = "Tasks";
+"new_task" = "New Task";
+
+/* Buttons & Actions */
+"cancel" = "Cancel";
+"add" = "Add";
+"delete" = "Delete";
+"show_all" = "Show All";
+"filter" = "Filter";
+
+/* Tooltips */
+"delete_task_tooltip" = "Delete task";
+"new_task_tooltip" = "Create new task (⌘N)";
+"filter_tasks_tooltip" = "Filter tasks";
+
+/* Form Sections */
+"section_title_required" = "Title *";
+"section_description" = "Description";
+"section_priority" = "Priority";
+
+/* Placeholders */
+"task_title_placeholder" = "Enter task title…";
+
+/* Empty States */
+"no_task_selected" = "No Task Selected";
+"no_task_selected_hint" = "Select a task from the list or create a new one with ⌘N.";
+"no_tasks" = "No Tasks";
+"no_tasks_hint" = "Create a new task with ⌘N.";
+
+/* Detail View */
+"priority_label" = "Priority: %@";
+"created_label" = "Created: %@";
+"change_status" = "Change Status";
+
+/* Priority */
+"priority_low" = "Low";
+"priority_medium" = "Medium";
+"priority_high" = "High";
+
+/* Status */
+"status_open" = "Open";
+"status_in_progress" = "In Progress";
+"status_done" = "Done";
+
+/* Accessibility */
+"accessibility_task_label" = "%@, Priority %@, %@";
+
+/* Errors */
+"error_empty_title" = "Title must not be empty.";

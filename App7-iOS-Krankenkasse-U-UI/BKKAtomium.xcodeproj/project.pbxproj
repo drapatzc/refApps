@@ -1,0 +1,909 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2222222222222222000001 /* BKKAtomiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000001 /* BKKAtomiumApp.swift */; };
+		2222222222222222000002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000002 /* AppState.swift */; };
+		2222222222222222000003 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000003 /* AppTheme.swift */; };
+		2222222222222222000004 /* InsuredPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000004 /* InsuredPerson.swift */; };
+		2222222222222222000005 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000005 /* Address.swift */; };
+		2222222222222222000006 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000006 /* PhoneNumber.swift */; };
+		2222222222222222000007 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000007 /* BankAccount.swift */; };
+		2222222222222222000008 /* EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000008 /* EmailAddress.swift */; };
+		2222222222222222000009 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000009 /* AuthService.swift */; };
+		2222222222222222000010 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000010 /* NotificationService.swift */; };
+		2222222222222222000011 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000011 /* Validators.swift */; };
+		2222222222222222000012 /* AddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000012 /* AddressRepository.swift */; };
+		2222222222222222000013 /* BankAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000013 /* BankAccountRepository.swift */; };
+		2222222222222222000014 /* EmailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000014 /* EmailRepository.swift */; };
+		2222222222222222000015 /* PhoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000015 /* PhoneRepository.swift */; };
+		2222222222222222000016 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000016 /* LoginViewModel.swift */; };
+		2222222222222222000017 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000017 /* ProfileViewModel.swift */; };
+		2222222222222222000018 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000018 /* HomeView.swift */; };
+		2222222222222222000019 /* ImprintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000019 /* ImprintView.swift */; };
+		2222222222222222000020 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000020 /* PrivacyView.swift */; };
+		2222222222222222000021 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000021 /* TermsView.swift */; };
+		2222222222222222000022 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000022 /* LoginView.swift */; };
+		2222222222222222000023 /* AddressFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000023 /* AddressFormView.swift */; };
+		2222222222222222000024 /* AddressListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000024 /* AddressListView.swift */; };
+		2222222222222222000025 /* BankAccountListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000025 /* BankAccountListView.swift */; };
+		2222222222222222000026 /* EmailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000026 /* EmailListView.swift */; };
+		2222222222222222000027 /* InsuranceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000027 /* InsuranceStatusView.swift */; };
+		2222222222222222000028 /* PhoneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000028 /* PhoneListView.swift */; };
+		2222222222222222000029 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000029 /* ProfileView.swift */; };
+		2222222222222222000030 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000030 /* CardView.swift */; };
+		2222222222222222000031 /* MockDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000031 /* MockDataSeeder.swift */; };
+		2222222222222222000032 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000040 /* Localizable.strings */; };
+		AAAA000000000001000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA000000000001000001 /* Assets.xcassets */; };
+		2222222222222222000033 /* InsuranceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000041 /* InsuranceCalculator.swift */; };
+		2222222222222222000050 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000050 /* MainTabView.swift */; };
+		2222222222222222000051 /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000051 /* BonusView.swift */; };
+		2222222222222222000052 /* SickNoteFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000052 /* SickNoteFlowView.swift */; };
+		2222222222222222000053 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000053 /* ServiceView.swift */; };
+		2222222222222222000054 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000054 /* HealthView.swift */; };
+		2222222222222222000055 /* PostfachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000055 /* PostfachView.swift */; };
+		2222222222222222000060 /* ApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000060 /* ApplicationsView.swift */; };
+		2222222222222222000061 /* SickPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000061 /* SickPayView.swift */; };
+		2222222222222222000062 /* ContactSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000062 /* ContactSheetView.swift */; };
+		2222222222222222000063 /* FAQWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000063 /* FAQWebView.swift */; };
+		3333333333333333000001 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000035 /* LoginTests.swift */; };
+		3333333333333333000002 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000036 /* ValidationTests.swift */; };
+		3333333333333333000003 /* InsuranceStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000037 /* InsuranceStatusTests.swift */; };
+		4444444444444444000001 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000038 /* LoginUITests.swift */; };
+		4444444444444444000002 /* ProfileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000039 /* ProfileUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CCCCCCCCCCCCCCCC000008 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAAAAAAAAAAAAAAA000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBBBBBBBBBBBBBBB000001;
+			remoteInfo = BKKAtomium;
+		};
+		DDDDDDDDDDDDDDDD000008 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAAAAAAAAAAAAAAA000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBBBBBBBBBBBBBBB000001;
+			remoteInfo = BKKAtomium;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1111111111111111000001 /* BKKAtomiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKKAtomiumApp.swift; sourceTree = "<group>"; };
+		1111111111111111000002 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		1111111111111111000003 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		1111111111111111000004 /* InsuredPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuredPerson.swift; sourceTree = "<group>"; };
+		1111111111111111000005 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		1111111111111111000006 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
+		1111111111111111000007 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
+		1111111111111111000008 /* EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddress.swift; sourceTree = "<group>"; };
+		1111111111111111000009 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1111111111111111000010 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		1111111111111111000011 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		1111111111111111000012 /* AddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepository.swift; sourceTree = "<group>"; };
+		1111111111111111000013 /* BankAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRepository.swift; sourceTree = "<group>"; };
+		1111111111111111000014 /* EmailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRepository.swift; sourceTree = "<group>"; };
+		1111111111111111000015 /* PhoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRepository.swift; sourceTree = "<group>"; };
+		1111111111111111000016 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1111111111111111000017 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		1111111111111111000018 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1111111111111111000019 /* ImprintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintView.swift; sourceTree = "<group>"; };
+		1111111111111111000020 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		1111111111111111000021 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		1111111111111111000022 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1111111111111111000023 /* AddressFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFormView.swift; sourceTree = "<group>"; };
+		1111111111111111000024 /* AddressListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListView.swift; sourceTree = "<group>"; };
+		1111111111111111000025 /* BankAccountListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountListView.swift; sourceTree = "<group>"; };
+		1111111111111111000026 /* EmailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListView.swift; sourceTree = "<group>"; };
+		1111111111111111000027 /* InsuranceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceStatusView.swift; sourceTree = "<group>"; };
+		1111111111111111000028 /* PhoneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneListView.swift; sourceTree = "<group>"; };
+		1111111111111111000029 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1111111111111111000030 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		1111111111111111000031 /* MockDataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataSeeder.swift; sourceTree = "<group>"; };
+		1111111111111111000032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1111111111111111000033 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111111111111111000034 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111111111111111000035 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		1111111111111111000036 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
+		1111111111111111000037 /* InsuranceStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceStatusTests.swift; sourceTree = "<group>"; };
+		1111111111111111000038 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
+		1111111111111111000039 /* ProfileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUITests.swift; sourceTree = "<group>"; };
+		1111111111111111000041 /* InsuranceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCalculator.swift; sourceTree = "<group>"; };
+		1111111111111111000050 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		1111111111111111000051 /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
+		1111111111111111000052 /* SickNoteFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickNoteFlowView.swift; sourceTree = "<group>"; };
+		1111111111111111000053 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		1111111111111111000054 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		1111111111111111000055 /* PostfachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostfachView.swift; sourceTree = "<group>"; };
+		1111111111111111000060 /* ApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsView.swift; sourceTree = "<group>"; };
+		1111111111111111000061 /* SickPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickPayView.swift; sourceTree = "<group>"; };
+		1111111111111111000062 /* ContactSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSheetView.swift; sourceTree = "<group>"; };
+		1111111111111111000063 /* FAQWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQWebView.swift; sourceTree = "<group>"; };
+		FFFFFF0000000000000001 /* BKKAtomium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKKAtomium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFFFFF0000000000000002 /* BKKAtomiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKAtomiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFFFFF0000000000000003 /* BKKAtomiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKAtomiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAAA000000000001000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBBBBBBBBBBBBBBB000007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCCCCCCCCCCCCCCC000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDDDDDDDDDDDDDDD000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EEEEEEEEEEEEEEEE000001 = {
+			isa = PBXGroup;
+			children = (
+				EEEEEEEEEEEEEEEE000003 /* BKKAtomium */,
+				EEEEEEEEEEEEEEEE000018 /* BKKAtomiumTests */,
+				EEEEEEEEEEEEEEEE000019 /* BKKAtomiumUITests */,
+				EEEEEEEEEEEEEEEE000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFFFFF0000000000000001 /* BKKAtomium.app */,
+				FFFFFF0000000000000002 /* BKKAtomiumTests.xctest */,
+				FFFFFF0000000000000003 /* BKKAtomiumUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000003 /* BKKAtomium */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000001 /* BKKAtomiumApp.swift */,
+				EEEEEEEEEEEEEEEE000004 /* App */,
+				EEEEEEEEEEEEEEEE000005 /* Models */,
+				EEEEEEEEEEEEEEEE000006 /* Services */,
+				EEEEEEEEEEEEEEEE000007 /* Validation */,
+				EEEEEEEEEEEEEEEE000008 /* Repositories */,
+				EEEEEEEEEEEEEEEE000009 /* ViewModels */,
+				EEEEEEEEEEEEEEEE000010 /* Views */,
+				EEEEEEEEEEEEEEEE000016 /* SeedData */,
+				EEEEEEEEEEEEEEEE000017 /* Resources */,
+				EEEEEEEEEEEEEEEE000020 /* Utilities */,
+				AAAA000000000001000001 /* Assets.xcassets */,
+			);
+			path = BKKAtomium;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000004 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000002 /* AppState.swift */,
+				1111111111111111000003 /* AppTheme.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000004 /* InsuredPerson.swift */,
+				1111111111111111000005 /* Address.swift */,
+				1111111111111111000006 /* PhoneNumber.swift */,
+				1111111111111111000007 /* BankAccount.swift */,
+				1111111111111111000008 /* EmailAddress.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000006 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000009 /* AuthService.swift */,
+				1111111111111111000010 /* NotificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000007 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000011 /* Validators.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000008 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000012 /* AddressRepository.swift */,
+				1111111111111111000013 /* BankAccountRepository.swift */,
+				1111111111111111000014 /* EmailRepository.swift */,
+				1111111111111111000015 /* PhoneRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000009 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000016 /* LoginViewModel.swift */,
+				1111111111111111000017 /* ProfileViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000010 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EEEEEEEEEEEEEEEE000011 /* Home */,
+				EEEEEEEEEEEEEEEE000012 /* Legal */,
+				EEEEEEEEEEEEEEEE000013 /* Login */,
+				EEEEEEEEEEEEEEEE000014 /* Profile */,
+				EEEEEEEEEEEEEEEE000015 /* Shared */,
+				EEEEEEEEEEEEEEEE000050 /* Tabs */,
+				EEEEEEEEEEEEEEEE000051 /* Bonus */,
+				EEEEEEEEEEEEEEEE000052 /* SickNote */,
+				EEEEEEEEEEEEEEEE000053 /* Service */,
+				EEEEEEEEEEEEEEEE000054 /* Health */,
+				EEEEEEEEEEEEEEEE000055 /* Postfach */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000050 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000050 /* MainTabView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000051 /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000051 /* BonusView.swift */,
+			);
+			path = Bonus;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000052 /* SickNote */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000052 /* SickNoteFlowView.swift */,
+			);
+			path = SickNote;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000053 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000053 /* ServiceView.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000054 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000054 /* HealthView.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000055 /* Postfach */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000055 /* PostfachView.swift */,
+			);
+			path = Postfach;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000011 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000018 /* HomeView.swift */,
+				1111111111111111000060 /* ApplicationsView.swift */,
+				1111111111111111000061 /* SickPayView.swift */,
+				1111111111111111000062 /* ContactSheetView.swift */,
+				1111111111111111000063 /* FAQWebView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000012 /* Legal */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000019 /* ImprintView.swift */,
+				1111111111111111000020 /* PrivacyView.swift */,
+				1111111111111111000021 /* TermsView.swift */,
+			);
+			path = Legal;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000013 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000022 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000014 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000023 /* AddressFormView.swift */,
+				1111111111111111000024 /* AddressListView.swift */,
+				1111111111111111000025 /* BankAccountListView.swift */,
+				1111111111111111000026 /* EmailListView.swift */,
+				1111111111111111000027 /* InsuranceStatusView.swift */,
+				1111111111111111000028 /* PhoneListView.swift */,
+				1111111111111111000029 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000015 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000030 /* CardView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000016 /* SeedData */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000031 /* MockDataSeeder.swift */,
+			);
+			path = SeedData;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000017 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000032 /* Info.plist */,
+				1111111111111111000040 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000018 /* BKKAtomiumTests */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000035 /* LoginTests.swift */,
+				1111111111111111000036 /* ValidationTests.swift */,
+				1111111111111111000037 /* InsuranceStatusTests.swift */,
+			);
+			path = BKKAtomiumTests;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000019 /* BKKAtomiumUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000038 /* LoginUITests.swift */,
+				1111111111111111000039 /* ProfileUITests.swift */,
+			);
+			path = BKKAtomiumUITests;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000020 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000041 /* InsuranceCalculator.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBBBBBBBBBBBBBBB000001 /* BKKAtomium */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBBBBBBBBBBBBBBB000002 /* Build configuration list for PBXNativeTarget "BKKAtomium" */;
+			buildPhases = (
+				BBBBBBBBBBBBBBBB000005 /* Sources */,
+				BBBBBBBBBBBBBBBB000006 /* Resources */,
+				BBBBBBBBBBBBBBBB000007 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BKKAtomium;
+			productName = BKKAtomium;
+			productReference = FFFFFF0000000000000001 /* BKKAtomium.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CCCCCCCCCCCCCCCC000001 /* BKKAtomiumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCCCCCCCCCCCCCCC000002 /* Build configuration list for PBXNativeTarget "BKKAtomiumTests" */;
+			buildPhases = (
+				CCCCCCCCCCCCCCCC000005 /* Sources */,
+				CCCCCCCCCCCCCCCC000006 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCCCCCCCCCCCCCCC000007 /* PBXTargetDependency */,
+			);
+			name = BKKAtomiumTests;
+			productName = BKKAtomiumTests;
+			productReference = FFFFFF0000000000000002 /* BKKAtomiumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDDDDDDDDDDDDDDD000001 /* BKKAtomiumUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDDDDDDDDDDDDDDD000002 /* Build configuration list for PBXNativeTarget "BKKAtomiumUITests" */;
+			buildPhases = (
+				DDDDDDDDDDDDDDDD000005 /* Sources */,
+				DDDDDDDDDDDDDDDD000006 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDDDDDDDDDDDDDDD000007 /* PBXTargetDependency */,
+			);
+			name = BKKAtomiumUITests;
+			productName = BKKAtomiumUITests;
+			productReference = FFFFFF0000000000000003 /* BKKAtomiumUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAAAAAAAAAAAAAAA000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					BBBBBBBBBBBBBBBB000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					CCCCCCCCCCCCCCCC000001 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = BBBBBBBBBBBBBBBB000001;
+					};
+					DDDDDDDDDDDDDDDD000001 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = BBBBBBBBBBBBBBBB000001;
+					};
+				};
+			};
+			buildConfigurationList = AAAAAAAAAAAAAAAA000002 /* Build configuration list for PBXProject "BKKAtomium" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = de;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				de,
+				en,
+				Base,
+			);
+			mainGroup = EEEEEEEEEEEEEEEE000001;
+			productRefGroup = EEEEEEEEEEEEEEEE000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBBBBBBBBBBBBBBB000001 /* BKKAtomium */,
+				CCCCCCCCCCCCCCCC000001 /* BKKAtomiumTests */,
+				DDDDDDDDDDDDDDDD000001 /* BKKAtomiumUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBBBBBBBBBBBBBBB000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2222222222222222000032 /* Localizable.strings in Resources */,
+				AAAA000000000001000002 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBBBBBBBBBBBBBBB000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2222222222222222000001 /* BKKAtomiumApp.swift in Sources */,
+				2222222222222222000002 /* AppState.swift in Sources */,
+				2222222222222222000003 /* AppTheme.swift in Sources */,
+				2222222222222222000004 /* InsuredPerson.swift in Sources */,
+				2222222222222222000005 /* Address.swift in Sources */,
+				2222222222222222000006 /* PhoneNumber.swift in Sources */,
+				2222222222222222000007 /* BankAccount.swift in Sources */,
+				2222222222222222000008 /* EmailAddress.swift in Sources */,
+				2222222222222222000009 /* AuthService.swift in Sources */,
+				2222222222222222000010 /* NotificationService.swift in Sources */,
+				2222222222222222000011 /* Validators.swift in Sources */,
+				2222222222222222000012 /* AddressRepository.swift in Sources */,
+				2222222222222222000013 /* BankAccountRepository.swift in Sources */,
+				2222222222222222000014 /* EmailRepository.swift in Sources */,
+				2222222222222222000015 /* PhoneRepository.swift in Sources */,
+				2222222222222222000016 /* LoginViewModel.swift in Sources */,
+				2222222222222222000017 /* ProfileViewModel.swift in Sources */,
+				2222222222222222000018 /* HomeView.swift in Sources */,
+				2222222222222222000019 /* ImprintView.swift in Sources */,
+				2222222222222222000020 /* PrivacyView.swift in Sources */,
+				2222222222222222000021 /* TermsView.swift in Sources */,
+				2222222222222222000022 /* LoginView.swift in Sources */,
+				2222222222222222000023 /* AddressFormView.swift in Sources */,
+				2222222222222222000024 /* AddressListView.swift in Sources */,
+				2222222222222222000025 /* BankAccountListView.swift in Sources */,
+				2222222222222222000026 /* EmailListView.swift in Sources */,
+				2222222222222222000027 /* InsuranceStatusView.swift in Sources */,
+				2222222222222222000028 /* PhoneListView.swift in Sources */,
+				2222222222222222000029 /* ProfileView.swift in Sources */,
+				2222222222222222000030 /* CardView.swift in Sources */,
+				2222222222222222000031 /* MockDataSeeder.swift in Sources */,
+				2222222222222222000033 /* InsuranceCalculator.swift in Sources */,
+				2222222222222222000050 /* MainTabView.swift in Sources */,
+				2222222222222222000051 /* BonusView.swift in Sources */,
+				2222222222222222000052 /* SickNoteFlowView.swift in Sources */,
+				2222222222222222000053 /* ServiceView.swift in Sources */,
+				2222222222222222000054 /* HealthView.swift in Sources */,
+				2222222222222222000055 /* PostfachView.swift in Sources */,
+				2222222222222222000060 /* ApplicationsView.swift in Sources */,
+				2222222222222222000061 /* SickPayView.swift in Sources */,
+				2222222222222222000062 /* ContactSheetView.swift in Sources */,
+				2222222222222222000063 /* FAQWebView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCCCCCCCCCCCCCCC000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3333333333333333000001 /* LoginTests.swift in Sources */,
+				3333333333333333000002 /* ValidationTests.swift in Sources */,
+				3333333333333333000003 /* InsuranceStatusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDDDDDDDDDDDDDDD000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4444444444444444000001 /* LoginUITests.swift in Sources */,
+				4444444444444444000002 /* ProfileUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CCCCCCCCCCCCCCCC000007 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBBBBBBBBBBBBBBB000001 /* BKKAtomium */;
+			targetProxy = CCCCCCCCCCCCCCCC000008 /* PBXContainerItemProxy */;
+		};
+		DDDDDDDDDDDDDDDD000007 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBBBBBBBBBBBBBBB000001 /* BKKAtomium */;
+			targetProxy = DDDDDDDDDDDDDDDD000008 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1111111111111111000040 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1111111111111111000033 /* de */,
+				1111111111111111000034 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAAAAAAAAAAAAAAA000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AAAAAAAAAAAAAAAA000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBBBBBBBBBBBBBBB000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BKKAtomium/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkatomium.net;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBBBBBBBBBBBBBBB000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BKKAtomium/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkatomium.net;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CCCCCCCCCCCCCCCC000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkatomium.net.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BKKAtomium.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BKKAtomium";
+			};
+			name = Debug;
+		};
+		CCCCCCCCCCCCCCCC000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkatomium.net.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BKKAtomium.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BKKAtomium";
+			};
+			name = Release;
+		};
+		DDDDDDDDDDDDDDDD000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkatomium.net.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BKKAtomium;
+			};
+			name = Debug;
+		};
+		DDDDDDDDDDDDDDDD000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RA49YSKNYN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkatomium.net.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BKKAtomium;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAAAAAAAAAAAAAAA000002 /* Build configuration list for PBXProject "BKKAtomium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAAAAAAAAAAAAAAA000003 /* Debug */,
+				AAAAAAAAAAAAAAAA000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBBBBBBBBBBBBBBB000002 /* Build configuration list for PBXNativeTarget "BKKAtomium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBBBBBBBBBBBBBBB000003 /* Debug */,
+				BBBBBBBBBBBBBBBB000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCCCCCCCCCCCCCCC000002 /* Build configuration list for PBXNativeTarget "BKKAtomiumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCCCCCCCCCCCCCCC000003 /* Debug */,
+				CCCCCCCCCCCCCCCC000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDDDDDDDDDDDDDDD000002 /* Build configuration list for PBXNativeTarget "BKKAtomiumUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDDDDDDDDDDDDDDD000003 /* Debug */,
+				DDDDDDDDDDDDDDDD000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAAAAAAAAAAAAAAA000001 /* Project object */;
+}

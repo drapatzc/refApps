@@ -1,0 +1,345 @@
+/* App & Tabs */
+"tab_home" = "Home";
+"tab_profile" = "Profile";
+"tab_service" = "Service";
+"tab_health" = "Health";
+"tab_bonus" = "Bonus";
+"tab_postfach" = "Inbox";
+
+/* Login */
+"login_tagline" = "Your health, our commitment.";
+"login_title" = "Sign In";
+"login_password_label" = "Password";
+"login_password_placeholder" = "Enter password";
+"login_button" = "Sign In";
+"login_show_password" = "Show password";
+"login_hide_password" = "Hide password";
+"auth_error_empty_password" = "Please enter your password.";
+"auth_error_invalid_credentials" = "The entered password is incorrect. Please try again.";
+
+"unknown1EN" = "wird nicht verwendet";
+
+/* Greetings */
+"greeting_morning" = "Good morning!";
+"greeting_afternoon" = "Good afternoon!";
+"greeting_evening" = "Good evening!";
+"greeting_night" = "Good night!";
+
+/* Home */
+"home_section_services" = "Our Services";
+"home_nav_profile" = "Open profile";
+
+/* Widgets */
+"widget_bonus_title" = "Bonus Program";
+"widget_bonus_subtitle" = "Collect points & get rewarded";
+"widget_sick_note_title" = "Sick Note";
+"widget_sick_note_subtitle" = "Submit digitally";
+"widget_service_title" = "Service";
+"widget_service_subtitle" = "We're here for you";
+"widget_applications_title" = "My Applications";
+"widget_applications_subtitle" = "Manage applications";
+"widget_sick_pay_title" = "Sick Pay";
+"widget_sick_pay_subtitle" = "Overview & billing";
+"widget_health_card_title" = "Health Card";
+"widget_health_card_subtitle" = "Digital health card";
+"widget_accessibility_hint" = "Feature not yet available";
+
+/* Profile */
+"profile_title" = "Profile";
+"profile_section_my_data" = "My Data";
+"profile_section_misc" = "More";
+"profile_section_legal" = "Legal Information";
+"profile_address" = "Address";
+"profile_phone" = "Phone Number";
+"profile_bank_account" = "Bank Account";
+"profile_email" = "Email";
+"profile_insurance_status" = "Insurance Status";
+"profile_settings" = "Settings";
+"profile_help_feedback" = "Help & Feedback";
+"profile_privacy" = "Privacy Policy";
+"profile_terms" = "Terms of Use";
+"profile_imprint" = "Imprint";
+"profile_logout" = "Sign Out";
+"profile_logout_confirm_title" = "Sign Out";
+"profile_logout_confirm_message" = "Are you sure you want to sign out?";
+
+/* Insurance Status */
+"insurance_status_title" = "Insurance Status";
+"insurance_status_valid" = "✓ Actively insured";
+"insurance_status_hint" = "Your data is transmitted securely and encrypted.";
+"insurance_section_personal" = "Personal Data";
+"insurance_section_insurance" = "Insurance Data";
+"insurance_field_name" = "Name";
+"insurance_field_birth" = "Date of Birth";
+"insurance_field_number" = "Insurance Number";
+"insurance_field_pension" = "Pension Insurance Number";
+"insurance_field_tax_id" = "Tax ID";
+"insurance_number" = "Insurance Number";
+
+/* Address */
+"address_empty_title" = "No Addresses";
+"address_empty_subtitle" = "Add your first address.";
+"address_add" = "Add Address";
+"address_add_title" = "Add Address";
+"address_edit_title" = "Edit Address";
+"address_delete_confirm" = "Are you sure you want to delete this address?";
+"address_section_street" = "Street";
+"address_section_location" = "Location";
+"address_section_type" = "Address Type";
+"address_type" = "Address type";
+"address_placeholder_street" = "Am Mühlenbach";
+"address_placeholder_house_number" = "105";
+"address_placeholder_city" = "Essen";
+"address_type_primary" = "Primary Residence";
+"address_type_secondary" = "Secondary Residence";
+"address_type_work" = "Work";
+
+/* Phone */
+"phone_empty_title" = "No Phone Numbers";
+"phone_empty_subtitle" = "Add your first phone number.";
+"phone_add_title" = "Add Phone Number";
+"phone_edit_title" = "Edit Phone Number";
+"phone_delete_confirm" = "Are you sure you want to delete this phone number?";
+"phone_section_number" = "Phone Number";
+"phone_section_type" = "Number Type";
+"phone_type" = "Phone type";
+"phone_type_mobile" = "Mobile";
+"phone_type_landline" = "Landline";
+"phone_type_work" = "Work";
+"phone_type_fax" = "Fax";
+
+/* Bank Account */
+"bank_empty_title" = "No Bank Accounts";
+"bank_empty_subtitle" = "Add your first bank account.";
+"bank_add_title" = "Add Bank Account";
+"bank_edit_title" = "Edit Bank Account";
+"bank_delete_confirm" = "Are you sure you want to delete this bank account?";
+"bank_section_details" = "Bank Details";
+"bank_placeholder_name" = "Commerzbank AG";
+"bank_placeholder_holder" = "Christian Drapatz";
+
+/* Email */
+"email_empty_title" = "No Email Addresses";
+"email_empty_subtitle" = "Add your first email address.";
+"email_add_title" = "Add Email";
+"email_edit_title" = "Edit Email";
+"email_delete_confirm" = "Are you sure you want to delete this email address?";
+"email_section_address" = "Email Address";
+"email_section_type" = "Email Type";
+"email_type" = "Email type";
+"email_type_personal" = "Personal";
+"email_type_work" = "Work";
+"email_type_other" = "Other";
+
+/* Common */
+"common_close" = "Close";
+"common_cancel" = "Cancel";
+"common_save" = "Save";
+"common_add" = "Add";
+"common_edit" = "Edit";
+"common_delete" = "Delete";
+"common_is_primary" = "Set as primary entry";
+"common_delete_confirm_title" = "Confirm Deletion";
+"badge_primary" = "Primary";
+"placeholder_coming_soon" = "This section will be available in a future version.";
+
+/* Validation */
+"validation_empty" = "%@ must not be empty.";
+"validation_too_short" = "%@ must be at least %d characters long.";
+"validation_too_long" = "%@ must not exceed %d characters.";
+"validation_invalid_format" = "%@ has an invalid format.";
+"validation_invalid_iban" = "The entered IBAN is invalid. Please check your input.";
+"validation_invalid_bic" = "The entered BIC is invalid (format: XXXXXXXX or XXXXXXXXXXX).";
+"validation_invalid_email" = "Please enter a valid email address.";
+"validation_invalid_phone" = "Please enter a valid phone number (digits, +, -, brackets only).";
+"validation_invalid_postal_code" = "The postal code is invalid (Germany: 5 digits).";
+"validation_duplicate_primary" = "There can only be one primary entry.";
+
+/* Fields */
+"field_street" = "Street";
+"field_house_number" = "House Number";
+"field_postal_code" = "Postal Code";
+"field_city" = "City";
+"field_country" = "Country";
+"field_phone_number" = "Phone Number";
+"field_email" = "Email";
+"field_bank_name" = "Bank Name";
+"field_account_holder" = "Account Holder";
+
+/* Notifications */
+"notification_demo_title" = "BKK Atomium";
+"notification_demo_body" = "Welcome! Your app is ready.";
+
+/* Accessibility */
+"accessibility_error" = "Error";
+
+/* Legal */
+"legal_last_updated" = "As of January 2025";
+"imprint_provider" = "Provider";
+"imprint_contact" = "Contact";
+"imprint_legal_form" = "Legal Form";
+"imprint_authority" = "Supervisory Authority";
+"imprint_board" = "Board";
+"imprint_disclaimer" = "Disclaimer";
+
+/* Home Search & Extensions */
+"home_search_placeholder" = "Search services";
+"home_search_no_results" = "No results";
+"home_search_no_results_subtitle" = "Try a different search term.";
+"home_section_service_hotline" = "Service";
+"home_section_help" = "Help";
+"home_hotline_doctor_title" = "Doctor Appointment Service";
+"home_hotline_doctor_subtitle" = "6 ct per call from landline";
+"home_hotline_medical_title" = "Medical Advice";
+"home_hotline_medical_subtitle" = "6 ct per call from landline";
+"home_help_contact" = "Contact";
+"home_help_contact_subtitle" = "Reach us directly";
+"home_help_faq" = "FAQ";
+"home_help_faq_subtitle" = "Answers to common topics";
+
+/* Bonus Program */
+"bonus_title" = "Bonus Program";
+"bonus_current_points" = "Current Balance";
+"bonus_goal_label" = "Goal: %@";
+"bonus_year_label" = "Program year %d";
+"bonus_measures_completed" = "Completed measures";
+"bonus_measures_list_title" = "Submitted measures";
+"bonus_action_new_measure" = "Submit new measure";
+"bonus_action_request_reward" = "Request reward";
+"bonus_action_end_participation" = "End participation";
+"bonus_measure_checkup" = "Health Check-up";
+"bonus_measure_dental" = "Dental Check";
+"bonus_measure_sport" = "Sports Badge";
+"bonus_measure_gym" = "Gym Certificate";
+"bonus_measure_vaccination" = "Vaccination";
+"bonus_info_hint" = "Earn points for healthy behavior and secure your reward.";
+
+/* Sick Note */
+"sick_note_title" = "Sick Note";
+"sick_note_info_title" = "How it works";
+"sick_note_info_subtitle" = "Submit your certificate of incapacity for work digitally.";
+"sick_note_step1_title" = "Place document flat";
+"sick_note_step1_body" = "Place the certificate on a flat, well-lit surface.";
+"sick_note_step2_title" = "All edges visible";
+"sick_note_step2_body" = "Make sure all four corners are visible in the viewfinder.";
+"sick_note_start_scan" = "Start scan";
+"sick_note_scanner_title" = "Scan document";
+"sick_note_scanner_hint" = "Place certificate inside the frame";
+"sick_note_capture" = "Capture";
+"sick_note_flash" = "Flash";
+"sick_note_filter_auto" = "Auto";
+"sick_note_filter_color" = "Color";
+"sick_note_filter_bw" = "B/W";
+"sick_note_edit_title" = "Edit";
+"sick_note_edit_crop" = "Crop";
+"sick_note_edit_adjust" = "Adjust";
+"sick_note_edit_rotate" = "Rotate";
+"sick_note_edit_next" = "Next";
+"sick_note_submit_title" = "Submit";
+"sick_note_submit_summary" = "Ready to submit";
+"sick_note_submit_description" = "Your certificate will be securely transmitted to BKK Atomium.";
+"sick_note_submit_confirm" = "Submit now";
+"sick_note_submit_success_title" = "Successfully submitted";
+"sick_note_submit_success_body" = "We have received your certificate and will process it shortly.";
+"sick_note_done" = "Done";
+
+/* Service Tab */
+"service_title" = "Service";
+"service_section_egk" = "Electronic Health Card";
+"service_section_request" = "Request";
+"service_egk_missing_title" = "Card not with you";
+"service_egk_missing_subtitle" = "Replacement proof for doctor visits";
+"service_egk_lost_title" = "Card lost";
+"service_egk_lost_subtitle" = "Block and request replacement";
+"service_request_certificates_title" = "Certificates";
+"service_request_certificates_subtitle" = "Membership, contributions, co-payment";
+
+/* Health Tab */
+"health_title" = "Health";
+"health_data_title" = "Health Data";
+"health_data_subtitle" = "Values, documents and reports";
+"health_medication_title" = "Medication";
+"health_medication_subtitle" = "Current and previous drugs";
+"health_prevention_title" = "Prevention";
+"health_prevention_subtitle" = "Check-ups and early detection";
+"health_vaccination_title" = "Vaccinations";
+"health_vaccination_subtitle" = "Vaccination record and reminders";
+"health_eau_title" = "eAU Certificate";
+"health_eau_subtitle" = "Digital work incapacity";
+"health_pregnancy_title" = "Pregnancy";
+"health_pregnancy_subtitle" = "Guidance and services";
+"health_cost_title" = "Cost Overview";
+"health_cost_subtitle" = "Invoices and reimbursements";
+
+/* Postfach */
+"postfach_title" = "Inbox";
+"postfach_search_placeholder" = "Search messages";
+"postfach_filter_button" = "Period";
+"postfach_filter_title" = "Filter by period";
+"postfach_filter_all" = "All messages";
+"postfach_filter_week" = "Last 7 days";
+"postfach_filter_month" = "Last month";
+"postfach_filter_year" = "Last year";
+"postfach_sender_insurance" = "BKK Atomium";
+"postfach_sender_you" = "You";
+"postfach_empty_title" = "No messages";
+"postfach_empty_subtitle" = "Your messages will appear here.";
+
+/* Mock Postfach Messages */
+"postfach_msg1_subject" = "Welcome to BKK Atomium";
+"postfach_msg1_body" = "Welcome! We're glad to have you as a member.";
+"postfach_msg2_subject" = "Thank you";
+"postfach_msg2_body" = "Thank you for the friendly welcome.";
+"postfach_msg3_subject" = "Bonus points credited";
+"postfach_msg3_body" = "Your health check-up measure has been credited with 30 euros.";
+"postfach_msg4_subject" = "Question about payout";
+"postfach_msg4_body" = "When will the reward be transferred to my account?";
+"postfach_msg5_subject" = "Payout";
+"postfach_msg5_body" = "The payout will be made within 5 business days after application.";
+"postfach_msg6_subject" = "Sick note received";
+"postfach_msg6_body" = "We have received your certificate and are processing it.";
+"postfach_msg7_subject" = "Confirmation";
+"postfach_msg7_body" = "Got it, thank you for the quick response.";
+"postfach_msg8_subject" = "Prevention reminder";
+"postfach_msg8_body" = "Your annual check-up is due. Book your appointment now.";
+"postfach_msg9_subject" = "Appointment booked";
+"postfach_msg9_body" = "Thanks for the reminder, appointment is booked.";
+"postfach_msg10_subject" = "New additional service";
+"postfach_msg10_body" = "We now cover additional preventive services. More info in the app.";
+
+/* Dashboard Destinations Placeholders */
+"placeholder_applications_title" = "My Applications";
+"placeholder_sick_pay_title" = "My Sick Pay";
+"placeholder_health_card_title" = "Health Card";
+"placeholder_in_development_title" = "Still in development";
+
+/* Applications */
+"applications_title" = "My Applications";
+"applications_intro" = "Here you'll find all applications you have submitted or received.";
+"applications_entry_format" = "Application %d";
+
+/* Sick Pay */
+"sick_pay_title" = "My Sick Pay";
+"sick_pay_intro" = "Find all information about sick pay and children's sick pay here.";
+"sick_pay_all_payments_title" = "All payments";
+"sick_pay_all_payments_subtitle" = "Sick pay and children's sick pay";
+
+"unknown2EN" = "wird nicht verwendet";
+
+/* Contact */
+"contact_title" = "Contact";
+"contact_intro" = "The Atomium BKK team is happy to help. You can reach us daily from 8 am to 8 pm on our free service number.";
+"contact_section_phone" = "Phone";
+"contact_section_written" = "Written";
+"contact_section_more" = "More";
+"contact_service_number_title" = "Service number";
+"contact_service_number" = "0800 1111 2222";
+"contact_request_title" = "Contact request";
+"contact_address_title" = "Atomium BKK";
+"contact_address_line1" = "Rot-Weiss-Essen Straße 1907";
+"contact_address_line2" = "45147 Essen";
+"contact_praise_complaint_title" = "Praise and complaint";
+"contact_advisor_title" = "Customer advisor";
+"contact_more_contacts_title" = "More contacts";
+
+"unknown3EN" = "wird nicht verwendet";

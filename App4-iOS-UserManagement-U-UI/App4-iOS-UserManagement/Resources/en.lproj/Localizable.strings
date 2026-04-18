@@ -1,0 +1,95 @@
+/* App */
+"app_title" = "User Management";
+"loading_database" = "Initializing database...";
+"startup_error_title" = "Startup Error";
+
+/* Salutation */
+"salutation_mr" = "Mr.";
+"salutation_ms" = "Ms.";
+"salutation_mx" = "Mx.";
+
+/* Fields */
+"field_salutation" = "Salutation";
+"field_first_name" = "First Name";
+"field_last_name" = "Last Name";
+"field_street" = "Street";
+"field_house_number" = "No.";
+"field_postal_code" = "Postal Code";
+"field_city" = "City";
+"field_country" = "Country";
+"field_email" = "E-Mail";
+"field_postal_code_city" = "Postal Code / City";
+
+/* Placeholders */
+"placeholder_first_name" = "Enter first name";
+"placeholder_last_name" = "Enter last name";
+"placeholder_street" = "Enter street";
+"placeholder_house_number" = "No.";
+"placeholder_postal_code" = "12345";
+"placeholder_city" = "Enter city";
+"placeholder_country" = "Enter country";
+"placeholder_email" = "name@example.com";
+
+/* Sections */
+"section_salutation" = "Salutation";
+"section_name" = "Name";
+"section_address" = "Address";
+"section_contact" = "Contact";
+
+/* Buttons */
+"button_cancel" = "Cancel";
+"button_save" = "Save";
+"button_edit" = "Edit";
+"button_delete" = "Delete";
+"button_ok" = "OK";
+"button_new_user" = "New User";
+
+/* Form Titles */
+"form_title_new" = "New User";
+"form_title_edit" = "Edit User";
+
+/* List */
+"search_placeholder" = "Search users...";
+"user_count" = "%d users";
+
+/* Empty States */
+"empty_state_title" = "No Users";
+"empty_state_subtitle" = "Tap the + button to create your first user.";
+"empty_search_title" = "No Results";
+"empty_search_subtitle" = "No users found matching your search.";
+"detail_empty_title" = "No User Selected";
+"detail_empty_subtitle" = "Select a user from the list to see their details.";
+
+/* Detail */
+"no_email" = "No email address";
+
+/* Hints */
+"email_optional_hint" = "E-Mail is optional.";
+
+/* Delete Confirmation */
+"delete_confirmation_title" = "Delete User?";
+"delete_confirmation_message" = "This action cannot be undone.";
+"delete_user_message" = "Do you want to delete \"%@\"?";
+
+/* Errors */
+"error_title" = "Error";
+"error_db_open" = "Database could not be opened";
+"error_db_query" = "Database query failed";
+"error_db_insert" = "Insert failed";
+"error_db_update" = "Update failed";
+"error_db_delete" = "Delete failed";
+"error_record_not_found" = "Record not found";
+"error_unknown" = "An unknown error occurred";
+
+/* Validation */
+"validation_required_first_name" = "First name is required.";
+"validation_required_last_name" = "Last name is required.";
+"validation_required_street" = "Street is required.";
+"validation_required_house_number" = "House number is required.";
+"validation_required_postal_code" = "Postal code is required.";
+"validation_required_city" = "City is required.";
+"validation_required_country" = "Country is required.";
+"validation_postal_code_digits_only" = "Postal code may only contain digits.";
+"validation_postal_code_length" = "Postal code must be between %d and %d characters.";
+"validation_email_invalid" = "Please enter a valid email address.";
+"validation_max_length" = "Maximum length is %d characters.";
