@@ -1,0 +1,8 @@
+.DS_Store
+App10-iOS-Device-carthage-U-UI/Carthage/Build
+App10-iOS-Device-carthage-U-UI/Carthage/Checkouts
+App13-iOS-Dependencies-cocoapods-U-UI/Pods
+App15-iOS-Dependencies-spm-cocoapods-carthage-U-UI/Carthage/Build
+App15-iOS-Dependencies-spm-cocoapods-carthage-U-UI/Carthage/Checkouts
+App15-iOS-Dependencies-spm-cocoapods-carthage-U-UI/Pods
+App8-iOS-Device-cocoapods-U-UI/Pods
