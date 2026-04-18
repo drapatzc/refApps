@@ -57,7 +57,7 @@ struct TodoListView: View {
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
-        .background(Color.yellow.opacity(0.25))
+        .background(Color.blue.opacity(0.15))
         .accessibilityIdentifier("todoList")
     }
 
@@ -68,7 +68,7 @@ struct TodoListView: View {
             description: Text(String(localized: "empty_description"))
         )
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.yellow.opacity(0.25))
+        .background(Color.blue.opacity(0.15))
         .accessibilityIdentifier("emptyState")
     }
 }
