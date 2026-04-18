@@ -56,6 +56,8 @@ struct TodoListView: View {
             .onDelete(perform: viewModel.deleteTodos)
         }
         .listStyle(.insetGrouped)
+        .scrollContentBackground(.hidden)
+        .background(Color.yellow.opacity(0.25))
         .accessibilityIdentifier("todoList")
     }
 
@@ -65,6 +67,8 @@ struct TodoListView: View {
             systemImage: "checkmark.circle",
             description: Text(String(localized: "empty_description"))
         )
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.yellow.opacity(0.25))
         .accessibilityIdentifier("emptyState")
     }
 }
