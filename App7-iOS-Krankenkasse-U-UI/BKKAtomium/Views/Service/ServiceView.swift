@@ -110,20 +110,11 @@ struct ServiceView: View {
     private func destinationView(for destination: ServiceDestination) -> some View {
         switch destination {
         case .egkMissing:
-            PlaceholderView(
-                title: String(localized: "service_egk_missing_title"),
-                icon: "creditcard.fill"
-            )
+            EGKMissingView()
         case .egkLost:
-            PlaceholderView(
-                title: String(localized: "service_egk_lost_title"),
-                icon: "creditcard.trianglebadge.exclamationmark"
-            )
+            EGKLostView()
         case .certificates:
-            PlaceholderView(
-                title: String(localized: "service_request_certificates_title"),
-                icon: "doc.badge.plus"
-            )
+            CertificateRequestView()
         }
     }
 }

@@ -127,19 +127,19 @@ struct HealthView: View {
     private func destinationView(for destination: HealthDestination) -> some View {
         switch destination {
         case .data:
-            PlaceholderView(title: String(localized: "health_data_title"), icon: "waveform.path.ecg")
+            HealthDataView()
         case .medication:
-            PlaceholderView(title: String(localized: "health_medication_title"), icon: "pills.fill")
+            MedicationView()
         case .prevention:
-            PlaceholderView(title: String(localized: "health_prevention_title"), icon: "stethoscope")
+            PreventionView()
         case .vaccination:
-            PlaceholderView(title: String(localized: "health_vaccination_title"), icon: "syringe.fill")
+            VaccinationView()
         case .eau:
-            PlaceholderView(title: String(localized: "health_eau_title"), icon: "doc.text.fill")
+            eAUView()
         case .pregnancy:
-            PlaceholderView(title: String(localized: "health_pregnancy_title"), icon: "figure.and.child.holdinghands")
+            PregnancyView()
         case .costs:
-            PlaceholderView(title: String(localized: "health_cost_title"), icon: "eurosign.circle.fill")
+            CostOverviewView()
         }
     }
 }

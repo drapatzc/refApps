@@ -51,6 +51,25 @@
 		2222222222222222000061 /* SickPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000061 /* SickPayView.swift */; };
 		2222222222222222000062 /* ContactSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000062 /* ContactSheetView.swift */; };
 		2222222222222222000063 /* FAQWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000063 /* FAQWebView.swift */; };
+		2222222222222222000064 /* HealthDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000064 /* HealthDataView.swift */; };
+		2222222222222222000065 /* MedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000065 /* MedicationView.swift */; };
+		2222222222222222000066 /* PreventionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000066 /* PreventionView.swift */; };
+		2222222222222222000067 /* VaccinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000067 /* VaccinationView.swift */; };
+		2222222222222222000068 /* eAUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000068 /* eAUView.swift */; };
+		2222222222222222000069 /* PregnancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000069 /* PregnancyView.swift */; };
+		2222222222222222000070 /* CostOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000070 /* CostOverviewView.swift */; };
+		2222222222222222000071 /* EGKMissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000071 /* EGKMissingView.swift */; };
+		2222222222222222000072 /* EGKLostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000072 /* EGKLostView.swift */; };
+		2222222222222222000073 /* CertificateRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000073 /* CertificateRequestView.swift */; };
+		2222222222222222000074 /* HotlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000074 /* HotlineView.swift */; };
+		2222222222222222000075 /* HealthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000075 /* HealthCardView.swift */; };
+		2222222222222222000076 /* SecureMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000076 /* SecureMessageView.swift */; };
+		2222222222222222000077 /* PraiseComplaintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000077 /* PraiseComplaintsView.swift */; };
+		2222222222222222000078 /* AdvisorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000078 /* AdvisorView.swift */; };
+		2222222222222222000079 /* MoreContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000079 /* MoreContactsView.swift */; };
+		2222222222222222000080 /* AddMeasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000080 /* AddMeasureView.swift */; };
+		2222222222222222000081 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000081 /* SettingsView.swift */; };
+		2222222222222222000082 /* HelpFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000082 /* HelpFeedbackView.swift */; };
 		3333333333333333000001 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000035 /* LoginTests.swift */; };
 		3333333333333333000002 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000036 /* ValidationTests.swift */; };
 		3333333333333333000003 /* InsuranceStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000037 /* InsuranceStatusTests.swift */; };
@@ -126,6 +145,25 @@
 		1111111111111111000061 /* SickPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickPayView.swift; sourceTree = "<group>"; };
 		1111111111111111000062 /* ContactSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSheetView.swift; sourceTree = "<group>"; };
 		1111111111111111000063 /* FAQWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQWebView.swift; sourceTree = "<group>"; };
+		1111111111111111000064 /* HealthDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataView.swift; sourceTree = "<group>"; };
+		1111111111111111000065 /* MedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationView.swift; sourceTree = "<group>"; };
+		1111111111111111000066 /* PreventionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventionView.swift; sourceTree = "<group>"; };
+		1111111111111111000067 /* VaccinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationView.swift; sourceTree = "<group>"; };
+		1111111111111111000068 /* eAUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eAUView.swift; sourceTree = "<group>"; };
+		1111111111111111000069 /* PregnancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PregnancyView.swift; sourceTree = "<group>"; };
+		1111111111111111000070 /* CostOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostOverviewView.swift; sourceTree = "<group>"; };
+		1111111111111111000071 /* EGKMissingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGKMissingView.swift; sourceTree = "<group>"; };
+		1111111111111111000072 /* EGKLostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGKLostView.swift; sourceTree = "<group>"; };
+		1111111111111111000073 /* CertificateRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateRequestView.swift; sourceTree = "<group>"; };
+		1111111111111111000074 /* HotlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotlineView.swift; sourceTree = "<group>"; };
+		1111111111111111000075 /* HealthCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCardView.swift; sourceTree = "<group>"; };
+		1111111111111111000076 /* SecureMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureMessageView.swift; sourceTree = "<group>"; };
+		1111111111111111000077 /* PraiseComplaintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseComplaintsView.swift; sourceTree = "<group>"; };
+		1111111111111111000078 /* AdvisorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvisorView.swift; sourceTree = "<group>"; };
+		1111111111111111000079 /* MoreContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreContactsView.swift; sourceTree = "<group>"; };
+		1111111111111111000080 /* AddMeasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeasureView.swift; sourceTree = "<group>"; };
+		1111111111111111000081 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1111111111111111000082 /* HelpFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFeedbackView.swift; sourceTree = "<group>"; };
 		FFFFFF0000000000000001 /* BKKAtomium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKKAtomium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFFFF0000000000000002 /* BKKAtomiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKAtomiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFFFF0000000000000003 /* BKKAtomiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKAtomiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				1111111111111111000051 /* BonusView.swift */,
+				1111111111111111000080 /* AddMeasureView.swift */,
 			);
 			path = Bonus;
 			sourceTree = "<group>";
@@ -300,6 +339,9 @@
 			isa = PBXGroup;
 			children = (
 				1111111111111111000053 /* ServiceView.swift */,
+				1111111111111111000071 /* EGKMissingView.swift */,
+				1111111111111111000072 /* EGKLostView.swift */,
+				1111111111111111000073 /* CertificateRequestView.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -308,6 +350,13 @@
 			isa = PBXGroup;
 			children = (
 				1111111111111111000054 /* HealthView.swift */,
+				1111111111111111000064 /* HealthDataView.swift */,
+				1111111111111111000065 /* MedicationView.swift */,
+				1111111111111111000066 /* PreventionView.swift */,
+				1111111111111111000067 /* VaccinationView.swift */,
+				1111111111111111000068 /* eAUView.swift */,
+				1111111111111111000069 /* PregnancyView.swift */,
+				1111111111111111000070 /* CostOverviewView.swift */,
 			);
 			path = Health;
 			sourceTree = "<group>";
@@ -328,6 +377,12 @@
 				1111111111111111000061 /* SickPayView.swift */,
 				1111111111111111000062 /* ContactSheetView.swift */,
 				1111111111111111000063 /* FAQWebView.swift */,
+				1111111111111111000074 /* HotlineView.swift */,
+				1111111111111111000075 /* HealthCardView.swift */,
+				1111111111111111000076 /* SecureMessageView.swift */,
+				1111111111111111000077 /* PraiseComplaintsView.swift */,
+				1111111111111111000078 /* AdvisorView.swift */,
+				1111111111111111000079 /* MoreContactsView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -360,6 +415,8 @@
 				1111111111111111000027 /* InsuranceStatusView.swift */,
 				1111111111111111000028 /* PhoneListView.swift */,
 				1111111111111111000029 /* ProfileView.swift */,
+				1111111111111111000081 /* SettingsView.swift */,
+				1111111111111111000082 /* HelpFeedbackView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -573,6 +630,25 @@
 				2222222222222222000061 /* SickPayView.swift in Sources */,
 				2222222222222222000062 /* ContactSheetView.swift in Sources */,
 				2222222222222222000063 /* FAQWebView.swift in Sources */,
+				2222222222222222000064 /* HealthDataView.swift in Sources */,
+				2222222222222222000065 /* MedicationView.swift in Sources */,
+				2222222222222222000066 /* PreventionView.swift in Sources */,
+				2222222222222222000067 /* VaccinationView.swift in Sources */,
+				2222222222222222000068 /* eAUView.swift in Sources */,
+				2222222222222222000069 /* PregnancyView.swift in Sources */,
+				2222222222222222000070 /* CostOverviewView.swift in Sources */,
+				2222222222222222000071 /* EGKMissingView.swift in Sources */,
+				2222222222222222000072 /* EGKLostView.swift in Sources */,
+				2222222222222222000073 /* CertificateRequestView.swift in Sources */,
+				2222222222222222000074 /* HotlineView.swift in Sources */,
+				2222222222222222000075 /* HealthCardView.swift in Sources */,
+				2222222222222222000076 /* SecureMessageView.swift in Sources */,
+				2222222222222222000077 /* PraiseComplaintsView.swift in Sources */,
+				2222222222222222000078 /* AdvisorView.swift in Sources */,
+				2222222222222222000079 /* MoreContactsView.swift in Sources */,
+				2222222222222222000080 /* AddMeasureView.swift in Sources */,
+				2222222222222222000081 /* SettingsView.swift in Sources */,
+				2222222222222222000082 /* HelpFeedbackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

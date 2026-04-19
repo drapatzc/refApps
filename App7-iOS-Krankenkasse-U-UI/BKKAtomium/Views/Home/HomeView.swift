@@ -349,19 +349,24 @@ struct HomeView: View {
         case .sickPay:
             SickPayView()
         case .healthCard:
-            PlaceholderView(
-                title: String(localized: "placeholder_health_card_title"),
-                icon: "creditcard.fill"
-            )
+            HealthCardView()
         case .doctorHotline:
-            PlaceholderView(
+            HotlineView(
                 title: String(localized: "home_hotline_doctor_title"),
-                icon: "phone.fill"
+                number: "116 117",
+                description: "Über den ärztlichen Bereitschaftsdienst erhalten Sie schnell einen Arzttermin – auch kurzfristig, wenn Ihre Praxis keinen freien Termin hat.",
+                hours: "24 Stunden täglich, 7 Tage die Woche",
+                note: "Im lebensbedrohlichen Notfall wählen Sie bitte 112.",
+                color: Color(red: 0.20, green: 0.60, blue: 0.40)
             )
         case .medicalHotline:
-            PlaceholderView(
+            HotlineView(
                 title: String(localized: "home_hotline_medical_title"),
-                icon: "phone.fill"
+                number: "116 117",
+                description: "Kostenlose telefonische Beratung durch medizinisches Fachpersonal – wenn Sie unsicher sind, ob ein Arztbesuch notwendig ist.",
+                hours: "Täglich 19:00–8:00 Uhr, am Wochenende und Feiertagen ganztägig",
+                note: "Im lebensbedrohlichen Notfall wählen Sie bitte 112.",
+                color: Color(red: 0.11, green: 0.29, blue: 0.50)
             )
         }
     }

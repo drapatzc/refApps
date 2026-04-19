@@ -105,6 +105,9 @@ struct BonusView: View {
 
     /// `true` after the view appears, used to animate the progress ring and content entrance.
     @State private var appeared = false
+    @State private var showAddMeasure = false
+    @State private var showRewardPayout = false
+    @State private var showEndParticipation = false
 
     /// Renders the navigation stack with the scrollable bonus content.
     var body: some View {
@@ -132,6 +135,24 @@ struct BonusView: View {
             .background(AppTheme.groupedBackground)
             .navigationTitle(String(localized: "bonus_title"))
             .navigationBarTitleDisplayMode(.large)
+            .sheet(isPresented: $showAddMeasure) {
+                AddMeasureView { newMeasure in
+                    viewModel.measures.insert(newMeasure, at: 0)
+                    viewModel.currentEuro += Double(newMeasure.points)
+                }
+            }
+            .confirmationDialog("Prämie beantragen", isPresented: $showRewardPayout, titleVisibility: .visible) {
+                Button("Prämie beantragen") {}
+                Button(String(localized: "common_cancel"), role: .cancel) {}
+            } message: {
+                Text("Ihr aktuelles Guthaben von \(viewModel.formattedCurrent) wird auf Ihr hinterlegtes Konto überwiesen. Die Auszahlung erfolgt innerhalb von 5 Werktagen.")
+            }
+            .confirmationDialog("Teilnahme beenden", isPresented: $showEndParticipation, titleVisibility: .visible) {
+                Button("Teilnahme beenden", role: .destructive) {}
+                Button(String(localized: "common_cancel"), role: .cancel) {}
+            } message: {
+                Text("Möchten Sie Ihre Teilnahme am Bonusprogramm wirklich beenden? Gesammelte Punkte verfallen.")
+            }
         }
         .onAppear {
             withAnimation(.easeOut(duration: 0.6)) {
@@ -259,14 +280,14 @@ struct BonusView: View {
     private var actionButtons: some View {
         VStack(spacing: AppTheme.spacingS) {
             Button {
-                // Mock — no action
+                showAddMeasure = true
             } label: {
                 Text(String(localized: "bonus_action_new_measure"))
                     .primaryButton()
             }
 
             Button {
-                // Mock — no action
+                showRewardPayout = true
             } label: {
                 HStack {
                     Text(String(localized: "bonus_action_request_reward"))
@@ -280,7 +301,7 @@ struct BonusView: View {
             }
 
             Button {
-                // Mock — no action
+                showEndParticipation = true
             } label: {
                 Text(String(localized: "bonus_action_end_participation"))
                     .font(.subheadline.weight(.semibold))

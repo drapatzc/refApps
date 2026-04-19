@@ -51,7 +51,7 @@ struct ContactSheetView: View {
 
                 Section(header: Text(String(localized: "contact_section_written"))) {
                     NavigationLink {
-                        placeholder
+                        SecureMessageView()
                     } label: {
                         ContactRow(
                             icon: "envelope.fill",
@@ -75,7 +75,7 @@ struct ContactSheetView: View {
                     }
 
                     NavigationLink {
-                        placeholder
+                        PraiseComplaintsView()
                     } label: {
                         ContactRow(
                             icon: "hand.thumbsup.fill",
@@ -86,7 +86,7 @@ struct ContactSheetView: View {
                     }
 
                     NavigationLink {
-                        placeholder
+                        AdvisorView()
                     } label: {
                         ContactRow(
                             icon: "person.fill",
@@ -99,7 +99,7 @@ struct ContactSheetView: View {
 
                 Section(header: Text(String(localized: "contact_section_more"))) {
                     NavigationLink {
-                        placeholder
+                        MoreContactsView()
                     } label: {
                         ContactRow(
                             icon: "person.3.fill",

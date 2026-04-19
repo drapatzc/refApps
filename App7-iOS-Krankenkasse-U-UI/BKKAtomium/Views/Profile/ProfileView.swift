@@ -202,9 +202,9 @@ struct ProfileView: View {
         case .insuranceStatus:
             InsuranceStatusView()
         case .settings:
-            PlaceholderView(title: String(localized: "profile_settings"), icon: "gearshape.fill")
+            SettingsView()
         case .helpFeedback:
-            PlaceholderView(title: String(localized: "profile_help_feedback"), icon: "questionmark.circle.fill")
+            HelpFeedbackView()
         case .myData:
             PlaceholderView(title: String(localized: "profile_section_my_data"), icon: "person.fill")
         case .privacy:
