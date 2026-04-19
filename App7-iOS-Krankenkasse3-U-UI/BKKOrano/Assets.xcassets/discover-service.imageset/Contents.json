@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "discover-service.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

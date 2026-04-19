@@ -1,0 +1,22 @@
+{
+  "configurations" : [
+    {
+      "id" : "33333333-3333-3333-3333-333333333333",
+      "name" : "UI only",
+      "options" : {
+      }
+    }
+  ],
+  "defaultOptions" : {
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:BKKOrano.xcodeproj",
+        "identifier" : "DDDDDDDDDDDDDDDD000001",
+        "name" : "BKKOranoUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
