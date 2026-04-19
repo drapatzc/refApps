@@ -1,0 +1,388 @@
+/* App & Tabs */
+"tab_home" = "Übersicht";
+"tab_profile" = "Profil";
+"tab_service" = "Service";
+"tab_health" = "Gesundheit";
+"tab_bonus" = "Bonus";
+"tab_postfach" = "Nachrichten";
+
+/* Login */
+"login_tagline" = "Moderne Krankenversicherung. Warm und verlässlich.";
+"login_title" = "Anmelden";
+"login_password_label" = "Passwort";
+"login_password_placeholder" = "Passwort eingeben";
+"login_button" = "Anmelden";
+"login_show_password" = "Passwort anzeigen";
+"login_hide_password" = "Passwort verbergen";
+"auth_error_empty_password" = "Bitte geben Sie Ihr Passwort ein.";
+"auth_error_invalid_credentials" = "Das eingegebene Passwort ist nicht korrekt. Bitte versuchen Sie es erneut.";
+
+/* Greetings */
+"greeting_morning" = "Guten Morgen,";
+"greeting_afternoon" = "Hallo,";
+"greeting_evening" = "Guten Abend,";
+"greeting_night" = "Gute Nacht,";
+
+/* Home */
+"home_section_services" = "Aktionen";
+"home_nav_profile" = "Profil öffnen";
+
+/* Widgets */
+"widget_bonus_title" = "Bonusprogramm";
+"widget_bonus_subtitle" = "Punkte sammeln & belohnt werden";
+"widget_sick_note_title" = "Krankmeldung";
+"widget_sick_note_subtitle" = "Digital einreichen";
+"widget_service_title" = "Service";
+"widget_service_subtitle" = "Wir sind für Sie da";
+"widget_applications_title" = "Meine Anträge";
+"widget_applications_subtitle" = "Anträge verwalten";
+"widget_sick_pay_title" = "Krankengeld";
+"widget_sick_pay_subtitle" = "Übersicht & Abrechnung";
+"widget_health_card_title" = "Versichertenkarte";
+"widget_health_card_subtitle" = "Digitale Gesundheitskarte";
+
+/* Profile */
+"profile_title" = "Profil";
+"profile_section_my_data" = "Meine Daten";
+"profile_section_misc" = "Weiteres";
+"profile_section_legal" = "Rechtliches";
+"profile_address" = "Adresse";
+"profile_phone" = "Rufnummer";
+"profile_bank_account" = "Bankverbindung";
+"profile_email" = "E-Mail";
+"profile_insurance_status" = "Versichertenstatus";
+"profile_settings" = "Einstellungen";
+"profile_help_feedback" = "Hilfe & Feedback";
+"profile_privacy" = "Datenschutz";
+"profile_terms" = "Nutzungsbedingungen";
+"profile_imprint" = "Impressum";
+"profile_logout" = "Abmelden";
+"profile_logout_confirm_title" = "Abmelden";
+"profile_logout_confirm_message" = "Möchten Sie sich wirklich abmelden?";
+
+/* Insurance Status */
+"insurance_status_title" = "Versichertenstatus";
+"insurance_status_valid" = "Aktiv versichert";
+"insurance_status_hint" = "Ihre Daten werden sicher und verschlüsselt übertragen.";
+"insurance_section_personal" = "Persönliche Daten";
+"insurance_section_insurance" = "Versicherungsdaten";
+"insurance_field_name" = "Name";
+"insurance_field_birth" = "Geburtsdatum";
+"insurance_field_number" = "Versichertennummer";
+"insurance_field_pension" = "Rentenversicherungsnummer";
+"insurance_field_tax_id" = "Steuer-ID";
+"insurance_number" = "Nr.";
+
+/* Address */
+"address_empty_title" = "Keine Adressen";
+"address_empty_subtitle" = "Fügen Sie Ihre erste Adresse hinzu.";
+"address_add" = "Adresse hinzufügen";
+"address_add_title" = "Neue Adresse";
+"address_edit_title" = "Adresse bearbeiten";
+"address_delete_confirm" = "Möchten Sie diese Adresse wirklich löschen?";
+"address_section_street" = "Straße";
+"address_section_location" = "Ort";
+"address_section_type" = "Art der Adresse";
+"address_type" = "Adressart";
+"address_placeholder_street" = "Am Mühlenbach";
+"address_placeholder_house_number" = "105";
+"address_placeholder_city" = "Essen";
+"address_type_primary" = "Hauptwohnsitz";
+"address_type_secondary" = "Nebenwohnsitz";
+"address_type_work" = "Arbeit";
+
+/* Phone */
+"phone_empty_title" = "Keine Rufnummern";
+"phone_empty_subtitle" = "Fügen Sie Ihre erste Rufnummer hinzu.";
+"phone_add_title" = "Neue Rufnummer";
+"phone_edit_title" = "Rufnummer bearbeiten";
+"phone_delete_confirm" = "Möchten Sie diese Rufnummer wirklich löschen?";
+"phone_section_number" = "Rufnummer";
+"phone_section_type" = "Art der Rufnummer";
+"phone_type" = "Rufnummerntyp";
+"phone_type_mobile" = "Mobil";
+"phone_type_landline" = "Festnetz";
+"phone_type_work" = "Arbeit";
+"phone_type_fax" = "Fax";
+
+/* Bank Account */
+"bank_empty_title" = "Keine Bankverbindung";
+"bank_empty_subtitle" = "Fügen Sie Ihre erste Bankverbindung hinzu.";
+"bank_add_title" = "Neue Bankverbindung";
+"bank_edit_title" = "Bankverbindung bearbeiten";
+"bank_delete_confirm" = "Möchten Sie diese Bankverbindung wirklich löschen?";
+"bank_section_details" = "Bankdetails";
+"bank_placeholder_name" = "Commerzbank AG";
+"bank_placeholder_holder" = "Christian Drapatz";
+
+/* Email */
+"email_empty_title" = "Keine E-Mail-Adressen";
+"email_empty_subtitle" = "Fügen Sie Ihre erste E-Mail-Adresse hinzu.";
+"email_add_title" = "Neue E-Mail";
+"email_edit_title" = "E-Mail bearbeiten";
+"email_delete_confirm" = "Möchten Sie diese E-Mail wirklich löschen?";
+"email_section_address" = "E-Mail-Adresse";
+"email_section_type" = "Art der E-Mail";
+"email_type" = "E-Mail-Typ";
+"email_type_personal" = "Privat";
+"email_type_work" = "Arbeit";
+"email_type_other" = "Sonstige";
+
+/* Common */
+"common_close" = "Schließen";
+"common_cancel" = "Abbrechen";
+"common_save" = "Speichern";
+"common_add" = "Hinzufügen";
+"common_edit" = "Bearbeiten";
+"common_delete" = "Löschen";
+"common_is_primary" = "Als Haupteintrag festlegen";
+"common_delete_confirm_title" = "Löschen bestätigen";
+"badge_primary" = "Haupt";
+"placeholder_coming_soon" = "Diese Funktion ist in Kürze verfügbar.";
+
+/* Validation */
+"validation_empty" = "%@ darf nicht leer sein.";
+"validation_too_short" = "%@ muss mindestens %d Zeichen lang sein.";
+"validation_too_long" = "%@ darf maximal %d Zeichen lang sein.";
+"validation_invalid_format" = "%@ hat ein ungültiges Format.";
+"validation_invalid_iban" = "Die eingegebene IBAN ist ungültig. Bitte prüfen.";
+"validation_invalid_bic" = "Der eingegebene BIC ist ungültig (Format: XXXXXXXX oder XXXXXXXXXXX).";
+"validation_invalid_email" = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+"validation_invalid_phone" = "Bitte geben Sie eine gültige Rufnummer ein (Ziffern, +, -, Klammern).";
+"validation_invalid_postal_code" = "Die Postleitzahl ist ungültig (Deutschland: 5 Ziffern).";
+"validation_duplicate_primary" = "Es kann nur einen Haupteintrag geben.";
+
+/* Fields */
+"field_street" = "Straße";
+"field_house_number" = "Hausnummer";
+"field_postal_code" = "Postleitzahl";
+"field_city" = "Stadt";
+"field_country" = "Land";
+"field_phone_number" = "Rufnummer";
+"field_email" = "E-Mail";
+"field_bank_name" = "Name der Bank";
+"field_account_holder" = "Kontoinhaber";
+
+/* Notifications */
+"notification_demo_title" = "BKK Orano";
+"notification_demo_body" = "Willkommen! Ihre App ist bereit.";
+
+/* Accessibility */
+"accessibility_error" = "Fehler";
+
+/* Legal */
+"legal_last_updated" = "Stand: April 2026";
+"imprint_provider" = "Anbieter";
+"imprint_contact" = "Kontakt";
+"imprint_legal_form" = "Rechtsform";
+"imprint_authority" = "Aufsichtsbehörde";
+"imprint_board" = "Vorstand";
+"imprint_disclaimer" = "Haftungsausschluss";
+
+/* Home Search & Extensions */
+"home_search_placeholder" = "Leistung suchen";
+"home_search_no_results" = "Keine Treffer";
+"home_search_no_results_subtitle" = "Versuchen Sie einen anderen Suchbegriff.";
+"home_section_service_hotline" = "Service & Hotlines";
+"home_section_help" = "Hilfe";
+"home_hotline_doctor_title" = "Arztterminservice";
+"home_hotline_doctor_subtitle" = "6 ct pro Anruf aus dem Festnetz";
+"home_hotline_medical_title" = "Medizinische Beratung";
+"home_hotline_medical_subtitle" = "6 ct pro Anruf aus dem Festnetz";
+"home_help_contact" = "Kontakt";
+"home_help_contact_subtitle" = "Erreichen Sie uns direkt";
+"home_help_faq" = "Häufige Fragen";
+"home_help_faq_subtitle" = "Antworten auf häufige Themen";
+
+/* Bonus Program */
+"bonus_title" = "Bonusprogramm";
+"bonus_current_points" = "Aktueller Stand";
+"bonus_goal_label" = "Ziel: %@";
+"bonus_year_label" = "Teilnahmejahr %d";
+"bonus_measures_completed" = "Maßnahmen";
+"bonus_measures_list_title" = "Eingereichte Maßnahmen";
+"bonus_action_new_measure" = "Neue Maßnahme einreichen";
+"bonus_action_request_reward" = "Prämie beantragen";
+"bonus_action_end_participation" = "Teilnahme beenden";
+"bonus_measure_checkup" = "Gesundheits-Check-up";
+"bonus_measure_dental" = "Zahnvorsorge";
+"bonus_measure_sport" = "Sportabzeichen";
+"bonus_measure_gym" = "Fitnessstudio";
+"bonus_measure_vaccination" = "Schutzimpfung";
+"bonus_info_hint" = "Punkte für gesundheitsbewusstes Verhalten sammeln und Prämie sichern.";
+
+/* Sick Note */
+"sick_note_title" = "Krankmeldung";
+"sick_note_info_title" = "So funktioniert's";
+"sick_note_info_subtitle" = "Reichen Sie Ihre Arbeitsunfähigkeits-Bescheinigung bequem digital ein.";
+"sick_note_step1_title" = "Dokument flach auflegen";
+"sick_note_step1_body" = "Legen Sie die Bescheinigung auf eine ebene, gut ausgeleuchtete Fläche.";
+"sick_note_step2_title" = "Alle Ränder im Bild";
+"sick_note_step2_body" = "Achten Sie darauf, dass alle vier Ecken erkennbar sind.";
+"sick_note_start_scan" = "Scan starten";
+"sick_note_scanner_title" = "Scannen";
+"sick_note_scanner_hint" = "Bescheinigung innerhalb des Rahmens platzieren";
+"sick_note_capture" = "Aufnehmen";
+"sick_note_flash" = "Blitz";
+"sick_note_filter_auto" = "Auto";
+"sick_note_filter_color" = "Farbe";
+"sick_note_filter_bw" = "S/W";
+"sick_note_edit_title" = "Bearbeiten";
+"sick_note_edit_crop" = "Zuschneiden";
+"sick_note_edit_adjust" = "Anpassen";
+"sick_note_edit_rotate" = "Drehen";
+"sick_note_edit_next" = "Weiter";
+"sick_note_submit_title" = "Einreichen";
+"sick_note_submit_summary" = "Bereit zum Einreichen";
+"sick_note_submit_description" = "Ihre Arbeitsunfähigkeits-Bescheinigung wird verschlüsselt an BKK Orano übermittelt.";
+"sick_note_submit_confirm" = "Jetzt einreichen";
+"sick_note_submit_success_title" = "Erfolgreich eingereicht";
+"sick_note_submit_success_body" = "Wir haben Ihre Bescheinigung erhalten und bearbeiten sie umgehend.";
+"sick_note_done" = "Fertig";
+
+/* Service Tab */
+"service_title" = "Service";
+"service_section_egk" = "Elektronische Gesundheitskarte";
+"service_section_request" = "Anfordern";
+"service_egk_missing_title" = "Karte nicht dabei";
+"service_egk_missing_subtitle" = "Ersatznachweis für den Arztbesuch";
+"service_egk_lost_title" = "Karte verloren";
+"service_egk_lost_subtitle" = "Sperren und Ersatzkarte anfordern";
+"service_request_certificates_title" = "Bescheinigungen";
+"service_request_certificates_subtitle" = "Mitgliedschaft, Beiträge, Zuzahlung";
+
+/* Health Tab */
+"health_title" = "Gesundheitsthemen";
+"health_data_title" = "Gesundheitsdaten";
+"health_data_subtitle" = "Werte, Dokumente und Berichte";
+"health_medication_title" = "Medikation";
+"health_medication_subtitle" = "Aktuelle und frühere Arzneimittel";
+"health_prevention_title" = "Vorsorge";
+"health_prevention_subtitle" = "Check-ups und Früherkennung";
+"health_vaccination_title" = "Impfungen";
+"health_vaccination_subtitle" = "Impfpass und Erinnerungen";
+"health_eau_title" = "eAU-Bescheinigung";
+"health_eau_subtitle" = "Digitale Arbeitsunfähigkeiten";
+"health_pregnancy_title" = "Schwangerschaft";
+"health_pregnancy_subtitle" = "Begleitung und Leistungen";
+"health_cost_title" = "Kostenübersicht";
+"health_cost_subtitle" = "Rechnungen und Erstattungen";
+
+/* Postfach */
+"postfach_title" = "Nachrichten";
+"postfach_search_placeholder" = "Nachrichten durchsuchen";
+"postfach_filter_button" = "Zeitraum";
+"postfach_filter_title" = "Zeitraum filtern";
+"postfach_filter_all" = "Alle Nachrichten";
+"postfach_filter_week" = "Letzte 7 Tage";
+"postfach_filter_month" = "Letzter Monat";
+"postfach_filter_year" = "Letztes Jahr";
+"postfach_sender_insurance" = "BKK Orano";
+"postfach_sender_you" = "Sie";
+"postfach_empty_title" = "Keine Nachrichten";
+"postfach_empty_subtitle" = "Hier erscheinen Ihre Nachrichten.";
+
+/* Mock Postfach Messages */
+"postfach_msg1_subject" = "Willkommen bei BKK Orano";
+"postfach_msg1_body" = "Herzlich willkommen! Wir freuen uns, Sie als Versicherte begrüßen zu dürfen.";
+"postfach_msg2_subject" = "Vielen Dank";
+"postfach_msg2_body" = "Vielen Dank für die freundliche Begrüßung.";
+"postfach_msg3_subject" = "Bonuspunkte gutgeschrieben";
+"postfach_msg3_body" = "Ihre Gesundheits-Check-up-Maßnahme wurde mit 30 € gutgeschrieben.";
+"postfach_msg4_subject" = "Frage zur Auszahlung";
+"postfach_msg4_body" = "Wann wird die Prämie auf mein Konto überwiesen?";
+"postfach_msg5_subject" = "Auszahlung";
+"postfach_msg5_body" = "Die Auszahlung erfolgt nach Antragstellung innerhalb von 5 Werktagen.";
+"postfach_msg6_subject" = "AU-Bescheinigung erhalten";
+"postfach_msg6_body" = "Wir haben Ihre Arbeitsunfähigkeitsbescheinigung erhalten und bearbeiten sie.";
+"postfach_msg7_subject" = "Bestätigung";
+"postfach_msg7_body" = "Alles klar, vielen Dank für die schnelle Rückmeldung.";
+"postfach_msg8_subject" = "Vorsorge-Erinnerung";
+"postfach_msg8_body" = "Ihre jährliche Vorsorgeuntersuchung steht an. Jetzt Termin vereinbaren.";
+"postfach_msg9_subject" = "Termin vereinbart";
+"postfach_msg9_body" = "Danke für die Erinnerung, Termin ist vereinbart.";
+"postfach_msg10_subject" = "Neue Zusatzleistung";
+"postfach_msg10_body" = "Ab sofort übernehmen wir weitere Vorsorgeleistungen. Infos in der App.";
+
+/* Placeholders */
+"placeholder_applications_title" = "Meine Anträge";
+"placeholder_sick_pay_title" = "Krankengeld";
+"placeholder_health_card_title" = "Versichertenkarte";
+"placeholder_in_development_title" = "In Entwicklung";
+
+/* Applications */
+"applications_title" = "Meine Anträge";
+"applications_intro" = "Hier finden Sie alle Anträge, die Sie eingereicht oder erhalten haben.";
+"applications_entry_format" = "Antrag %d";
+
+/* Sick Pay */
+"sick_pay_title" = "Krankengeld";
+"sick_pay_intro" = "Hier finden Sie alle Infos zum Kranken- und Kinderkrankengeld.";
+"sick_pay_all_payments_title" = "Alle Auszahlungen";
+"sick_pay_all_payments_subtitle" = "Kranken- und Kinderkrankengeld";
+
+/* Contact */
+"contact_title" = "Kontakt";
+"contact_intro" = "Das Team der BKK Orano berät Sie gerne. Sie erreichen uns täglich von 8 Uhr bis 20 Uhr.";
+"contact_section_phone" = "Telefon";
+"contact_section_written" = "Schriftlich";
+"contact_section_more" = "Weitere";
+"contact_service_number_title" = "Servicenummer";
+"contact_service_number" = "0800 1111 2222";
+"contact_request_title" = "Kontaktanfrage";
+"contact_address_title" = "BKK Orano";
+"contact_address_line1" = "Rot-Weiss-Essen Straße 1907";
+"contact_address_line2" = "45147 Essen";
+"contact_praise_complaint_title" = "Lob und Beschwerde";
+"contact_advisor_title" = "Kundenberater";
+"contact_more_contacts_title" = "Weitere Ansprechpartner";
+
+/* ==============================================
+   V2 additions — Blau/Orange, Google-Style, Discover feed
+   ============================================== */
+
+/* V2 tabs */
+"tab_v2_start" = "Start";
+"tab_v2_service" = "Service";
+
+/* V2 Home */
+"home_v2_tagline" = "Gesundheit, alles auf einen Blick.";
+"home_v2_search_placeholder" = "Leistungen, Bonus, Anträge suchen";
+"home_v2_search_empty_hint" = "Tippen Sie einen Begriff ein – wir finden, was Sie brauchen.";
+"home_v2_status_card_title" = "Aktiv versichert";
+"home_v2_status_card_cta" = "Karte anzeigen";
+"home_v2_quickactions_title" = "Schnell erledigt";
+"home_v2_discover_title" = "Entdecken";
+"home_v2_discover_subtitle" = "Empfehlungen für Sie";
+"home_v2_filter_all" = "Alle";
+"home_v2_filter_prevention" = "Vorsorge";
+"home_v2_filter_bonus" = "Bonus";
+"home_v2_filter_service" = "Service";
+
+/* V2 Discover cards */
+"discover_prevention_eyebrow" = "Vorsorge";
+"discover_prevention_title" = "Bleiben Sie gesund";
+"discover_prevention_subtitle" = "Alle Vorsorgeuntersuchungen für die ganze Familie auf einen Blick.";
+"discover_bonus_eyebrow" = "Bonus";
+"discover_bonus_title" = "200 € sichern";
+"discover_bonus_subtitle" = "Aktivitäten erfassen und Ihre Bonusprämie einlösen.";
+"discover_service_eyebrow" = "Service";
+"discover_service_title" = "Rund um die Uhr da";
+"discover_service_subtitle" = "Unsere medizinischen Hotlines beraten Sie jederzeit — vertraulich und schnell.";
+"discover_family_eyebrow" = "Familie";
+"discover_family_title" = "Familie mitversichern";
+"discover_family_subtitle" = "Wie Sie Partner und Kinder kostenfrei einschließen.";
+
+/* V2 Service hub (promoted from secondary rail to tab) */
+"service_v2_title" = "Service";
+"service_v2_intro" = "Alle Leistungen, die Sie brauchen — klar sortiert.";
+"service_v2_section_health" = "Gesundheit";
+"service_v2_section_documents" = "Dokumente";
+"service_v2_section_contact" = "Beratung";
+
+/* V2 Login */
+"login_v2_welcome" = "Willkommen bei";
+"login_v2_app_name" = "BKK Orano";
+"login_v2_tagline" = "Ihre Krankenkasse — einfach. digital. nah.";
+"login_v2_hint" = "Melden Sie sich an, um Ihre Leistungen zu sehen.";
+
