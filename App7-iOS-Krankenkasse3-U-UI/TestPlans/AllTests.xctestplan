@@ -1,0 +1,42 @@
+{
+  "configurations" : [
+    {
+      "id" : "22222222-2222-2222-2222-222222222221",
+      "name" : "Deutsch",
+      "options" : {
+        "codeCoverage" : true,
+        "language" : "de",
+        "region" : "DE"
+      }
+    },
+    {
+      "id" : "22222222-2222-2222-2222-222222222222",
+      "name" : "English",
+      "options" : {
+        "codeCoverage" : true,
+        "language" : "en",
+        "region" : "US"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:BKKOrano.xcodeproj",
+        "identifier" : "CCCCCCCCCCCCCCCC000001",
+        "name" : "BKKOranoTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:BKKOrano.xcodeproj",
+        "identifier" : "DDDDDDDDDDDDDDDD000001",
+        "name" : "BKKOranoUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
