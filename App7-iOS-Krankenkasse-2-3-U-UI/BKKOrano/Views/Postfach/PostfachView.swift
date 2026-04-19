@@ -123,7 +123,7 @@ struct PostfachView: View {
         ZStack {
             if msg.isFromUser {
                 Circle()
-                    .fill(AppTheme.primarySoft)
+                    .fill(AppTheme.peach.opacity(0.7))
                     .frame(width: 40, height: 40)
             } else {
                 Circle()
@@ -175,7 +175,7 @@ struct PostMessageDetail: View {
             VStack(alignment: .leading, spacing: AppTheme.spaceL) {
                 VStack(alignment: .leading, spacing: AppTheme.spaceS) {
                     Text(message.subject)
-                        .font(.system(.title2, design: .rounded, weight: .semibold))
+                        .font(.system(.title2, design: .serif, weight: .semibold))
                         .foregroundStyle(AppTheme.ink)
                     HStack {
                         Text(message.senderLabel)

@@ -34,7 +34,7 @@ struct ApplicationsView: View {
                 .font(.title)
                 .foregroundStyle(AppTheme.primary)
                 .padding(AppTheme.spaceM)
-                .background(AppTheme.primarySoft)
+                .background(AppTheme.peach.opacity(0.5))
                 .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusM, style: .continuous))
             Text(String(localized: "applications_intro"))
                 .font(.callout)
@@ -54,7 +54,7 @@ struct ApplicationsView: View {
                     .fill(app.status.tint)
                     .frame(width: 12, height: 12)
                 Rectangle()
-                    .fill(AppTheme.primarySoft)
+                    .fill(AppTheme.peach.opacity(0.8))
                     .frame(width: 2)
             }
             .frame(width: 12)

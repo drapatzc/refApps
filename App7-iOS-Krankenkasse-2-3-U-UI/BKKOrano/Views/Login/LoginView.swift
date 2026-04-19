@@ -1,60 +1,39 @@
 import SwiftUI
 
-/// Login screen — v2 redesign.
+/// Login screen — bold dark-orange hero with a layered glass card.
 ///
-/// Evolution from v1:
-/// - Full-width landscape photograph (`hero-login`) replaces the painterly
-///   gradient. A horizon line divides sky and foreground, signalling "open,
-///   friendly, grounded".
-/// - Brand mark drops the serif wordmark in favor of a rounded sans-serif
-///   wordmark that reads as a digital-first product.
-/// - The translucent card becomes a crisp white Material card with a
-///   distinct elevation (Google Material style) instead of a frosted glass.
-/// - The primary CTA is solid blue with a subtle shadow — no orange mix on
-///   the button itself; orange is reserved for discovery and highlights.
+/// UX differs from the reference app: no full-screen photo background,
+/// instead a painterly gradient with a serif "Orano" wordmark sitting
+/// above a translucent card. Focus handling and error animation stay
+/// close to the reference.
 struct LoginView: View {
 
     @Environment(AppState.self) private var appState
     @State private var viewModel = LoginViewModel()
     @State private var showPassword: Bool = false
     @FocusState private var passwordFocused: Bool
-    @State private var cardAppeared = false
+    @State private var logoAppeared = false
 
     var body: some View {
-        ZStack(alignment: .top) {
-            // Landscape hero image fills the screen; a blue-to-transparent
-            // gradient at the bottom guarantees legibility for the card.
-            GeometryReader { geo in
-                Image("hero-login")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geo.size.width, height: geo.size.height)
-                    .clipped()
-                    .overlay(
-                        LinearGradient(
-                            colors: [.clear, AppTheme.primaryDeep.opacity(0.35), AppTheme.primaryDeep.opacity(0.65)],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
-                    .ignoresSafeArea()
-            }
+        ZStack {
+            OranoHeroBackground()
 
-            VStack(spacing: 0) {
-                brandMark
-                    .padding(.top, 70)
-                Spacer()
+            VStack(spacing: AppTheme.spaceXL) {
+                Spacer(minLength: 40)
+                logo
+                Spacer(minLength: 20)
                 card
-                    .padding(.horizontal, AppTheme.spaceL)
-                    .padding(.bottom, AppTheme.spaceXL)
+                Spacer(minLength: 30)
+                footer
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, AppTheme.spaceL)
         }
         .onAppear {
-            withAnimation(.spring(response: 0.6, dampingFraction: 0.82).delay(0.15)) {
-                cardAppeared = true
+            withAnimation(.spring(response: 0.7, dampingFraction: 0.75)) {
+                logoAppeared = true
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
+            // Auto-focus the password field slightly delayed for a natural feel.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                 passwordFocused = true
             }
         }
@@ -70,31 +49,36 @@ struct LoginView: View {
         }
     }
 
-    // MARK: - Brand mark
+    // MARK: - Logo & brand mark
 
-    private var brandMark: some View {
-        VStack(spacing: AppTheme.spaceS) {
-            HStack(spacing: 10) {
-                // Rounded wordmark square
-                ZStack {
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .fill(Color.white)
-                        .frame(width: 52, height: 52)
-                        .shadow(color: .black.opacity(0.18), radius: 8, y: 3)
-                    Text("O")
-                        .font(.system(size: 32, weight: .black, design: .rounded))
-                        .foregroundStyle(AppTheme.heroGradient)
-                }
-                Text(String(localized: "login_v2_app_name"))
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
+    private var logo: some View {
+        VStack(spacing: AppTheme.spaceM) {
+            ZStack {
+                Circle()
+                    .fill(Color.white.opacity(0.15))
+                    .frame(width: 112, height: 112)
+                    .blur(radius: 18)
+                Circle()
+                    .strokeBorder(Color.white.opacity(0.6), lineWidth: 1.5)
+                    .frame(width: 96, height: 96)
+                Image(systemName: "heart.text.square.fill")
+                    .font(.system(size: 40, weight: .medium))
                     .foregroundStyle(.white)
-                    .shadow(color: .black.opacity(0.25), radius: 4, y: 1)
             }
-            Text(String(localized: "login_v2_tagline"))
-                .font(.system(.subheadline, design: .rounded, weight: .medium))
-                .foregroundStyle(.white.opacity(0.92))
-                .multilineTextAlignment(.center)
-                .shadow(color: .black.opacity(0.25), radius: 3, y: 1)
+            .scaleEffect(logoAppeared ? 1 : 0.6)
+            .opacity(logoAppeared ? 1 : 0)
+
+            VStack(spacing: 4) {
+                Text("BKK Orano")
+                    .font(.system(.largeTitle, design: .serif, weight: .bold))
+                    .foregroundStyle(.white)
+                    .shadow(color: Color.black.opacity(0.2), radius: 6, y: 2)
+                Text(String(localized: "login_tagline"))
+                    .font(.subheadline)
+                    .foregroundStyle(.white.opacity(0.85))
+            }
+            .opacity(logoAppeared ? 1 : 0)
+            .offset(y: logoAppeared ? 0 : 20)
         }
     }
 
@@ -103,12 +87,8 @@ struct LoginView: View {
     private var card: some View {
         VStack(alignment: .leading, spacing: AppTheme.spaceM) {
             Text(String(localized: "login_title"))
-                .font(.system(.title2, design: .rounded, weight: .semibold))
+                .font(.title2.weight(.semibold))
                 .foregroundStyle(AppTheme.ink)
-
-            Text(String(localized: "login_v2_hint"))
-                .font(.footnote)
-                .foregroundStyle(.secondary)
 
             passwordField
 
@@ -134,11 +114,12 @@ struct LoginView: View {
             .accessibilityIdentifier("login_button")
         }
         .padding(AppTheme.spaceL)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusXL, style: .continuous))
-        .shadow(color: .black.opacity(0.18), radius: 22, y: 10)
-        .offset(y: cardAppeared ? 0 : 40)
-        .opacity(cardAppeared ? 1 : 0)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: AppTheme.radiusXL, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: AppTheme.radiusXL, style: .continuous)
+                .strokeBorder(Color.white.opacity(0.35), lineWidth: 1)
+        )
+        .shadow(color: AppTheme.primaryDeep.opacity(0.3), radius: 20, x: 0, y: 10)
         .animation(.spring(response: 0.3, dampingFraction: 0.8), value: viewModel.errorMessage)
     }
 
@@ -181,12 +162,17 @@ struct LoginView: View {
             .padding(.horizontal, AppTheme.spaceM)
             .background(AppTheme.surface)
             .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusM, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: AppTheme.radiusM, style: .continuous)
-                    .strokeBorder(passwordFocused ? AppTheme.primary : .clear, lineWidth: 1.5)
-                    .animation(.easeInOut(duration: 0.15), value: passwordFocused)
-            )
         }
+    }
+
+    private var footer: some View {
+        HStack(spacing: AppTheme.spaceS) {
+            Image(systemName: "shield.lefthalf.filled")
+            Text("Verschlüsselte Verbindung")
+                .font(.caption.weight(.medium))
+        }
+        .foregroundStyle(.white.opacity(0.7))
+        .padding(.bottom, AppTheme.spaceM)
     }
 
     // MARK: - Actions

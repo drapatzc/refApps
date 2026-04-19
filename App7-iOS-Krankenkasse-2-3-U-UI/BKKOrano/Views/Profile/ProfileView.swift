@@ -62,7 +62,7 @@ struct ProfileView: View {
                 avatar
                 if let person = viewModel.person {
                     Text(person.fullName)
-                        .font(.system(.title2, design: .rounded, weight: .semibold))
+                        .font(.system(.title2, design: .serif, weight: .semibold))
                         .foregroundStyle(AppTheme.ink)
                     HStack(spacing: AppTheme.spaceS) {
                         OranoChip(
@@ -184,7 +184,7 @@ struct ProfileView: View {
                 Image(systemName: icon)
                     .foregroundStyle(AppTheme.primary)
                     .frame(width: 28, height: 28)
-                    .background(AppTheme.primarySoft)
+                    .background(AppTheme.peach.opacity(0.5))
                     .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 Text(title)
                     .font(.body)

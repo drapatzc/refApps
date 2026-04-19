@@ -1,21 +1,20 @@
 import SwiftUI
 import SwiftData
 
-/// Home — v2 redesign.
+/// Home dashboard — a vertically flowing feed of sections.
 ///
-/// Evolution from v1:
-/// - Search is promoted from a toolbar-hidden entry to a prominent search
-///   field right under the status card. Typing filters the Discover feed
-///   immediately (Google-style, not a drawer).
-/// - A **Discover** feed of image cards replaces the action rail of
-///   gradient tiles. Each card carries a full-width illustration with an
-///   eyebrow chip — warmer, more human, more modern.
-/// - Quick actions remain as a horizontal chip row, but lighter-weight
-///   (icon + label only) so they don't compete with Discover for attention.
-/// - A bonus progress strip is retained as a subtle, full-width card at the
-///   bottom.
-/// - MVVM: all catalogue and filtering logic moves into `HomeViewModel`.
+/// **UX departure from the reference app**
+/// - No photo hero. A warm gradient band provides mood without overpowering.
+/// - A condensed status card replaces a large hero image: insurance number,
+///   actively insured badge, and member name at a glance.
+/// - The 6-widget grid is replaced by a horizontal "Aktionen" rail at the top
+///   plus a compact "Service" rail further down — fewer decisions above the fold.
+/// - A live bonus-progress strip is promoted to the dashboard, so users can see
+///   their program status without navigating to a dedicated tab.
+/// - Deep search lives behind a toolbar icon to keep the first viewport calm.
 struct HomeView: View {
+
+    // MARK: - Navigation
 
     enum Destination: Hashable {
         case sickNote
@@ -30,38 +29,49 @@ struct HomeView: View {
         case egkMissing
         case egkLost
         case certificates
-        case preventiveCare
     }
 
     @Environment(AppState.self) private var appState
     @Environment(\.modelContext) private var modelContext
 
     @State private var path = NavigationPath()
-    @State private var viewModel = HomeViewModel()
+    @State private var searchText = ""
     @State private var profileVM = ProfileViewModel()
+    @State private var bonusVM = BonusProgramViewModel()
+
+    private var allSearchable: [SearchEntry] { SearchEntry.catalog }
+    private var filteredSearch: [SearchEntry] {
+        guard !searchText.isEmpty else { return [] }
+        let needle = searchText.lowercased()
+        return allSearchable.filter {
+            $0.title.lowercased().contains(needle) ||
+            $0.subtitle.lowercased().contains(needle)
+        }
+    }
 
     // MARK: - Body
 
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
-                VStack(alignment: .leading, spacing: AppTheme.spaceXL) {
+                VStack(alignment: .leading, spacing: AppTheme.spaceL) {
                     greetingHeader
                     statusCard
-                    searchField
-                    if !viewModel.searchText.isEmpty {
-                        searchResults
-                    } else {
-                        filterRow
-                        quickActionsRow
-                        discoverFeed
-                        bonusStrip
-                    }
+                    actionRail
+                    bonusStrip
+                    serviceRail
+                    helpSection
                 }
                 .padding(.vertical, AppTheme.spaceL)
             }
             .background(AppTheme.canvas.ignoresSafeArea())
             .navigationBarTitleDisplayMode(.inline)
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .automatic),
+                prompt: Text(String(localized: "home_search_placeholder"))
+            )
+            .overlay(alignment: .top) { searchResultsOverlay }
             .toolbar { toolbarContent }
             .task {
                 profileVM.loadPerson(context: modelContext)
@@ -72,20 +82,17 @@ struct HomeView: View {
         }
     }
 
-    // MARK: - Greeting
+    // MARK: - Header
 
     private var greetingHeader: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(viewModel.greetingForTimeOfDay())
+        VStack(alignment: .leading, spacing: AppTheme.spaceXS) {
+            Text(greetingForTimeOfDay())
                 .font(.callout)
                 .foregroundStyle(.secondary)
             Text(profileVM.person?.firstName ?? "Willkommen")
-                .font(.system(size: 34, weight: .bold, design: .rounded))
+                .font(.system(.largeTitle, design: .serif, weight: .semibold))
                 .foregroundStyle(AppTheme.ink)
                 .lineLimit(1)
-            Text(String(localized: "home_v2_tagline"))
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, AppTheme.spaceL)
@@ -97,21 +104,21 @@ struct HomeView: View {
         HStack(spacing: AppTheme.spaceM) {
             ZStack {
                 Circle()
-                    .fill(AppTheme.actionGradient)
-                    .frame(width: 52, height: 52)
+                    .fill(AppTheme.heroGradient)
+                    .frame(width: 56, height: 56)
                 Image(systemName: "checkmark.shield.fill")
-                    .font(.title3)
+                    .font(.title2)
                     .foregroundStyle(.white)
             }
-            VStack(alignment: .leading, spacing: 3) {
-                Text(String(localized: "home_v2_status_card_title"))
-                    .font(.system(.subheadline, design: .rounded, weight: .semibold))
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(String(localized: "insurance_status_valid"))
+                    .font(.subheadline.weight(.semibold))
                     .foregroundStyle(AppTheme.success)
                 if let person = profileVM.person {
                     Text(person.fullName)
-                        .font(.system(.headline, design: .rounded, weight: .semibold))
-                        .foregroundStyle(AppTheme.ink)
-                    Text(person.insuranceNumber)
+                        .font(.headline)
+                    Text(String(localized: "insurance_number") + ": " + person.insuranceNumber)
                         .font(.caption.monospacedDigit())
                         .foregroundStyle(.secondary)
                 }
@@ -119,6 +126,7 @@ struct HomeView: View {
             Spacer()
             Image(systemName: "chevron.right")
                 .foregroundStyle(.tertiary)
+                .accessibilityHidden(true)
         }
         .padding(AppTheme.spaceM)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -126,219 +134,262 @@ struct HomeView: View {
         .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusL, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: AppTheme.radiusL, style: .continuous)
-                .strokeBorder(AppTheme.primarySoft, lineWidth: 1)
+                .strokeBorder(AppTheme.peach.opacity(0.6), lineWidth: 1)
         )
-        .shadow(color: AppTheme.ink.opacity(0.08), radius: 10, y: 3)
+        .shadow(color: AppTheme.primaryDeep.opacity(0.08), radius: 14, x: 0, y: 6)
         .padding(.horizontal, AppTheme.spaceL)
         .accessibilityElement(children: .combine)
         .accessibilityIdentifier("status_card")
     }
 
-    // MARK: - Search (prominent, always visible)
+    // MARK: - Action rail
 
-    private var searchField: some View {
-        HStack(spacing: AppTheme.spaceS) {
-            Image(systemName: "magnifyingglass")
-                .foregroundStyle(.secondary)
-            TextField(
-                String(localized: "home_v2_search_placeholder"),
-                text: $viewModel.searchText
-            )
-            .textFieldStyle(.plain)
-            .autocorrectionDisabled()
-            .accessibilityIdentifier("home_search_field")
-            if !viewModel.searchText.isEmpty {
-                Button {
-                    viewModel.searchText = ""
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundStyle(.tertiary)
-                }
-                .buttonStyle(.plain)
-            }
-        }
-        .padding(.horizontal, AppTheme.spaceM)
-        .padding(.vertical, 12)
-        .background(AppTheme.surface)
-        .clipShape(Capsule())
-        .overlay(
-            Capsule().strokeBorder(AppTheme.primary.opacity(0.12), lineWidth: 1)
-        )
-        .padding(.horizontal, AppTheme.spaceL)
-    }
-
-    // MARK: - Filter chips
-
-    private var filterRow: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: AppTheme.spaceS) {
-                ForEach(HomeViewModel.Filter.allCases) { filter in
-                    Button {
-                        withAnimation(.easeInOut(duration: 0.15)) {
-                            viewModel.activeFilter = filter
-                        }
-                    } label: {
-                        OranoChip(
-                            text: filter.label,
-                            icon: filter.icon,
-                            filled: viewModel.activeFilter == filter
-                        )
-                    }
-                    .buttonStyle(.plain)
-                }
-            }
-            .padding(.horizontal, AppTheme.spaceL)
-        }
-    }
-
-    // MARK: - Quick actions row
-
-    private var quickActionsRow: some View {
-        VStack(alignment: .leading, spacing: AppTheme.spaceM) {
+    private var actionRail: some View {
+        VStack(alignment: .leading, spacing: AppTheme.spaceS) {
             OranoSectionHeader(
-                title: String(localized: "home_v2_quickactions_title"),
-                icon: "bolt.fill"
+                title: String(localized: "home_section_services"),
+                icon: "sparkles"
             )
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: AppTheme.spaceM) {
-                    ForEach(viewModel.quickActions) { action in
-                        quickTile(action)
-                    }
+                    heroAction(
+                        icon: "doc.text.viewfinder",
+                        title: String(localized: "widget_sick_note_title"),
+                        subtitle: String(localized: "widget_sick_note_subtitle"),
+                        tint: AppTheme.primary
+                    ) { path.append(Destination.sickNote) }
+
+                    heroAction(
+                        icon: "tray.full.fill",
+                        title: String(localized: "widget_applications_title"),
+                        subtitle: String(localized: "widget_applications_subtitle"),
+                        tint: AppTheme.accent
+                    ) { path.append(Destination.applications) }
+
+                    heroAction(
+                        icon: "creditcard.fill",
+                        title: String(localized: "widget_health_card_title"),
+                        subtitle: String(localized: "widget_health_card_subtitle"),
+                        tint: AppTheme.primaryDeep
+                    ) { path.append(Destination.healthCard) }
+
+                    heroAction(
+                        icon: "eurosign.bank.building.fill",
+                        title: String(localized: "widget_sick_pay_title"),
+                        subtitle: String(localized: "widget_sick_pay_subtitle"),
+                        tint: AppTheme.primary
+                    ) { path.append(Destination.sickPay) }
                 }
                 .padding(.horizontal, AppTheme.spaceL)
             }
         }
     }
 
-    private func quickTile(_ action: HomeViewModel.QuickAction) -> some View {
-        Button {
-            path.append(action.destination)
-        } label: {
-            VStack(spacing: 10) {
+    private func heroAction(
+        icon: String,
+        title: String,
+        subtitle: String,
+        tint: Color,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: AppTheme.spaceS) {
                 ZStack {
                     Circle()
-                        .fill(action.tint.opacity(0.14))
-                        .frame(width: 54, height: 54)
-                    Image(systemName: action.icon)
+                        .fill(Color.white.opacity(0.22))
+                        .frame(width: 44, height: 44)
+                    Image(systemName: icon)
                         .font(.title3)
-                        .foregroundStyle(action.tint)
+                        .foregroundStyle(.white)
                 }
-                Text(action.title)
-                    .font(.system(.caption, design: .rounded, weight: .semibold))
-                    .foregroundStyle(AppTheme.ink)
-                    .multilineTextAlignment(.center)
+                Spacer(minLength: AppTheme.spaceM)
+                Text(title)
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .lineLimit(1)
+                Text(subtitle)
+                    .font(.caption)
+                    .foregroundStyle(.white.opacity(0.85))
                     .lineLimit(2)
-                    .frame(width: 84)
             }
-        }
-        .buttonStyle(.plain)
-    }
-
-    // MARK: - Discover feed
-
-    private var discoverFeed: some View {
-        VStack(alignment: .leading, spacing: AppTheme.spaceM) {
-            OranoSectionHeader(
-                title: String(localized: "home_v2_discover_title"),
-                icon: "sparkles",
-                trailing: AnyView(
-                    Text(String(localized: "home_v2_discover_subtitle"))
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+            .padding(AppTheme.spaceM)
+            .frame(width: 200, height: 160, alignment: .topLeading)
+            .background(
+                LinearGradient(
+                    colors: [tint, tint.opacity(0.72)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
                 )
             )
-            VStack(spacing: AppTheme.spaceM) {
-                ForEach(viewModel.filteredDiscoverCards) { card in
-                    OranoFeedCard(
-                        imageName: card.imageName,
-                        eyebrow: card.eyebrow,
-                        title: card.title,
-                        subtitle: card.subtitle,
-                        tint: card.tint
-                    ) {
-                        path.append(card.destination)
-                    }
-                }
-            }
-            .padding(.horizontal, AppTheme.spaceL)
+            .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusL, style: .continuous))
+            .shadow(color: tint.opacity(0.35), radius: 14, x: 0, y: 6)
         }
+        .buttonStyle(.plain)
     }
 
     // MARK: - Bonus strip
 
     private var bonusStrip: some View {
         Button { path.append(Destination.bonus) } label: {
-            HStack(spacing: AppTheme.spaceM) {
-                ZStack {
-                    Circle()
-                        .fill(AppTheme.warmGradient)
-                        .frame(width: 48, height: 48)
-                    Image(systemName: "star.fill")
-                        .foregroundStyle(.white)
+            VStack(alignment: .leading, spacing: AppTheme.spaceS) {
+                HStack(spacing: AppTheme.spaceS) {
+                    Image(systemName: "star.leadinghalf.filled")
+                        .foregroundStyle(AppTheme.primary)
+                    Text(String(localized: "widget_bonus_title"))
+                        .font(.headline)
+                        .foregroundStyle(AppTheme.ink)
+                    Spacer()
+                    Text(bonusVM.formattedCurrent + " / " + bonusVM.formattedGoal)
+                        .font(.footnote.weight(.medium))
+                        .foregroundStyle(.secondary)
                 }
-                VStack(alignment: .leading, spacing: 6) {
-                    HStack {
-                        Text(String(localized: "widget_bonus_title"))
-                            .font(.system(.headline, design: .rounded, weight: .semibold))
-                            .foregroundStyle(AppTheme.ink)
-                        Spacer()
-                        Text(viewModel.bonusVM.formattedCurrent + " / " + viewModel.bonusVM.formattedGoal)
-                            .font(.footnote.weight(.medium))
-                            .foregroundStyle(.secondary)
-                    }
-                    ProgressView(value: viewModel.bonusVM.progress)
-                        .progressViewStyle(.linear)
-                        .tint(AppTheme.accent)
-                }
+                ProgressView(value: bonusVM.progress)
+                    .progressViewStyle(.linear)
+                    .tint(AppTheme.primary)
+                Text(String(localized: "bonus_info_hint"))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.leading)
             }
             .padding(AppTheme.spaceM)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .oranoCardFlat()
+            .background(AppTheme.softGradient)
+            .overlay(
+                RoundedRectangle(cornerRadius: AppTheme.radiusL, style: .continuous)
+                    .strokeBorder(AppTheme.primary.opacity(0.18), lineWidth: 1)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusL, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .padding(.horizontal, AppTheme.spaceL)
+    }
+
+    // MARK: - Service rail
+
+    private var serviceRail: some View {
+        VStack(alignment: .leading, spacing: AppTheme.spaceS) {
+            OranoSectionHeader(
+                title: String(localized: "home_section_service_hotline"),
+                icon: "phone.bubble.fill"
+            )
+
+            VStack(spacing: 0) {
+                serviceRow(
+                    icon: "stethoscope",
+                    title: String(localized: "home_hotline_doctor_title"),
+                    subtitle: String(localized: "home_hotline_doctor_subtitle")
+                ) { path.append(Destination.hotlineDoctor) }
+
+                Divider().padding(.leading, 72)
+
+                serviceRow(
+                    icon: "waveform.path.ecg",
+                    title: String(localized: "home_hotline_medical_title"),
+                    subtitle: String(localized: "home_hotline_medical_subtitle")
+                ) { path.append(Destination.hotlineMedical) }
+
+                Divider().padding(.leading, 72)
+
+                serviceRow(
+                    icon: "cross.case.fill",
+                    title: String(localized: "service_egk_lost_title"),
+                    subtitle: String(localized: "service_egk_lost_subtitle")
+                ) { path.append(Destination.egkLost) }
+            }
+            .background(AppTheme.cardBackground)
+            .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusL, style: .continuous))
+            .shadow(color: AppTheme.primaryDeep.opacity(0.05), radius: 10, x: 0, y: 4)
             .padding(.horizontal, AppTheme.spaceL)
+        }
+    }
+
+    private func serviceRow(
+        icon: String,
+        title: String,
+        subtitle: String,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            HStack(spacing: AppTheme.spaceM) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(AppTheme.peach.opacity(0.5))
+                        .frame(width: 44, height: 44)
+                    Image(systemName: icon)
+                        .font(.title3)
+                        .foregroundStyle(AppTheme.primary)
+                }
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(AppTheme.ink)
+                    Text(subtitle)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.footnote)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(.horizontal, AppTheme.spaceM)
+            .padding(.vertical, 14)
         }
         .buttonStyle(.plain)
     }
 
-    // MARK: - Search results
+    // MARK: - Help section
 
-    @ViewBuilder
-    private var searchResults: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            if viewModel.searchResults.isEmpty {
-                OranoEmptyState(
-                    icon: "magnifyingglass",
-                    title: String(localized: "home_search_no_results"),
-                    subtitle: String(localized: "home_search_no_results_subtitle")
-                )
-            } else {
-                ForEach(viewModel.searchResults) { entry in
-                    Button {
-                        viewModel.searchText = ""
-                        path.append(entry.destination)
-                    } label: {
-                        HStack(spacing: AppTheme.spaceM) {
-                            Image(systemName: entry.icon)
-                                .frame(width: 36, height: 36)
-                                .foregroundStyle(AppTheme.primary)
-                                .background(AppTheme.primarySoft)
-                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(entry.title).font(.subheadline.weight(.semibold))
-                                    .foregroundStyle(AppTheme.ink)
-                                Text(entry.subtitle).font(.caption).foregroundStyle(.secondary)
-                            }
-                            Spacer()
-                            Image(systemName: "arrow.up.right")
-                                .foregroundStyle(.tertiary)
-                        }
-                        .padding(.horizontal, AppTheme.spaceL)
-                        .padding(.vertical, AppTheme.spaceM)
-                    }
-                    .buttonStyle(.plain)
-                    Divider().padding(.leading, 72)
-                }
+    private var helpSection: some View {
+        VStack(alignment: .leading, spacing: AppTheme.spaceS) {
+            OranoSectionHeader(
+                title: String(localized: "home_section_help"),
+                icon: "questionmark.circle.fill"
+            )
+            HStack(spacing: AppTheme.spaceM) {
+                helpTile(
+                    icon: "envelope.fill",
+                    title: String(localized: "home_help_contact"),
+                    subtitle: String(localized: "home_help_contact_subtitle")
+                ) { path.append(Destination.contact) }
+                helpTile(
+                    icon: "text.book.closed.fill",
+                    title: String(localized: "home_help_faq"),
+                    subtitle: String(localized: "home_help_faq_subtitle")
+                ) { path.append(Destination.faq) }
             }
+            .padding(.horizontal, AppTheme.spaceL)
         }
+    }
+
+    private func helpTile(
+        icon: String,
+        title: String,
+        subtitle: String,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: AppTheme.spaceS) {
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundStyle(AppTheme.primary)
+                    .padding(.bottom, AppTheme.spaceXS)
+                Text(title)
+                    .font(.headline)
+                    .foregroundStyle(AppTheme.ink)
+                Text(subtitle)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.leading)
+            }
+            .padding(AppTheme.spaceM)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(AppTheme.cardBackground)
+            .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusL, style: .continuous))
+            .shadow(color: AppTheme.primaryDeep.opacity(0.06), radius: 10, x: 0, y: 4)
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: - Toolbar
@@ -346,28 +397,60 @@ struct HomeView: View {
     @ToolbarContentBuilder
     private var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
-            HStack(spacing: 6) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 7, style: .continuous)
-                        .fill(AppTheme.heroGradient)
-                        .frame(width: 28, height: 28)
-                    Text("O")
-                        .font(.system(size: 18, weight: .black, design: .rounded))
-                        .foregroundStyle(.white)
-                }
+            HStack(spacing: AppTheme.spaceS) {
+                Circle()
+                    .fill(AppTheme.heroGradient)
+                    .frame(width: 28, height: 28)
+                    .overlay(
+                        Image(systemName: "heart.text.square.fill")
+                            .font(.caption2)
+                            .foregroundStyle(.white)
+                    )
                 Text("Orano")
-                    .font(.system(.headline, design: .rounded, weight: .bold))
-                    .foregroundStyle(AppTheme.ink)
+                    .font(.system(.headline, design: .serif, weight: .semibold))
             }
         }
-        ToolbarItem(placement: .topBarTrailing) {
-            Button {
-                // No-op visual anchor — future notifications inbox lives here.
-            } label: {
-                Image(systemName: "bell")
-                    .foregroundStyle(AppTheme.primary)
+    }
+
+    // MARK: - Search overlay
+
+    @ViewBuilder
+    private var searchResultsOverlay: some View {
+        if !searchText.isEmpty {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    if filteredSearch.isEmpty {
+                        OranoEmptyState(
+                            icon: "magnifyingglass",
+                            title: String(localized: "home_search_no_results"),
+                            subtitle: String(localized: "home_search_no_results_subtitle")
+                        )
+                    } else {
+                        ForEach(filteredSearch) { entry in
+                            Button {
+                                searchText = ""
+                                path.append(entry.destination)
+                            } label: {
+                                HStack(spacing: AppTheme.spaceM) {
+                                    Image(systemName: entry.icon)
+                                        .foregroundStyle(AppTheme.primary)
+                                    VStack(alignment: .leading) {
+                                        Text(entry.title).font(.subheadline.weight(.semibold))
+                                        Text(entry.subtitle).font(.caption).foregroundStyle(.secondary)
+                                    }
+                                    Spacer()
+                                }
+                                .padding(.horizontal, AppTheme.spaceL)
+                                .padding(.vertical, AppTheme.spaceM)
+                            }
+                            .buttonStyle(.plain)
+                            Divider()
+                        }
+                    }
+                }
             }
-            .accessibilityLabel("Benachrichtigungen")
+            .background(AppTheme.canvas)
+            .transition(.opacity)
         }
     }
 
@@ -376,175 +459,37 @@ struct HomeView: View {
     @ViewBuilder
     private func destinationView(for destination: Destination) -> some View {
         switch destination {
-        case .sickNote:        SickNoteFlowView()
-        case .applications:    ApplicationsView()
-        case .sickPay:         SickPayView()
-        case .bonus:           BonusView()
-        case .healthCard:      OranoPlaceholder(icon: "creditcard.fill", title: String(localized: "placeholder_health_card_title"))
-        case .contact:         ContactSheetView()
-        case .faq:             FAQWebView()
-        case .hotlineDoctor:   OranoPlaceholder(icon: "stethoscope", title: String(localized: "home_hotline_doctor_title"))
-        case .hotlineMedical:  OranoPlaceholder(icon: "waveform.path.ecg", title: String(localized: "home_hotline_medical_title"))
-        case .egkMissing:      OranoPlaceholder(icon: "creditcard", title: String(localized: "service_egk_missing_title"))
-        case .egkLost:         OranoPlaceholder(icon: "cross.case.fill", title: String(localized: "service_egk_lost_title"))
-        case .certificates:    OranoPlaceholder(icon: "doc.badge.plus", title: String(localized: "service_request_certificates_title"))
-        case .preventiveCare:  OranoPlaceholder(icon: "stethoscope", title: String(localized: "discover_prevention_title"))
-        }
-    }
-}
-
-#Preview {
-    HomeView()
-        .environment(AppState())
-}
-
-// MARK: - Home view model
-
-/// State and catalogues backing the redesigned Home screen.
-/// Kept in this file (mirrors v1's inline `BonusProgramViewModel`) so the
-/// pbxproj target membership stays unchanged — an intentional simplification
-/// that keeps v2 a drop-in replacement of v1's target layout.
-@Observable
-final class HomeViewModel {
-
-    // MARK: Filter
-
-    enum Filter: String, CaseIterable, Identifiable {
-        case all, prevention, bonus, service
-        var id: String { rawValue }
-        var label: String {
-            switch self {
-            case .all:        return String(localized: "home_v2_filter_all")
-            case .prevention: return String(localized: "home_v2_filter_prevention")
-            case .bonus:      return String(localized: "home_v2_filter_bonus")
-            case .service:    return String(localized: "home_v2_filter_service")
-            }
-        }
-        var icon: String? {
-            switch self {
-            case .all:        return "circle.grid.2x2"
-            case .prevention: return "leaf"
-            case .bonus:      return "star"
-            case .service:    return "stethoscope"
-            }
+        case .sickNote:
+            SickNoteFlowView()
+        case .applications:
+            ApplicationsView()
+        case .sickPay:
+            SickPayView()
+        case .bonus:
+            BonusView()
+        case .healthCard:
+            OranoPlaceholder(icon: "creditcard.fill", title: String(localized: "placeholder_health_card_title"))
+        case .contact:
+            ContactSheetView()
+        case .faq:
+            FAQWebView()
+        case .hotlineDoctor:
+            OranoPlaceholder(icon: "stethoscope", title: String(localized: "home_hotline_doctor_title"))
+        case .hotlineMedical:
+            OranoPlaceholder(icon: "waveform.path.ecg", title: String(localized: "home_hotline_medical_title"))
+        case .egkMissing:
+            OranoPlaceholder(icon: "creditcard", title: String(localized: "service_egk_missing_title"))
+        case .egkLost:
+            OranoPlaceholder(icon: "cross.case.fill", title: String(localized: "service_egk_lost_title"))
+        case .certificates:
+            OranoPlaceholder(icon: "doc.badge.plus", title: String(localized: "service_request_certificates_title"))
         }
     }
 
-    // MARK: QuickAction
+    // MARK: - Helpers
 
-    struct QuickAction: Identifiable {
-        let id = UUID()
-        let icon: String
-        let title: String
-        let tint: Color
-        let destination: HomeView.Destination
-    }
-
-    // MARK: DiscoverCard
-
-    struct DiscoverCard: Identifiable {
-        let id = UUID()
-        let imageName: String
-        let eyebrow: String
-        let title: String
-        let subtitle: String
-        let tint: Color
-        let destination: HomeView.Destination
-        let filter: Filter
-    }
-
-    // MARK: State
-
-    var searchText: String = ""
-    var activeFilter: Filter = .all
-    var bonusVM: BonusProgramViewModel = .init()
-
-    // MARK: Quick actions
-
-    var quickActions: [QuickAction] {
-        [
-            QuickAction(icon: "doc.text.viewfinder",
-                        title: String(localized: "widget_sick_note_title"),
-                        tint: AppTheme.primary,
-                        destination: .sickNote),
-            QuickAction(icon: "tray.full.fill",
-                        title: String(localized: "widget_applications_title"),
-                        tint: AppTheme.accent,
-                        destination: .applications),
-            QuickAction(icon: "creditcard.fill",
-                        title: String(localized: "widget_health_card_title"),
-                        tint: AppTheme.primaryDeep,
-                        destination: .healthCard),
-            QuickAction(icon: "eurosign.bank.building.fill",
-                        title: String(localized: "widget_sick_pay_title"),
-                        tint: AppTheme.primary,
-                        destination: .sickPay),
-            QuickAction(icon: "phone.bubble.fill",
-                        title: String(localized: "home_help_contact"),
-                        tint: AppTheme.accent,
-                        destination: .contact),
-            QuickAction(icon: "questionmark.bubble.fill",
-                        title: String(localized: "home_help_faq"),
-                        tint: AppTheme.primaryDeep,
-                        destination: .faq)
-        ]
-    }
-
-    // MARK: Discover cards
-
-    var discoverCards: [DiscoverCard] {
-        [
-            DiscoverCard(imageName: "discover-vorsorge",
-                         eyebrow: String(localized: "discover_prevention_eyebrow"),
-                         title: String(localized: "discover_prevention_title"),
-                         subtitle: String(localized: "discover_prevention_subtitle"),
-                         tint: AppTheme.primary,
-                         destination: .preventiveCare,
-                         filter: .prevention),
-            DiscoverCard(imageName: "discover-bonus",
-                         eyebrow: String(localized: "discover_bonus_eyebrow"),
-                         title: String(localized: "discover_bonus_title"),
-                         subtitle: String(localized: "discover_bonus_subtitle"),
-                         tint: AppTheme.accent,
-                         destination: .bonus,
-                         filter: .bonus),
-            DiscoverCard(imageName: "discover-service",
-                         eyebrow: String(localized: "discover_service_eyebrow"),
-                         title: String(localized: "discover_service_title"),
-                         subtitle: String(localized: "discover_service_subtitle"),
-                         tint: AppTheme.primaryDeep,
-                         destination: .hotlineDoctor,
-                         filter: .service),
-            DiscoverCard(imageName: "hero-family",
-                         eyebrow: String(localized: "discover_family_eyebrow"),
-                         title: String(localized: "discover_family_title"),
-                         subtitle: String(localized: "discover_family_subtitle"),
-                         tint: AppTheme.accent,
-                         destination: .applications,
-                         filter: .service)
-        ]
-    }
-
-    var filteredDiscoverCards: [DiscoverCard] {
-        guard activeFilter != .all else { return discoverCards }
-        return discoverCards.filter { $0.filter == activeFilter }
-    }
-
-    // MARK: Search
-
-    var searchResults: [SearchEntry] {
-        guard !searchText.isEmpty else { return [] }
-        let needle = searchText.lowercased()
-        return SearchEntry.catalog.filter {
-            $0.title.lowercased().contains(needle) ||
-            $0.subtitle.lowercased().contains(needle)
-        }
-    }
-
-    // MARK: Greeting
-
-    func greetingForTimeOfDay(now: Date = Date()) -> String {
-        let hour = Calendar.current.component(.hour, from: now)
+    private func greetingForTimeOfDay() -> String {
+        let hour = Calendar.current.component(.hour, from: Date())
         switch hour {
         case 5..<11:  return String(localized: "greeting_morning")
         case 11..<17: return String(localized: "greeting_afternoon")
@@ -599,17 +544,11 @@ struct SearchEntry: Identifiable {
             subtitle: String(localized: "home_help_contact_subtitle"),
             icon: "envelope.fill",
             destination: .contact
-        ),
-        SearchEntry(
-            title: String(localized: "discover_prevention_title"),
-            subtitle: String(localized: "discover_prevention_subtitle"),
-            icon: "stethoscope",
-            destination: .preventiveCare
         )
     ]
 }
 
-// MARK: - Bonus view model (kept here so we don't alter pbxproj file layout)
+// MARK: - Bonus view model (kept here to match pbxproj file listing of BonusView.swift)
 
 @Observable
 final class BonusProgramViewModel {
@@ -664,4 +603,9 @@ struct BonusMeasure: Identifiable {
     let icon: String
     let euroAmount: Double
     let date: Date
+}
+
+#Preview {
+    HomeView()
+        .environment(AppState())
 }

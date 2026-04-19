@@ -1,106 +1,78 @@
 import SwiftUI
 
-/// BKK Orano 2.0 design system — blue & orange, Google-Material influenced.
+/// BKK Orano design system — warm terracotta orange palette.
 ///
-/// Evolution note (v1 → v2): the warm terracotta palette of v1 gives way to a
-/// calmer, trust-driven blue anchor with an energetic orange accent. The type
-/// system switches from serif display to a rounded sans-serif so the product
-/// feels more digital-native, closer to Google Material 3 than to the
-/// editorial Apple Health feel of v1.
+/// All colors are defined in code; no Assets.xcassets color entries required.
+/// Values follow an Apple-inspired hierarchy: calm backgrounds, expressive
+/// accent surfaces, and a single trusted primary for action and identity.
 enum AppTheme {
 
     // MARK: - Brand palette
 
-    /// Trusted Google-style blue — the primary brand anchor.
-    static let primary = Color(red: 0.10, green: 0.46, blue: 0.91)     // #1A75E8
+    /// Deep burnt orange — primary brand color.
+    static let primary = Color(red: 0.84, green: 0.33, blue: 0.11)   // #D65519
 
-    /// Deeper navy — used on gradients, pressed states.
-    static let primaryDeep = Color(red: 0.04, green: 0.32, blue: 0.78) // #0A52C7
+    /// Rich cinnamon — darker companion used in gradients and shadows.
+    static let primaryDeep = Color(red: 0.66, green: 0.23, blue: 0.06) // #A93B10
 
-    /// Very light sky tint — soft surface background.
-    static let primarySoft = Color(red: 0.87, green: 0.93, blue: 1.00) // #DFEDFF
+    /// Warm amber — soft accent for highlights and secondary actions.
+    static let accent = Color(red: 0.95, green: 0.60, blue: 0.28)   // #F29948
 
-    /// Energetic orange — the secondary brand color, used sparingly
-    /// to signal actions and highlights.
-    static let accent = Color(red: 0.96, green: 0.62, blue: 0.04)      // #F59E0B
+    /// Soft sunset peach — decorative background tint.
+    static let peach = Color(red: 0.98, green: 0.87, blue: 0.74)    // #FBDEBD
 
-    /// Deeper amber for accent gradient endpoints.
-    static let accentDeep = Color(red: 0.85, green: 0.47, blue: 0.02)  // #D97706
-
-    /// Soft peach for accent backgrounds.
-    static let accentSoft = Color(red: 1.00, green: 0.94, blue: 0.84)  // #FFF0D6
-
-    /// Cool ink — foreground text color on light surfaces (not warm brown as in v1).
-    static let ink = Color(red: 0.10, green: 0.13, blue: 0.18)         // #1A202C
+    /// Deep warm brown — foreground color on light surfaces.
+    static let ink = Color(red: 0.22, green: 0.14, blue: 0.09)      // #382418
 
     // MARK: - Semantic surfaces
+
+    /// Surface for cards and sheets.
+    static let cardBackground = Color(.systemBackground)
+
+    /// Subtle grouped background (warm-tinted system color).
+    static let surface = Color(.secondarySystemGroupedBackground)
 
     /// Canvas background for main screens.
     static let canvas = Color(.systemGroupedBackground)
 
-    /// Surface for cards (paper).
-    static let cardBackground = Color(.systemBackground)
-
-    /// Subtle inner surface for nested groups.
-    static let surface = Color(.secondarySystemGroupedBackground)
-
-    /// Success / positive tint — calm green.
-    static let success = Color(red: 0.13, green: 0.58, blue: 0.35)     // #21945A
-
-    /// Warning tint.
-    static let warning = Color(red: 0.96, green: 0.62, blue: 0.04)
+    /// Success tint.
+    static let success = Color(red: 0.15, green: 0.55, blue: 0.38)
 
     /// Destructive / error tint.
-    static let danger = Color(red: 0.80, green: 0.24, blue: 0.24)      // #CC3D3D
+    static let danger = Color(red: 0.83, green: 0.22, blue: 0.20)
 
     // MARK: - Gradients
 
-    /// Brand gradient (deep navy → primary → accent orange) — used on hero bands.
-    /// This blue-to-orange horizon line is the single most distinctive
-    /// signature of v2; it ties every hero surface together.
+    /// Signature brand gradient (deep → bright orange) — used on hero areas.
     static let heroGradient = LinearGradient(
-        colors: [primaryDeep, primary, accent.opacity(0.80)],
+        colors: [primaryDeep, primary, accent],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
 
-    /// Compact solid-blue gradient for primary action buttons.
+    /// Compact action gradient for buttons.
     static let actionGradient = LinearGradient(
         colors: [primary, primaryDeep],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
 
-    /// Warm orange gradient for energetic accent buttons.
-    static let warmGradient = LinearGradient(
-        colors: [accent, accentDeep],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
-    )
-
-    /// Horizon gradient — deep blue → soft orange — for landscape illustrations.
-    static let horizonGradient = LinearGradient(
-        colors: [primaryDeep, primary, accent, Color(red: 1.0, green: 0.85, blue: 0.6)],
-        startPoint: .top,
-        endPoint: .bottom
-    )
-
-    /// Soft tonal gradient — sky-blue tint on white.
+    /// Soft surface gradient for banners and cards.
     static let softGradient = LinearGradient(
-        colors: [primarySoft.opacity(0.9), Color.white],
+        colors: [peach.opacity(0.6), peach.opacity(0.25)],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
 
     /// Glow overlay used on decorative shapes.
     static let glowGradient = RadialGradient(
-        colors: [accent.opacity(0.45), .clear],
+        colors: [accent.opacity(0.55), .clear],
         center: .center,
         startRadius: 0,
         endRadius: 220
     )
 
-    // MARK: - Spacing (8-pt base grid)
+    // MARK: - Spacing
 
     static let spaceXS:  CGFloat = 4
     static let spaceS:   CGFloat = 8
@@ -109,70 +81,43 @@ enum AppTheme {
     static let spaceXL:  CGFloat = 32
     static let spaceXXL: CGFloat = 48
 
-    // MARK: - Radii (tighter than v1 — closer to Material's 12/16 scale)
+    // MARK: - Radii
 
     static let radiusS:  CGFloat = 10
-    static let radiusM:  CGFloat = 14
-    static let radiusL:  CGFloat = 18
-    static let radiusXL: CGFloat = 24
+    static let radiusM:  CGFloat = 16
+    static let radiusL:  CGFloat = 22
+    static let radiusXL: CGFloat = 28
 
-    // MARK: - Elevation (Material-style shadow tokens)
+    // MARK: - Typography
 
-    struct Elevation {
-        let radius: CGFloat
-        let y: CGFloat
-        let opacity: Double
-    }
-
-    static let elevation1 = Elevation(radius: 4,  y: 1, opacity: 0.08)
-    static let elevation2 = Elevation(radius: 10, y: 3, opacity: 0.10)
-    static let elevation3 = Elevation(radius: 18, y: 6, opacity: 0.14)
-
-    // MARK: - Typography (rounded sans-serif — v1 used serif)
-
-    /// Large display — rounded, bold.
-    static let displayFont:   Font = .system(.largeTitle, design: .rounded, weight: .bold)
-    /// Section headline.
-    static let headlineFont:  Font = .system(.title3, design: .rounded, weight: .semibold)
-    /// Title on cards.
-    static let cardTitleFont: Font = .system(.headline, design: .rounded, weight: .semibold)
-    /// Body / descriptive copy — default design for readability.
-    static let bodyFont:      Font = .system(.body, design: .default)
+    /// Large display title (hero sections).
+    static let displayFont:  Font = .system(.largeTitle, design: .serif, weight: .semibold)
+    /// Section headline (card titles).
+    static let headlineFont: Font = .system(.title2, design: .default, weight: .semibold)
+    /// Body / descriptive copy.
+    static let bodyFont:     Font = .system(.body, design: .default)
     /// Numeric / data readout.
-    static let monoFont:      Font = .system(.body, design: .monospaced).weight(.medium)
+    static let monoFont:     Font = .system(.body, design: .monospaced).weight(.medium)
 }
 
 // MARK: - View modifiers
 
 extension View {
 
-    /// Standard Orano v2 card: soft Material shadow, crisp corners, paper surface.
-    func oranoCard() -> some View {
+    /// Applies the standard Orano card treatment: warm background + soft shadow.
+    func oranoCard(colorScheme: ColorScheme = .light) -> some View {
         self
             .background(AppTheme.cardBackground)
             .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusL, style: .continuous))
             .shadow(
-                color: AppTheme.ink.opacity(AppTheme.elevation2.opacity),
-                radius: AppTheme.elevation2.radius,
-                x: 0,
-                y: AppTheme.elevation2.y
+                color: colorScheme == .dark
+                    ? Color.black.opacity(0.35)
+                    : AppTheme.primaryDeep.opacity(0.08),
+                radius: 14, x: 0, y: 6
             )
     }
 
-    /// Flat (elevation-1) card for compact rows / inline groups.
-    func oranoCardFlat() -> some View {
-        self
-            .background(AppTheme.cardBackground)
-            .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusM, style: .continuous))
-            .shadow(
-                color: AppTheme.ink.opacity(AppTheme.elevation1.opacity),
-                radius: AppTheme.elevation1.radius,
-                x: 0,
-                y: AppTheme.elevation1.y
-            )
-    }
-
-    /// Primary call-to-action: filled blue.
+    /// Primary call-to-action button styling.
     func oranoPrimaryButton() -> some View {
         self
             .font(.headline)
@@ -181,29 +126,17 @@ extension View {
             .padding(.vertical, AppTheme.spaceM)
             .background(AppTheme.actionGradient)
             .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusM, style: .continuous))
-            .shadow(color: AppTheme.primary.opacity(0.30), radius: 10, x: 0, y: 4)
+            .shadow(color: AppTheme.primary.opacity(0.35), radius: 10, x: 0, y: 4)
     }
 
-    /// Warm orange button — energetic "hero" action.
-    func oranoAccentButton() -> some View {
-        self
-            .font(.headline)
-            .foregroundStyle(.white)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, AppTheme.spaceM)
-            .background(AppTheme.warmGradient)
-            .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusM, style: .continuous))
-            .shadow(color: AppTheme.accent.opacity(0.32), radius: 10, x: 0, y: 4)
-    }
-
-    /// Tonal ghost button: blue text on soft sky background.
+    /// Tonal secondary button with peach background.
     func oranoSecondaryButton() -> some View {
         self
             .font(.headline)
             .foregroundStyle(AppTheme.primary)
             .frame(maxWidth: .infinity)
             .padding(.vertical, AppTheme.spaceM)
-            .background(AppTheme.primarySoft)
+            .background(AppTheme.peach.opacity(0.65))
             .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusM, style: .continuous))
     }
 

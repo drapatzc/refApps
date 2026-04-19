@@ -126,7 +126,7 @@ struct InsuranceStatusView: View {
                 .foregroundStyle(.secondary)
         }
         .padding(AppTheme.spaceM)
-        .background(AppTheme.primarySoft)
+        .background(AppTheme.peach.opacity(0.3))
         .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusM, style: .continuous))
         .padding(.horizontal, AppTheme.spaceL)
     }

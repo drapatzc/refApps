@@ -76,7 +76,7 @@ struct SickNoteFlowView: View {
                 Capsule()
                     .fill(s.rawValue <= step.rawValue
                           ? AppTheme.primary
-                          : AppTheme.primarySoft)
+                          : AppTheme.peach.opacity(0.5))
                     .frame(height: 4)
                     .animation(.easeInOut(duration: 0.25), value: step)
             }
@@ -128,7 +128,7 @@ struct SickNoteFlowView: View {
                     .foregroundStyle(.white)
             }
             Text(String(localized: "sick_note_info_title"))
-                .font(.system(.title2, design: .rounded, weight: .semibold))
+                .font(.system(.title2, design: .serif, weight: .semibold))
                 .foregroundStyle(AppTheme.ink)
             Text(String(localized: "sick_note_info_subtitle"))
                 .font(.subheadline)
@@ -143,7 +143,7 @@ struct SickNoteFlowView: View {
         HStack(alignment: .top, spacing: AppTheme.spaceM) {
             ZStack {
                 Circle()
-                    .fill(AppTheme.primarySoft)
+                    .fill(AppTheme.peach.opacity(0.6))
                     .frame(width: 40, height: 40)
                 Text("\(number)")
                     .font(.headline)
@@ -248,7 +248,7 @@ struct SickNoteFlowView: View {
                 }
             }
             .padding(4)
-            .background(AppTheme.primarySoft)
+            .background(AppTheme.peach.opacity(0.35))
             .clipShape(Capsule())
 
             Spacer()
@@ -258,7 +258,7 @@ struct SickNoteFlowView: View {
                     .font(.title3)
                     .foregroundStyle(flashEnabled ? .white : AppTheme.primary)
                     .frame(width: 44, height: 44)
-                    .background(flashEnabled ? AppTheme.primary : AppTheme.primarySoft)
+                    .background(flashEnabled ? AppTheme.primary : AppTheme.peach.opacity(0.5))
                     .clipShape(Circle())
             }
             .accessibilityLabel(String(localized: "sick_note_flash"))
@@ -336,7 +336,7 @@ struct SickNoteFlowView: View {
                 .font(.title3)
                 .foregroundStyle(AppTheme.primary)
                 .frame(width: 52, height: 52)
-                .background(AppTheme.primarySoft)
+                .background(AppTheme.peach.opacity(0.5))
                 .clipShape(Circle())
             Text(label)
                 .font(.caption)

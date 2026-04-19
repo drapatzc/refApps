@@ -76,7 +76,7 @@ struct ContactSheetView: View {
                 .font(.title3)
                 .foregroundStyle(AppTheme.primary)
                 .frame(width: 44, height: 44)
-                .background(AppTheme.primarySoft)
+                .background(AppTheme.peach.opacity(0.5))
                 .clipShape(Circle())
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)

@@ -2,10 +2,7 @@ import SwiftUI
 
 // MARK: - Section header
 
-/// Section title used above grouped content (rounded sans-serif, blue accent icon).
-/// Evolution note: v1 used uppercase tracked caps with an orange glyph. v2
-/// drops the tracking, uses standard casing, and treats the optional icon as
-/// a subtle blue marker — in line with the Material/Google direction.
+/// Section title used above grouped content (uppercase tracking, orange accent).
 struct OranoSectionHeader: View {
     let title: String
     var icon: String? = nil
@@ -19,18 +16,22 @@ struct OranoSectionHeader: View {
                     .foregroundStyle(AppTheme.primary)
             }
             Text(title)
-                .font(.system(.subheadline, design: .rounded, weight: .semibold))
-                .foregroundStyle(AppTheme.ink)
+                .font(.footnote.weight(.semibold))
+                .tracking(0.8)
+                .textCase(.uppercase)
+                .foregroundStyle(.secondary)
             Spacer(minLength: 0)
             if let trailing { trailing }
         }
-        .padding(.horizontal, AppTheme.spaceL)
+        .padding(.horizontal, AppTheme.spaceM)
+        .padding(.top, AppTheme.spaceS)
     }
 }
 
 // MARK: - Generic content card
 
 struct OranoCard<Content: View>: View {
+    @Environment(\.colorScheme) private var colorScheme
     var padding: CGFloat = AppTheme.spaceM
     @ViewBuilder var content: () -> Content
 
@@ -38,7 +39,7 @@ struct OranoCard<Content: View>: View {
         content()
             .padding(padding)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .oranoCard()
+            .oranoCard(colorScheme: colorScheme)
     }
 }
 
@@ -56,9 +57,9 @@ struct OranoInfoRow: View {
                 Image(systemName: icon)
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(AppTheme.primary)
-                    .frame(width: 32, height: 32)
-                    .background(AppTheme.primarySoft)
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .frame(width: 28, height: 28)
+                    .background(AppTheme.peach.opacity(0.5))
+                    .clipShape(Circle())
             }
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
@@ -88,7 +89,7 @@ struct OranoPrimaryBadge: View {
             .foregroundStyle(.white)
             .padding(.horizontal, 8)
             .padding(.vertical, 3)
-            .background(AppTheme.warmGradient)
+            .background(AppTheme.actionGradient)
             .clipShape(Capsule())
     }
 }
@@ -150,12 +151,12 @@ struct OranoEmptyState: View {
         VStack(spacing: AppTheme.spaceM) {
             Image(systemName: icon)
                 .font(.system(size: 44, weight: .light))
-                .foregroundStyle(AppTheme.primary.opacity(0.7))
+                .foregroundStyle(AppTheme.primary.opacity(0.6))
                 .padding(AppTheme.spaceL)
-                .background(AppTheme.primarySoft)
+                .background(AppTheme.peach.opacity(0.35))
                 .clipShape(Circle())
             Text(title)
-                .font(.system(.title3, design: .rounded, weight: .semibold))
+                .font(.title3.weight(.semibold))
                 .foregroundStyle(.primary)
             Text(subtitle)
                 .font(.subheadline)
@@ -205,7 +206,7 @@ struct OranoTextField: View {
     }
 }
 
-// MARK: - Chip / pill (Material-style filter chip)
+// MARK: - Chip / pill
 
 struct OranoChip: View {
     let text: String
@@ -221,10 +222,10 @@ struct OranoChip: View {
             Text(text)
                 .font(.caption.weight(.medium))
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 7)
-        .background(filled ? AnyShapeStyle(AppTheme.primary) : AnyShapeStyle(AppTheme.primarySoft))
-        .foregroundStyle(filled ? Color.white : AppTheme.primary)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 6)
+        .background(filled ? AppTheme.primary : AppTheme.peach.opacity(0.45))
+        .foregroundStyle(filled ? .white : AppTheme.primary)
         .clipShape(Capsule())
     }
 }
@@ -242,11 +243,11 @@ struct OranoPlaceholder: View {
                     .font(.system(size: 64, weight: .light))
                     .foregroundStyle(AppTheme.primary)
                     .padding(AppTheme.spaceXL)
-                    .background(AppTheme.primarySoft)
+                    .background(AppTheme.peach.opacity(0.35))
                     .clipShape(Circle())
 
                 Text(title)
-                    .font(.system(.title, design: .rounded, weight: .semibold))
+                    .font(.title.weight(.semibold))
 
                 Text(String(localized: "placeholder_coming_soon"))
                     .font(.body)
@@ -265,7 +266,7 @@ struct OranoPlaceholder: View {
 
 // MARK: - Hero gradient background
 
-/// Decorative background used on Login — blue→orange horizon with a soft radial glow.
+/// Decorative background used on Login and hero screens — radial glow layered on the brand gradient.
 struct OranoHeroBackground: View {
     var body: some View {
         ZStack {
@@ -285,106 +286,5 @@ struct OranoHeroBackground: View {
             .allowsHitTesting(false)
             .ignoresSafeArea()
         }
-    }
-}
-
-// MARK: - v2: Discover feed card (big image + title + subtitle)
-
-/// A Google-inspired feed card: hero image on top, copy below — used in the
-/// new Home "Entdecken" feed and wherever a visual highlight is warranted.
-struct OranoFeedCard: View {
-    let imageName: String
-    let eyebrow: String
-    let title: String
-    let subtitle: String
-    var tint: Color = AppTheme.primary
-    var action: (() -> Void)? = nil
-
-    var body: some View {
-        Button {
-            action?()
-        } label: {
-            VStack(alignment: .leading, spacing: 0) {
-                ZStack(alignment: .bottomLeading) {
-                    Image(imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 160)
-                        .clipped()
-                        .overlay(
-                            LinearGradient(
-                                colors: [.clear, .black.opacity(0.45)],
-                                startPoint: .center,
-                                endPoint: .bottom
-                            )
-                        )
-                    Text(eyebrow)
-                        .font(.caption2.weight(.bold))
-                        .tracking(0.5)
-                        .textCase(.uppercase)
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 5)
-                        .background(tint.opacity(0.85))
-                        .clipShape(Capsule())
-                        .padding(AppTheme.spaceM)
-                }
-                VStack(alignment: .leading, spacing: 6) {
-                    Text(title)
-                        .font(.system(.headline, design: .rounded, weight: .semibold))
-                        .foregroundStyle(AppTheme.ink)
-                        .multilineTextAlignment(.leading)
-                    Text(subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(2)
-                }
-                .padding(AppTheme.spaceM)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .oranoCard()
-        }
-        .buttonStyle(.plain)
-    }
-}
-
-// MARK: - v2: Service tile (Material-style)
-
-/// Compact tile used on Service/Health hubs: icon chip on top, title below.
-struct OranoServiceTile: View {
-    let icon: String
-    let title: String
-    let subtitle: String
-    var tint: Color = AppTheme.primary
-    var action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            VStack(alignment: .leading, spacing: AppTheme.spaceS) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                        .fill(tint.opacity(0.14))
-                        .frame(width: 44, height: 44)
-                    Image(systemName: icon)
-                        .font(.title3)
-                        .foregroundStyle(tint)
-                }
-                Spacer(minLength: 6)
-                Text(title)
-                    .font(.system(.subheadline, design: .rounded, weight: .semibold))
-                    .foregroundStyle(AppTheme.ink)
-                    .multilineTextAlignment(.leading)
-                Text(subtitle)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(2)
-            }
-            .padding(AppTheme.spaceM)
-            .frame(maxWidth: .infinity, minHeight: 140, alignment: .topLeading)
-            .oranoCardFlat()
-        }
-        .buttonStyle(.plain)
     }
 }

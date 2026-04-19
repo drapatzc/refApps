@@ -53,7 +53,7 @@ struct ImprintView: View {
                 .background(AppTheme.actionGradient)
                 .clipShape(RoundedRectangle(cornerRadius: AppTheme.radiusM, style: .continuous))
             Text(title)
-                .font(.system(.title2, design: .rounded, weight: .semibold))
+                .font(.system(.title2, design: .serif, weight: .semibold))
                 .foregroundStyle(AppTheme.ink)
         }
     }

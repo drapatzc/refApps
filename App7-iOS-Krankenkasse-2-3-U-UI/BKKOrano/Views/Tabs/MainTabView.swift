@@ -1,57 +1,42 @@
 import SwiftUI
 
-/// Top-level tab shell — v2 redesign.
+/// Top-level tab shell — four tabs: Home, Health, Messages, Profile.
 ///
-/// Evolution from v1:
-/// - Drops the "Health" tab. The preventive/health content from v1 is folded
-///   into the promoted **Service** tab, which has grown from a secondary rail
-///   on Home into a first-class destination.
-/// - Switches tab icons from semi-outline to a mix of filled/outlined
-///   symbols that flip on selection — closer to Google Material's convention.
-/// - Keeps Profile as a full tab (carried over from v1 — it worked well).
+/// Compared to the reference app this drops the Service and Bonus tabs; their
+/// entry points now live inside the Home dashboard and the Health tab. Profile
+/// is promoted from modal sheet to a full tab for a flatter information
+/// architecture, matching Apple's own Health and Wallet apps.
 struct MainTabView: View {
 
     @State private var selection: Tab = .home
 
     enum Tab: Hashable {
-        case home, service, messages, profile
+        case home, health, messages, profile
     }
 
     var body: some View {
         TabView(selection: $selection) {
             HomeView()
                 .tabItem {
-                    Label(
-                        String(localized: "tab_v2_start"),
-                        systemImage: selection == .home ? "house.fill" : "house"
-                    )
+                    Label(String(localized: "tab_home"), systemImage: "square.grid.2x2.fill")
                 }
                 .tag(Tab.home)
 
-            ServiceView()
+            HealthView()
                 .tabItem {
-                    Label(
-                        String(localized: "tab_v2_service"),
-                        systemImage: selection == .service ? "square.grid.2x2.fill" : "square.grid.2x2"
-                    )
+                    Label(String(localized: "tab_health"), systemImage: "heart.text.square.fill")
                 }
-                .tag(Tab.service)
+                .tag(Tab.health)
 
             PostfachView()
                 .tabItem {
-                    Label(
-                        String(localized: "tab_postfach"),
-                        systemImage: selection == .messages ? "tray.fill" : "tray"
-                    )
+                    Label(String(localized: "tab_postfach"), systemImage: "bubble.left.and.bubble.right.fill")
                 }
                 .tag(Tab.messages)
 
             ProfileView()
                 .tabItem {
-                    Label(
-                        String(localized: "tab_profile"),
-                        systemImage: selection == .profile ? "person.crop.circle.fill" : "person.crop.circle"
-                    )
+                    Label(String(localized: "tab_profile"), systemImage: "person.crop.circle.fill")
                 }
                 .tag(Tab.profile)
         }

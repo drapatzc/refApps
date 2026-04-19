@@ -48,7 +48,7 @@ struct HealthView: View {
                 .font(.callout)
                 .foregroundStyle(.secondary)
             Text("Alles, was Sie brauchen,\nauf einem Blick.")
-                .font(.system(.title, design: .rounded, weight: .semibold))
+                .font(.system(.title, design: .serif, weight: .semibold))
                 .foregroundStyle(AppTheme.ink)
         }
         .padding(.horizontal, AppTheme.spaceL)
