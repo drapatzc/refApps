@@ -39,7 +39,6 @@
 		2222222222222222000030 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000030 /* CardView.swift */; };
 		2222222222222222000031 /* MockDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000031 /* MockDataSeeder.swift */; };
 		2222222222222222000032 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000040 /* Localizable.strings */; };
-		AAAA000000000001000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA000000000001000001 /* Assets.xcassets */; };
 		2222222222222222000033 /* InsuranceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000041 /* InsuranceCalculator.swift */; };
 		2222222222222222000050 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000050 /* MainTabView.swift */; };
 		2222222222222222000051 /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000051 /* BonusView.swift */; };
@@ -58,6 +57,7 @@
 		4444444444444444000001 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000038 /* LoginUITests.swift */; };
 		4444444444444444000002 /* ProfileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000039 /* ProfileUITests.swift */; };
 		4444444444444444000003 /* HomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000070 /* HomeUITests.swift */; };
+		AAAA000000000001000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA000000000001000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,10 +115,8 @@
 		1111111111111111000035 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		1111111111111111000036 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
 		1111111111111111000037 /* InsuranceStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceStatusTests.swift; sourceTree = "<group>"; };
-		1111111111111111000071 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		1111111111111111000038 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		1111111111111111000039 /* ProfileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUITests.swift; sourceTree = "<group>"; };
-		1111111111111111000070 /* HomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUITests.swift; sourceTree = "<group>"; };
 		1111111111111111000041 /* InsuranceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCalculator.swift; sourceTree = "<group>"; };
 		1111111111111111000050 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		1111111111111111000051 /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
@@ -130,10 +128,12 @@
 		1111111111111111000061 /* SickPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickPayView.swift; sourceTree = "<group>"; };
 		1111111111111111000062 /* ContactSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSheetView.swift; sourceTree = "<group>"; };
 		1111111111111111000063 /* FAQWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQWebView.swift; sourceTree = "<group>"; };
+		1111111111111111000070 /* HomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUITests.swift; sourceTree = "<group>"; };
+		1111111111111111000071 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		AAAA000000000001000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFFFFF0000000000000001 /* BKKOrano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKKOrano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFFFF0000000000000002 /* BKKOranoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKOranoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFFFF0000000000000003 /* BKKOranoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKOranoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAAA000000000001000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,54 +276,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		EEEEEEEEEEEEEEEE000050 /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000050 /* MainTabView.swift */,
-			);
-			path = Tabs;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000051 /* Bonus */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000051 /* BonusView.swift */,
-			);
-			path = Bonus;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000052 /* SickNote */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000052 /* SickNoteFlowView.swift */,
-			);
-			path = SickNote;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000053 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000053 /* ServiceView.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000054 /* Health */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000054 /* HealthView.swift */,
-			);
-			path = Health;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000055 /* Postfach */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000055 /* PostfachView.swift */,
-			);
-			path = Postfach;
-			sourceTree = "<group>";
-		};
 		EEEEEEEEEEEEEEEE000011 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +372,54 @@
 				1111111111111111000041 /* InsuranceCalculator.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000050 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000050 /* MainTabView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000051 /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000051 /* BonusView.swift */,
+			);
+			path = Bonus;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000052 /* SickNote */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000052 /* SickNoteFlowView.swift */,
+			);
+			path = SickNote;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000053 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000053 /* ServiceView.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000054 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000054 /* HealthView.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000055 /* Postfach */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000055 /* PostfachView.swift */,
+			);
+			path = Postfach;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -760,13 +760,14 @@
 				DEVELOPMENT_TEAM = RA49YSKNYN;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = BKKOrano/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = drcBKK3;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkorano.v2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -784,13 +785,14 @@
 				DEVELOPMENT_TEAM = RA49YSKNYN;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = BKKOrano/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = drcBKK3;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkorano.v2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
