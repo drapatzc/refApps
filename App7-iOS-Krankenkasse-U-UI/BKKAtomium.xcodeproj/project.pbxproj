@@ -39,7 +39,6 @@
 		2222222222222222000030 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000030 /* CardView.swift */; };
 		2222222222222222000031 /* MockDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000031 /* MockDataSeeder.swift */; };
 		2222222222222222000032 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000040 /* Localizable.strings */; };
-		AAAA000000000001000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA000000000001000001 /* Assets.xcassets */; };
 		2222222222222222000033 /* InsuranceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000041 /* InsuranceCalculator.swift */; };
 		2222222222222222000050 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000050 /* MainTabView.swift */; };
 		2222222222222222000051 /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000051 /* BonusView.swift */; };
@@ -75,6 +74,7 @@
 		3333333333333333000003 /* InsuranceStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000037 /* InsuranceStatusTests.swift */; };
 		4444444444444444000001 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000038 /* LoginUITests.swift */; };
 		4444444444444444000002 /* ProfileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000039 /* ProfileUITests.swift */; };
+		AAAA000000000001000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA000000000001000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,10 +164,10 @@
 		1111111111111111000080 /* AddMeasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeasureView.swift; sourceTree = "<group>"; };
 		1111111111111111000081 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1111111111111111000082 /* HelpFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFeedbackView.swift; sourceTree = "<group>"; };
+		AAAA000000000001000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFFFFF0000000000000001 /* BKKAtomium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKKAtomium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFFFF0000000000000002 /* BKKAtomiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKAtomiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFFFF0000000000000003 /* BKKAtomiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKAtomiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAAA000000000001000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,65 +310,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		EEEEEEEEEEEEEEEE000050 /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000050 /* MainTabView.swift */,
-			);
-			path = Tabs;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000051 /* Bonus */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000051 /* BonusView.swift */,
-				1111111111111111000080 /* AddMeasureView.swift */,
-			);
-			path = Bonus;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000052 /* SickNote */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000052 /* SickNoteFlowView.swift */,
-			);
-			path = SickNote;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000053 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000053 /* ServiceView.swift */,
-				1111111111111111000071 /* EGKMissingView.swift */,
-				1111111111111111000072 /* EGKLostView.swift */,
-				1111111111111111000073 /* CertificateRequestView.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000054 /* Health */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000054 /* HealthView.swift */,
-				1111111111111111000064 /* HealthDataView.swift */,
-				1111111111111111000065 /* MedicationView.swift */,
-				1111111111111111000066 /* PreventionView.swift */,
-				1111111111111111000067 /* VaccinationView.swift */,
-				1111111111111111000068 /* eAUView.swift */,
-				1111111111111111000069 /* PregnancyView.swift */,
-				1111111111111111000070 /* CostOverviewView.swift */,
-			);
-			path = Health;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000055 /* Postfach */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000055 /* PostfachView.swift */,
-			);
-			path = Postfach;
-			sourceTree = "<group>";
-		};
 		EEEEEEEEEEEEEEEE000011 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +412,65 @@
 				1111111111111111000041 /* InsuranceCalculator.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000050 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000050 /* MainTabView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000051 /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000051 /* BonusView.swift */,
+				1111111111111111000080 /* AddMeasureView.swift */,
+			);
+			path = Bonus;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000052 /* SickNote */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000052 /* SickNoteFlowView.swift */,
+			);
+			path = SickNote;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000053 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000053 /* ServiceView.swift */,
+				1111111111111111000071 /* EGKMissingView.swift */,
+				1111111111111111000072 /* EGKLostView.swift */,
+				1111111111111111000073 /* CertificateRequestView.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000054 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000054 /* HealthView.swift */,
+				1111111111111111000064 /* HealthDataView.swift */,
+				1111111111111111000065 /* MedicationView.swift */,
+				1111111111111111000066 /* PreventionView.swift */,
+				1111111111111111000067 /* VaccinationView.swift */,
+				1111111111111111000068 /* eAUView.swift */,
+				1111111111111111000069 /* PregnancyView.swift */,
+				1111111111111111000070 /* CostOverviewView.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		EEEEEEEEEEEEEEEE000055 /* Postfach */ = {
+			isa = PBXGroup;
+			children = (
+				1111111111111111000055 /* PostfachView.swift */,
+			);
+			path = Postfach;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -834,7 +834,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkatomium.net;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -858,7 +858,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.bkkatomium.net;
+				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
