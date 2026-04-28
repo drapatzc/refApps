@@ -57,6 +57,50 @@ enum AppTheme {
     static let animationSnappy = Animation.snappy(duration: 0.3)
 }
 
+// MARK: - PressableButtonStyle
+
+/// Button-Stil mit Scale-Animation beim Tap und haptic Feedback.
+struct PressableButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.94 : 1.0)
+            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: configuration.isPressed)
+            .sensoryFeedback(.impact(weight: .light), trigger: configuration.isPressed) { _, new in new }
+    }
+}
+
+// MARK: - ShimmerModifier
+
+/// View-Modifer für animierten Shimmer-Effekt beim Laden.
+struct ShimmerModifier: ViewModifier {
+    let isLoading: Bool
+    @State private var phase: CGFloat = -1
+
+    func body(content: Content) -> some View {
+        ZStack {
+            content
+
+            if isLoading {
+                TimelineView(.animation) { timeline in
+                    let now = timeline.date.timeIntervalSince1970
+                    let phase = (now.truncatingRemainder(dividingBy: 1.5) / 1.5) * 2 - 1
+
+                    LinearGradient(
+                        gradient: Gradient(stops: [
+                            .init(color: .white.opacity(0), location: phase - 0.15),
+                            .init(color: .white.opacity(0.4), location: phase),
+                            .init(color: .white.opacity(0), location: phase + 0.15)
+                        ]),
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                    .ignoresSafeArea()
+                }
+            }
+        }
+    }
+}
+
 // MARK: - View Modifier
 
 extension View {
@@ -81,6 +125,7 @@ extension View {
             .padding(.vertical, AppTheme.spacingM)
             .background(AppTheme.primaryGradient)
             .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusM))
+            .buttonStyle(PressableButtonStyle())
     }
 
     func destructiveButton() -> some View {
@@ -115,5 +160,16 @@ extension View {
         #else
         self
         #endif
+    }
+
+    /// Färbt die View mit dem Primär-Gradient (für Texte).
+    func gradientText() -> some View {
+        self
+            .foregroundStyle(AppTheme.primaryGradient)
+    }
+
+    /// Wendet einen animierten Shimmer-Effekt an, wenn `isLoading == true`.
+    func shimmer(isLoading: Bool = false) -> some View {
+        modifier(ShimmerModifier(isLoading: isLoading))
     }
 }

@@ -348,11 +348,32 @@ struct HomeView: View {
                 VStack(alignment: .leading, spacing: AppTheme.spacingL) {
                     // Begrüßung
                     VStack(alignment: .leading, spacing: AppTheme.spacingXS) {
-                        Text(greeting)
-                            .font(.title.weight(.bold))
-                            .foregroundStyle(.primary)
-                            .opacity(headerAppeared ? 1 : 0)
-                            .offset(y: headerAppeared ? 0 : 12)
+                        HStack(spacing: AppTheme.spacingS) {
+                            let greetingIcon = greeting.contains("morning") ? "sunrise.fill" :
+                                              greeting.contains("afternoon") ? "sun.max.fill" :
+                                              greeting.contains("evening") ? "sunset.fill" : "moon.stars.fill"
+
+                            if #available(iOS 17, *) {
+                                Image(systemName: greetingIcon)
+                                    .font(.title2)
+                                    .foregroundStyle(AppTheme.primary)
+                                    .phaseAnimator([0, 1, 0], trigger: headerAppeared) { content, phase in
+                                        content
+                                            .scaleEffect(1.0 + phase * 0.15)
+                                            .rotationEffect(.degrees(phase * 10))
+                                    }
+                            } else {
+                                Image(systemName: greetingIcon)
+                                    .font(.title2)
+                                    .foregroundStyle(AppTheme.primary)
+                            }
+
+                            Text(greeting)
+                                .font(.title.weight(.bold))
+                                .foregroundStyle(.primary)
+                        }
+                        .opacity(headerAppeared ? 1 : 0)
+                        .offset(y: headerAppeared ? 0 : 12)
 
                         Text(appState.currentUserName)
                             .font(.title2.weight(.semibold))
@@ -430,6 +451,12 @@ struct HomeView: View {
                                 Button("Öffnen", systemImage: "arrow.right.circle") {
                                     path.append(widget.destination)
                                 }
+                            }
+                            .scrollTransition(.animated(.bouncy)) { content, phase in
+                                content
+                                    .opacity(phase.isIdentity ? 1 : 0.5)
+                                    .scaleEffect(phase.isIdentity ? 1 : 0.9)
+                                    .blur(radius: phase.isIdentity ? 0 : 3)
                             }
                             .opacity(headerAppeared ? 1 : 0)
                             .offset(y: headerAppeared ? 0 : 20)
