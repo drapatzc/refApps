@@ -1,11 +1,66 @@
 import SwiftUI
 
+enum EGKStep: Int {
+    case initial = 0
+    case requesting = 1
+    case atDoctor = 2
+    case requestNewCard = 3
+}
+
 struct EGKMissingView: View {
+    @Environment(AppState.self) private var appState
+    @State private var currentStep: EGKStep = .initial
     @State private var showConfirm = false
-    @State private var showSuccess = false
+    @State private var isSubmitting = false
+    @State private var validUntil: Date?
 
     var body: some View {
         List {
+            switch currentStep {
+            case .initial:
+                initialSection
+            case .requesting:
+                requestingSection
+            case .atDoctor:
+                atDoctorSection
+            case .requestNewCard:
+                requestNewCardSection
+            }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle(String(localized: "service_egk_missing_title"))
+        .navigationBarTitleDisplayMode(.large)
+        .confirmationDialog(
+            "Ersatznachweis anfordern",
+            isPresented: $showConfirm,
+            titleVisibility: .visible
+        ) {
+            Button("Anfordern") {
+                Task {
+                    isSubmitting = true
+                    try? await Task.sleep(for: .milliseconds(800))
+
+                    let isSuccess = Bool.random()
+                    let msg = isSuccess ? "Ersatznachweis beantragt" : "Fehler beim Beantragen"
+                    await appState.showToast(message: msg, isSuccess: isSuccess)
+
+                    if isSuccess {
+                        validUntil = Calendar.current.date(byAdding: .day, value: 10, to: Date())
+                        currentStep = .requesting
+                        try? await Task.sleep(for: .milliseconds(500))
+                        currentStep = .atDoctor
+                    }
+                    isSubmitting = false
+                }
+            }
+            Button("Abbrechen", role: .cancel) {}
+        } message: {
+            Text("Ein Ersatznachweis wird erstellt und in Ihr Postfach gesendet.")
+        }
+    }
+
+    private var initialSection: some View {
+        Group {
             Section {
                 VStack(alignment: .leading, spacing: AppTheme.spacingM) {
                     HStack(spacing: AppTheme.spacingM) {
@@ -38,9 +93,15 @@ struct EGKMissingView: View {
                 Button {
                     showConfirm = true
                 } label: {
-                    Text("Ersatznachweis anfordern")
-                        .primaryButton()
+                    if isSubmitting {
+                        ProgressView()
+                            .tint(.white)
+                    } else {
+                        Text("Ersatznachweis anfordern")
+                    }
                 }
+                .primaryButton()
+                .disabled(isSubmitting)
                 .listRowBackground(Color.clear)
                 .listRowInsets(EdgeInsets(top: 4, leading: AppTheme.spacingM, bottom: 4, trailing: AppTheme.spacingM))
             }
@@ -57,23 +118,120 @@ struct EGKMissingView: View {
                 .listRowBackground(Color.clear)
             }
         }
-        .listStyle(.insetGrouped)
-        .navigationTitle(String(localized: "service_egk_missing_title"))
-        .navigationBarTitleDisplayMode(.large)
-        .confirmationDialog(
-            "Ersatznachweis anfordern",
-            isPresented: $showConfirm,
-            titleVisibility: .visible
-        ) {
-            Button("Anfordern") { showSuccess = true }
-            Button("Abbrechen", role: .cancel) {}
-        } message: {
-            Text("Ein Ersatznachweis wird erstellt und in Ihr Postfach gesendet.")
+    }
+
+    private var requestingSection: some View {
+        Group {
+            Section {
+                VStack(spacing: AppTheme.spacingM) {
+                    HStack(spacing: AppTheme.spacingM) {
+                        ProgressView()
+                            .tint(Color(red: 0.20, green: 0.60, blue: 0.40))
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Nachweis wird angefordert")
+                                .font(.headline.weight(.semibold))
+                            Text("Bitte warten Sie...")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                .listRowBackground(Color(red: 0.20, green: 0.60, blue: 0.40).opacity(0.06))
+            }
         }
-        .alert("Ersatznachweis erstellt", isPresented: $showSuccess) {
-            Button("OK") {}
-        } message: {
-            Text("Ihr Ersatznachweis befindet sich jetzt in Ihrem Postfach. Er ist 10 Tage gültig.")
+    }
+
+    private var atDoctorSection: some View {
+        Group {
+            Section {
+                VStack(alignment: .leading, spacing: AppTheme.spacingM) {
+                    HStack(spacing: AppTheme.spacingM) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 32))
+                            .foregroundStyle(Color(red: 0.20, green: 0.60, blue: 0.40))
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Bescheinigung liegt vor")
+                                .font(.headline.weight(.semibold))
+                            Text("Beim Arzt verwendbar")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                .listRowBackground(Color(red: 0.20, green: 0.60, blue: 0.40).opacity(0.06))
+            }
+
+            Section(header: Text("Gültigkeitsdaten")) {
+                if let validUntil {
+                    HStack {
+                        Text("Gültig bis")
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        Text(validUntil, style: .date)
+                            .font(.subheadline.weight(.semibold))
+                    }
+                    HStack {
+                        Text("Gültig für")
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        Text("10 Tage")
+                            .font(.subheadline.weight(.semibold))
+                    }
+                }
+            }
+
+            Section(header: Text("Nächste Schritte")) {
+                Button {
+                    currentStep = .requestNewCard
+                } label: {
+                    HStack {
+                        Text("Neue Karte beantragen")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.caption.weight(.semibold))
+                    }
+                    .foregroundStyle(.blue)
+                }
+            }
+        }
+    }
+
+    private var requestNewCardSection: some View {
+        Group {
+            Section {
+                VStack(alignment: .leading, spacing: AppTheme.spacingM) {
+                    HStack(spacing: AppTheme.spacingM) {
+                        Image(systemName: "creditcard")
+                            .font(.system(size: 32))
+                            .foregroundStyle(Color(red: 0.10, green: 0.45, blue: 0.55))
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Neue Karte beantragen")
+                                .font(.headline.weight(.semibold))
+                            Text("Permanente Lösung")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    Text("Beantragen Sie eine neue Gesundheitskarte um wieder vollständig versichert zu sein.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                .listRowBackground(Color(red: 0.10, green: 0.45, blue: 0.55).opacity(0.06))
+            }
+
+            Section {
+                NavigationLink {
+                    EGKLostView()
+                } label: {
+                    HStack {
+                        Text("Zur Kartenverwaltung")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.caption.weight(.semibold))
+                    }
+                    .foregroundStyle(.primary)
+                }
+            }
         }
     }
 }

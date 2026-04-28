@@ -15,20 +15,18 @@ struct ComposeMessageView: View {
 
     private var canSubmit: Bool {
         !subject.trimmingCharacters(in: .whitespaces).isEmpty &&
-        !messageBody.trimmingCharacters(in: .whitespaces).isEmpty &&
-        messageBody.count >= 10 &&
-        attachments.count <= 3
+        messageBody.trimmingCharacters(in: .whitespaces).count >= 10
     }
 
     var body: some View {
         NavigationStack {
             List {
-                Section(header: Text("Betreff")) {
-                    TextField("Betreffzeile", text: $subject)
+                Section(header: Text(String(localized: "compose_subject_label"))) {
+                    TextField(String(localized: "compose_subject_placeholder"), text: $subject)
                         .textContentType(.none)
                 }
 
-                Section(header: Text("Nachricht")) {
+                Section(header: Text(String(localized: "compose_message_label"))) {
                     TextEditor(text: $messageBody)
                         .focused($focused)
                         .frame(minHeight: 120)
@@ -45,20 +43,20 @@ struct ComposeMessageView: View {
                     let charCount = messageBody.count
                     HStack {
                         Spacer()
-                        Text("\(charCount)/10 Zeichen")
+                        Text("\(charCount)/10 " + String(localized: "common_characters"))
                             .font(.caption)
                             .foregroundStyle(charCount >= 10 ? .green : .secondary)
                     }
                 }
 
-                Section(header: Text("Anhänge")) {
+                Section(header: Text(String(localized: "compose_attachments_title"))) {
                     Button {
                         showFilePicker = true
                     } label: {
                         HStack(spacing: AppTheme.spacingM) {
                             Image(systemName: "paperclip")
                                 .foregroundStyle(AppTheme.primary)
-                            Text(attachments.count < 3 ? "Datei anhängen" : "Max. 3 Anhänge")
+                            Text(attachments.count < 3 ? String(localized: "compose_add_attachment") : String(localized: "compose_max_attachments"))
                                 .foregroundStyle(attachments.count < 3 ? .primary : .secondary)
                         }
                     }
@@ -101,8 +99,15 @@ struct ComposeMessageView: View {
                             try? await Task.sleep(for: .milliseconds(800))
 
                             let isSuccess = Bool.random()
-                            let attachmentText = attachments.isEmpty ? "" : " mit \(attachments.count) Anhängen"
-                            let feedbackMsg = isSuccess ? "Nachricht versendet\(attachmentText)!" : "Fehler beim Versenden"
+                            let feedbackMsg = if isSuccess {
+                                if attachments.isEmpty {
+                                    String(localized: "compose_sent")
+                                } else {
+                                    String(localized: "compose_sent_with_attachments", arguments: [attachments.count])
+                                }
+                            } else {
+                                String(localized: "compose_send_error")
+                            }
 
                             await appState.showToast(message: feedbackMsg, isSuccess: isSuccess)
 
@@ -130,11 +135,11 @@ struct ComposeMessageView: View {
                 }
             }
             .listStyle(.insetGrouped)
-            .navigationTitle("Neue Nachricht")
+            .navigationTitle(String(localized: "compose_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") {
+                    Button(String(localized: "common_cancel")) {
                         dismiss()
                     }
                 }

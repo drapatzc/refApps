@@ -11,46 +11,44 @@ struct ApplicationsView: View {
     @State private var showAddSheet = false
 
     var body: some View {
-        NavigationStack {
-            Group {
-                if viewModel.requests.isEmpty {
-                    EmptyStateView(
-                        icon: "doc.text.fill",
-                        title: String(localized: "applications_empty_title"),
-                        subtitle: String(localized: "applications_empty_subtitle")
-                    )
-                } else {
-                    List {
-                        ForEach(Array(viewModel.groupedByYear.reversed()), id: \.key) { year, requests in
-                            Section(header: Text("\(year)")) {
-                                ForEach(requests.sorted { $0.submittedDate > $1.submittedDate }) { request in
-                                    NavigationLink(value: request) {
-                                        ApplicationRow(request: request)
-                                    }
+        Group {
+            if viewModel.requests.isEmpty {
+                EmptyStateView(
+                    icon: "doc.text.fill",
+                    title: String(localized: "applications_empty_title"),
+                    subtitle: String(localized: "applications_empty_subtitle")
+                )
+            } else {
+                List {
+                    ForEach(Array(viewModel.groupedByYear.reversed()), id: \.key) { year, requests in
+                        Section(header: Text("\(year)")) {
+                            ForEach(requests.sorted { $0.submittedDate > $1.submittedDate }) { request in
+                                NavigationLink(value: request) {
+                                    ApplicationRow(request: request)
                                 }
                             }
                         }
                     }
-                    .listStyle(.insetGrouped)
-                    .navigationDestination(for: BenefitRequest.self) { request in
-                        BenefitRequestDetailView(request: request)
-                    }
+                }
+                .listStyle(.insetGrouped)
+            }
+        }
+        .navigationDestination(for: BenefitRequest.self) { request in
+            BenefitRequestDetailView(request: request)
+        }
+        .navigationTitle(String(localized: "applications_title"))
+        .navigationBarTitleDisplayMode(.large)
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button {
+                    showAddSheet = true
+                } label: {
+                    Image(systemName: "plus")
                 }
             }
-            .navigationTitle(String(localized: "applications_title"))
-            .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        showAddSheet = true
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
-            .sheet(isPresented: $showAddSheet) {
-                AddBenefitRequestView()
-            }
+        }
+        .sheet(isPresented: $showAddSheet) {
+            AddBenefitRequestView()
         }
         .task {
             await viewModel.setup(context: modelContext)

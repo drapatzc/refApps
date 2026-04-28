@@ -143,6 +143,7 @@
 "common_is_primary" = "Als Haupteintrag festlegen";
 "common_delete_confirm_title" = "Löschen bestätigen";
 "common_open_link" = "Link öffnen";
+"common_characters" = "Zeichen";
 "badge_primary" = "Haupt";
 "placeholder_coming_soon" = "Dieser Bereich wird in einer zukünftigen Version verfügbar sein.";
 "web_view_title" = "Webseite";
@@ -283,6 +284,10 @@
 "health_pregnancy_subtitle" = "Begleitung und Leistungen";
 "health_cost_title" = "Kostenübersicht";
 "health_cost_subtitle" = "Rechnungen und Erstattungen";
+"health_invoices_title" = "Rechnungen";
+"health_invoices_subtitle" = "Abrechnungsdokumente und Auszüge";
+"health_documents_title" = "Dokumente";
+"health_documents_subtitle" = "Krankenakten und Berichte";
 
 /* Postfach */
 "postfach_title" = "Postfach";
@@ -459,5 +464,104 @@
 "field_document_title" = "Dokumenttitel";
 "field_document_file" = "Datei";
 
-"unknownDE3" = "wird nicht verwendet";
-"unknownDE3_alt" = "wird nicht verwendet & doppelt";
+/* Toast Messages */
+"toast_success" = "Erfolgreich";
+"toast_error" = "Fehler";
+
+/* Compose Message */
+"compose_title" = "Nachricht schreiben";
+"compose_subject_label" = "Betreff";
+"compose_subject_placeholder" = "Worum geht es?";
+"compose_message_label" = "Nachricht";
+"compose_message_placeholder" = "Ihre Nachricht...";
+"compose_attachments_title" = "Anhänge";
+"compose_add_attachment" = "Datei anhängen";
+"compose_max_attachments" = "Max. 3 Anhänge";
+"compose_send_button" = "Sicher senden";
+"compose_character_count" = "%d von 10 Zeichen";
+"compose_character_remaining" = "%d/%d Zeichen";
+"compose_sent_with_attachments" = "Nachricht mit %d Anhang(en) versendet";
+"compose_sent" = "Nachricht versendet";
+"compose_send_error" = "Fehler beim Senden";
+
+/* Sick Note */
+"sick_note_title" = "Krankmeldung fotografieren";
+"sick_note_select_photo" = "Foto aufnehmen oder auswählen";
+"sick_note_rotate" = "Drehen";
+"sick_note_change" = "Ändern";
+"sick_note_done" = "Fertig";
+"sick_note_select_from_photos" = "Aus Fotos auswählen";
+"sick_note_camera" = "Kamera";
+
+/* Benefit Requests */
+"benefit_detail_title" = "Leistungsantrag";
+"benefit_status_submitted" = "Eingereicht";
+"benefit_status_in_progress" = "In Bearbeitung";
+"benefit_status_approved" = "Genehmigt";
+"benefit_status_rejected" = "Abgelehnt";
+"benefit_amount" = "Betrag";
+"benefit_processed_date" = "Bearbeitungsdatum";
+"benefit_request_form_title" = "Neuer Antrag";
+"benefit_request_type_label" = "Antragstyp";
+"benefit_request_description_label" = "Beschreibung";
+
+/* Sick Pay */
+"sick_pay_title" = "Mein Krankengeld";
+"sick_pay_period" = "Zeitraum";
+"sick_pay_daily_rate" = "Tagessatz";
+"sick_pay_total" = "Gesamtbetrag";
+"sick_pay_status_active" = "Laufend";
+"sick_pay_status_completed" = "Abgeschlossen";
+"sick_pay_calculator_title" = "Krankengeld-Rechner";
+"sick_pay_salary_label" = "Jahresgehalt";
+"sick_pay_daily_calculation" = "Bei %@ Jahresgehalt";
+
+/* EGK Missing */
+"service_egk_missing_title" = "Karte nicht dabei?";
+"egk_step_1_title" = "Nachweis wird angefordert";
+"egk_step_2_title" = "Bescheinigung liegt vor";
+"egk_step_3_title" = "Neue Karte beantragen";
+"egk_step_awaiting" = "Bitte warten Sie...";
+"egk_step_valid_until" = "Gültig bis";
+"egk_step_valid_for" = "Gültig für";
+"egk_next_steps" = "Nächste Schritte";
+"egk_request_new_card" = "Zur Kartenverwaltung";
+"egk_request_certificate" = "Ersatznachweis anfordern";
+
+/* Bonus Apply */
+"bonus_apply_title" = "Prämie beantragen";
+"bonus_current_balance" = "Aktuelles Guthaben";
+"bonus_option_transfer" = "Überweisung";
+"bonus_option_transfer_desc" = "Geld direkt auf Ihr Konto";
+"bonus_option_voucher" = "Gutschein";
+"bonus_option_voucher_desc" = "Gutschein für Apotheken";
+"bonus_option_contribution" = "Beitrag reduzieren";
+"bonus_option_contribution_desc" = "Reduzieren Sie Ihren Versicherungsbeitrag";
+"bonus_account_details" = "Kontodetails";
+"bonus_iban_label" = "IBAN eingeben";
+"bonus_submit_button" = "Beantragen";
+
+/* Contact */
+"contact_title" = "Kontakt";
+"contact_intro" = "Wir sind für Sie da – wählen Sie Ihren bevorzugten Kontaktweg.";
+"contact_section_phone" = "Telefonisch";
+"contact_section_written" = "Schriftlich";
+"contact_section_more" = "Weitere Kontakte";
+"contact_service_number_title" = "Servicehotline";
+"contact_service_number" = "0800 111 2222";
+"contact_request_title" = "Sichere Nachricht";
+"contact_address_title" = "Krankenkasse Adresse";
+"contact_address_line1" = "Musterstraße 1";
+"contact_address_line2" = "45147 Essen";
+"contact_maps_open" = "In Maps öffnen";
+"contact_praise_complaint_title" = "Lob & Beschwerde";
+"contact_advisor_title" = "Persönlicher Berater";
+"contact_more_contacts_title" = "Weitere Kontakte";
+
+/* Common */
+"common_close" = "Schließen";
+"common_cancel" = "Abbrechen";
+"common_save" = "Speichern";
+"common_delete" = "Löschen";
+"common_edit" = "Bearbeiten";
+"common_back" = "Zurück";

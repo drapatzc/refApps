@@ -141,6 +141,7 @@
 "common_is_primary" = "Set as primary entry";
 "common_delete_confirm_title" = "Confirm Deletion";
 "common_open_link" = "Open Link";
+"common_characters" = "characters";
 "badge_primary" = "Primary";
 "placeholder_coming_soon" = "This section will be available in a future version.";
 "web_view_title" = "Website";
@@ -281,6 +282,10 @@
 "health_pregnancy_subtitle" = "Guidance and services";
 "health_cost_title" = "Cost Overview";
 "health_cost_subtitle" = "Invoices and reimbursements";
+"health_invoices_title" = "Invoices";
+"health_invoices_subtitle" = "Billing documents and statements";
+"health_documents_title" = "Documents";
+"health_documents_subtitle" = "Medical records and reports";
 
 /* Postfach */
 "postfach_title" = "Inbox";
@@ -459,4 +464,104 @@
 "field_document_title" = "Document Title";
 "field_document_file" = "File";
 
-"unknown3EN" = "wird nicht verwendet";
+/* Toast Messages */
+"toast_success" = "Success";
+"toast_error" = "Error";
+
+/* Compose Message */
+"compose_title" = "Write Message";
+"compose_subject_label" = "Subject";
+"compose_subject_placeholder" = "What is this about?";
+"compose_message_label" = "Message";
+"compose_message_placeholder" = "Your message...";
+"compose_attachments_title" = "Attachments";
+"compose_add_attachment" = "Add file";
+"compose_max_attachments" = "Max 3 attachments";
+"compose_send_button" = "Send Securely";
+"compose_character_count" = "%d of 10 characters";
+"compose_character_remaining" = "%d/%d characters";
+"compose_sent_with_attachments" = "Message sent with %d attachment(s)";
+"compose_sent" = "Message sent";
+"compose_send_error" = "Error sending message";
+
+/* Sick Note */
+"sick_note_title" = "Take Sick Note Photo";
+"sick_note_select_photo" = "Take or select photo";
+"sick_note_rotate" = "Rotate";
+"sick_note_change" = "Change";
+"sick_note_done" = "Done";
+"sick_note_select_from_photos" = "Select from Photos";
+"sick_note_camera" = "Camera";
+
+/* Benefit Requests */
+"benefit_detail_title" = "Benefit Request";
+"benefit_status_submitted" = "Submitted";
+"benefit_status_in_progress" = "In Progress";
+"benefit_status_approved" = "Approved";
+"benefit_status_rejected" = "Rejected";
+"benefit_amount" = "Amount";
+"benefit_processed_date" = "Processing Date";
+"benefit_request_form_title" = "New Request";
+"benefit_request_type_label" = "Request Type";
+"benefit_request_description_label" = "Description";
+
+/* Sick Pay */
+"sick_pay_title" = "My Sick Pay";
+"sick_pay_period" = "Period";
+"sick_pay_daily_rate" = "Daily Rate";
+"sick_pay_total" = "Total Amount";
+"sick_pay_status_active" = "Active";
+"sick_pay_status_completed" = "Completed";
+"sick_pay_calculator_title" = "Sick Pay Calculator";
+"sick_pay_salary_label" = "Annual Salary";
+"sick_pay_daily_calculation" = "At %@ annual salary";
+
+/* EGK Missing */
+"service_egk_missing_title" = "Card Missing?";
+"egk_step_1_title" = "Certificate Being Requested";
+"egk_step_2_title" = "Certificate Ready";
+"egk_step_3_title" = "Request New Card";
+"egk_step_awaiting" = "Please wait...";
+"egk_step_valid_until" = "Valid Until";
+"egk_step_valid_for" = "Valid For";
+"egk_next_steps" = "Next Steps";
+"egk_request_new_card" = "Go to Card Management";
+"egk_request_certificate" = "Request Certificate";
+
+/* Bonus Apply */
+"bonus_apply_title" = "Request Bonus";
+"bonus_current_balance" = "Current Balance";
+"bonus_option_transfer" = "Bank Transfer";
+"bonus_option_transfer_desc" = "Money directly to your account";
+"bonus_option_voucher" = "Voucher";
+"bonus_option_voucher_desc" = "Voucher for pharmacies";
+"bonus_option_contribution" = "Reduce Premium";
+"bonus_option_contribution_desc" = "Reduce your insurance premium";
+"bonus_account_details" = "Account Details";
+"bonus_iban_label" = "Enter IBAN";
+"bonus_submit_button" = "Request";
+
+/* Contact */
+"contact_title" = "Contact";
+"contact_intro" = "We're here for you – choose your preferred contact method.";
+"contact_section_phone" = "By Phone";
+"contact_section_written" = "In Writing";
+"contact_section_more" = "More Contacts";
+"contact_service_number_title" = "Service Hotline";
+"contact_service_number" = "0800 111 2222";
+"contact_request_title" = "Secure Message";
+"contact_address_title" = "Insurance Company Address";
+"contact_address_line1" = "Sample Street 1";
+"contact_address_line2" = "45147 Essen";
+"contact_maps_open" = "Open in Maps";
+"contact_praise_complaint_title" = "Praise & Complaints";
+"contact_advisor_title" = "Personal Advisor";
+"contact_more_contacts_title" = "More Contacts";
+
+/* Common */
+"common_close" = "Close";
+"common_cancel" = "Cancel";
+"common_save" = "Save";
+"common_delete" = "Delete";
+"common_edit" = "Edit";
+"common_back" = "Back";

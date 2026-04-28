@@ -106,7 +106,7 @@ struct BonusView: View {
     /// `true` after the view appears, used to animate the progress ring and content entrance.
     @State private var appeared = false
     @State private var showAddMeasure = false
-    @State private var showRewardPayout = false
+    @State private var showApplyBonus = false
     @State private var showEndParticipation = false
 
     /// Renders the navigation stack with the scrollable bonus content.
@@ -141,11 +141,8 @@ struct BonusView: View {
                     viewModel.currentEuro += Double(newMeasure.points)
                 }
             }
-            .confirmationDialog("Prämie beantragen", isPresented: $showRewardPayout, titleVisibility: .visible) {
-                Button("Prämie beantragen") {}
-                Button(String(localized: "common_cancel"), role: .cancel) {}
-            } message: {
-                Text("Ihr aktuelles Guthaben von \(viewModel.formattedCurrent) wird auf Ihr hinterlegtes Konto überwiesen. Die Auszahlung erfolgt innerhalb von 5 Werktagen.")
+            .sheet(isPresented: $showApplyBonus) {
+                ApplyBonusView(currentPoints: viewModel.currentEuro)
             }
             .confirmationDialog("Teilnahme beenden", isPresented: $showEndParticipation, titleVisibility: .visible) {
                 Button("Teilnahme beenden", role: .destructive) {}
@@ -287,7 +284,7 @@ struct BonusView: View {
             }
 
             Button {
-                showRewardPayout = true
+                showApplyBonus = true
             } label: {
                 HStack {
                     Text(String(localized: "bonus_action_request_reward"))

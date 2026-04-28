@@ -191,6 +191,9 @@ struct HomeView: View {
                     .accessibilityIdentifier("profileButton")
                 }
             }
+            .navigationDestination(for: HomeDestination.self) { destination in
+                destinationView(for: destination)
+            }
             .searchable(
                 text: $searchText,
                 placement: .navigationBarDrawer(displayMode: .always),
@@ -205,9 +208,6 @@ struct HomeView: View {
             .sheet(isPresented: $showFAQSheet) {
                 FAQWebView(url: faqURL)
                     .ignoresSafeArea()
-            }
-            .navigationDestination(for: HomeDestination.self) { destination in
-                destinationView(for: destination)
             }
         }
         .onAppear {

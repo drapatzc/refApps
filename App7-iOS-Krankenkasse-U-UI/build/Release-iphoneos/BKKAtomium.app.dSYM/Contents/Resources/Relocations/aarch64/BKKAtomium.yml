@@ -1,5 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     '/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/Release-iphoneos/BKKAtomium.app/BKKAtomium'
-relocations:     []
-...

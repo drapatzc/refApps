@@ -62,7 +62,7 @@ struct ContactSheetView: View {
                     }
 
                     NavigationLink {
-                        placeholder
+                        InsuranceAddressView()
                     } label: {
                         ContactRow(
                             icon: "building.2.fill",

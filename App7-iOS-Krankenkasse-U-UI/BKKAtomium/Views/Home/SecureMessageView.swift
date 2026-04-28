@@ -2,9 +2,10 @@ import SwiftUI
 
 struct SecureMessageView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(AppState.self) private var appState
     @State private var subject = ""
     @State private var message = ""
-    @State private var showSuccess = false
+    @State private var isSubmitting = false
     @FocusState private var focusedField: Field?
 
     enum Field { case subject, message }
@@ -52,13 +53,33 @@ struct SecureMessageView: View {
 
             Section {
                 Button {
-                    focusedField = nil
-                    showSuccess = true
+                    Task {
+                        focusedField = nil
+                        isSubmitting = true
+                        try? await Task.sleep(for: .milliseconds(800))
+
+                        let isSuccess = Bool.random()
+                        let msg = isSuccess ? "Nachricht gesendet" : "Fehler beim Senden"
+                        await appState.showToast(message: msg, isSuccess: isSuccess)
+
+                        if isSuccess {
+                            subject = ""
+                            message = ""
+                            try? await Task.sleep(for: .milliseconds(500))
+                            dismiss()
+                        }
+                        isSubmitting = false
+                    }
                 } label: {
-                    Label("Sicher senden", systemImage: "lock.fill")
-                        .primaryButton()
+                    if isSubmitting {
+                        ProgressView()
+                            .tint(.white)
+                    } else {
+                        Label("Sicher senden", systemImage: "lock.fill")
+                    }
                 }
-                .disabled(!canSend)
+                .primaryButton()
+                .disabled(!canSend || isSubmitting)
                 .listRowBackground(Color.clear)
                 .listRowInsets(EdgeInsets(top: 4, leading: AppTheme.spacingM, bottom: 4, trailing: AppTheme.spacingM))
             }
@@ -73,11 +94,6 @@ struct SecureMessageView: View {
         .listStyle(.insetGrouped)
         .navigationTitle("Kontaktanfrage")
         .navigationBarTitleDisplayMode(.large)
-        .alert("Nachricht gesendet", isPresented: $showSuccess) {
-            Button("OK") { dismiss() }
-        } message: {
-            Text("Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 2 Werktagen.")
-        }
     }
 }
 
