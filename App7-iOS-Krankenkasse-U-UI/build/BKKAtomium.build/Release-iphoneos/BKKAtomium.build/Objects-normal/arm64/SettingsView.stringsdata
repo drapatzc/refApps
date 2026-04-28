@@ -1,0 +1,176 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Profile/SettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "settings_title",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 77
+        }
+      },
+      {
+        "comment": "",
+        "key": "profile_logout_confirm_title",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 79
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_section_notifications",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 11
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_section_appearance",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_section_security",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "Info",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 59
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_notification_push",
+        "location": {
+          "startingColumn": 127,
+          "startingLine": 13
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_notification_bonus",
+        "location": {
+          "startingColumn": 127,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_notification_prevention",
+        "location": {
+          "startingColumn": 138,
+          "startingLine": 21
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_appearance_mode",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_appearance_mode",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_appearance_system",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 41
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_appearance_light",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_appearance_dark",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 43
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_security_biometric",
+        "location": {
+          "startingColumn": 99,
+          "startingLine": 51
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_app_version",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 60
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_build",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 61
+        }
+      },
+      {
+        "comment": "",
+        "key": "profile_logout",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 71
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_cancel",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 80
+        }
+      },
+      {
+        "comment": "",
+        "key": "profile_logout",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "profile_logout_confirm_message",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 85
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,40 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Repositories/BenefitRequestRepository.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "notification_benefit_submitted_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "notification_benefit_submitted_body",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 37
+        }
+      },
+      {
+        "comment": "",
+        "key": "notification_benefit_status_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 52
+        }
+      },
+      {
+        "comment": "",
+        "key": "notification_benefit_status_body",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 53
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,48 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Tabs/MainTabView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "tab_home",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 52
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab_service",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 58
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab_health",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab_bonus",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab_postfach",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 76
+        }
+      }
+    ]
+  },
+  "version": 1
+}

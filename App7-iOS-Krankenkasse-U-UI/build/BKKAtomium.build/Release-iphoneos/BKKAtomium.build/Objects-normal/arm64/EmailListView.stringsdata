@@ -1,0 +1,168 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Profile/EmailListView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "profile_email",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_delete_confirm_title",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "email_empty_title",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "email_empty_subtitle",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 27
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_delete",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 37
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_edit",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_delete",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_cancel",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "email_delete_confirm",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 71
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@: %@",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 110
+        }
+      },
+      {
+        "comment": "",
+        "key": "email_edit_title",
+        "location": {
+          "startingColumn": 60,
+          "startingLine": 193
+        }
+      },
+      {
+        "comment": "",
+        "key": "email_add_title",
+        "location": {
+          "startingColumn": 100,
+          "startingLine": 193
+        }
+      },
+      {
+        "comment": "",
+        "key": "email_section_address",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 157
+        }
+      },
+      {
+        "comment": "",
+        "key": "email_section_type",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 169
+        }
+      },
+      {
+        "comment": "",
+        "key": "field_email",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "email_type",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 170
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_is_primary",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 176
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_save",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 183
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_add",
+        "location": {
+          "startingColumn": 99,
+          "startingLine": 183
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_cancel",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 197
+        }
+      }
+    ]
+  },
+  "version": 1
+}

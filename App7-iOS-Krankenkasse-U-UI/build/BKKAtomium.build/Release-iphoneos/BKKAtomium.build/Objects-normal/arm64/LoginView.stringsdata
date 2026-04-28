@@ -1,0 +1,88 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Login/LoginView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "BKK Atomium",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "login_tagline",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "login_title",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 99
+        }
+      },
+      {
+        "comment": "",
+        "key": "login_button",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 181
+        }
+      },
+      {
+        "comment": "",
+        "key": "login_password_label",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "login_hide_password",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 134
+        }
+      },
+      {
+        "comment": "",
+        "key": "login_show_password",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 135
+        }
+      },
+      {
+        "comment": "",
+        "key": "login_password_placeholder",
+        "location": {
+          "startingColumn": 57,
+          "startingLine": 113
+        }
+      },
+      {
+        "comment": "",
+        "key": "login_password_placeholder",
+        "location": {
+          "startingColumn": 59,
+          "startingLine": 116
+        }
+      },
+      {
+        "comment": "",
+        "key": "login_button",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 171
+        }
+      }
+    ]
+  },
+  "version": 1
+}

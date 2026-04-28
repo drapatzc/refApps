@@ -1,0 +1,24 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Services/NotificationService.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "notification_demo_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 97
+        }
+      },
+      {
+        "comment": "",
+        "key": "notification_demo_body",
+        "location": {
+          "startingColumn": 37,
+          "startingLine": 98
+        }
+      }
+    ]
+  },
+  "version": 1
+}

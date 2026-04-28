@@ -1,0 +1,64 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Models/Invoice.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "invoice_category_arzt",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "invoice_category_zahnarzt",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "invoice_category_medikament",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 47
+        }
+      },
+      {
+        "comment": "",
+        "key": "invoice_category_krankenhaus",
+        "location": {
+          "startingColumn": 53,
+          "startingLine": 48
+        }
+      },
+      {
+        "comment": "",
+        "key": "invoice_category_sonstiges",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "invoice_status_offen",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "invoice_status_erstattet",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 71
+        }
+      }
+    ]
+  },
+  "version": 1
+}

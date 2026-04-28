@@ -1,0 +1,512 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Home/HomeView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "greeting_morning",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "greeting_afternoon",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "greeting_evening",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 71
+        }
+      },
+      {
+        "comment": "",
+        "key": "greeting_night",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 72
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_doctor_title",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 776
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_doctor_subtitle",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 777
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_medical_title",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 783
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_medical_subtitle",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 784
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_help_contact",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 790
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_help_contact_subtitle",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 791
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_help_faq",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 797
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_help_faq_subtitle",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 798
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab_bonus",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 808
+        }
+      },
+      {
+        "comment": "",
+        "key": "bonus_title",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 809
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab_postfach",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 815
+        }
+      },
+      {
+        "comment": "",
+        "key": "postfach_title",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 816
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab_health",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 822
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_title",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 823
+        }
+      },
+      {
+        "comment": "",
+        "key": "tab_service",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 829
+        }
+      },
+      {
+        "comment": "",
+        "key": "service_title",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 830
+        }
+      },
+      {
+        "comment": "",
+        "key": "profile_settings",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 840
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings_title",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 841
+        }
+      },
+      {
+        "comment": "",
+        "key": "profile_insurance_status",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 847
+        }
+      },
+      {
+        "comment": "",
+        "key": "insurance_status_title",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 848
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_search_placeholder",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 197
+        }
+      },
+      {
+        "comment": "",
+        "key": "BKK Atomium",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 178
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_nav_profile",
+        "location": {
+          "startingColumn": 59,
+          "startingLine": 190
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_doctor_title",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 477
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_medical_title",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 486
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_section_advertisements",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 280
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_section_services",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 294
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_section_service_hotline",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 320
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_section_help",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 345
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_widget_bonus_title",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 257
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_widget_bonus_subtitle",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 259
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_widget_postfach_title",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 270
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_widget_postfach_new_messages",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 272
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_doctor_title",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 326
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_doctor_subtitle",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 327
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_medical_title",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 336
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_hotline_medical_subtitle",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 337
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_help_contact",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 353
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_help_contact_subtitle",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 354
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_help_faq",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 365
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_help_faq_subtitle",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 366
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_search_no_results",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 390
+        }
+      },
+      {
+        "comment": "",
+        "key": "home_search_no_results_subtitle",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 392
+        }
+      },
+      {
+        "comment": "",
+        "key": "BKK",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 518
+        }
+      },
+      {
+        "comment": "",
+        "key": "Atomium",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 521
+        }
+      },
+      {
+        "comment": "",
+        "key": "widget_sick_note_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 589
+        }
+      },
+      {
+        "comment": "",
+        "key": "widget_sick_note_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 590
+        }
+      },
+      {
+        "comment": "",
+        "key": "widget_applications_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 596
+        }
+      },
+      {
+        "comment": "",
+        "key": "widget_applications_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 597
+        }
+      },
+      {
+        "comment": "",
+        "key": "widget_sick_pay_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 603
+        }
+      },
+      {
+        "comment": "",
+        "key": "widget_sick_pay_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 604
+        }
+      },
+      {
+        "comment": "",
+        "key": "widget_health_card_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 610
+        }
+      },
+      {
+        "comment": "",
+        "key": "widget_health_card_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 611
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@: %@",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 669
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@: %@",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 730
+        }
+      },
+      {
+        "comment": "",
+        "key": "ad_health_tips_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 926
+        }
+      },
+      {
+        "comment": "",
+        "key": "ad_wellness_programs_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 931
+        }
+      },
+      {
+        "comment": "",
+        "key": "ad_dental_care_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 936
+        }
+      },
+      {
+        "comment": "",
+        "key": "ad_mental_health_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 941
+        }
+      }
+    ]
+  },
+  "version": 1
+}

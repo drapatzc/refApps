@@ -1,0 +1,80 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Home/AdvisorView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "contact_advisor_title",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kontaktmöglichkeiten",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sprechzeiten",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 55
+        }
+      },
+      {
+        "comment": "",
+        "key": "MW",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 15
+        }
+      },
+      {
+        "comment": "",
+        "key": "Michael Weber",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 20
+        }
+      },
+      {
+        "comment": "",
+        "key": "Kundenberater",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 22
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mo – Fr: 8:00 – 17:00 Uhr",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 61
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sa & So: Nicht verfügbar",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "Außerhalb der Sprechzeiten erreichen Sie uns über die kostenfreie Servicenummer 0800 1111 2222.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 76
+        }
+      }
+    ]
+  },
+  "version": 1
+}

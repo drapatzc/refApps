@@ -1,0 +1,16 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Legal/TermsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "profile_terms",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 9
+        }
+      }
+    ]
+  },
+  "version": 1
+}

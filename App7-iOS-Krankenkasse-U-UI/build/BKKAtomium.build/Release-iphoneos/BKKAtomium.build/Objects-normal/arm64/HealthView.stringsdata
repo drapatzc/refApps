@@ -1,0 +1,96 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Health/HealthView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "health_data_title"
+      },
+      {
+        "comment": "",
+        "key": "health_data_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "health_medication_title"
+      },
+      {
+        "comment": "",
+        "key": "health_medication_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "health_prevention_title"
+      },
+      {
+        "comment": "",
+        "key": "health_prevention_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "health_vaccination_title"
+      },
+      {
+        "comment": "",
+        "key": "health_vaccination_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "health_eau_title"
+      },
+      {
+        "comment": "",
+        "key": "health_eau_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "health_pregnancy_title"
+      },
+      {
+        "comment": "",
+        "key": "health_pregnancy_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "health_cost_title"
+      },
+      {
+        "comment": "",
+        "key": "health_cost_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "health_invoices_title"
+      },
+      {
+        "comment": "",
+        "key": "health_invoices_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "health_documents_title"
+      },
+      {
+        "comment": "",
+        "key": "health_documents_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "health_title",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 132
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@: %@",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 198
+        }
+      }
+    ]
+  },
+  "version": 1
+}

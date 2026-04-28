@@ -1,0 +1,12 @@
+{
+  "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/BKKAtomiumApp.swift" : {
+    "abi-baseline-json" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/BKKAtomium.abi.json",
+    "const-values" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/BKKAtomium-primary.swiftconstvalues",
+    "dependencies" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/BKKAtomium-primary.d",
+    "diagnostics" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/BKKAtomium-primary.dia",
+    "objc-header" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/BKKAtomium-Swift.h",
+    "swiftdoc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/BKKAtomium.swiftdoc",
+    "swiftmodule" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/BKKAtomium.swiftmodule",
+    "swiftsourceinfo" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/BKKAtomium.swiftsourceinfo"
+  }
+}

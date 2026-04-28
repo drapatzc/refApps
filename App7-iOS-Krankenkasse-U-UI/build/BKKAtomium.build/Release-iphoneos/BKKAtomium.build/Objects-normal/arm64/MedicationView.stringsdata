@@ -1,0 +1,40 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Health/MedicationView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "health_medication_title",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 73
+        }
+      },
+      {
+        "comment": "",
+        "key": "Aktuelle Medikamente",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "Ihre aktuell verordneten Medikamente im Überblick.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 48
+        }
+      },
+      {
+        "comment": "",
+        "key": "Diese Liste dient nur zur Übersicht. Bitte konsultieren Sie Ihren Arzt vor jeder Änderung der Medikation.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 65
+        }
+      }
+    ]
+  },
+  "version": 1
+}

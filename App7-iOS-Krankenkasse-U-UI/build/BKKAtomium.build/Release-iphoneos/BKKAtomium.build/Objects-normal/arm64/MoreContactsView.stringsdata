@@ -1,0 +1,56 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Home/MoreContactsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "contact_more_contacts_title",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "Fachabteilungen",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 30
+        }
+      },
+      {
+        "comment": "",
+        "key": "Zentrale",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "Unsere Fachabteilungen helfen Ihnen bei spezifischen Anliegen. Alle Nummern sind kostenfrei (Mo–Fr 8–20 Uhr).",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "Servicenummer",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "0800 1111 2222 · 24/7 kostenlos",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 52
+        }
+      }
+    ]
+  },
+  "version": 1
+}

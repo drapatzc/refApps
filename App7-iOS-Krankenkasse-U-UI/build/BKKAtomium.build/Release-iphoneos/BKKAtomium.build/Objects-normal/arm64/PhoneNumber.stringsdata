@@ -1,0 +1,40 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Models/PhoneNumber.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "phone_type_mobile",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 61
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_type_landline",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_type_work",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_type_fax",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 64
+        }
+      }
+    ]
+  },
+  "version": 1
+}

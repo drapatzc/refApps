@@ -1,0 +1,152 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Home/ContactSheetView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "contact_title",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 116
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_section_phone",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 30
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_section_written",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 52
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_section_more",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 100
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_intro",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 20
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_service_number_title",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_service_number",
+        "location": {
+          "startingColumn": 57,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_service_number_title",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_service_number",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 37
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_request_title",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 59
+        }
+      },
+      {
+        "comment": "",
+        "key": "placeholder_in_development_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 131
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_address_title",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_address_line1",
+        "location": {
+          "startingColumn": 57,
+          "startingLine": 71
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_address_line2",
+        "location": {
+          "startingColumn": 53,
+          "startingLine": 73
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_praise_complaint_title",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 83
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_advisor_title",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 94
+        }
+      },
+      {
+        "comment": "",
+        "key": "contact_more_contacts_title",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 107
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_close",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 120
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,168 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Profile/PhoneListView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "profile_phone",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 53
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_delete_confirm_title",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_empty_title",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_empty_subtitle",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 27
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_delete",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_edit",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_delete",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 72
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_cancel",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 75
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_delete_confirm",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 77
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@: %@",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 117
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_edit_title",
+        "location": {
+          "startingColumn": 60,
+          "startingLine": 200
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_add_title",
+        "location": {
+          "startingColumn": 100,
+          "startingLine": 200
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_section_number",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 164
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_section_type",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 176
+        }
+      },
+      {
+        "comment": "",
+        "key": "field_phone_number",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 166
+        }
+      },
+      {
+        "comment": "",
+        "key": "phone_type",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 177
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_is_primary",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 183
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_save",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 190
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_add",
+        "location": {
+          "startingColumn": 99,
+          "startingLine": 190
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_cancel",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 204
+        }
+      }
+    ]
+  },
+  "version": 1
+}

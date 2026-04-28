@@ -1,0 +1,40 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Profile/HelpFeedbackView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "profile_help_feedback",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 76
+        }
+      },
+      {
+        "comment": "",
+        "key": "Häufige Fragen",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 38
+        }
+      },
+      {
+        "comment": "",
+        "key": "Support",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "Feedback",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 58
+        }
+      }
+    ]
+  },
+  "version": 1
+}

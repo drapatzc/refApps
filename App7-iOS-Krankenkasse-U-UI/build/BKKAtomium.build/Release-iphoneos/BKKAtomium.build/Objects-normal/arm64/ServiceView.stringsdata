@@ -1,0 +1,64 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Service/ServiceView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "service_egk_missing_title"
+      },
+      {
+        "comment": "",
+        "key": "service_egk_missing_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "service_egk_lost_title"
+      },
+      {
+        "comment": "",
+        "key": "service_egk_lost_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "service_request_certificates_title"
+      },
+      {
+        "comment": "",
+        "key": "service_request_certificates_subtitle"
+      },
+      {
+        "comment": "",
+        "key": "service_title",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 97
+        }
+      },
+      {
+        "comment": "",
+        "key": "service_section_egk",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 80
+        }
+      },
+      {
+        "comment": "",
+        "key": "service_section_request",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 88
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@: %@",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 153
+        }
+      }
+    ]
+  },
+  "version": 1
+}

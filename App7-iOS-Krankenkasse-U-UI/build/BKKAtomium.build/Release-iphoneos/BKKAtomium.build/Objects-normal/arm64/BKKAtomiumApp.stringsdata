@@ -1,0 +1,224 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/BKKAtomiumApp.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "bonus_measure_checkup",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "bonus_measure_dental",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "bonus_measure_sport",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "service_egk_missing_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "service_egk_missing_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "service_egk_lost_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "service_egk_lost_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "service_request_certificates_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "service_request_certificates_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_data_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_data_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_medication_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_medication_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_prevention_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_prevention_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_vaccination_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_vaccination_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_eau_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_eau_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_pregnancy_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_pregnancy_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_cost_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_cost_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_invoices_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_invoices_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_documents_title",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "health_documents_subtitle",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 159
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,40 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Home/ApplicationsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "applications_title",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "applications_empty_title",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 19
+        }
+      },
+      {
+        "comment": "",
+        "key": "applications_empty_subtitle",
+        "location": {
+          "startingColumn": 53,
+          "startingLine": 20
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 25
+        }
+      }
+    ]
+  },
+  "version": 1
+}

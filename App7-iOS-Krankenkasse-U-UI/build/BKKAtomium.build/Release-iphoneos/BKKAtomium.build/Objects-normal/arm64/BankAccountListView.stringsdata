@@ -1,0 +1,184 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Profile/BankAccountListView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "profile_bank_account",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_delete_confirm_title",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank_empty_title",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank_empty_subtitle",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 27
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_delete",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 37
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_edit",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_delete",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_cancel",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank_delete_confirm",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 71
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@, IBAN: %@, %@",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 103
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank_edit_title",
+        "location": {
+          "startingColumn": 60,
+          "startingLine": 208
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank_add_title",
+        "location": {
+          "startingColumn": 99,
+          "startingLine": 208
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank_section_details",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 174
+        }
+      },
+      {
+        "comment": "",
+        "key": "IBAN & BIC",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 152
+        }
+      },
+      {
+        "comment": "",
+        "key": "field_bank_name",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 176
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank_placeholder_name",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 178
+        }
+      },
+      {
+        "comment": "",
+        "key": "field_account_holder",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 184
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank_placeholder_holder",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 186
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_is_primary",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 191
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_save",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 198
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_add",
+        "location": {
+          "startingColumn": 99,
+          "startingLine": 198
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_cancel",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 212
+        }
+      }
+    ]
+  },
+  "version": 1
+}

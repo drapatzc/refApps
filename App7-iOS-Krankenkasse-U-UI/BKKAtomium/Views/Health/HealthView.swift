@@ -18,6 +18,10 @@ enum HealthDestination: Hashable {
     case pregnancy
     /// Co-payment and cost overview.
     case costs
+    /// Invoice management.
+    case invoices
+    /// Document management.
+    case documents
 }
 
 /// A value type describing a single navigable health item shown in the list.
@@ -97,6 +101,20 @@ struct HealthView: View {
             title: String(localized: "health_cost_title"),
             subtitle: String(localized: "health_cost_subtitle"),
             destination: .costs
+        ),
+        HealthItem(
+            icon: "list.bullet.rectangle",
+            color: Color(red: 0.30, green: 0.60, blue: 0.80),
+            title: String(localized: "health_invoices_title"),
+            subtitle: String(localized: "health_invoices_subtitle"),
+            destination: .invoices
+        ),
+        HealthItem(
+            icon: "doc.circle.fill",
+            color: Color(red: 0.70, green: 0.45, blue: 0.20),
+            title: String(localized: "health_documents_title"),
+            subtitle: String(localized: "health_documents_subtitle"),
+            destination: .documents
         )
     ]
 
@@ -140,6 +158,10 @@ struct HealthView: View {
             PregnancyView()
         case .costs:
             CostOverviewView()
+        case .invoices:
+            InvoiceListView()
+        case .documents:
+            DocumentListView()
         }
     }
 }

@@ -1,0 +1,248 @@
+{
+  "source": "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/SickNote/SickNoteFlowView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "sick_note_filter_auto",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_filter_color",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 55
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_filter_bw",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 56
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_title",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 122
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_scanner_title",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_edit_title",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 124
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_submit_title",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 125
+        }
+      },
+      {
+        "comment": "",
+        "key": "common_cancel",
+        "location": {
+          "startingColumn": 59,
+          "startingLine": 109
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_info_title",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 164
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_info_subtitle",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 166
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_step1_title",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 178
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_step1_body",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 179
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_step2_title",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 184
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_step2_body",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 185
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_start_scan",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 197
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 230
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_scanner_hint",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 300
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_flash",
+        "location": {
+          "startingColumn": 59,
+          "startingLine": 340
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_capture",
+        "location": {
+          "startingColumn": 59,
+          "startingLine": 356
+        }
+      },
+      {
+        "comment": "",
+        "key": "Arbeitsunfähigkeitsbescheinigung",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 406
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_edit_crop",
+        "location": {
+          "startingColumn": 75,
+          "startingLine": 431
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_edit_adjust",
+        "location": {
+          "startingColumn": 90,
+          "startingLine": 432
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_edit_rotate",
+        "location": {
+          "startingColumn": 83,
+          "startingLine": 433
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_edit_next",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 442
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_submit_summary",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 526
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_submit_description",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 528
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_submit_confirm",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 547
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_submit_success_title",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 571
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_submit_success_body",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 573
+        }
+      },
+      {
+        "comment": "",
+        "key": "sick_note_done",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 583
+        }
+      }
+    ]
+  },
+  "version": 1
+}
