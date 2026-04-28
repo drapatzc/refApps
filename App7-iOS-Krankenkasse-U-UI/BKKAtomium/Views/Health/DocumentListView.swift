@@ -17,10 +17,10 @@ struct DocumentListView: View {
                         Image(systemName: "doc.circle.fill")
                             .font(.system(size: 32))
                             .foregroundStyle(.secondary)
-                        Text("Keine Dokumente")
+                        Text(String(localized: "health_documents_empty_title"))
                             .font(.headline)
                             .foregroundStyle(.secondary)
-                        Text("Fügen Sie Versicherungsdokumente hinzu, um sie hier zu speichern.")
+                        Text(String(localized: "health_documents_empty_subtitle"))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                             .multilineTextAlignment(.center)
@@ -30,7 +30,7 @@ struct DocumentListView: View {
                     .listRowBackground(Color.clear)
                 }
             } else {
-                Section(header: Text("Dokumente")) {
+                Section(header: Text(String(localized: "health_documents_title"))) {
                     ForEach(viewModel.documents.sorted { $0.uploadDate > $1.uploadDate }) { document in
                         DocumentRow(document: document)
                             .swipeActions(edge: .trailing) {
@@ -55,12 +55,12 @@ struct DocumentListView: View {
                     }
                 }
 
-                Section(header: Text("Speichernutzung")) {
+                Section(header: Text(String(localized: "health_documents_storage_title"))) {
                     let totalSize = viewModel.documents.map(\.fileData.count).reduce(0, +)
                     let sizeInMB = Double(totalSize) / (1024 * 1024)
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Gesamt")
+                            Text(String(localized: "health_documents_storage_total"))
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                             Text(String(format: "%.2f MB", sizeInMB))
@@ -68,7 +68,7 @@ struct DocumentListView: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 2) {
-                            Text("Dokumente")
+                            Text(String(localized: "health_documents_storage_count"))
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                             Text("\(viewModel.documents.count)")
@@ -79,7 +79,7 @@ struct DocumentListView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("Dokumente")
+        .navigationTitle(String(localized: "health_documents_title"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {

@@ -271,6 +271,22 @@ enum MockDataSeeder {
                 category: InvoiceCategory.sonstiges.rawValue,
                 status: InvoiceStatus.erstattet.rawValue,
                 invoiceDescription: "Orthopädische Einlagen"
+            ),
+            Invoice(
+                date: calendar.date(from: DateComponents(year: 2026, month: 4, day: 5))!,
+                amount: 45.00,
+                provider: "Dr. Schneider - Augenarzt",
+                category: InvoiceCategory.arzt.rawValue,
+                status: InvoiceStatus.offen.rawValue,
+                invoiceDescription: "Augenuntersuchung und neue Brille"
+            ),
+            Invoice(
+                date: calendar.date(from: DateComponents(year: 2026, month: 4, day: 12))!,
+                amount: 120.00,
+                provider: "Physio-Praxis Meyer",
+                category: InvoiceCategory.sonstiges.rawValue,
+                status: InvoiceStatus.erstattet.rawValue,
+                invoiceDescription: "10 Sitzungen Physiotherapie"
             )
         ]
         invoices.forEach { person.invoices.append($0) }
@@ -318,6 +334,20 @@ enum MockDataSeeder {
                 title: "Zahnarztrechnung Februar 2026",
                 documentType: DocumentType.rechnung.rawValue,
                 uploadDate: calendar.date(from: DateComponents(year: 2026, month: 2, day: 5))!,
+                fileData: rechnung,
+                notes: nil
+            ),
+            InsuranceDocument(
+                title: "Arztbericht März 2026",
+                documentType: DocumentType.bericht.rawValue,
+                uploadDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 10))!,
+                fileData: bescheinigung,
+                notes: "Kardiologie"
+            ),
+            InsuranceDocument(
+                title: "Laborergebnis April 2026",
+                documentType: DocumentType.bescheinigung.rawValue,
+                uploadDate: calendar.date(from: DateComponents(year: 2026, month: 4, day: 2))!,
                 fileData: rechnung,
                 notes: nil
             )

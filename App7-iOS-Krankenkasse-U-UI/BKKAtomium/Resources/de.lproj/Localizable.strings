@@ -286,8 +286,15 @@
 "health_cost_subtitle" = "Rechnungen und Erstattungen";
 "health_invoices_title" = "Rechnungen";
 "health_invoices_subtitle" = "Abrechnungsdokumente und Auszüge";
+"health_invoices_empty_title" = "Noch keine Rechnungen";
+"health_invoices_empty_subtitle" = "Ihre Rechnungen werden hier angezeigt.";
 "health_documents_title" = "Dokumente";
 "health_documents_subtitle" = "Krankenakten und Berichte";
+"health_documents_empty_title" = "Noch keine Dokumente";
+"health_documents_empty_subtitle" = "Fügen Sie Versicherungsdokumente hinzu, um sie hier zu speichern.";
+"health_documents_storage_title" = "Speichernutzung";
+"health_documents_storage_total" = "Gesamt";
+"health_documents_storage_count" = "Dokumente";
 
 /* Postfach */
 "postfach_title" = "Postfach";

@@ -284,8 +284,15 @@
 "health_cost_subtitle" = "Invoices and reimbursements";
 "health_invoices_title" = "Invoices";
 "health_invoices_subtitle" = "Billing documents and statements";
+"health_invoices_empty_title" = "No Invoices Yet";
+"health_invoices_empty_subtitle" = "Your invoices will appear here.";
 "health_documents_title" = "Documents";
 "health_documents_subtitle" = "Medical records and reports";
+"health_documents_empty_title" = "No Documents Yet";
+"health_documents_empty_subtitle" = "Add insurance documents to save them here.";
+"health_documents_storage_title" = "Storage Usage";
+"health_documents_storage_total" = "Total";
+"health_documents_storage_count" = "Documents";
 
 /* Postfach */
 "postfach_title" = "Inbox";
