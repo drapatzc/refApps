@@ -60,7 +60,7 @@ struct MockDataSeederTests {
         #expect(components.day == 22)
     }
 
-    @Test("seed() legt eine Adresse, eine Telefonnummer, ein Konto und zwei E-Mails an")
+    @Test("seed() legt 5 Adressen, 8 Telefonnummern, 4 Konten, 6 E-Mails, 7 Rechnungen, 3 Anträge und 4 Dokumente an")
     func testSeedRelationshipCounts() throws {
         let container = try makeContainer()
         let context = container.mainContext
@@ -73,9 +73,9 @@ struct MockDataSeederTests {
         #expect(person.phoneNumbers.count == 8)
         #expect(person.bankAccounts.count == 4)
         #expect(person.emailAddresses.count == 6)
-        #expect(person.invoices.count == 5)
+        #expect(person.invoices.count == 7)
         #expect(person.benefitRequests.count == 3)
-        #expect(person.documents.count == 2)
+        #expect(person.documents.count == 4)
     }
 
     @Test("seed() setzt alle Haupteinträge als primär")

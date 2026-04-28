@@ -2,45 +2,21 @@ import SwiftUI
 
 // MARK: - Mock Data
 
-/// A value type representing a single completed bonus programme measure.
 struct BonusMeasure: Identifiable, Hashable {
-
-    /// A stable random identifier for list diffing.
     let id = UUID()
-
-    /// The display name of the health measure (e.g. "Check-up 35").
     let title: String
-
-    /// The monetary bonus credited for completing the measure, in Euro cents.
     let points: Int
-
-    /// The date on which the measure was completed.
     let date: Date
-
-    /// The SF Symbols icon name representing the measure type.
     let icon: String
-
-    /// The tint color used for the measure icon and badge.
     let color: Color
 }
 
-/// The observable view model powering the bonus programme screen.
-///
-/// Holds the current bonus balance, yearly goal, and the list of completed measures.
-/// All currency formatting is performed in-memory using `NumberFormatter`.
 @Observable
 final class BonusProgramViewModel {
-
-    /// The total monetary goal for the current year in Euro.
     let goalEuro: Double = 200
-
-    /// The amount already credited towards the yearly goal in Euro.
     var currentEuro: Double = 90
-
-    /// The calendar year for which the bonus balance is displayed.
     var year: Int = Calendar.current.component(.year, from: Date())
 
-    /// The list of completed health measures contributing to the bonus balance.
     var measures: [BonusMeasure] = [
         BonusMeasure(
             title: String(localized: "bonus_measure_checkup"),
@@ -65,26 +41,12 @@ final class BonusProgramViewModel {
         )
     ]
 
-    /// The total number of completed measures.
     var completedCount: Int { measures.count }
-
-    /// The progress as a fraction between 0 and 1 relative to `goalEuro`.
     var progress: Double { min(currentEuro / goalEuro, 1.0) }
 
-    /// The current balance formatted as a locale-sensitive Euro currency string.
-    var formattedCurrent: String {
-        formatEuro(currentEuro)
-    }
+    var formattedCurrent: String { formatEuro(currentEuro) }
+    var formattedGoal: String { formatEuro(goalEuro) }
 
-    /// The yearly goal formatted as a locale-sensitive Euro currency string.
-    var formattedGoal: String {
-        formatEuro(goalEuro)
-    }
-
-    /// Returns a locale-sensitive Euro-formatted string for the given value.
-    ///
-    /// - Parameter value: The value to format.
-    /// - Returns: A currency-formatted string, e.g. `"90 €"`.
     private func formatEuro(_ value: Double) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -96,30 +58,20 @@ final class BonusProgramViewModel {
 
 // MARK: - Bonus View
 
-/// The bonus programme tab screen.
-///
-/// Displays a circular progress ring, a stats row, the list of completed measures,
-/// and action buttons for adding new measures, requesting a reward payout, or ending participation.
 struct BonusView: View {
     @State private var viewModel = BonusProgramViewModel()
-
-    /// `true` after the view appears, used to animate the progress ring and content entrance.
     @State private var appeared = false
     @State private var showAddMeasure = false
     @State private var showApplyBonus = false
     @State private var showEndParticipation = false
 
-    /// Renders the navigation stack with the scrollable bonus content.
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: AppTheme.spacingL) {
                     progressCard
-
                     statsRow
-
                     measuresList
-
                     actionButtons
 
                     Text(String(localized: "bonus_info_hint"))
@@ -151,8 +103,12 @@ struct BonusView: View {
                 Text("Möchten Sie Ihre Teilnahme am Bonusprogramm wirklich beenden? Gesammelte Punkte verfallen.")
             }
         }
+        // Haptic: Maßnahme erfolgreich hinzugefügt
+        .sensoryFeedback(.success, trigger: viewModel.completedCount)
+        // Haptic: Sheet öffnet sich
+        .sensoryFeedback(.impact(weight: .medium), trigger: showAddMeasure) { _, new in new }
         .onAppear {
-            withAnimation(.easeOut(duration: 0.6)) {
+            withAnimation(AppTheme.animationSmooth) {
                 appeared = true
             }
         }
@@ -160,9 +116,9 @@ struct BonusView: View {
 
     // MARK: - Progress Card
 
-    /// The animated circular progress ring card showing current balance vs. goal.
     private var progressCard: some View {
         VStack(spacing: AppTheme.spacingM) {
+            // Kreisförmiger Fortschrittsring
             ZStack {
                 Circle()
                     .stroke(AppTheme.primary.opacity(0.12), lineWidth: 14)
@@ -182,7 +138,7 @@ struct BonusView: View {
                         style: StrokeStyle(lineWidth: 14, lineCap: .round)
                     )
                     .rotationEffect(.degrees(-90))
-                    .animation(.spring(response: 1.0, dampingFraction: 0.9), value: appeared)
+                    .animation(.spring(duration: 1.0, bounce: 0.08), value: appeared)
 
                 VStack(spacing: AppTheme.spacingXS) {
                     Text(String(localized: "bonus_current_points"))
@@ -204,6 +160,23 @@ struct BonusView: View {
             .frame(width: 220, height: 220)
             .padding(.top, AppTheme.spacingS)
 
+            // Linearer Gauge als sekundäre Fortschrittsanzeige
+            Gauge(value: viewModel.progress) {
+                EmptyView()
+            } currentValueLabel: {
+                Text(viewModel.formattedCurrent)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(AppTheme.primary)
+            } minimumValueLabel: {
+                Text("0 €").font(.caption2).foregroundStyle(.secondary)
+            } maximumValueLabel: {
+                Text(viewModel.formattedGoal).font(.caption2).foregroundStyle(.secondary)
+            }
+            .gaugeStyle(.linearCapacity)
+            .tint(AppTheme.accent)
+            .animation(.smooth(duration: 1.2), value: viewModel.progress)
+            .padding(.horizontal, AppTheme.spacingL)
+
             Text(String(format: String(localized: "bonus_year_label"), viewModel.year))
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(AppTheme.primary)
@@ -224,7 +197,6 @@ struct BonusView: View {
 
     // MARK: - Stats Row
 
-    /// A horizontal row of two `StatCard` views showing completed measure count and current balance.
     private var statsRow: some View {
         HStack(spacing: AppTheme.spacingM) {
             StatCard(
@@ -245,7 +217,6 @@ struct BonusView: View {
 
     // MARK: - Measures List
 
-    /// The vertical list of completed health measures, rendered inside a card background.
     private var measuresList: some View {
         VStack(alignment: .leading, spacing: AppTheme.spacingS) {
             Text(String(localized: "bonus_measures_list_title"))
@@ -273,7 +244,6 @@ struct BonusView: View {
 
     // MARK: - Action Buttons
 
-    /// The three action buttons: add measure, request reward payout, and end participation.
     private var actionButtons: some View {
         VStack(spacing: AppTheme.spacingS) {
             Button {
@@ -312,22 +282,12 @@ struct BonusView: View {
 
 // MARK: - Stat Card
 
-/// A small card displaying a single statistic with an icon, value, and label.
 private struct StatCard: View {
-
-    /// The SF Symbols icon name.
     let icon: String
-
-    /// The tint color for the icon and its background circle.
     let color: Color
-
-    /// The primary value string (e.g. a count or currency amount).
     let value: String
-
-    /// The caption label describing the statistic.
     let label: String
 
-    /// Renders the icon circle, value, and label in a left-aligned vertical stack.
     var body: some View {
         VStack(alignment: .leading, spacing: AppTheme.spacingS) {
             ZStack {
@@ -337,10 +297,13 @@ private struct StatCard: View {
                 Image(systemName: icon)
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(color)
+                    // Symbol bounced bei jedem Wert-Wechsel (z.B. neue Maßnahme)
+                    .symbolEffect(.bounce, value: value)
             }
             Text(value)
                 .font(.title3.weight(.bold))
                 .foregroundStyle(.primary)
+                .contentTransition(.numericText())
             Text(label)
                 .font(.caption)
                 .foregroundStyle(.secondary)
@@ -356,13 +319,9 @@ private struct StatCard: View {
 
 // MARK: - Measure Row
 
-/// A single row in the completed measures list showing the measure icon, title, date, and bonus amount.
 private struct MeasureRow: View {
-
-    /// The measure to display.
     let measure: BonusMeasure
 
-    /// The completion date formatted as a medium-style date string.
     private var formattedDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -370,7 +329,6 @@ private struct MeasureRow: View {
         return formatter.string(from: measure.date)
     }
 
-    /// Renders the icon, title, date, and bonus amount in a horizontal layout.
     var body: some View {
         HStack(spacing: AppTheme.spacingM) {
             ZStack {

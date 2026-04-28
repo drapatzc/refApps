@@ -14,7 +14,7 @@ struct AuthServiceTests {
     /// Verifies that all demo passwords configured in `AuthService` are accepted by `login(password:)`.
     @Test("Gültige Passwörter werden akzeptiert")
     func testValidPasswords() {
-        #expect(sut.login(password: "123456") == true)
+        #expect(sut.login(password: "1234567") == true)
         #expect(sut.login(password: "Abc12345#") == true)
         #expect(sut.login(password: "testmann") == true)
     }

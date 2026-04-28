@@ -41,11 +41,11 @@ enum HomeSearchAction: Hashable {
 struct HomeView: View {
     @Environment(AppState.self) private var appState
 
-    /// Controls presentation of the profile sheet.
     @State private var showProfile = false
-
-    /// `true` after the view first appears, used to drive entrance animations.
     @State private var headerAppeared = false
+
+    /// Namespace für iOS 18 Zoom-Transitions bei Widget-Karten.
+    @Namespace private var zoomNamespace
 
     /// The current search query entered by the user.
     @State private var searchText = ""
@@ -59,8 +59,8 @@ struct HomeView: View {
     /// Controls presentation of the FAQ web sheet.
     @State private var showFAQSheet = false
 
-    /// Controls presentation of the search sheet.
-    @State private var showSearchSheet = false
+    /// Destination, die nach einer Suche als Sheet geöffnet wird.
+    @State private var sheetDestination: HomeDestination? = nil
 
     /// The FAQ URL opened in `FAQWebView`.
     private let faqURL = URL(string: "https://www.christiandrapatz.de")!
@@ -165,6 +165,11 @@ struct HomeView: View {
             dashboardContent
                 .scrollDismissesKeyboard(.interactively)
                 .background(AppTheme.groupedBackground)
+                .searchable(
+                    text: $searchText,
+                    placement: .navigationBarDrawer(displayMode: .automatic),
+                    prompt: String(localized: "home_search_placeholder")
+                )
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -174,21 +179,13 @@ struct HomeView: View {
                     }
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         Button {
-                            showSearchSheet = true
-                        } label: {
-                            Image(systemName: "magnifyingglass")
-                                .font(.title3)
-                                .foregroundStyle(AppTheme.primary)
-                        }
-                        .accessibilityLabel(String(localized: "home_search_placeholder"))
-
-                        Button {
                             showProfile = true
                         } label: {
                             Image(systemName: "person.circle.fill")
                                 .font(.title3)
                                 .foregroundStyle(AppTheme.primary)
                         }
+                        .sensoryFeedback(.impact(weight: .light), trigger: showProfile) { _, new in new }
                         .accessibilityLabel(String(localized: "home_nav_profile"))
                         .accessibilityIdentifier("profileButton")
                     }
@@ -206,13 +203,25 @@ struct HomeView: View {
                 FAQWebView(url: faqURL)
                     .ignoresSafeArea()
             }
-            .sheet(isPresented: $showSearchSheet) {
-                HomeSearchSheet(
-                    searchText: $searchText,
-                    path: $path,
-                    showContactSheet: $showContactSheet,
-                    showFAQSheet: $showFAQSheet
-                )
+            // Sheet für Suchergebnis-Navigation
+            .sheet(isPresented: Binding(
+                get: { sheetDestination != nil },
+                set: { if !$0 { sheetDestination = nil } }
+            )) {
+                if let dest = sheetDestination {
+                    NavigationStack {
+                        sheetContentView(for: dest)
+                            .toolbar {
+                                ToolbarItem(placement: .topBarTrailing) {
+                                    Button { sheetDestination = nil } label: {
+                                        Image(systemName: "xmark.circle.fill")
+                                            .foregroundStyle(.secondary)
+                                            .font(.title3)
+                                    }
+                                }
+                            }
+                    }
+                }
             }
         }
         .onAppear {
@@ -225,12 +234,116 @@ struct HomeView: View {
     // MARK: - Dashboard Content
 
     /// The full scrollable dashboard layout shown when no search is active.
+    // MARK: - Search Results (Inline)
+
+    private var searchResultsContent: some View {
+        LazyVStack(spacing: AppTheme.spacingS) {
+            if filteredItems.isEmpty {
+                VStack(spacing: AppTheme.spacingM) {
+                    Image(systemName: "magnifyingglass")
+                        .font(.system(size: 48))
+                        .foregroundStyle(.secondary.opacity(0.4))
+                    Text(String(localized: "home_search_no_results"))
+                        .font(.headline)
+                    Text(String(localized: "home_search_no_results_subtitle"))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.top, AppTheme.spacingXXL)
+                .padding(.horizontal, AppTheme.spacingM)
+            } else {
+                ForEach(filteredItems) { item in
+                    Button {
+                        handleSearchAction(item.action)
+                    } label: {
+                        HomeListRow(
+                            icon: item.icon,
+                            iconColor: item.color,
+                            title: item.title,
+                            subtitle: item.subtitle
+                        )
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        }
+        .padding(.horizontal, AppTheme.spacingM)
+        .padding(.top, AppTheme.spacingM)
+        .padding(.bottom, AppTheme.spacingXXL)
+    }
+
+    private func handleSearchAction(_ action: HomeSearchAction) {
+        withAnimation(AppTheme.animationSnappy) {
+            searchText = ""
+        }
+        switch action {
+        case .navigate(let destination):
+            sheetDestination = destination
+        case .openContact:
+            showContactSheet = true
+        case .openFAQ:
+            showFAQSheet = true
+        case .switchTab(let tab):
+            appState.selectedTab = tab
+        }
+    }
+
+    /// Destination-View für Sheet-Präsentation (ohne Zoom-Transition, da modal).
+    @ViewBuilder
+    private func sheetContentView(for destination: HomeDestination) -> some View {
+        switch destination {
+        case .sickNote:
+            SickNoteFlowView()
+        case .applications:
+            ApplicationsView()
+        case .sickPay:
+            SickPayView()
+        case .healthCard:
+            HealthCardView()
+        case .doctorHotline:
+            HotlineView(
+                title: String(localized: "home_hotline_doctor_title"),
+                number: "116 117",
+                description: "Über den ärztlichen Bereitschaftsdienst erhalten Sie schnell einen Arzttermin – auch kurzfristig, wenn Ihre Praxis keinen freien Termin hat.",
+                hours: "24 Stunden täglich, 7 Tage die Woche",
+                note: "Im lebensbedrohlichen Notfall wählen Sie bitte 112.",
+                color: Color(red: 0.20, green: 0.60, blue: 0.40)
+            )
+        case .medicalHotline:
+            HotlineView(
+                title: String(localized: "home_hotline_medical_title"),
+                number: "116 117",
+                description: "Kostenlose telefonische Beratung durch medizinisches Fachpersonal – wenn Sie unsicher sind, ob ein Arztbesuch notwendig ist.",
+                hours: "Täglich 19:00–8:00 Uhr, am Wochenende und Feiertagen ganztägig",
+                note: "Im lebensbedrohlichen Notfall wählen Sie bitte 112.",
+                color: Color(red: 0.11, green: 0.29, blue: 0.50)
+            )
+        }
+    }
+
+    // MARK: - Dashboard Content
+
     private var dashboardContent: some View {
         ScrollView {
-            VStack(spacing: 0) {
-                MountainHeroView()
-                    .frame(height: 220)
-                    .clipped()
+            if !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                searchResultsContent
+            } else {
+                VStack(spacing: 0) {
+                // Parallax-Hero: GeometryReader liest Position im ScrollView-CoordinateSpace
+                // und versetzt das Bild mit 35% Parallax-Faktor (iOS 17+, kein #available nötig)
+                GeometryReader { proxy in
+                    let minY = proxy.frame(in: .named("homeScroll")).minY
+                    MountainHeroView()
+                        .frame(
+                            width: proxy.size.width,
+                            height: max(220, 220 + minY)
+                        )
+                        .clipped()
+                        .offset(y: minY > 0 ? -minY : minY * 0.35)
+                }
+                .frame(height: 220)
 
                 VStack(alignment: .leading, spacing: AppTheme.spacingL) {
                     // Begrüßung
@@ -249,7 +362,7 @@ struct HomeView: View {
                     }
                     .padding(.horizontal, AppTheme.spacingM)
                     .padding(.top, AppTheme.spacingL)
-                    .animation(.spring(response: 0.5, dampingFraction: 0.8).delay(0.1), value: headerAppeared)
+                    .animation(.spring(duration: 0.5, bounce: 0.2).delay(0.1), value: headerAppeared)
 
                     // Bonusprogramm + Postfach Widgets
                     VStack(spacing: AppTheme.spacingM) {
@@ -308,12 +421,20 @@ struct HomeView: View {
                         ForEach(Array(HomeWidget.allWidgets.enumerated()), id: \.offset) { index, widget in
                             NavigationLink(value: widget.destination) {
                                 HomeWidgetCard(widget: widget)
+                                    // iOS 18: Zoom-Transition vom Widget zur Detail-View
+                                    .zoomTransitionSource(id: widget.destination, in: zoomNamespace)
                             }
                             .buttonStyle(.plain)
+                            // Long-Press Context Menu mit Schnellaktionen
+                            .contextMenu {
+                                Button("Öffnen", systemImage: "arrow.right.circle") {
+                                    path.append(widget.destination)
+                                }
+                            }
                             .opacity(headerAppeared ? 1 : 0)
                             .offset(y: headerAppeared ? 0 : 20)
                             .animation(
-                                .spring(response: 0.5, dampingFraction: 0.8)
+                                .spring(duration: 0.5, bounce: 0.2)
                                     .delay(0.2 + Double(index) * 0.06),
                                 value: headerAppeared
                             )
@@ -377,11 +498,12 @@ struct HomeView: View {
 
                     Spacer(minLength: AppTheme.spacingXXL)
                 }
-            }
+            } // VStack (Dashboard)
+            } // else (no search)
         }
         .scrollIndicators(.hidden)
+        .coordinateSpace(name: "homeScroll")
     }
-
 
     // MARK: - Section Title
 
@@ -411,12 +533,16 @@ struct HomeView: View {
         switch destination {
         case .sickNote:
             SickNoteFlowView()
+                .zoomTransitionDestination(id: destination, in: zoomNamespace)
         case .applications:
             ApplicationsView()
+                .zoomTransitionDestination(id: destination, in: zoomNamespace)
         case .sickPay:
             SickPayView()
+                .zoomTransitionDestination(id: destination, in: zoomNamespace)
         case .healthCard:
             HealthCardView()
+                .zoomTransitionDestination(id: destination, in: zoomNamespace)
         case .doctorHotline:
             HotlineView(
                 title: String(localized: "home_hotline_doctor_title"),
@@ -426,6 +552,7 @@ struct HomeView: View {
                 note: "Im lebensbedrohlichen Notfall wählen Sie bitte 112.",
                 color: Color(red: 0.20, green: 0.60, blue: 0.40)
             )
+            .zoomTransitionDestination(id: destination, in: zoomNamespace)
         case .medicalHotline:
             HotlineView(
                 title: String(localized: "home_hotline_medical_title"),
@@ -435,6 +562,7 @@ struct HomeView: View {
                 note: "Im lebensbedrohlichen Notfall wählen Sie bitte 112.",
                 color: Color(red: 0.11, green: 0.29, blue: 0.50)
             )
+            .zoomTransitionDestination(id: destination, in: zoomNamespace)
         }
     }
 }
@@ -870,22 +998,22 @@ struct AdCarouselItem: Identifiable {
         AdCarouselItem(
             title: String(localized: "ad_health_tips_title"),
             imageName: "ad-health-tips",
-            url: URL(string: "https://www.bkk-atomium.de/gesundheitstipps")!
+            url: URL(string: "https://christiandrapatz.de/de/")!
         ),
         AdCarouselItem(
             title: String(localized: "ad_wellness_programs_title"),
             imageName: "ad-wellness",
-            url: URL(string: "https://www.bkk-atomium.de/wellnessprogramme")!
+            url: URL(string: "https://xcodex.betterlocale.com")!
         ),
         AdCarouselItem(
             title: String(localized: "ad_dental_care_title"),
             imageName: "ad-dental",
-            url: URL(string: "https://www.bkk-atomium.de/zahnpflege")!
+            url: URL(string: "https://betterlocale.com/de-home/")!
         ),
         AdCarouselItem(
             title: String(localized: "ad_mental_health_title"),
             imageName: "ad-mental-health",
-            url: URL(string: "https://www.bkk-atomium.de/psychische-gesundheit")!
+            url: URL(string: "https://atomiumgames.com")!
         )
     ]
 }

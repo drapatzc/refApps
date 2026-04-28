@@ -1,10 +1,6 @@
 import SwiftUI
 
 /// The login screen presented when the user is not authenticated.
-///
-/// `LoginView` renders a full-screen hero background image, a brand header,
-/// and a `LoginCard` that collects the password. After a successful login it
-/// delegates the session transition to `AppState.login(name:insuranceNumber:)`.
 struct LoginView: View {
     @Environment(AppState.self) private var appState
     @Environment(\.modelContext) private var modelContext
@@ -12,20 +8,25 @@ struct LoginView: View {
     @State private var showPassword = false
     @FocusState private var passwordFocused: Bool
 
-    /// Renders the hero background, branding section, and login card.
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                // Hintergrundbild — Österreich Sommer ~2500m
-                FamilyHeroBackground()
-                    .ignoresSafeArea()
+                // iOS 18+: Animiertes MeshGradient-Hintergrund
+                // iOS 17: Fotorealistisches Alpenbild
+                if #available(iOS 18, *) {
+                    AnimatedMeshBackground()
+                        .ignoresSafeArea()
+                } else {
+                    FamilyHeroBackground()
+                        .ignoresSafeArea()
+                }
 
-                // Dunkler Overlay-Gradient
+                // Dunkler Overlay-Gradient für Lesbarkeit
                 LinearGradient(
                     colors: [
-                        Color.black.opacity(0.1),
-                        Color.black.opacity(0.55),
-                        Color.black.opacity(0.75)
+                        Color.black.opacity(0.05),
+                        Color.black.opacity(0.45),
+                        Color.black.opacity(0.70)
                     ],
                     startPoint: .top,
                     endPoint: .bottom
@@ -37,10 +38,19 @@ struct LoginView: View {
 
                     // Branding
                     VStack(spacing: AppTheme.spacingS) {
-                        Image(systemName: "cross.circle.fill")
-                            .font(.system(size: 52))
-                            .foregroundStyle(.white)
-                            .symbolEffect(.pulse, options: .repeating)
+                        // iOS 18: .breathe für lebendigen Puls-Effekt
+                        // iOS 17: .pulse als Fallback
+                        if #available(iOS 18, *) {
+                            Image(systemName: "cross.circle.fill")
+                                .font(.system(size: 52))
+                                .foregroundStyle(.white)
+                                .symbolEffect(.breathe, options: .repeating)
+                        } else {
+                            Image(systemName: "cross.circle.fill")
+                                .font(.system(size: 52))
+                                .foregroundStyle(.white)
+                                .symbolEffect(.pulse, options: .repeating)
+                        }
 
                         Text("BKK Atomium")
                             .font(.system(size: 30, weight: .bold, design: .rounded))
@@ -64,11 +74,13 @@ struct LoginView: View {
                 .offset(y: -100)
             }
             .ignoresSafeArea(.keyboard)
+            .sensoryFeedback(.success, trigger: viewModel.loginSucceeded) { _, new in new }
+            .sensoryFeedback(.error, trigger: viewModel.errorMessage) { _, new in new != nil }
             .onChange(of: viewModel.loginSucceeded) { _, succeeded in
                 if succeeded {
                     Task { @MainActor in
                         try? await Task.sleep(for: .milliseconds(300))
-                        withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                        withAnimation(.spring(duration: 0.4, bounce: 0.1)) {
                             appState.login(name: "Christian Drapatz", insuranceNumber: "A987654321")
                         }
                     }
@@ -81,19 +93,14 @@ struct LoginView: View {
     }
 }
 
-/// The frosted-glass card that houses the password field, error banner, and login button.
+// MARK: - Login Card
+
 struct LoginCard: View {
-    /// The view model driving the login form state.
     @Bindable var viewModel: LoginViewModel
-
-    /// Controls whether the password is shown in plain text.
     @Binding var showPassword: Bool
-
-    /// Focus state for the password text field.
     @FocusState var passwordFocused: Bool
     @Environment(\.colorScheme) private var colorScheme
 
-    /// Renders the password field, optional error banner, and the primary login button.
     var body: some View {
         VStack(spacing: AppTheme.spacingL) {
             Text(String(localized: "login_title"))
@@ -147,7 +154,7 @@ struct LoginCard: View {
                 )
             }
 
-            // Fehler
+            // Fehler-Banner
             if let error = viewModel.errorMessage {
                 ErrorBannerView(message: error) {
                     viewModel.clearError()
@@ -176,7 +183,7 @@ struct LoginCard: View {
             .primaryButton()
             .disabled(!viewModel.isLoginButtonEnabled)
             .opacity(viewModel.isLoginButtonEnabled ? 1.0 : 0.6)
-            .animation(.easeInOut(duration: 0.2), value: viewModel.isLoginButtonEnabled)
+            .animation(AppTheme.animationSnappy, value: viewModel.isLoginButtonEnabled)
             .accessibilityIdentifier("loginButton")
             .accessibilityLabel(String(localized: "login_button"))
         }
@@ -184,17 +191,48 @@ struct LoginCard: View {
         .background(.regularMaterial)
         .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusXL))
         .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 10)
-        .animation(.easeInOut(duration: 0.2), value: viewModel.errorMessage)
+        .animation(AppTheme.animationSnappy, value: viewModel.errorMessage)
     }
 }
 
-// MARK: - Hintergrund: Österreich Sommer ~2500m (Alpenwiese + Berge)
+// MARK: - Animated Mesh Background (iOS 18+)
 
-/// A full-screen background view that loads a mountain landscape photo asynchronously.
-///
-/// Renders the local hero image from Assets, stretched to fill the available space.
+/// Sanft animierter MeshGradient in der BKK-Atomium Farbpalette (Dunkelblau / Dunkelgrün).
+/// Nutzt TimelineView für flüssige 60 fps Animation ohne Battery-Drain durch withAnimation-Loop.
+@available(iOS 18.0, *)
+struct AnimatedMeshBackground: View {
+    var body: some View {
+        TimelineView(.animation) { context in
+            let t = Float(context.date.timeIntervalSinceReferenceDate * 0.22)
+            MeshGradient(
+                width: 3, height: 3,
+                points: [
+                    [0, 0], [0.5, 0], [1, 0],
+                    [0,       0.5 + 0.09 * sin(t)       ],
+                    [0.5 + 0.05 * cos(t * 0.75), 0.5    ],
+                    [1,       0.5 - 0.07 * sin(t * 1.1) ],
+                    [0, 1], [0.5, 1], [1, 1]
+                ],
+                colors: [
+                    Color(red: 0.04, green: 0.12, blue: 0.28),
+                    Color(red: 0.08, green: 0.22, blue: 0.42),
+                    Color(red: 0.05, green: 0.16, blue: 0.34),
+                    Color(red: 0.07, green: 0.22, blue: 0.36),
+                    Color(red: 0.10, green: 0.30, blue: 0.32),
+                    Color(red: 0.08, green: 0.24, blue: 0.36),
+                    Color(red: 0.04, green: 0.13, blue: 0.24),
+                    Color(red: 0.08, green: 0.32, blue: 0.22),
+                    Color(red: 0.06, green: 0.22, blue: 0.18)
+                ]
+            )
+        }
+        .ignoresSafeArea()
+    }
+}
+
+// MARK: - Foto-Hintergrund (iOS 17 Fallback)
+
 struct FamilyHeroBackground: View {
-
     var body: some View {
         GeometryReader { geo in
             Image("hero-login")

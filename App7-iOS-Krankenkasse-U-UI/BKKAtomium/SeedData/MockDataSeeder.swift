@@ -339,7 +339,7 @@ enum MockDataSeeder {
             ),
             InsuranceDocument(
                 title: "Arztbericht März 2026",
-                documentType: DocumentType.bericht.rawValue,
+                documentType: DocumentType.vertrag.rawValue,
                 uploadDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 10))!,
                 fileData: bescheinigung,
                 notes: "Kardiologie"

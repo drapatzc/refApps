@@ -78,6 +78,7 @@ struct MainTabView: View {
                 .tag(Tab.postfach)
         }
         .tint(AppTheme.primary)
+        .sensoryFeedback(.selection, trigger: selection)
         .onChange(of: selection) { _, newValue in
             appState.selectedTab = newValue.stringValue
         }
