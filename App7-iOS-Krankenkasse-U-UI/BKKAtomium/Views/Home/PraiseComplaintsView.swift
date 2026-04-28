@@ -31,7 +31,7 @@ struct PraiseComplaintsView: View {
     @FocusState private var focused: Bool
 
     private var canSend: Bool {
-        message.trimmingCharacters(in: .whitespacesAndNewlines).count >= 10
+        !message.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     var body: some View {

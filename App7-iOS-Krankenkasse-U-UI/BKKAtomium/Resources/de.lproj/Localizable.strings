@@ -335,6 +335,8 @@
 "applications_title" = "Meine Anträge";
 "applications_intro" = "Hier finden Sie alle Anträge, die Sie eingereicht oder erhalten haben.";
 "applications_entry_format" = "Antrag %d";
+"applications_empty_title" = "Noch keine Anträge";
+"applications_empty_subtitle" = "Ihre eingereichten Anträge werden hier angezeigt.";
 
 /* Sick Pay */
 "sick_pay_title" = "Mein Krankengeld";

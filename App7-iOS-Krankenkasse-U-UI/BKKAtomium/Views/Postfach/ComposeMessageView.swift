@@ -103,7 +103,10 @@ struct ComposeMessageView: View {
                                 if attachments.isEmpty {
                                     String(localized: "compose_sent")
                                 } else {
-                                    String(localized: "compose_sent_with_attachments", arguments: [attachments.count])
+											  String(
+													format: String(localized: "compose_sent_with_attachments"),
+													arguments: [attachments.count]
+											  )
                                 }
                             } else {
                                 String(localized: "compose_send_error")
@@ -125,7 +128,7 @@ struct ComposeMessageView: View {
                             ProgressView()
                                 .tint(.white)
                         } else {
-                            Text("Senden")
+                            Text(String(localized: "compose_send_button"))
                         }
                     }
                     .primaryButton()

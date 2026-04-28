@@ -333,6 +333,8 @@
 "applications_title" = "My Applications";
 "applications_intro" = "Here you'll find all applications you have submitted or received.";
 "applications_entry_format" = "Application %d";
+"applications_empty_title" = "No Applications Yet";
+"applications_empty_subtitle" = "Your submitted applications will appear here.";
 
 /* Sick Pay */
 "sick_pay_title" = "My Sick Pay";
