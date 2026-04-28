@@ -1,0 +1,13 @@
+{
+  "images" : [
+    {
+      "filename" : "ad-health-tips.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

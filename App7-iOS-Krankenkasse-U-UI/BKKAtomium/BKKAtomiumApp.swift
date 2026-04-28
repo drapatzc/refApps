@@ -27,7 +27,10 @@ struct BKKAtomiumApp: App {
             Address.self,
             PhoneNumber.self,
             BankAccount.self,
-            EmailAddress.self
+            EmailAddress.self,
+            Invoice.self,
+            InsuranceDocument.self,
+            BenefitRequest.self
         ])
         let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         do {
@@ -72,6 +75,7 @@ struct RootView: View {
             }
         }
         .animation(.easeInOut(duration: 0.35), value: appState.isLoggedIn)
+        .preferredColorScheme(appState.colorSchemeOverride)
         .task {
             await MockDataSeeder.seedIfNeeded(context: modelContext)
         }

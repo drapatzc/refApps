@@ -5,6 +5,7 @@ import SwiftUI
 /// `MainTabView` hosts five tabs — Home, Service, Health, Bonus, and Postfach —
 /// and applies the app's primary tint color to the tab bar.
 struct MainTabView: View {
+    @Environment(AppState.self) private var appState
 
     /// The currently selected tab.
     @State private var selection: Tab = .home
@@ -21,6 +22,26 @@ struct MainTabView: View {
         case bonus
         /// The message inbox tab.
         case postfach
+
+        var stringValue: String {
+            switch self {
+            case .home: return "home"
+            case .service: return "service"
+            case .health: return "health"
+            case .bonus: return "bonus"
+            case .postfach: return "postfach"
+            }
+        }
+
+        init(stringValue: String) {
+            switch stringValue {
+            case "service": self = .service
+            case "health": self = .health
+            case "bonus": self = .bonus
+            case "postfach": self = .postfach
+            default: self = .home
+            }
+        }
     }
 
     /// Renders the `TabView` with all five tab items.
@@ -57,6 +78,15 @@ struct MainTabView: View {
                 .tag(Tab.postfach)
         }
         .tint(AppTheme.primary)
+        .onChange(of: selection) { _, newValue in
+            appState.selectedTab = newValue.stringValue
+        }
+        .onChange(of: appState.selectedTab) { _, newValue in
+            selection = Tab(stringValue: newValue)
+        }
+        .onAppear {
+            selection = Tab(stringValue: appState.selectedTab)
+        }
     }
 }
 

@@ -142,8 +142,10 @@
 "common_delete" = "Löschen";
 "common_is_primary" = "Als Haupteintrag festlegen";
 "common_delete_confirm_title" = "Löschen bestätigen";
+"common_open_link" = "Link öffnen";
 "badge_primary" = "Haupt";
 "placeholder_coming_soon" = "Dieser Bereich wird in einer zukünftigen Version verfügbar sein.";
+"web_view_title" = "Webseite";
 
 /* Validation */
 "validation_empty" = "%@ darf nicht leer sein.";
@@ -190,6 +192,15 @@
 "home_search_no_results_subtitle" = "Versuchen Sie einen anderen Suchbegriff.";
 "home_section_service_hotline" = "Service";
 "home_section_help" = "Hilfe";
+"home_section_advertisements" = "Empfehlungen";
+"home_widget_bonus_title" = "Bonusprogramm";
+"home_widget_bonus_subtitle" = "Punkte sammeln";
+"home_widget_postfach_title" = "Postfach";
+"home_widget_postfach_new_messages" = "es sind neue Nachrichten eingegangen";
+"ad_health_tips_title" = "Gesundheitstipps";
+"ad_wellness_programs_title" = "Wellnessprogramme";
+"ad_dental_care_title" = "Zahnpflege";
+"ad_mental_health_title" = "Psychische Gesundheit";
 "home_hotline_doctor_title" = "Arztterminservice";
 "home_hotline_doctor_subtitle" = "6 ct pro Anruf aus dem Festnetz";
 "home_hotline_medical_title" = "Medizinische Beratung";
@@ -342,5 +353,111 @@
 "contact_advisor_title" = "Kundenberater";
 "contact_more_contacts_title" = "Weitere Ansprechpartner";
 
+/* Biometrics */
+"biometrics_reason" = "Für die sichere Anmeldung bei BKK Atomium.";
+"biometrics_failed" = "Biometrische Authentifizierung fehlgeschlagen. Bitte versuchen Sie es erneut.";
+"login_biometrics_button" = "Mit Face ID / Touch ID anmelden";
+
+/* Invoices */
+"invoice_list_title" = "Rechnungshistorie";
+"invoice_add_title" = "Rechnung hinzufügen";
+"invoice_edit_title" = "Rechnung bearbeiten";
+"invoice_delete_confirm" = "Möchten Sie diese Rechnung wirklich löschen?";
+"invoice_empty_title" = "Keine Rechnungen";
+"invoice_empty_subtitle" = "Fügen Sie Ihre erste Rechnung hinzu.";
+"invoice_category_arzt" = "Arzt";
+"invoice_category_zahnarzt" = "Zahnarzt";
+"invoice_category_medikament" = "Medikament";
+"invoice_category_krankenhaus" = "Krankenhaus";
+"invoice_category_sonstiges" = "Sonstiges";
+"invoice_status_offen" = "Offen";
+"invoice_status_erstattet" = "Erstattet";
+"invoice_section_details" = "Rechnungsdetails";
+"invoice_total_paid" = "Gesamtbetrag: %@";
+"invoice_total_refunded" = "Erstattet: %@";
+
+/* Benefit Requests */
+"benefit_list_title" = "Meine Anträge";
+"benefit_add_title" = "Neuer Antrag";
+"benefit_edit_title" = "Antrag bearbeiten";
+"benefit_delete_confirm" = "Möchten Sie diesen Antrag wirklich löschen?";
+"benefit_section_status" = "Status";
+"benefit_status_eingereicht" = "Eingereicht";
+"benefit_status_inBearbeitung" = "In Bearbeitung";
+"benefit_status_genehmigt" = "Genehmigt";
+"benefit_status_abgelehnt" = "Abgelehnt";
+"benefit_type_krankengeldantrag" = "Krankengeldantrag";
+"benefit_type_kostenerstattung" = "Kostenerstattung";
+"benefit_type_haushaltshilfe" = "Haushaltshilfe";
+"benefit_type_mutterschaftsgeld" = "Mutterschaftsgeld";
+"benefit_type_zahnersatz" = "Zahnersatz";
+"benefit_type_hilfsmittel" = "Hilfsmittel";
+"benefit_type_rehabilitation" = "Rehabilitation";
+"benefit_type_sonstiges" = "Sonstiges";
+"benefit_timeline" = "Bearbeitungszeitraum";
+
+/* Documents */
+"document_list_title" = "Dokumente";
+"document_add_title" = "Dokument hochladen";
+"document_edit_title" = "Dokument bearbeiten";
+"document_delete_confirm" = "Möchten Sie dieses Dokument wirklich löschen?";
+"document_empty_title" = "Keine Dokumente";
+"document_empty_subtitle" = "Laden Sie Ihr erstes Dokument hoch.";
+"document_section_details" = "Dokumentdetails";
+"document_type_bescheinigung" = "Bescheinigung";
+"document_type_rechnung" = "Rechnung";
+"document_type_schreiben" = "Schreiben";
+"document_type_vertrag" = "Vertrag";
+"document_type_sonstiges" = "Sonstiges";
+"service_documents_title" = "Dokumente";
+"service_documents_subtitle" = "Ihre Unterlagen digital verwalten";
+
+/* Cost Overview */
+"cost_overview_title" = "Kostenübersicht";
+"cost_overview_copay_limit" = "Belastungsgrenze";
+"cost_overview_paid" = "Bezahlt";
+"cost_overview_refunded" = "Erstattet";
+"cost_overview_pending" = "Ausstehend";
+"cost_overview_history_title" = "Rechnungshistorie";
+"cost_overview_no_invoices" = "Noch keine Rechnungen.";
+
+/* Export */
+"export_invoice_list" = "Rechnungshistorie.pdf";
+"export_benefit_requests" = "Leistungsanträge.pdf";
+
+/* Settings */
+"settings_title" = "Einstellungen";
+"settings_section_notifications" = "Benachrichtigungen";
+"settings_section_appearance" = "Darstellung";
+"settings_section_security" = "Sicherheit";
+"settings_notification_push" = "Push-Benachrichtigungen";
+"settings_notification_bonus" = "Bonus-Erinnerungen";
+"settings_notification_prevention" = "Vorsorge-Erinnerungen";
+"settings_appearance_mode" = "Farbmodus";
+"settings_appearance_system" = "System";
+"settings_appearance_light" = "Hell";
+"settings_appearance_dark" = "Dunkel";
+"settings_security_biometric" = "Biometrisches Login";
+"settings_app_version" = "Version";
+"settings_build" = "Build";
+
+/* Dashboard */
+"home_section_premium" = "Beitragsübersicht";
+"home_premium_monthly" = "Monatsbeitrag";
+"home_premium_info" = "Persönliche Berechnung (brutto)";
+
+/* Notifications */
+"notification_benefit_submitted_title" = "Antrag eingereicht";
+"notification_benefit_submitted_body" = "Ihr Antrag \"%@\" wurde erfolgreich eingereicht.";
+"notification_benefit_status_title" = "Antragsstatus geändert";
+"notification_benefit_status_body" = "Ihr Antrag hat den Status \"%@\" erhalten.";
+
+/* Fields */
+"field_provider" = "Anbieter";
+"field_amount" = "Betrag";
+"field_description" = "Beschreibung";
+"field_document_title" = "Dokumenttitel";
+"field_document_file" = "Datei";
+
 "unknownDE3" = "wird nicht verwendet";
-"unknownDE3" = "wird nicht verwendet & doppelt";
+"unknownDE3_alt" = "wird nicht verwendet & doppelt";

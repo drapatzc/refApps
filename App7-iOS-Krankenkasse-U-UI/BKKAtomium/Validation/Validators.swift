@@ -318,3 +318,58 @@ struct BankAccountValidator {
         return bic.range(of: pattern, options: .regularExpression) != nil
     }
 }
+
+// MARK: - Invoice Validator
+
+struct InvoiceValidator {
+    static func validate(date: Date, amount: Double, provider: String) -> [ValidationError] {
+        var errors: [ValidationError] = []
+
+        let trimmedProvider = provider.trimmingCharacters(in: .whitespaces)
+        if trimmedProvider.isEmpty {
+            errors.append(.empty(field: String(localized: "field_provider")))
+        }
+
+        if amount <= 0 {
+            errors.append(.invalidFormat(field: String(localized: "field_amount")))
+        }
+
+        return errors
+    }
+}
+
+// MARK: - Document Validator
+
+struct DocumentValidator {
+    static let maxFileSize = 10 * 1024 * 1024
+
+    static func validate(title: String, fileData: Data) -> [ValidationError] {
+        var errors: [ValidationError] = []
+
+        if title.trimmingCharacters(in: .whitespaces).isEmpty {
+            errors.append(.empty(field: String(localized: "field_document_title")))
+        }
+
+        if fileData.isEmpty {
+            errors.append(.empty(field: String(localized: "field_document_file")))
+        } else if fileData.count > maxFileSize {
+            errors.append(.tooLong(field: String(localized: "field_document_file"), maximum: 10))
+        }
+
+        return errors
+    }
+}
+
+// MARK: - BenefitRequest Validator
+
+struct BenefitRequestValidator {
+    static func validate(description: String) -> [ValidationError] {
+        var errors: [ValidationError] = []
+
+        if description.trimmingCharacters(in: .whitespaces).isEmpty {
+            errors.append(.empty(field: String(localized: "field_description")))
+        }
+
+        return errors
+    }
+}

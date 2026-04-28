@@ -54,6 +54,24 @@ final class InsuredPerson {
     @Relationship(deleteRule: .cascade, inverse: \EmailAddress.person)
     var emailAddresses: [EmailAddress]
 
+    /// All invoices associated with this person.
+    ///
+    /// Cascade-deletes linked `Invoice` records when the person is deleted.
+    @Relationship(deleteRule: .cascade)
+    var invoices: [Invoice] = []
+
+    /// All insurance documents associated with this person.
+    ///
+    /// Cascade-deletes linked `InsuranceDocument` records when the person is deleted.
+    @Relationship(deleteRule: .cascade)
+    var documents: [InsuranceDocument] = []
+
+    /// All benefit requests associated with this person.
+    ///
+    /// Cascade-deletes linked `BenefitRequest` records when the person is deleted.
+    @Relationship(deleteRule: .cascade)
+    var benefitRequests: [BenefitRequest] = []
+
     /// The person's full display name, composed from `firstName` and `lastName`.
     var fullName: String {
         "\(firstName) \(lastName)"

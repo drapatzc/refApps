@@ -1,4 +1,5 @@
 import Foundation
+import LocalAuthentication
 
 /// A singleton service that performs password-based authentication.
 ///
@@ -36,6 +37,28 @@ final class AuthService {
             return .invalidCredentials
         }
         return nil
+    }
+
+    /// Returns `true` if the device supports biometric authentication (Face ID or Touch ID).
+    func canUseBiometrics() -> Bool {
+        let context = LAContext()
+        var error: NSError?
+        return context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
+    }
+
+    /// Authenticates the user using biometric authentication (Face ID or Touch ID).
+    ///
+    /// - Returns: `true` if authentication succeeds, `false` otherwise.
+    func authenticateWithBiometrics() async -> Bool {
+        let context = LAContext()
+        do {
+            return try await context.evaluatePolicy(
+                .deviceOwnerAuthenticationWithBiometrics,
+                localizedReason: String(localized: "biometrics_reason")
+            )
+        } catch {
+            return false
+        }
     }
 }
 

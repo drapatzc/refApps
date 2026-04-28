@@ -1,61 +1,93 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var pushEnabled       = true
-    @State private var bonusReminders    = true
-    @State private var appointmentAlerts = false
-    @State private var biometricsEnabled = true
-    @State private var appearanceIndex   = 0
-
-    private let appearanceOptions = ["Systemeinstellung", "Hell", "Dunkel"]
+    @Environment(AppState.self) private var appState
+    @State private var viewModel = SettingsViewModel()
+    @State private var showLogoutAlert = false
+    @State private var biometricEnabled = false
 
     var body: some View {
         List {
-            Section(header: Text("Benachrichtigungen")) {
-                Toggle(isOn: $pushEnabled) {
-                    SettingsRow(icon: "bell.fill", color: Color(red: 0.80, green: 0.25, blue: 0.25), title: "Push-Benachrichtigungen")
+            Section(header: Text(String(localized: "settings_section_notifications"))) {
+                Toggle(isOn: $viewModel.pushEnabled) {
+                    SettingsRow(icon: "bell.fill", color: Color(red: 0.80, green: 0.25, blue: 0.25), title: String(localized: "settings_notification_push"))
                 }
-                .disabled(!pushEnabled && !bonusReminders)
 
-                Toggle(isOn: $bonusReminders) {
-                    SettingsRow(icon: "star.fill", color: Color(red: 0.95, green: 0.65, blue: 0.10), title: "Bonus-Erinnerungen")
+                Toggle(isOn: $viewModel.bonusReminders) {
+                    SettingsRow(icon: "star.fill", color: Color(red: 0.95, green: 0.65, blue: 0.10), title: String(localized: "settings_notification_bonus"))
                 }
-                .disabled(!pushEnabled)
 
-                Toggle(isOn: $appointmentAlerts) {
-                    SettingsRow(icon: "calendar.badge.clock", color: Color(red: 0.20, green: 0.60, blue: 0.40), title: "Vorsorge-Termine")
+                Toggle(isOn: $viewModel.preventionAlerts) {
+                    SettingsRow(icon: "calendar.badge.clock", color: Color(red: 0.20, green: 0.60, blue: 0.40), title: String(localized: "settings_notification_prevention"))
                 }
-                .disabled(!pushEnabled)
             }
 
-            Section(header: Text("Darstellung")) {
-                HStack {
-                    SettingsRow(icon: "paintbrush.fill", color: Color(red: 0.55, green: 0.25, blue: 0.75), title: "Erscheinungsbild")
-                    Spacer()
-                    Picker("", selection: $appearanceIndex) {
-                        ForEach(Array(appearanceOptions.enumerated()), id: \.offset) { index, opt in
-                            Text(opt).tag(index)
+            Section(header: Text(String(localized: "settings_section_appearance"))) {
+                VStack(spacing: AppTheme.spacingM) {
+                    HStack(spacing: AppTheme.spacingM) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color(red: 0.55, green: 0.25, blue: 0.75).opacity(0.15))
+                                .frame(width: 30, height: 30)
+                            Image(systemName: "paintbrush.fill")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundStyle(Color(red: 0.55, green: 0.25, blue: 0.75))
                         }
+                        Text(String(localized: "settings_appearance_mode"))
+                            .font(.body)
                     }
-                    .pickerStyle(.menu)
+
+                    Picker(String(localized: "settings_appearance_mode"), selection: $viewModel.appearanceIndex) {
+                        Text(String(localized: "settings_appearance_system")).tag(0)
+                        Text(String(localized: "settings_appearance_light")).tag(1)
+                        Text(String(localized: "settings_appearance_dark")).tag(2)
+                    }
+                    .pickerStyle(.segmented)
                 }
             }
 
-            Section(header: Text("Sicherheit")) {
-                Toggle(isOn: $biometricsEnabled) {
-                    SettingsRow(icon: "faceid", color: AppTheme.primary, title: "Face ID / Touch ID")
+            Section(header: Text(String(localized: "settings_section_security"))) {
+                Toggle(isOn: $biometricEnabled) {
+                    SettingsRow(icon: "faceid", color: AppTheme.primary, title: String(localized: "settings_security_biometric"))
+                }
+                .disabled(!appState.isBiometricAvailable)
+                .onChange(of: biometricEnabled) {
+                    appState.isBiometricEnabled = biometricEnabled
                 }
             }
 
             Section(header: Text("Info")) {
-                SettingsInfoRow(label: "Version",         value: "1.0.0")
-                SettingsInfoRow(label: "Build",           value: "2025.04.19")
-                SettingsInfoRow(label: "Betriebssystem",  value: "iOS 17+")
+                SettingsInfoRow(label: String(localized: "settings_app_version"), value: "1.0.0")
+                SettingsInfoRow(label: String(localized: "settings_build"), value: "2025.04.19")
+                SettingsInfoRow(label: "iOS", value: "17+")
+            }
+
+            Section {
+                Button(role: .destructive) {
+                    showLogoutAlert = true
+                } label: {
+                    HStack {
+                        Image(systemName: "arrow.backward")
+                        Text(String(localized: "profile_logout"))
+                    }
+                }
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle(String(localized: "profile_settings"))
-        .navigationBarTitleDisplayMode(.large)
+        .navigationTitle(String(localized: "settings_title"))
+        .navigationBarTitleDisplayMode(.inline)
+        .alert(String(localized: "profile_logout_confirm_title"), isPresented: $showLogoutAlert) {
+            Button(String(localized: "common_cancel"), role: .cancel) {}
+            Button(String(localized: "profile_logout"), role: .destructive) {
+                appState.logout()
+            }
+        } message: {
+            Text(String(localized: "profile_logout_confirm_message"))
+        }
+        .onAppear {
+            viewModel.setup(appState: appState)
+            biometricEnabled = appState.isBiometricEnabled
+        }
     }
 }
 

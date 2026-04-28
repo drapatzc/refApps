@@ -24,6 +24,24 @@ final class AppState {
     /// An error message to be displayed to the user, or `nil` when there is no error.
     var errorMessage: String? = nil
 
+    /// Whether biometric authentication is enabled.
+    var isBiometricEnabled: Bool {
+        get { UserDefaults.standard.bool(forKey: "biometric.enabled") }
+        set { UserDefaults.standard.set(newValue, forKey: "biometric.enabled") }
+    }
+
+    /// Whether the device supports biometric authentication.
+    var isBiometricAvailable: Bool = false
+
+    /// Color scheme override for dark mode support (nil = system default).
+    var colorSchemeOverride: ColorScheme? = nil
+
+    /// Cached monthly insurance premium.
+    var monthlyPremium: Double = 0.0
+
+    /// Currently selected tab in the main tab view.
+    var selectedTab: String = "home"
+
     /// Transitions the application into the authenticated state.
     ///
     /// - Parameters:

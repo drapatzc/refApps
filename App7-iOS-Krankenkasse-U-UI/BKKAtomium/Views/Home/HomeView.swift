@@ -28,6 +28,8 @@ enum HomeSearchAction: Hashable {
     case openContact
     /// Opens the FAQ web sheet.
     case openFAQ
+    /// Switches to a specific tab.
+    case switchTab(String)
 }
 
 // MARK: - Home View
@@ -71,14 +73,86 @@ struct HomeView: View {
         }
     }
 
-    /// The search results filtered from `HomeSearchableItem.all` matching the current query.
+    /// The search results filtered from `HomeSearchableItem.all` matching the current query with fuzzy matching.
+    /// Entering "?" shows all available search results.
     private var filteredItems: [HomeSearchableItem] {
         let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !query.isEmpty else { return [] }
-        return HomeSearchableItem.all.filter {
-            $0.title.lowercased().contains(query) ||
-            $0.subtitle.lowercased().contains(query)
+
+        // Show all results when user enters "?"
+        if query == "?" {
+            return HomeSearchableItem.all
         }
+
+        return HomeSearchableItem.all.filter {
+            fuzzyMatch(query, against: $0.title.lowercased()) ||
+            fuzzyMatch(query, against: $0.subtitle.lowercased())
+        }
+    }
+
+    /// Performs fuzzy matching between a search term and a target string using Levenshtein distance.
+    /// Allows for spelling mistakes and typos.
+    ///
+    /// Examples:
+    /// - "Bonsp" matches "Bonusprogramm" (1 missing char)
+    /// - "Krankmeldung" matches "Krankmeldung" (exact)
+    /// - "Postfch" matches "Postfach" (1 missing char)
+    private func fuzzyMatch(_ query: String, against target: String) -> Bool {
+        // Exact substring match (fast path)
+        if target.contains(query) {
+            return true
+        }
+
+        // Levenshtein distance for spell tolerance
+        // Allow 1 error per 3 characters (more liberal)
+        let maxDistance = max(1, (query.count + 2) / 3)
+        let distance = levenshteinDistance(query, target)
+
+        return distance <= maxDistance
+    }
+
+    /// Calculates the Levenshtein distance between two strings.
+    ///
+    /// The Levenshtein distance is the minimum number of single-character edits
+    /// (insertions, deletions, or substitutions) required to change one string into another.
+    ///
+    /// Algorithm: Dynamic Programming with O(m*n) time complexity and O(n) space complexity.
+    ///
+    /// - Parameters:
+    ///   - s1: First string to compare
+    ///   - s2: Second string to compare
+    /// - Returns: The minimum edit distance between the two strings
+    ///
+    /// Examples:
+    /// - levenshteinDistance("cat", "cats") = 1 (insertion)
+    /// - levenshteinDistance("kitten", "sitting") = 3 (substitution x3)
+    /// - levenshteinDistance("Bonsp", "Bonusp") = 1 (insertion)
+    private func levenshteinDistance(_ s1: String, _ s2: String) -> Int {
+        let s1 = Array(s1), s2 = Array(s2)
+        let (m, n) = (s1.count, s2.count)
+
+        // Base cases
+        if m == 0 { return n }
+        if n == 0 { return m }
+
+        // Use two rows for space optimization (O(n) instead of O(m*n))
+        var prev = Array(0...n)
+        var curr = Array(repeating: 0, count: n + 1)
+
+        for i in 1...m {
+            curr[0] = i
+            for j in 1...n {
+                let cost = s1[i - 1] == s2[j - 1] ? 0 : 1
+                curr[j] = min(
+                    curr[j - 1] + 1,      // insertion
+                    prev[j] + 1,          // deletion
+                    prev[j - 1] + cost    // substitution
+                )
+            }
+            // Swap rows for next iteration
+            (prev, curr) = (curr, prev)
+        }
+        return prev[n]
     }
 
     /// `true` when the search field contains non-whitespace text.
@@ -101,7 +175,9 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    BKKLogoView()
+                    Text("BKK Atomium")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.primary)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -169,6 +245,50 @@ struct HomeView: View {
                     .padding(.horizontal, AppTheme.spacingM)
                     .padding(.top, AppTheme.spacingL)
                     .animation(.spring(response: 0.5, dampingFraction: 0.8).delay(0.1), value: headerAppeared)
+
+                    // Bonusprogramm + Postfach Widgets
+                    VStack(spacing: AppTheme.spacingM) {
+                        Button {
+                            appState.selectedTab = "bonus"
+                        } label: {
+                            DashboardWidgetRow(
+                                icon: "star.fill",
+                                iconColor: Color(red: 0.95, green: 0.65, blue: 0.10),
+                                title: String(localized: "home_widget_bonus_title"),
+                                value: "1.250",
+                                subtitle: String(localized: "home_widget_bonus_subtitle")
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        Button {
+                            appState.selectedTab = "postfach"
+                        } label: {
+                            DashboardWidgetRow(
+                                icon: "envelope.badge.fill",
+                                iconColor: Color(red: 0.55, green: 0.25, blue: 0.75),
+                                title: String(localized: "home_widget_postfach_title"),
+                                value: "3",
+                                subtitle: String(localized: "home_widget_postfach_new_messages")
+                            )
+                        }
+                        .buttonStyle(.plain)
+                    }
+                    .padding(.horizontal, AppTheme.spacingM)
+
+                    // Advertisement Carousel
+                    sectionTitle(String(localized: "home_section_advertisements"))
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 0) {
+                            ForEach(AdCarouselItem.allItems) { item in
+                                Link(destination: item.url) {
+                                    AdvertisementCard(item: item)
+                                }
+                            }
+                        }
+                    }
+                    .scrollIndicators(.hidden)
+                    .frame(height: 160)
 
                     // Widget-Kacheln
                     sectionTitle(String(localized: "home_section_services"))
@@ -313,6 +433,8 @@ struct HomeView: View {
             showContactSheet = true
         case .openFAQ:
             showFAQSheet = true
+        case .switchTab(let tabName):
+            appState.selectedTab = tabName
         }
     }
 
@@ -379,15 +501,27 @@ struct HomeView: View {
 /// Displays a cross circle SF Symbol alongside the app name in bold.
 struct BKKLogoView: View {
 
-    /// Renders the cross icon and "BKK Atomium" label side by side.
+    /// Renders the BKK Atomium logo with health icon and label.
     var body: some View {
-        HStack(spacing: 6) {
-            Image(systemName: "cross.circle.fill")
-                .foregroundStyle(AppTheme.primary)
-                .font(.subheadline)
-            Text("BKK Atomium")
-                .font(.headline.weight(.bold))
-                .foregroundStyle(.primary)
+        HStack(spacing: 8) {
+            ZStack {
+                Circle()
+                    .fill(AppTheme.primary)
+                    .frame(width: 28, height: 28)
+
+                Image(systemName: "heart.fill")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(.white)
+            }
+
+            VStack(alignment: .leading, spacing: 0) {
+                Text("BKK")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(.primary)
+                Text("Atomium")
+                    .font(.system(size: 10, weight: .semibold))
+                    .foregroundStyle(AppTheme.primary)
+            }
         }
     }
 }
@@ -623,9 +757,10 @@ struct HomeSearchableItem: Identifiable {
     /// The action to trigger when the item is selected from search results.
     let action: HomeSearchAction
 
-    /// All searchable items, derived from the widget grid and static hotline/help entries.
+    /// All searchable items from all tabs and views.
     static var all: [HomeSearchableItem] {
-        HomeWidget.allWidgets.map {
+        // Home dashboard widgets
+        let homeWidgets = HomeWidget.allWidgets.map {
             HomeSearchableItem(
                 title: $0.title,
                 subtitle: $0.subtitle,
@@ -633,7 +768,10 @@ struct HomeSearchableItem: Identifiable {
                 color: $0.color,
                 action: .navigate($0.destination)
             )
-        } + [
+        }
+
+        // Home service hotlines & help
+        let homeServices = [
             HomeSearchableItem(
                 title: String(localized: "home_hotline_doctor_title"),
                 subtitle: String(localized: "home_hotline_doctor_subtitle"),
@@ -663,5 +801,214 @@ struct HomeSearchableItem: Identifiable {
                 action: .openFAQ
             )
         ]
+
+        // Tab navigation items
+        let tabItems = [
+            HomeSearchableItem(
+                title: String(localized: "tab_bonus"),
+                subtitle: String(localized: "bonus_title"),
+                icon: "star.fill",
+                color: Color(red: 0.95, green: 0.65, blue: 0.10),
+                action: .switchTab("bonus")
+            ),
+            HomeSearchableItem(
+                title: String(localized: "tab_postfach"),
+                subtitle: String(localized: "postfach_title"),
+                icon: "tray.fill",
+                color: Color(red: 0.55, green: 0.25, blue: 0.75),
+                action: .switchTab("postfach")
+            ),
+            HomeSearchableItem(
+                title: String(localized: "tab_health"),
+                subtitle: String(localized: "health_title"),
+                icon: "heart.fill",
+                color: Color(red: 0.80, green: 0.25, blue: 0.25),
+                action: .switchTab("health")
+            ),
+            HomeSearchableItem(
+                title: String(localized: "tab_service"),
+                subtitle: String(localized: "service_title"),
+                icon: "headphones",
+                color: Color(red: 0.20, green: 0.60, blue: 0.40),
+                action: .switchTab("service")
+            )
+        ]
+
+        // Profile/Settings items
+        let profileItems = [
+            HomeSearchableItem(
+                title: String(localized: "profile_settings"),
+                subtitle: String(localized: "settings_title"),
+                icon: "gear",
+                color: AppTheme.primary,
+                action: .switchTab("service") // Settings are accessed via Profile button
+            ),
+            HomeSearchableItem(
+                title: String(localized: "profile_insurance_status"),
+                subtitle: String(localized: "insurance_status_title"),
+                icon: "checkmark.circle.fill",
+                color: Color(red: 0.20, green: 0.60, blue: 0.40),
+                action: .switchTab("service")
+            )
+        ]
+
+        return homeWidgets + homeServices + tabItems + profileItems
     }
 }
+
+// MARK: - Dashboard Widget Row
+
+/// A styled widget row for dashboard items like Bonusprogramm and Postfach.
+struct DashboardWidgetRow: View {
+    @Environment(\.colorScheme) private var colorScheme
+
+    let icon: String
+    let iconColor: Color
+    let title: String
+    let value: String
+    let subtitle: String
+
+    var body: some View {
+        HStack(spacing: AppTheme.spacingM) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(iconColor.opacity(0.15))
+                    .frame(width: 44, height: 44)
+
+                Image(systemName: icon)
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundStyle(iconColor)
+            }
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
+                Text(subtitle)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer(minLength: 0)
+
+            VStack(alignment: .trailing, spacing: 2) {
+                Text(value)
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(iconColor)
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.tertiary)
+            }
+        }
+        .padding(.horizontal, AppTheme.spacingM)
+        .padding(.vertical, AppTheme.spacingM)
+        .background(colorScheme == .dark ? Color(.secondarySystemBackground) : .white)
+        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusM))
+        .shadow(
+            color: colorScheme == .dark ? .black.opacity(0.20) : .black.opacity(0.04),
+            radius: 8, x: 0, y: 2
+        )
+    }
+}
+
+// MARK: - Advertisement Carousel
+
+/// A value type that describes an advertisement carousel item.
+struct AdCarouselItem: Identifiable {
+    let id = UUID()
+    let title: String
+    let imageName: String
+    let url: URL
+
+    /// Sample advertisement items for the carousel.
+    static let allItems: [AdCarouselItem] = [
+        AdCarouselItem(
+            title: String(localized: "ad_health_tips_title"),
+            imageName: "ad-health-tips",
+            url: URL(string: "https://www.bkk-atomium.de/gesundheitstipps")!
+        ),
+        AdCarouselItem(
+            title: String(localized: "ad_wellness_programs_title"),
+            imageName: "ad-wellness",
+            url: URL(string: "https://www.bkk-atomium.de/wellnessprogramme")!
+        ),
+        AdCarouselItem(
+            title: String(localized: "ad_dental_care_title"),
+            imageName: "ad-dental",
+            url: URL(string: "https://www.bkk-atomium.de/zahnpflege")!
+        ),
+        AdCarouselItem(
+            title: String(localized: "ad_mental_health_title"),
+            imageName: "ad-mental-health",
+            url: URL(string: "https://www.bkk-atomium.de/psychische-gesundheit")!
+        )
+    ]
+}
+
+/// A card view for advertisement carousel items.
+struct AdvertisementCard: View {
+    let item: AdCarouselItem
+
+    private var gradientStart: Color {
+        switch item.imageName {
+        case "ad-health-tips": return Color(red: 0.95, green: 0.45, blue: 0.30)
+        case "ad-wellness": return Color(red: 0.35, green: 0.75, blue: 0.55)
+        case "ad-dental": return Color(red: 1.0, green: 0.85, blue: 0.40)
+        case "ad-mental-health": return Color(red: 0.80, green: 0.60, blue: 1.0)
+        default: return AppTheme.primary
+        }
+    }
+
+    private var gradientEnd: Color {
+        switch item.imageName {
+        case "ad-health-tips": return Color(red: 0.80, green: 0.25, blue: 0.25)
+        case "ad-wellness": return Color(red: 0.20, green: 0.60, blue: 0.40)
+        case "ad-dental": return Color(red: 0.95, green: 0.65, blue: 0.10)
+        case "ad-mental-health": return Color(red: 0.55, green: 0.25, blue: 0.75)
+        default: return AppTheme.primary
+        }
+    }
+
+    private var icon: String {
+        switch item.imageName {
+        case "ad-health-tips": return "stethoscope"
+        case "ad-wellness": return "figure.stairs"
+        case "ad-dental": return "mouth"
+        case "ad-mental-health": return "brain.head.profile"
+        default: return "heart.fill"
+        }
+    }
+
+    var body: some View {
+        ZStack {
+            // Background Image
+            Image(item.imageName)
+                .resizable()
+                .scaledToFill()
+
+            // Dark overlay - full coverage for text readability
+            LinearGradient(
+                colors: [.black.opacity(0.2), .black.opacity(0.8)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+
+            // Title at bottom (centered and padded)
+            VStack(alignment: .center) {
+                Spacer()
+                Text(item.title)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.white)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, AppTheme.spacingXS)
+                    .padding(.bottom, AppTheme.spacingS)
+                    .shadow(color: .black.opacity(0.5), radius: 2, x: 0, y: 1)
+            }
+        }
+        .frame(width: 160, height: 160)
+        .clipped()
+    }
+}
+

@@ -140,8 +140,10 @@
 "common_delete" = "Delete";
 "common_is_primary" = "Set as primary entry";
 "common_delete_confirm_title" = "Confirm Deletion";
+"common_open_link" = "Open Link";
 "badge_primary" = "Primary";
 "placeholder_coming_soon" = "This section will be available in a future version.";
+"web_view_title" = "Website";
 
 /* Validation */
 "validation_empty" = "%@ must not be empty.";
@@ -188,6 +190,15 @@
 "home_search_no_results_subtitle" = "Try a different search term.";
 "home_section_service_hotline" = "Service";
 "home_section_help" = "Help";
+"home_section_advertisements" = "Recommendations";
+"home_widget_bonus_title" = "Bonus Program";
+"home_widget_bonus_subtitle" = "Earn points";
+"home_widget_postfach_title" = "Inbox";
+"home_widget_postfach_new_messages" = "you have new messages";
+"ad_health_tips_title" = "Health Tips";
+"ad_wellness_programs_title" = "Wellness Programs";
+"ad_dental_care_title" = "Dental Care";
+"ad_mental_health_title" = "Mental Health";
 "home_hotline_doctor_title" = "Doctor Appointment Service";
 "home_hotline_doctor_subtitle" = "6 ct per call from landline";
 "home_hotline_medical_title" = "Medical Advice";
@@ -341,5 +352,111 @@
 "contact_praise_complaint_title" = "Praise and complaint";
 "contact_advisor_title" = "Customer advisor";
 "contact_more_contacts_title" = "More contacts";
+
+/* Biometrics */
+"biometrics_reason" = "For secure login to BKK Atomium.";
+"biometrics_failed" = "Biometric authentication failed. Please try again.";
+"login_biometrics_button" = "Sign in with Face ID / Touch ID";
+
+/* Invoices */
+"invoice_list_title" = "Invoice History";
+"invoice_add_title" = "Add Invoice";
+"invoice_edit_title" = "Edit Invoice";
+"invoice_delete_confirm" = "Do you really want to delete this invoice?";
+"invoice_empty_title" = "No Invoices";
+"invoice_empty_subtitle" = "Add your first invoice.";
+"invoice_category_arzt" = "Doctor";
+"invoice_category_zahnarzt" = "Dentist";
+"invoice_category_medikament" = "Medication";
+"invoice_category_krankenhaus" = "Hospital";
+"invoice_category_sonstiges" = "Other";
+"invoice_status_offen" = "Open";
+"invoice_status_erstattet" = "Reimbursed";
+"invoice_section_details" = "Invoice Details";
+"invoice_total_paid" = "Total Amount: %@";
+"invoice_total_refunded" = "Reimbursed: %@";
+
+/* Benefit Requests */
+"benefit_list_title" = "My Requests";
+"benefit_add_title" = "New Request";
+"benefit_edit_title" = "Edit Request";
+"benefit_delete_confirm" = "Do you really want to delete this request?";
+"benefit_section_status" = "Status";
+"benefit_status_eingereicht" = "Submitted";
+"benefit_status_inBearbeitung" = "In Progress";
+"benefit_status_genehmigt" = "Approved";
+"benefit_status_abgelehnt" = "Rejected";
+"benefit_type_krankengeldantrag" = "Sick Pay Request";
+"benefit_type_kostenerstattung" = "Cost Reimbursement";
+"benefit_type_haushaltshilfe" = "Household Help";
+"benefit_type_mutterschaftsgeld" = "Maternity Benefit";
+"benefit_type_zahnersatz" = "Dental Replacement";
+"benefit_type_hilfsmittel" = "Medical Device";
+"benefit_type_rehabilitation" = "Rehabilitation";
+"benefit_type_sonstiges" = "Other";
+"benefit_timeline" = "Processing Timeline";
+
+/* Documents */
+"document_list_title" = "Documents";
+"document_add_title" = "Upload Document";
+"document_edit_title" = "Edit Document";
+"document_delete_confirm" = "Do you really want to delete this document?";
+"document_empty_title" = "No Documents";
+"document_empty_subtitle" = "Upload your first document.";
+"document_section_details" = "Document Details";
+"document_type_bescheinigung" = "Certificate";
+"document_type_rechnung" = "Invoice";
+"document_type_schreiben" = "Letter";
+"document_type_vertrag" = "Contract";
+"document_type_sonstiges" = "Other";
+"service_documents_title" = "Documents";
+"service_documents_subtitle" = "Manage your documents digitally";
+
+/* Cost Overview */
+"cost_overview_title" = "Cost Overview";
+"cost_overview_copay_limit" = "Annual Limit";
+"cost_overview_paid" = "Paid";
+"cost_overview_refunded" = "Reimbursed";
+"cost_overview_pending" = "Pending";
+"cost_overview_history_title" = "Invoice History";
+"cost_overview_no_invoices" = "No invoices yet.";
+
+/* Export */
+"export_invoice_list" = "InvoiceHistory.pdf";
+"export_benefit_requests" = "BenefitRequests.pdf";
+
+/* Settings */
+"settings_title" = "Settings";
+"settings_section_notifications" = "Notifications";
+"settings_section_appearance" = "Appearance";
+"settings_section_security" = "Security";
+"settings_notification_push" = "Push Notifications";
+"settings_notification_bonus" = "Bonus Reminders";
+"settings_notification_prevention" = "Prevention Reminders";
+"settings_appearance_mode" = "Color Mode";
+"settings_appearance_system" = "System";
+"settings_appearance_light" = "Light";
+"settings_appearance_dark" = "Dark";
+"settings_security_biometric" = "Biometric Login";
+"settings_app_version" = "Version";
+"settings_build" = "Build";
+
+/* Dashboard */
+"home_section_premium" = "Premium Overview";
+"home_premium_monthly" = "Monthly Premium";
+"home_premium_info" = "Personal calculation (gross)";
+
+/* Notifications */
+"notification_benefit_submitted_title" = "Request Submitted";
+"notification_benefit_submitted_body" = "Your request \"%@\" was successfully submitted.";
+"notification_benefit_status_title" = "Request Status Changed";
+"notification_benefit_status_body" = "Your request has been updated to \"%@\".";
+
+/* Fields */
+"field_provider" = "Provider";
+"field_amount" = "Amount";
+"field_description" = "Description";
+"field_document_title" = "Document Title";
+"field_document_file" = "File";
 
 "unknown3EN" = "wird nicht verwendet";

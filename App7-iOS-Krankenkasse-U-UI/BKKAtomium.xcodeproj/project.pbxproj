@@ -1,985 +1,3064 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 56;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		2222222222222222000001 /* BKKAtomiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000001 /* BKKAtomiumApp.swift */; };
-		2222222222222222000002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000002 /* AppState.swift */; };
-		2222222222222222000003 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000003 /* AppTheme.swift */; };
-		2222222222222222000004 /* InsuredPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000004 /* InsuredPerson.swift */; };
-		2222222222222222000005 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000005 /* Address.swift */; };
-		2222222222222222000006 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000006 /* PhoneNumber.swift */; };
-		2222222222222222000007 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000007 /* BankAccount.swift */; };
-		2222222222222222000008 /* EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000008 /* EmailAddress.swift */; };
-		2222222222222222000009 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000009 /* AuthService.swift */; };
-		2222222222222222000010 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000010 /* NotificationService.swift */; };
-		2222222222222222000011 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000011 /* Validators.swift */; };
-		2222222222222222000012 /* AddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000012 /* AddressRepository.swift */; };
-		2222222222222222000013 /* BankAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000013 /* BankAccountRepository.swift */; };
-		2222222222222222000014 /* EmailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000014 /* EmailRepository.swift */; };
-		2222222222222222000015 /* PhoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000015 /* PhoneRepository.swift */; };
-		2222222222222222000016 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000016 /* LoginViewModel.swift */; };
-		2222222222222222000017 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000017 /* ProfileViewModel.swift */; };
-		2222222222222222000018 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000018 /* HomeView.swift */; };
-		2222222222222222000019 /* ImprintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000019 /* ImprintView.swift */; };
-		2222222222222222000020 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000020 /* PrivacyView.swift */; };
-		2222222222222222000021 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000021 /* TermsView.swift */; };
-		2222222222222222000022 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000022 /* LoginView.swift */; };
-		2222222222222222000023 /* AddressFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000023 /* AddressFormView.swift */; };
-		2222222222222222000024 /* AddressListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000024 /* AddressListView.swift */; };
-		2222222222222222000025 /* BankAccountListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000025 /* BankAccountListView.swift */; };
-		2222222222222222000026 /* EmailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000026 /* EmailListView.swift */; };
-		2222222222222222000027 /* InsuranceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000027 /* InsuranceStatusView.swift */; };
-		2222222222222222000028 /* PhoneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000028 /* PhoneListView.swift */; };
-		2222222222222222000029 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000029 /* ProfileView.swift */; };
-		2222222222222222000030 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000030 /* CardView.swift */; };
-		2222222222222222000031 /* MockDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000031 /* MockDataSeeder.swift */; };
-		2222222222222222000032 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000040 /* Localizable.strings */; };
-		2222222222222222000033 /* InsuranceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000041 /* InsuranceCalculator.swift */; };
-		2222222222222222000050 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000050 /* MainTabView.swift */; };
-		2222222222222222000051 /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000051 /* BonusView.swift */; };
-		2222222222222222000052 /* SickNoteFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000052 /* SickNoteFlowView.swift */; };
-		2222222222222222000053 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000053 /* ServiceView.swift */; };
-		2222222222222222000054 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000054 /* HealthView.swift */; };
-		2222222222222222000055 /* PostfachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000055 /* PostfachView.swift */; };
-		2222222222222222000060 /* ApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000060 /* ApplicationsView.swift */; };
-		2222222222222222000061 /* SickPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000061 /* SickPayView.swift */; };
-		2222222222222222000062 /* ContactSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000062 /* ContactSheetView.swift */; };
-		2222222222222222000063 /* FAQWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000063 /* FAQWebView.swift */; };
-		2222222222222222000064 /* HealthDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000064 /* HealthDataView.swift */; };
-		2222222222222222000065 /* MedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000065 /* MedicationView.swift */; };
-		2222222222222222000066 /* PreventionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000066 /* PreventionView.swift */; };
-		2222222222222222000067 /* VaccinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000067 /* VaccinationView.swift */; };
-		2222222222222222000068 /* eAUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000068 /* eAUView.swift */; };
-		2222222222222222000069 /* PregnancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000069 /* PregnancyView.swift */; };
-		2222222222222222000070 /* CostOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000070 /* CostOverviewView.swift */; };
-		2222222222222222000071 /* EGKMissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000071 /* EGKMissingView.swift */; };
-		2222222222222222000072 /* EGKLostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000072 /* EGKLostView.swift */; };
-		2222222222222222000073 /* CertificateRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000073 /* CertificateRequestView.swift */; };
-		2222222222222222000074 /* HotlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000074 /* HotlineView.swift */; };
-		2222222222222222000075 /* HealthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000075 /* HealthCardView.swift */; };
-		2222222222222222000076 /* SecureMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000076 /* SecureMessageView.swift */; };
-		2222222222222222000077 /* PraiseComplaintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000077 /* PraiseComplaintsView.swift */; };
-		2222222222222222000078 /* AdvisorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000078 /* AdvisorView.swift */; };
-		2222222222222222000079 /* MoreContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000079 /* MoreContactsView.swift */; };
-		2222222222222222000080 /* AddMeasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000080 /* AddMeasureView.swift */; };
-		2222222222222222000081 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000081 /* SettingsView.swift */; };
-		2222222222222222000082 /* HelpFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000082 /* HelpFeedbackView.swift */; };
-		3333333333333333000001 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000035 /* LoginTests.swift */; };
-		3333333333333333000002 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000036 /* ValidationTests.swift */; };
-		3333333333333333000003 /* InsuranceStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000037 /* InsuranceStatusTests.swift */; };
-		4444444444444444000001 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000038 /* LoginUITests.swift */; };
-		4444444444444444000002 /* ProfileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111111111111111000039 /* ProfileUITests.swift */; };
-		AAAA000000000001000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA000000000001000001 /* Assets.xcassets */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CCCCCCCCCCCCCCCC000008 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AAAAAAAAAAAAAAAA000001 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BBBBBBBBBBBBBBBB000001;
-			remoteInfo = BKKAtomium;
-		};
-		DDDDDDDDDDDDDDDD000008 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AAAAAAAAAAAAAAAA000001 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BBBBBBBBBBBBBBBB000001;
-			remoteInfo = BKKAtomium;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		1111111111111111000001 /* BKKAtomiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKKAtomiumApp.swift; sourceTree = "<group>"; };
-		1111111111111111000002 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		1111111111111111000003 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
-		1111111111111111000004 /* InsuredPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuredPerson.swift; sourceTree = "<group>"; };
-		1111111111111111000005 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		1111111111111111000006 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
-		1111111111111111000007 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
-		1111111111111111000008 /* EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddress.swift; sourceTree = "<group>"; };
-		1111111111111111000009 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		1111111111111111000010 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		1111111111111111000011 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
-		1111111111111111000012 /* AddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepository.swift; sourceTree = "<group>"; };
-		1111111111111111000013 /* BankAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRepository.swift; sourceTree = "<group>"; };
-		1111111111111111000014 /* EmailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRepository.swift; sourceTree = "<group>"; };
-		1111111111111111000015 /* PhoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRepository.swift; sourceTree = "<group>"; };
-		1111111111111111000016 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		1111111111111111000017 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		1111111111111111000018 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		1111111111111111000019 /* ImprintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintView.swift; sourceTree = "<group>"; };
-		1111111111111111000020 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
-		1111111111111111000021 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
-		1111111111111111000022 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		1111111111111111000023 /* AddressFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFormView.swift; sourceTree = "<group>"; };
-		1111111111111111000024 /* AddressListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListView.swift; sourceTree = "<group>"; };
-		1111111111111111000025 /* BankAccountListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountListView.swift; sourceTree = "<group>"; };
-		1111111111111111000026 /* EmailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListView.swift; sourceTree = "<group>"; };
-		1111111111111111000027 /* InsuranceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceStatusView.swift; sourceTree = "<group>"; };
-		1111111111111111000028 /* PhoneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneListView.swift; sourceTree = "<group>"; };
-		1111111111111111000029 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		1111111111111111000030 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		1111111111111111000031 /* MockDataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataSeeder.swift; sourceTree = "<group>"; };
-		1111111111111111000032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1111111111111111000033 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1111111111111111000034 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1111111111111111000035 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
-		1111111111111111000036 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
-		1111111111111111000037 /* InsuranceStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceStatusTests.swift; sourceTree = "<group>"; };
-		1111111111111111000038 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
-		1111111111111111000039 /* ProfileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUITests.swift; sourceTree = "<group>"; };
-		1111111111111111000041 /* InsuranceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCalculator.swift; sourceTree = "<group>"; };
-		1111111111111111000050 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		1111111111111111000051 /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
-		1111111111111111000052 /* SickNoteFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickNoteFlowView.swift; sourceTree = "<group>"; };
-		1111111111111111000053 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
-		1111111111111111000054 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
-		1111111111111111000055 /* PostfachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostfachView.swift; sourceTree = "<group>"; };
-		1111111111111111000060 /* ApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsView.swift; sourceTree = "<group>"; };
-		1111111111111111000061 /* SickPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SickPayView.swift; sourceTree = "<group>"; };
-		1111111111111111000062 /* ContactSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSheetView.swift; sourceTree = "<group>"; };
-		1111111111111111000063 /* FAQWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQWebView.swift; sourceTree = "<group>"; };
-		1111111111111111000064 /* HealthDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataView.swift; sourceTree = "<group>"; };
-		1111111111111111000065 /* MedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationView.swift; sourceTree = "<group>"; };
-		1111111111111111000066 /* PreventionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventionView.swift; sourceTree = "<group>"; };
-		1111111111111111000067 /* VaccinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationView.swift; sourceTree = "<group>"; };
-		1111111111111111000068 /* eAUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eAUView.swift; sourceTree = "<group>"; };
-		1111111111111111000069 /* PregnancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PregnancyView.swift; sourceTree = "<group>"; };
-		1111111111111111000070 /* CostOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostOverviewView.swift; sourceTree = "<group>"; };
-		1111111111111111000071 /* EGKMissingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGKMissingView.swift; sourceTree = "<group>"; };
-		1111111111111111000072 /* EGKLostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGKLostView.swift; sourceTree = "<group>"; };
-		1111111111111111000073 /* CertificateRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateRequestView.swift; sourceTree = "<group>"; };
-		1111111111111111000074 /* HotlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotlineView.swift; sourceTree = "<group>"; };
-		1111111111111111000075 /* HealthCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCardView.swift; sourceTree = "<group>"; };
-		1111111111111111000076 /* SecureMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureMessageView.swift; sourceTree = "<group>"; };
-		1111111111111111000077 /* PraiseComplaintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseComplaintsView.swift; sourceTree = "<group>"; };
-		1111111111111111000078 /* AdvisorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvisorView.swift; sourceTree = "<group>"; };
-		1111111111111111000079 /* MoreContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreContactsView.swift; sourceTree = "<group>"; };
-		1111111111111111000080 /* AddMeasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeasureView.swift; sourceTree = "<group>"; };
-		1111111111111111000081 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		1111111111111111000082 /* HelpFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFeedbackView.swift; sourceTree = "<group>"; };
-		AAAA000000000001000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FFFFFF0000000000000001 /* BKKAtomium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKKAtomium.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFFFFF0000000000000002 /* BKKAtomiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKAtomiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFFFFF0000000000000003 /* BKKAtomiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKKAtomiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		BBBBBBBBBBBBBBBB000007 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CCCCCCCCCCCCCCCC000006 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDDDDDDDDDDDDDDD000006 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		EEEEEEEEEEEEEEEE000001 = {
-			isa = PBXGroup;
-			children = (
-				EEEEEEEEEEEEEEEE000003 /* BKKAtomium */,
-				EEEEEEEEEEEEEEEE000018 /* BKKAtomiumTests */,
-				EEEEEEEEEEEEEEEE000019 /* BKKAtomiumUITests */,
-				EEEEEEEEEEEEEEEE000002 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000002 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FFFFFF0000000000000001 /* BKKAtomium.app */,
-				FFFFFF0000000000000002 /* BKKAtomiumTests.xctest */,
-				FFFFFF0000000000000003 /* BKKAtomiumUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000003 /* BKKAtomium */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000001 /* BKKAtomiumApp.swift */,
-				EEEEEEEEEEEEEEEE000004 /* App */,
-				EEEEEEEEEEEEEEEE000005 /* Models */,
-				EEEEEEEEEEEEEEEE000006 /* Services */,
-				EEEEEEEEEEEEEEEE000007 /* Validation */,
-				EEEEEEEEEEEEEEEE000008 /* Repositories */,
-				EEEEEEEEEEEEEEEE000009 /* ViewModels */,
-				EEEEEEEEEEEEEEEE000010 /* Views */,
-				EEEEEEEEEEEEEEEE000016 /* SeedData */,
-				EEEEEEEEEEEEEEEE000017 /* Resources */,
-				EEEEEEEEEEEEEEEE000020 /* Utilities */,
-				AAAA000000000001000001 /* Assets.xcassets */,
-			);
-			path = BKKAtomium;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000004 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000002 /* AppState.swift */,
-				1111111111111111000003 /* AppTheme.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000005 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000004 /* InsuredPerson.swift */,
-				1111111111111111000005 /* Address.swift */,
-				1111111111111111000006 /* PhoneNumber.swift */,
-				1111111111111111000007 /* BankAccount.swift */,
-				1111111111111111000008 /* EmailAddress.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000006 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000009 /* AuthService.swift */,
-				1111111111111111000010 /* NotificationService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000007 /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000011 /* Validators.swift */,
-			);
-			path = Validation;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000008 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000012 /* AddressRepository.swift */,
-				1111111111111111000013 /* BankAccountRepository.swift */,
-				1111111111111111000014 /* EmailRepository.swift */,
-				1111111111111111000015 /* PhoneRepository.swift */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000009 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000016 /* LoginViewModel.swift */,
-				1111111111111111000017 /* ProfileViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000010 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				EEEEEEEEEEEEEEEE000011 /* Home */,
-				EEEEEEEEEEEEEEEE000012 /* Legal */,
-				EEEEEEEEEEEEEEEE000013 /* Login */,
-				EEEEEEEEEEEEEEEE000014 /* Profile */,
-				EEEEEEEEEEEEEEEE000015 /* Shared */,
-				EEEEEEEEEEEEEEEE000050 /* Tabs */,
-				EEEEEEEEEEEEEEEE000051 /* Bonus */,
-				EEEEEEEEEEEEEEEE000052 /* SickNote */,
-				EEEEEEEEEEEEEEEE000053 /* Service */,
-				EEEEEEEEEEEEEEEE000054 /* Health */,
-				EEEEEEEEEEEEEEEE000055 /* Postfach */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000011 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000018 /* HomeView.swift */,
-				1111111111111111000060 /* ApplicationsView.swift */,
-				1111111111111111000061 /* SickPayView.swift */,
-				1111111111111111000062 /* ContactSheetView.swift */,
-				1111111111111111000063 /* FAQWebView.swift */,
-				1111111111111111000074 /* HotlineView.swift */,
-				1111111111111111000075 /* HealthCardView.swift */,
-				1111111111111111000076 /* SecureMessageView.swift */,
-				1111111111111111000077 /* PraiseComplaintsView.swift */,
-				1111111111111111000078 /* AdvisorView.swift */,
-				1111111111111111000079 /* MoreContactsView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000012 /* Legal */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000019 /* ImprintView.swift */,
-				1111111111111111000020 /* PrivacyView.swift */,
-				1111111111111111000021 /* TermsView.swift */,
-			);
-			path = Legal;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000013 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000022 /* LoginView.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000014 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000023 /* AddressFormView.swift */,
-				1111111111111111000024 /* AddressListView.swift */,
-				1111111111111111000025 /* BankAccountListView.swift */,
-				1111111111111111000026 /* EmailListView.swift */,
-				1111111111111111000027 /* InsuranceStatusView.swift */,
-				1111111111111111000028 /* PhoneListView.swift */,
-				1111111111111111000029 /* ProfileView.swift */,
-				1111111111111111000081 /* SettingsView.swift */,
-				1111111111111111000082 /* HelpFeedbackView.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000015 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000030 /* CardView.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000016 /* SeedData */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000031 /* MockDataSeeder.swift */,
-			);
-			path = SeedData;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000017 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000032 /* Info.plist */,
-				1111111111111111000040 /* Localizable.strings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000018 /* BKKAtomiumTests */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000035 /* LoginTests.swift */,
-				1111111111111111000036 /* ValidationTests.swift */,
-				1111111111111111000037 /* InsuranceStatusTests.swift */,
-			);
-			path = BKKAtomiumTests;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000019 /* BKKAtomiumUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000038 /* LoginUITests.swift */,
-				1111111111111111000039 /* ProfileUITests.swift */,
-			);
-			path = BKKAtomiumUITests;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000020 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000041 /* InsuranceCalculator.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000050 /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000050 /* MainTabView.swift */,
-			);
-			path = Tabs;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000051 /* Bonus */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000051 /* BonusView.swift */,
-				1111111111111111000080 /* AddMeasureView.swift */,
-			);
-			path = Bonus;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000052 /* SickNote */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000052 /* SickNoteFlowView.swift */,
-			);
-			path = SickNote;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000053 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000053 /* ServiceView.swift */,
-				1111111111111111000071 /* EGKMissingView.swift */,
-				1111111111111111000072 /* EGKLostView.swift */,
-				1111111111111111000073 /* CertificateRequestView.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000054 /* Health */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000054 /* HealthView.swift */,
-				1111111111111111000064 /* HealthDataView.swift */,
-				1111111111111111000065 /* MedicationView.swift */,
-				1111111111111111000066 /* PreventionView.swift */,
-				1111111111111111000067 /* VaccinationView.swift */,
-				1111111111111111000068 /* eAUView.swift */,
-				1111111111111111000069 /* PregnancyView.swift */,
-				1111111111111111000070 /* CostOverviewView.swift */,
-			);
-			path = Health;
-			sourceTree = "<group>";
-		};
-		EEEEEEEEEEEEEEEE000055 /* Postfach */ = {
-			isa = PBXGroup;
-			children = (
-				1111111111111111000055 /* PostfachView.swift */,
-			);
-			path = Postfach;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		BBBBBBBBBBBBBBBB000001 /* BKKAtomium */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BBBBBBBBBBBBBBBB000002 /* Build configuration list for PBXNativeTarget "BKKAtomium" */;
-			buildPhases = (
-				BBBBBBBBBBBBBBBB000005 /* Sources */,
-				BBBBBBBBBBBBBBBB000006 /* Resources */,
-				BBBBBBBBBBBBBBBB000007 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BKKAtomium;
-			productName = BKKAtomium;
-			productReference = FFFFFF0000000000000001 /* BKKAtomium.app */;
-			productType = "com.apple.product-type.application";
-		};
-		CCCCCCCCCCCCCCCC000001 /* BKKAtomiumTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CCCCCCCCCCCCCCCC000002 /* Build configuration list for PBXNativeTarget "BKKAtomiumTests" */;
-			buildPhases = (
-				CCCCCCCCCCCCCCCC000005 /* Sources */,
-				CCCCCCCCCCCCCCCC000006 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CCCCCCCCCCCCCCCC000007 /* PBXTargetDependency */,
-			);
-			name = BKKAtomiumTests;
-			productName = BKKAtomiumTests;
-			productReference = FFFFFF0000000000000002 /* BKKAtomiumTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DDDDDDDDDDDDDDDD000001 /* BKKAtomiumUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DDDDDDDDDDDDDDDD000002 /* Build configuration list for PBXNativeTarget "BKKAtomiumUITests" */;
-			buildPhases = (
-				DDDDDDDDDDDDDDDD000005 /* Sources */,
-				DDDDDDDDDDDDDDDD000006 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DDDDDDDDDDDDDDDD000007 /* PBXTargetDependency */,
-			);
-			name = BKKAtomiumUITests;
-			productName = BKKAtomiumUITests;
-			productReference = FFFFFF0000000000000003 /* BKKAtomiumUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		AAAAAAAAAAAAAAAA000001 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
-				TargetAttributes = {
-					BBBBBBBBBBBBBBBB000001 = {
-						CreatedOnToolsVersion = 16.0;
-					};
-					CCCCCCCCCCCCCCCC000001 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = BBBBBBBBBBBBBBBB000001;
-					};
-					DDDDDDDDDDDDDDDD000001 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = BBBBBBBBBBBBBBBB000001;
-					};
-				};
-			};
-			buildConfigurationList = AAAAAAAAAAAAAAAA000002 /* Build configuration list for PBXProject "BKKAtomium" */;
-			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = de;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				de,
-				en,
-				Base,
-			);
-			mainGroup = EEEEEEEEEEEEEEEE000001;
-			productRefGroup = EEEEEEEEEEEEEEEE000002 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				BBBBBBBBBBBBBBBB000001 /* BKKAtomium */,
-				CCCCCCCCCCCCCCCC000001 /* BKKAtomiumTests */,
-				DDDDDDDDDDDDDDDD000001 /* BKKAtomiumUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		BBBBBBBBBBBBBBBB000006 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2222222222222222000032 /* Localizable.strings in Resources */,
-				AAAA000000000001000002 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		BBBBBBBBBBBBBBBB000005 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2222222222222222000001 /* BKKAtomiumApp.swift in Sources */,
-				2222222222222222000002 /* AppState.swift in Sources */,
-				2222222222222222000003 /* AppTheme.swift in Sources */,
-				2222222222222222000004 /* InsuredPerson.swift in Sources */,
-				2222222222222222000005 /* Address.swift in Sources */,
-				2222222222222222000006 /* PhoneNumber.swift in Sources */,
-				2222222222222222000007 /* BankAccount.swift in Sources */,
-				2222222222222222000008 /* EmailAddress.swift in Sources */,
-				2222222222222222000009 /* AuthService.swift in Sources */,
-				2222222222222222000010 /* NotificationService.swift in Sources */,
-				2222222222222222000011 /* Validators.swift in Sources */,
-				2222222222222222000012 /* AddressRepository.swift in Sources */,
-				2222222222222222000013 /* BankAccountRepository.swift in Sources */,
-				2222222222222222000014 /* EmailRepository.swift in Sources */,
-				2222222222222222000015 /* PhoneRepository.swift in Sources */,
-				2222222222222222000016 /* LoginViewModel.swift in Sources */,
-				2222222222222222000017 /* ProfileViewModel.swift in Sources */,
-				2222222222222222000018 /* HomeView.swift in Sources */,
-				2222222222222222000019 /* ImprintView.swift in Sources */,
-				2222222222222222000020 /* PrivacyView.swift in Sources */,
-				2222222222222222000021 /* TermsView.swift in Sources */,
-				2222222222222222000022 /* LoginView.swift in Sources */,
-				2222222222222222000023 /* AddressFormView.swift in Sources */,
-				2222222222222222000024 /* AddressListView.swift in Sources */,
-				2222222222222222000025 /* BankAccountListView.swift in Sources */,
-				2222222222222222000026 /* EmailListView.swift in Sources */,
-				2222222222222222000027 /* InsuranceStatusView.swift in Sources */,
-				2222222222222222000028 /* PhoneListView.swift in Sources */,
-				2222222222222222000029 /* ProfileView.swift in Sources */,
-				2222222222222222000030 /* CardView.swift in Sources */,
-				2222222222222222000031 /* MockDataSeeder.swift in Sources */,
-				2222222222222222000033 /* InsuranceCalculator.swift in Sources */,
-				2222222222222222000050 /* MainTabView.swift in Sources */,
-				2222222222222222000051 /* BonusView.swift in Sources */,
-				2222222222222222000052 /* SickNoteFlowView.swift in Sources */,
-				2222222222222222000053 /* ServiceView.swift in Sources */,
-				2222222222222222000054 /* HealthView.swift in Sources */,
-				2222222222222222000055 /* PostfachView.swift in Sources */,
-				2222222222222222000060 /* ApplicationsView.swift in Sources */,
-				2222222222222222000061 /* SickPayView.swift in Sources */,
-				2222222222222222000062 /* ContactSheetView.swift in Sources */,
-				2222222222222222000063 /* FAQWebView.swift in Sources */,
-				2222222222222222000064 /* HealthDataView.swift in Sources */,
-				2222222222222222000065 /* MedicationView.swift in Sources */,
-				2222222222222222000066 /* PreventionView.swift in Sources */,
-				2222222222222222000067 /* VaccinationView.swift in Sources */,
-				2222222222222222000068 /* eAUView.swift in Sources */,
-				2222222222222222000069 /* PregnancyView.swift in Sources */,
-				2222222222222222000070 /* CostOverviewView.swift in Sources */,
-				2222222222222222000071 /* EGKMissingView.swift in Sources */,
-				2222222222222222000072 /* EGKLostView.swift in Sources */,
-				2222222222222222000073 /* CertificateRequestView.swift in Sources */,
-				2222222222222222000074 /* HotlineView.swift in Sources */,
-				2222222222222222000075 /* HealthCardView.swift in Sources */,
-				2222222222222222000076 /* SecureMessageView.swift in Sources */,
-				2222222222222222000077 /* PraiseComplaintsView.swift in Sources */,
-				2222222222222222000078 /* AdvisorView.swift in Sources */,
-				2222222222222222000079 /* MoreContactsView.swift in Sources */,
-				2222222222222222000080 /* AddMeasureView.swift in Sources */,
-				2222222222222222000081 /* SettingsView.swift in Sources */,
-				2222222222222222000082 /* HelpFeedbackView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CCCCCCCCCCCCCCCC000005 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3333333333333333000001 /* LoginTests.swift in Sources */,
-				3333333333333333000002 /* ValidationTests.swift in Sources */,
-				3333333333333333000003 /* InsuranceStatusTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDDDDDDDDDDDDDDD000005 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4444444444444444000001 /* LoginUITests.swift in Sources */,
-				4444444444444444000002 /* ProfileUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CCCCCCCCCCCCCCCC000007 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BBBBBBBBBBBBBBBB000001 /* BKKAtomium */;
-			targetProxy = CCCCCCCCCCCCCCCC000008 /* PBXContainerItemProxy */;
-		};
-		DDDDDDDDDDDDDDDD000007 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BBBBBBBBBBBBBBBB000001 /* BKKAtomium */;
-			targetProxy = DDDDDDDDDDDDDDDD000008 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1111111111111111000040 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1111111111111111000033 /* de */,
-				1111111111111111000034 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		AAAAAAAAAAAAAAAA000003 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		AAAAAAAAAAAAAAAA000004 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		BBBBBBBBBBBBBBBB000003 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = RA49YSKNYN;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = BKKAtomium/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		BBBBBBBBBBBBBBBB000004 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = RA49YSKNYN;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = BKKAtomium/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		CCCCCCCCCCCCCCCC000003 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = RA49YSKNYN;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp1.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BKKAtomium.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BKKAtomium";
-			};
-			name = Debug;
-		};
-		CCCCCCCCCCCCCCCC000004 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = RA49YSKNYN;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp1.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BKKAtomium.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BKKAtomium";
-			};
-			name = Release;
-		};
-		DDDDDDDDDDDDDDDD000003 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = RA49YSKNYN;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp1.uitests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BKKAtomium;
-			};
-			name = Debug;
-		};
-		DDDDDDDDDDDDDDDD000004 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_TEAM = RA49YSKNYN;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.drapatz.testapp1.uitests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BKKAtomium;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		AAAAAAAAAAAAAAAA000002 /* Build configuration list for PBXProject "BKKAtomium" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AAAAAAAAAAAAAAAA000003 /* Debug */,
-				AAAAAAAAAAAAAAAA000004 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BBBBBBBBBBBBBBBB000002 /* Build configuration list for PBXNativeTarget "BKKAtomium" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BBBBBBBBBBBBBBBB000003 /* Debug */,
-				BBBBBBBBBBBBBBBB000004 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CCCCCCCCCCCCCCCC000002 /* Build configuration list for PBXNativeTarget "BKKAtomiumTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CCCCCCCCCCCCCCCC000003 /* Debug */,
-				CCCCCCCCCCCCCCCC000004 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DDDDDDDDDDDDDDDD000002 /* Build configuration list for PBXNativeTarget "BKKAtomiumUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DDDDDDDDDDDDDDDD000003 /* Debug */,
-				DDDDDDDDDDDDDDDD000004 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = AAAAAAAAAAAAAAAA000001 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>56</string>
+	<key>objects</key>
+	<dict>
+		<key>06314605A90B4AEFAF1CE679</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/Repositories/BenefitRequestRepository.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomiumApp.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000002</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppState.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000003</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppTheme.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000004</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>InsuredPerson.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000005</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Address.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000006</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PhoneNumber.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000007</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BankAccount.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000008</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>EmailAddress.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000009</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AuthService.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000010</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>NotificationService.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000011</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Validators.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000012</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AddressRepository.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000013</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BankAccountRepository.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000014</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>EmailRepository.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000015</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PhoneRepository.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000016</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LoginViewModel.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000017</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ProfileViewModel.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000018</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>HomeView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000019</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ImprintView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000020</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PrivacyView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000021</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TermsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000022</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LoginView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000023</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AddressFormView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000024</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AddressListView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000025</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BankAccountListView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000026</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>EmailListView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000027</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>InsuranceStatusView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000028</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PhoneListView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000029</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ProfileView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000030</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CardView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000031</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MockDataSeeder.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000032</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000033</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>de</string>
+			<key>path</key>
+			<string>de.lproj/Localizable.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000034</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/Localizable.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000035</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LoginTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000036</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ValidationTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000037</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>InsuranceStatusTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000038</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LoginUITests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000039</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ProfileUITests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000040</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000033</string>
+				<string>1111111111111111000034</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Localizable.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000041</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>InsuranceCalculator.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000050</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MainTabView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000051</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BonusView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000052</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SickNoteFlowView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000053</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ServiceView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000054</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>HealthView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000055</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PostfachView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000060</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ApplicationsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000061</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SickPayView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000062</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ContactSheetView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000063</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FAQWebView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000064</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>HealthDataView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000065</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MedicationView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000066</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PreventionView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000067</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>VaccinationView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000068</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>eAUView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000069</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PregnancyView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000070</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CostOverviewView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000071</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>EGKMissingView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000072</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>EGKLostView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000073</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CertificateRequestView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000074</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>HotlineView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000075</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>HealthCardView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000076</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SecureMessageView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000077</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PraiseComplaintsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000078</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AdvisorView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000079</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MoreContactsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000080</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AddMeasureView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000081</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SettingsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1111111111111111000082</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>HelpFeedbackView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1578C43FFC034BA387FF321C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/ViewModels/SettingsViewModel.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>20A747651AFD486799005DF4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>06314605A90B4AEFAF1CE679</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000002</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000002</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000003</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000003</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000004</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000004</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000005</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000005</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000006</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000006</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000007</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000007</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000008</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000008</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000009</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000009</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000010</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000010</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000011</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000011</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000012</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000012</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000013</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000013</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000014</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000014</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000015</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000015</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000016</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000016</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000017</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000017</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000018</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000018</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000019</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000019</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000020</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000020</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000021</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000021</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000022</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000022</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000023</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000023</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000024</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000024</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000025</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000025</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000026</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000026</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000027</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000027</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000028</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000028</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000029</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000029</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000030</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000030</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000031</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000031</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000032</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000040</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000033</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000041</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000050</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000050</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000051</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000051</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000052</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000052</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000053</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000053</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000054</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000054</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000055</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000055</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000060</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000060</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000061</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000061</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000062</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000062</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000063</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000063</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000064</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000064</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000065</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000065</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000066</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000066</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000067</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000067</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000068</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000069</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000069</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000070</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000070</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000071</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000071</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000072</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000072</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000073</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000073</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000074</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000074</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000075</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000075</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000076</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000076</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000077</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000077</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000078</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000078</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000079</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000079</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000080</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000080</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000081</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000081</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2222222222222222000082</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000082</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>24490341F6114087A813406D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/ViewModels/BenefitRequestViewModel.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3333333333333333000001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000035</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3333333333333333000002</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000036</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3333333333333333000003</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000037</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>43E55C30E77841AABF5589AB</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/Repositories/InvoiceRepository.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4444444444444444000001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000038</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4444444444444444000002</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1111111111111111000039</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4AC920550E0746F0BB658867</key>
+		<dict>
+			<key>fileRef</key>
+			<string>24490341F6114087A813406D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4F273E003AEB4941869ED1E5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/Models/InsuranceDocument.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>541195FDDE9048EE8AEB4F08</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/Models/Invoice.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>54D17184B68C4AE6BD3D8F00</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C61C41B69C004D329F370E67</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5555555555555555000001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppStateTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000002</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ExtendedValidationTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000003</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>InsuranceCalculatorTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000004</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LoginViewModelAsyncTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000005</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MockDataSeederTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000006</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ModelTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000007</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>RepositoryTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000008</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ValidationErrorTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000009</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ViewModelIntegrationTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000010</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ProfileViewModelTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000011</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppThemeTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000012</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AuthErrorTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000013</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>NotificationServiceTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000014</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AdditionalValidatorTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5555555555555555000015</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SupplementalCoverageTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5CF8769346BF446DA3389C68</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1578C43FFC034BA387FF321C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000002</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000002</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000003</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000003</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000004</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000004</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000005</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000005</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000006</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000006</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000007</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000007</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000008</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000008</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000009</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000009</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000010</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000010</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000011</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000011</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000012</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000012</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000013</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000013</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000014</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000014</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6666666666666666000015</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5555555555555555000015</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>76F406F66E8E4EC784B9CC55</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C013674CF7FC480CA38976AD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>861097224D88410BB4714618</key>
+		<dict>
+			<key>fileRef</key>
+			<string>43E55C30E77841AABF5589AB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A4316DB62523481CA7F387AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/Repositories/DocumentRepository.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A64D6AE19F0D4427879C0064</key>
+		<dict>
+			<key>fileRef</key>
+			<string>541195FDDE9048EE8AEB4F08</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AAAA000000000001000001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AAAA000000000001000002</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AAAA000000000001000001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AAAAAAAAAAAAAAAA000001</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>BuildIndependentTargetsInParallel</key>
+				<string>1</string>
+				<key>LastSwiftUpdateCheck</key>
+				<string>1600</string>
+				<key>LastUpgradeCheck</key>
+				<string>1600</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>BBBBBBBBBBBBBBBB000001</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>16.0</string>
+					</dict>
+					<key>CCCCCCCCCCCCCCCC000001</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>16.0</string>
+						<key>TestTargetID</key>
+						<string>BBBBBBBBBBBBBBBB000001</string>
+					</dict>
+					<key>DDDDDDDDDDDDDDDD000001</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>16.0</string>
+						<key>TestTargetID</key>
+						<string>BBBBBBBBBBBBBBBB000001</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>AAAAAAAAAAAAAAAA000002</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 14.0</string>
+			<key>developmentRegion</key>
+			<string>de</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>de</string>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>EEEEEEEEEEEEEEEE000001</string>
+			<key>productRefGroup</key>
+			<string>EEEEEEEEEEEEEEEE000002</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>BBBBBBBBBBBBBBBB000001</string>
+				<string>CCCCCCCCCCCCCCCC000001</string>
+				<string>DDDDDDDDDDDDDDDD000001</string>
+			</array>
+		</dict>
+		<key>AAAAAAAAAAAAAAAA000002</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>AAAAAAAAAAAAAAAA000003</string>
+				<string>AAAAAAAAAAAAAAAA000004</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AAAAAAAAAAAAAAAA000003</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS</key>
+				<string>YES</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++20</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_WEAK</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_COMMA</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_NON_LITERAL_NULL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_LITERAL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
+				<string>YES</string>
+				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_STRICT_PROTOTYPES</key>
+				<string>YES</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNGUARDED_AVAILABILITY</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>ENABLE_USER_SCRIPT_SANDBOXING</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu17</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>LOCALIZATION_PREFERS_STRING_CATALOGS</key>
+				<string>YES</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>INCLUDE_SOURCE</string>
+				<key>MTL_FAST_MATH</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_ACTIVE_COMPILATION_CONDITIONS</key>
+				<string>DEBUG $(inherited)</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>AAAAAAAAAAAAAAAA000004</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS</key>
+				<string>YES</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++20</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_WEAK</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_COMMA</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_NON_LITERAL_NULL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_LITERAL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
+				<string>YES</string>
+				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_STRICT_PROTOTYPES</key>
+				<string>YES</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNGUARDED_AVAILABILITY</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_USER_SCRIPT_SANDBOXING</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu17</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>LOCALIZATION_PREFERS_STRING_CATALOGS</key>
+				<string>YES</string>
+				<key>MTL_FAST_MATH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_COMPILATION_MODE</key>
+				<string>wholemodule</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-O</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>BBBBBBBBBBBBBBBB000001</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>BBBBBBBBBBBBBBBB000002</string>
+			<key>buildPhases</key>
+			<array>
+				<string>BBBBBBBBBBBBBBBB000005</string>
+				<string>BBBBBBBBBBBBBBBB000006</string>
+				<string>BBBBBBBBBBBBBBBB000007</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>BKKAtomium</string>
+			<key>productName</key>
+			<string>BKKAtomium</string>
+			<key>productReference</key>
+			<string>FFFFFF0000000000000001</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>BBBBBBBBBBBBBBBB000002</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>BBBBBBBBBBBBBBBB000003</string>
+				<string>BBBBBBBBBBBBBBBB000004</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>BBBBBBBBBBBBBBBB000003</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
+				<string>AccentColor</string>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>8</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>RA49YSKNYN</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>NO</string>
+				<key>INFOPLIST_FILE</key>
+				<string>BKKAtomium/Resources/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+				</array>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>net.drapatz.testapp1</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>BBBBBBBBBBBBBBBB000004</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
+				<string>AccentColor</string>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>8</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>RA49YSKNYN</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>NO</string>
+				<key>INFOPLIST_FILE</key>
+				<string>BKKAtomium/Resources/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+				</array>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>net.drapatz.testapp1</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>BBBBBBBBBBBBBBBB000005</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2222222222222222000001</string>
+				<string>2222222222222222000002</string>
+				<string>2222222222222222000003</string>
+				<string>2222222222222222000004</string>
+				<string>2222222222222222000005</string>
+				<string>2222222222222222000006</string>
+				<string>2222222222222222000007</string>
+				<string>2222222222222222000008</string>
+				<string>2222222222222222000009</string>
+				<string>2222222222222222000010</string>
+				<string>2222222222222222000011</string>
+				<string>2222222222222222000012</string>
+				<string>2222222222222222000013</string>
+				<string>2222222222222222000014</string>
+				<string>2222222222222222000015</string>
+				<string>2222222222222222000016</string>
+				<string>2222222222222222000017</string>
+				<string>2222222222222222000018</string>
+				<string>2222222222222222000019</string>
+				<string>2222222222222222000020</string>
+				<string>2222222222222222000021</string>
+				<string>2222222222222222000022</string>
+				<string>2222222222222222000023</string>
+				<string>2222222222222222000024</string>
+				<string>2222222222222222000025</string>
+				<string>2222222222222222000026</string>
+				<string>2222222222222222000027</string>
+				<string>2222222222222222000028</string>
+				<string>2222222222222222000029</string>
+				<string>2222222222222222000030</string>
+				<string>2222222222222222000031</string>
+				<string>2222222222222222000033</string>
+				<string>2222222222222222000050</string>
+				<string>2222222222222222000051</string>
+				<string>2222222222222222000052</string>
+				<string>2222222222222222000053</string>
+				<string>2222222222222222000054</string>
+				<string>2222222222222222000055</string>
+				<string>2222222222222222000060</string>
+				<string>2222222222222222000061</string>
+				<string>2222222222222222000062</string>
+				<string>2222222222222222000063</string>
+				<string>2222222222222222000064</string>
+				<string>2222222222222222000065</string>
+				<string>2222222222222222000066</string>
+				<string>2222222222222222000067</string>
+				<string>2222222222222222000068</string>
+				<string>2222222222222222000069</string>
+				<string>2222222222222222000070</string>
+				<string>2222222222222222000071</string>
+				<string>2222222222222222000072</string>
+				<string>2222222222222222000073</string>
+				<string>2222222222222222000074</string>
+				<string>2222222222222222000075</string>
+				<string>2222222222222222000076</string>
+				<string>2222222222222222000077</string>
+				<string>2222222222222222000078</string>
+				<string>2222222222222222000079</string>
+				<string>2222222222222222000080</string>
+				<string>2222222222222222000081</string>
+				<string>2222222222222222000082</string>
+				<string>A64D6AE19F0D4427879C0064</string>
+				<string>BFAB4B0D560040C59CF84FD9</string>
+				<string>F278010A97644C0CA03B0C9F</string>
+				<string>76F406F66E8E4EC784B9CC55</string>
+				<string>5CF8769346BF446DA3389C68</string>
+				<string>861097224D88410BB4714618</string>
+				<string>FBA187B093E34FC280E2802D</string>
+				<string>20A747651AFD486799005DF4</string>
+				<string>54D17184B68C4AE6BD3D8F00</string>
+				<string>4AC920550E0746F0BB658867</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BBBBBBBBBBBBBBBB000006</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2222222222222222000032</string>
+				<string>AAAA000000000001000002</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BBBBBBBBBBBBBBBB000007</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BFAB4B0D560040C59CF84FD9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4F273E003AEB4941869ED1E5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C013674CF7FC480CA38976AD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/Services/KeychainWrapper.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C61C41B69C004D329F370E67</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/ViewModels/InvoiceViewModel.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CCCCCCCCCCCCCCCC000001</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>CCCCCCCCCCCCCCCC000002</string>
+			<key>buildPhases</key>
+			<array>
+				<string>CCCCCCCCCCCCCCCC000005</string>
+				<string>CCCCCCCCCCCCCCCC000006</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>CCCCCCCCCCCCCCCC000007</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>BKKAtomiumTests</string>
+			<key>productName</key>
+			<string>BKKAtomiumTests</string>
+			<key>productReference</key>
+			<string>FFFFFF0000000000000002</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>CCCCCCCCCCCCCCCC000002</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>CCCCCCCCCCCCCCCC000003</string>
+				<string>CCCCCCCCCCCCCCCC000004</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>CCCCCCCCCCCCCCCC000003</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>8</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>RA49YSKNYN</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>net.drapatz.testapp1.tests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>NO</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/BKKAtomium.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BKKAtomium</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>CCCCCCCCCCCCCCCC000004</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>8</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>RA49YSKNYN</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>net.drapatz.testapp1.tests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>NO</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/BKKAtomium.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BKKAtomium</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>CCCCCCCCCCCCCCCC000005</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3333333333333333000001</string>
+				<string>3333333333333333000002</string>
+				<string>3333333333333333000003</string>
+				<string>6666666666666666000001</string>
+				<string>6666666666666666000002</string>
+				<string>6666666666666666000003</string>
+				<string>6666666666666666000004</string>
+				<string>6666666666666666000005</string>
+				<string>6666666666666666000006</string>
+				<string>6666666666666666000007</string>
+				<string>6666666666666666000008</string>
+				<string>6666666666666666000009</string>
+				<string>6666666666666666000010</string>
+				<string>6666666666666666000011</string>
+				<string>6666666666666666000012</string>
+				<string>6666666666666666000013</string>
+				<string>6666666666666666000014</string>
+				<string>6666666666666666000015</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CCCCCCCCCCCCCCCC000006</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CCCCCCCCCCCCCCCC000007</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>BBBBBBBBBBBBBBBB000001</string>
+			<key>targetProxy</key>
+			<string>CCCCCCCCCCCCCCCC000008</string>
+		</dict>
+		<key>CCCCCCCCCCCCCCCC000008</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>AAAAAAAAAAAAAAAA000001</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>BBBBBBBBBBBBBBBB000001</string>
+			<key>remoteInfo</key>
+			<string>BKKAtomium</string>
+		</dict>
+		<key>DDDDDDDDDDDDDDDD000001</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>DDDDDDDDDDDDDDDD000002</string>
+			<key>buildPhases</key>
+			<array>
+				<string>DDDDDDDDDDDDDDDD000005</string>
+				<string>DDDDDDDDDDDDDDDD000006</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>DDDDDDDDDDDDDDDD000007</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>BKKAtomiumUITests</string>
+			<key>productName</key>
+			<string>BKKAtomiumUITests</string>
+			<key>productReference</key>
+			<string>FFFFFF0000000000000003</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>DDDDDDDDDDDDDDDD000002</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>DDDDDDDDDDDDDDDD000003</string>
+				<string>DDDDDDDDDDDDDDDD000004</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>DDDDDDDDDDDDDDDD000003</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>8</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>RA49YSKNYN</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>net.drapatz.testapp1.uitests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>NO</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>BKKAtomium</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>DDDDDDDDDDDDDDDD000004</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Automatic</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>8</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>RA49YSKNYN</string>
+				<key>GENERATE_INFOPLIST_FILE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>MARKETING_VERSION</key>
+				<string>1.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>net.drapatz.testapp1.uitests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_EMIT_LOC_STRINGS</key>
+				<string>NO</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>BKKAtomium</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>DDDDDDDDDDDDDDDD000005</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4444444444444444000001</string>
+				<string>4444444444444444000002</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DDDDDDDDDDDDDDDD000006</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DDDDDDDDDDDDDDDD000007</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>BBBBBBBBBBBBBBBB000001</string>
+			<key>targetProxy</key>
+			<string>DDDDDDDDDDDDDDDD000008</string>
+		</dict>
+		<key>DDDDDDDDDDDDDDDD000008</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>AAAAAAAAAAAAAAAA000001</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>BBBBBBBBBBBBBBBB000001</string>
+			<key>remoteInfo</key>
+			<string>BKKAtomium</string>
+		</dict>
+		<key>E042F2E0F7984DB0A1CB0882</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BKKAtomium/Models/BenefitRequest.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000001</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EEEEEEEEEEEEEEEE000003</string>
+				<string>EEEEEEEEEEEEEEEE000018</string>
+				<string>EEEEEEEEEEEEEEEE000019</string>
+				<string>EEEEEEEEEEEEEEEE000002</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000002</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FFFFFF0000000000000001</string>
+				<string>FFFFFF0000000000000002</string>
+				<string>FFFFFF0000000000000003</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000003</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000001</string>
+				<string>EEEEEEEEEEEEEEEE000004</string>
+				<string>EEEEEEEEEEEEEEEE000005</string>
+				<string>EEEEEEEEEEEEEEEE000006</string>
+				<string>EEEEEEEEEEEEEEEE000007</string>
+				<string>EEEEEEEEEEEEEEEE000008</string>
+				<string>EEEEEEEEEEEEEEEE000009</string>
+				<string>EEEEEEEEEEEEEEEE000010</string>
+				<string>EEEEEEEEEEEEEEEE000016</string>
+				<string>EEEEEEEEEEEEEEEE000017</string>
+				<string>EEEEEEEEEEEEEEEE000020</string>
+				<string>AAAA000000000001000001</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>BKKAtomium</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000004</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000002</string>
+				<string>1111111111111111000003</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>App</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000005</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000004</string>
+				<string>1111111111111111000005</string>
+				<string>1111111111111111000006</string>
+				<string>1111111111111111000007</string>
+				<string>1111111111111111000008</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Models</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000006</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000009</string>
+				<string>1111111111111111000010</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Services</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000007</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000011</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Validation</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000008</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000012</string>
+				<string>1111111111111111000013</string>
+				<string>1111111111111111000014</string>
+				<string>1111111111111111000015</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Repositories</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000009</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000016</string>
+				<string>1111111111111111000017</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ViewModels</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000010</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EEEEEEEEEEEEEEEE000011</string>
+				<string>EEEEEEEEEEEEEEEE000012</string>
+				<string>EEEEEEEEEEEEEEEE000013</string>
+				<string>EEEEEEEEEEEEEEEE000014</string>
+				<string>EEEEEEEEEEEEEEEE000015</string>
+				<string>EEEEEEEEEEEEEEEE000050</string>
+				<string>EEEEEEEEEEEEEEEE000051</string>
+				<string>EEEEEEEEEEEEEEEE000052</string>
+				<string>EEEEEEEEEEEEEEEE000053</string>
+				<string>EEEEEEEEEEEEEEEE000054</string>
+				<string>EEEEEEEEEEEEEEEE000055</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000011</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000018</string>
+				<string>1111111111111111000060</string>
+				<string>1111111111111111000061</string>
+				<string>1111111111111111000062</string>
+				<string>1111111111111111000063</string>
+				<string>1111111111111111000074</string>
+				<string>1111111111111111000075</string>
+				<string>1111111111111111000076</string>
+				<string>1111111111111111000077</string>
+				<string>1111111111111111000078</string>
+				<string>1111111111111111000079</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Home</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000012</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000019</string>
+				<string>1111111111111111000020</string>
+				<string>1111111111111111000021</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Legal</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000013</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000022</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Login</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000014</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000023</string>
+				<string>1111111111111111000024</string>
+				<string>1111111111111111000025</string>
+				<string>1111111111111111000026</string>
+				<string>1111111111111111000027</string>
+				<string>1111111111111111000028</string>
+				<string>1111111111111111000029</string>
+				<string>1111111111111111000081</string>
+				<string>1111111111111111000082</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Profile</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000015</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000030</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Shared</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000016</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000031</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>SeedData</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000017</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000032</string>
+				<string>1111111111111111000040</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000018</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000035</string>
+				<string>1111111111111111000036</string>
+				<string>1111111111111111000037</string>
+				<string>5555555555555555000001</string>
+				<string>5555555555555555000002</string>
+				<string>5555555555555555000003</string>
+				<string>5555555555555555000004</string>
+				<string>5555555555555555000005</string>
+				<string>5555555555555555000006</string>
+				<string>5555555555555555000007</string>
+				<string>5555555555555555000008</string>
+				<string>5555555555555555000009</string>
+				<string>5555555555555555000010</string>
+				<string>5555555555555555000011</string>
+				<string>5555555555555555000012</string>
+				<string>5555555555555555000013</string>
+				<string>5555555555555555000014</string>
+				<string>5555555555555555000015</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>BKKAtomiumTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000019</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000038</string>
+				<string>1111111111111111000039</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>BKKAtomiumUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000020</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000041</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Utilities</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000050</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000050</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Tabs</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000051</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000051</string>
+				<string>1111111111111111000080</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Bonus</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000052</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000052</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>SickNote</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000053</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000053</string>
+				<string>1111111111111111000071</string>
+				<string>1111111111111111000072</string>
+				<string>1111111111111111000073</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Service</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000054</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000054</string>
+				<string>1111111111111111000064</string>
+				<string>1111111111111111000065</string>
+				<string>1111111111111111000066</string>
+				<string>1111111111111111000067</string>
+				<string>1111111111111111000068</string>
+				<string>1111111111111111000069</string>
+				<string>1111111111111111000070</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Health</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EEEEEEEEEEEEEEEE000055</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1111111111111111000055</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Postfach</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F278010A97644C0CA03B0C9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E042F2E0F7984DB0A1CB0882</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FBA187B093E34FC280E2802D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A4316DB62523481CA7F387AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FFFFFF0000000000000001</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>BKKAtomium.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>FFFFFF0000000000000002</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>BKKAtomiumTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>FFFFFF0000000000000003</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>BKKAtomiumUITests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>AAAAAAAAAAAAAAAA000001</string>
+</dict>
+</plist>
