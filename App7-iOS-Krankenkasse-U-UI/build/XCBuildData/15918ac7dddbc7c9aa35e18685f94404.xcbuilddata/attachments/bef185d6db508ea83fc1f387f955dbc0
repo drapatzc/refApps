@@ -158,6 +158,11 @@
     "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SettingsViewModel.bc",
     "object" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SettingsViewModel.o"
   },
+  "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/ViewModels/SickNoteViewModel.swift" : {
+    "index-unit-output-path" : "/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SickNoteViewModel.o",
+    "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SickNoteViewModel.bc",
+    "object" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SickNoteViewModel.o"
+  },
   "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Bonus/AddMeasureView.swift" : {
     "index-unit-output-path" : "/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/AddMeasureView.o",
     "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/AddMeasureView.bc",
@@ -313,6 +318,11 @@
     "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/LoginView.bc",
     "object" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/LoginView.o"
   },
+  "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Postfach/ComposeMessageView.swift" : {
+    "index-unit-output-path" : "/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/ComposeMessageView.o",
+    "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/ComposeMessageView.bc",
+    "object" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/ComposeMessageView.o"
+  },
   "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Postfach/PostfachView.swift" : {
     "index-unit-output-path" : "/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/PostfachView.o",
     "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/PostfachView.bc",
@@ -392,6 +402,11 @@
     "index-unit-output-path" : "/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SickNoteFlowView.o",
     "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SickNoteFlowView.bc",
     "object" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SickNoteFlowView.o"
+  },
+  "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/SickNote/SickNoteImagePickerView.swift" : {
+    "index-unit-output-path" : "/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SickNoteImagePickerView.o",
+    "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SickNoteImagePickerView.bc",
+    "object" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/SickNoteImagePickerView.o"
   },
   "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Tabs/MainTabView.swift" : {
     "index-unit-output-path" : "/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/MainTabView.o",
