@@ -165,6 +165,9 @@ struct PostfachView: View {
     /// Controls presentation of the filter bottom sheet.
     @State private var showFilterSheet = false
 
+    /// Controls presentation of the compose message sheet.
+    @State private var showComposeSheet = false
+
     /// Messages filtered by the active date range and search query.
     private var filteredMessages: [PostfachMessage] {
         let query = searchText.trimmingCharacters(in: .whitespaces).lowercased()
@@ -192,13 +195,24 @@ struct PostfachView: View {
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showFilterSheet = true
-                    } label: {
-                        Label(
-                            String(localized: "postfach_filter_button"),
-                            systemImage: "calendar"
-                        )
+                    HStack(spacing: AppTheme.spacingL) {
+                        Button {
+                            showComposeSheet = true
+                        } label: {
+                            Label(
+                                "Nachricht",
+                                systemImage: "square.and.pencil"
+                            )
+                        }
+
+                        Button {
+                            showFilterSheet = true
+                        } label: {
+                            Label(
+                                String(localized: "postfach_filter_button"),
+                                systemImage: "calendar"
+                            )
+                        }
                     }
                 }
             }
@@ -211,6 +225,9 @@ struct PostfachView: View {
                 PostfachFilterSheet(selected: $filter)
                     .presentationDetents([.medium])
                     .presentationDragIndicator(.visible)
+            }
+            .sheet(isPresented: $showComposeSheet) {
+                ComposeMessageView()
             }
         }
     }

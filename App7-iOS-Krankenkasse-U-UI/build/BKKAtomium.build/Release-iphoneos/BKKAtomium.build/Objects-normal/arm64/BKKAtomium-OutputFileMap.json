@@ -313,6 +313,11 @@
     "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/LoginView.bc",
     "object" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/LoginView.o"
   },
+  "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Postfach/ComposeMessageView.swift" : {
+    "index-unit-output-path" : "/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/ComposeMessageView.o",
+    "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/ComposeMessageView.bc",
+    "object" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/ComposeMessageView.o"
+  },
   "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/BKKAtomium/Views/Postfach/PostfachView.swift" : {
     "index-unit-output-path" : "/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/PostfachView.o",
     "llvm-bc" : "/Users/drapatz/GIT-Home/refApps/App7-iOS-Krankenkasse-U-UI/build/BKKAtomium.build/Release-iphoneos/BKKAtomium.build/Objects-normal/arm64/PostfachView.bc",

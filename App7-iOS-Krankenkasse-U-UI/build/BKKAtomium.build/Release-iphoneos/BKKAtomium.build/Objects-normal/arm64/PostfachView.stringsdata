@@ -199,7 +199,7 @@
         "key": "postfach_title",
         "location": {
           "startingColumn": 48,
-          "startingLine": 191
+          "startingLine": 194
         }
       },
       {
@@ -207,15 +207,23 @@
         "key": "postfach_search_placeholder",
         "location": {
           "startingColumn": 48,
-          "startingLine": 208
+          "startingLine": 222
+        }
+      },
+      {
+        "comment": "",
+        "key": "Nachricht",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 203
         }
       },
       {
         "comment": "",
         "key": "postfach_filter_button",
         "location": {
-          "startingColumn": 47,
-          "startingLine": 199
+          "startingColumn": 51,
+          "startingLine": 212
         }
       },
       {
@@ -223,7 +231,7 @@
         "key": "postfach_empty_title",
         "location": {
           "startingColumn": 36,
-          "startingLine": 249
+          "startingLine": 266
         }
       },
       {
@@ -231,7 +239,7 @@
         "key": "postfach_empty_subtitle",
         "location": {
           "startingColumn": 36,
-          "startingLine": 251
+          "startingLine": 268
         }
       },
       {
@@ -239,7 +247,7 @@
         "key": "postfach_sender_you",
         "location": {
           "startingColumn": 33,
-          "startingLine": 294
+          "startingLine": 311
         }
       },
       {
@@ -247,7 +255,7 @@
         "key": "postfach_sender_insurance",
         "location": {
           "startingColumn": 33,
-          "startingLine": 295
+          "startingLine": 312
         }
       },
       {
@@ -255,7 +263,7 @@
         "key": "%@. %@. %@",
         "location": {
           "startingColumn": 29,
-          "startingLine": 351
+          "startingLine": 368
         }
       },
       {
@@ -263,7 +271,7 @@
         "key": "postfach_filter_title",
         "location": {
           "startingColumn": 48,
-          "startingLine": 455
+          "startingLine": 472
         }
       },
       {
@@ -271,7 +279,7 @@
         "key": "common_close",
         "location": {
           "startingColumn": 46,
-          "startingLine": 459
+          "startingLine": 476
         }
       }
     ]
