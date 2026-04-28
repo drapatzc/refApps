@@ -59,6 +59,9 @@ struct HomeView: View {
     /// Controls presentation of the FAQ web sheet.
     @State private var showFAQSheet = false
 
+    /// Controls presentation of the search sheet.
+    @State private var showSearchSheet = false
+
     /// The FAQ URL opened in `FAQWebView`.
     private let faqURL = URL(string: "https://www.christiandrapatz.de")!
 
@@ -155,50 +158,44 @@ struct HomeView: View {
         return prev[n]
     }
 
-    /// `true` when the search field contains non-whitespace text.
-    private var isSearching: Bool {
-        !searchText.trimmingCharacters(in: .whitespaces).isEmpty
-    }
 
-    /// Renders the navigation stack with the dashboard or search results, toolbar, and sheets.
+    /// Renders the navigation stack with the dashboard, toolbar, and sheets.
     var body: some View {
         NavigationStack(path: $path) {
-            Group {
-                if isSearching {
-                    searchResultsContent
-                } else {
-                    dashboardContent
-                }
-            }
-            .scrollDismissesKeyboard(.interactively)
-            .background(AppTheme.groupedBackground)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("BKK Atomium")
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showProfile = true
-                    } label: {
-                        Image(systemName: "person.circle.fill")
-                            .font(.title3)
-                            .foregroundStyle(AppTheme.primary)
+            dashboardContent
+                .scrollDismissesKeyboard(.interactively)
+                .background(AppTheme.groupedBackground)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text("BKK Atomium")
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
                     }
-                    .accessibilityLabel(String(localized: "home_nav_profile"))
-                    .accessibilityIdentifier("profileButton")
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        Button {
+                            showSearchSheet = true
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                                .font(.title3)
+                                .foregroundStyle(AppTheme.primary)
+                        }
+                        .accessibilityLabel(String(localized: "home_search_placeholder"))
+
+                        Button {
+                            showProfile = true
+                        } label: {
+                            Image(systemName: "person.circle.fill")
+                                .font(.title3)
+                                .foregroundStyle(AppTheme.primary)
+                        }
+                        .accessibilityLabel(String(localized: "home_nav_profile"))
+                        .accessibilityIdentifier("profileButton")
+                    }
                 }
-            }
-            .navigationDestination(for: HomeDestination.self) { destination in
-                destinationView(for: destination)
-            }
-            .searchable(
-                text: $searchText,
-                placement: .navigationBarDrawer(displayMode: .always),
-                prompt: Text(String(localized: "home_search_placeholder"))
-            )
+                .navigationDestination(for: HomeDestination.self) { destination in
+                    destinationView(for: destination)
+                }
             .sheet(isPresented: $showProfile) {
                 ProfileView()
             }
@@ -208,6 +205,14 @@ struct HomeView: View {
             .sheet(isPresented: $showFAQSheet) {
                 FAQWebView(url: faqURL)
                     .ignoresSafeArea()
+            }
+            .sheet(isPresented: $showSearchSheet) {
+                HomeSearchSheet(
+                    searchText: $searchText,
+                    path: $path,
+                    showContactSheet: $showContactSheet,
+                    showFAQSheet: $showFAQSheet
+                )
             }
         }
         .onAppear {
@@ -377,66 +382,6 @@ struct HomeView: View {
         .scrollIndicators(.hidden)
     }
 
-    // MARK: - Search Results
-
-    /// The content shown when the user is actively searching.
-    private var searchResultsContent: some View {
-        Group {
-            if filteredItems.isEmpty {
-                VStack(spacing: AppTheme.spacingM) {
-                    Image(systemName: "magnifyingglass")
-                        .font(.system(size: 52))
-                        .foregroundStyle(.secondary.opacity(0.5))
-                    Text(String(localized: "home_search_no_results"))
-                        .font(.headline)
-                    Text(String(localized: "home_search_no_results_subtitle"))
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .padding(.top, AppTheme.spacingXXL)
-            } else {
-                ScrollView {
-                    VStack(spacing: AppTheme.spacingS) {
-                        ForEach(filteredItems) { item in
-                            Button {
-                                triggerSearchAction(item.action)
-                            } label: {
-                                HomeListRow(
-                                    icon: item.icon,
-                                    iconColor: item.color,
-                                    title: item.title,
-                                    subtitle: item.subtitle
-                                )
-                            }
-                            .buttonStyle(.plain)
-                            .transition(.opacity)
-                        }
-                    }
-                    .padding(.horizontal, AppTheme.spacingM)
-                    .padding(.top, AppTheme.spacingM)
-                }
-                .animation(.easeInOut(duration: 0.2), value: filteredItems.count)
-            }
-        }
-    }
-
-    /// Clears the search text and triggers the given action on the navigation stack or sheet state.
-    ///
-    /// - Parameter action: The `HomeSearchAction` to execute.
-    private func triggerSearchAction(_ action: HomeSearchAction) {
-        searchText = ""
-        switch action {
-        case .navigate(let destination):
-            path.append(destination)
-        case .openContact:
-            showContactSheet = true
-        case .openFAQ:
-            showFAQSheet = true
-        case .switchTab(let tabName):
-            appState.selectedTab = tabName
-        }
-    }
 
     // MARK: - Section Title
 
@@ -1012,3 +957,152 @@ struct AdvertisementCard: View {
     }
 }
 
+// MARK: - Search Sheet
+
+/// A sheet view for searching across all home items.
+struct HomeSearchSheet: View {
+    @Binding var searchText: String
+    @Binding var path: NavigationPath
+    @Binding var showContactSheet: Bool
+    @Binding var showFAQSheet: Bool
+    @Environment(AppState.self) private var appState
+    @Environment(\.dismiss) private var dismiss
+    @FocusState private var searchFocused: Bool
+
+    private var filteredItems: [HomeSearchableItem] {
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !query.isEmpty else { return [] }
+
+        if query == "?" {
+            return HomeSearchableItem.all
+        }
+
+        return HomeSearchableItem.all.filter {
+            fuzzyMatch(query, against: $0.title.lowercased()) ||
+            fuzzyMatch(query, against: $0.subtitle.lowercased())
+        }
+    }
+
+    private func fuzzyMatch(_ query: String, against target: String) -> Bool {
+        if target.contains(query) {
+            return true
+        }
+        let maxDistance = max(1, (query.count + 2) / 3)
+        let distance = levenshteinDistance(query, target)
+        return distance <= maxDistance
+    }
+
+    private func levenshteinDistance(_ s1: String, _ s2: String) -> Int {
+        let s1 = Array(s1), s2 = Array(s2)
+        let (m, n) = (s1.count, s2.count)
+
+        if m == 0 { return n }
+        if n == 0 { return m }
+
+        var prev = Array(0...n)
+        var curr = Array(repeating: 0, count: n + 1)
+
+        for i in 1...m {
+            curr[0] = i
+            for j in 1...n {
+                let cost = s1[i - 1] == s2[j - 1] ? 0 : 1
+                curr[j] = min(
+                    curr[j - 1] + 1,
+                    prev[j] + 1,
+                    prev[j - 1] + cost
+                )
+            }
+            (prev, curr) = (curr, prev)
+        }
+        return prev[n]
+    }
+
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 0) {
+                HStack(spacing: AppTheme.spacingM) {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundStyle(.secondary)
+                    TextField(String(localized: "home_search_placeholder"), text: $searchText)
+                        .focused($searchFocused)
+                    if !searchText.isEmpty {
+                        Button {
+                            searchText = ""
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                .padding(AppTheme.spacingM)
+                .background(Color(.secondarySystemBackground))
+
+                if filteredItems.isEmpty {
+                    VStack(spacing: AppTheme.spacingM) {
+                        Image(systemName: "magnifyingglass")
+                            .font(.system(size: 52))
+                            .foregroundStyle(.secondary.opacity(0.5))
+                        Text(String(localized: "home_search_no_results"))
+                            .font(.headline)
+                        Text(String(localized: "home_search_no_results_subtitle"))
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(.top, AppTheme.spacingXXL)
+                } else {
+                    ScrollView {
+                        VStack(spacing: AppTheme.spacingS) {
+                            ForEach(filteredItems) { item in
+                                Button {
+                                    triggerSearchAction(item.action)
+                                } label: {
+                                    HomeListRow(
+                                        icon: item.icon,
+                                        iconColor: item.color,
+                                        title: item.title,
+                                        subtitle: item.subtitle
+                                    )
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
+                        .padding(.horizontal, AppTheme.spacingM)
+                        .padding(.top, AppTheme.spacingM)
+                    }
+                }
+
+                Spacer(minLength: 0)
+            }
+            .background(AppTheme.groupedBackground)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(String(localized: "common_cancel")) {
+                        searchText = ""
+                        dismiss()
+                    }
+                }
+            }
+        }
+        .onAppear {
+            searchFocused = true
+        }
+    }
+
+    private func triggerSearchAction(_ action: HomeSearchAction) {
+        searchText = ""
+        dismiss()
+
+        switch action {
+        case .navigate(let destination):
+            path.append(destination)
+        case .openContact:
+            showContactSheet = true
+        case .openFAQ:
+            showFAQSheet = true
+        case .switchTab(let tabName):
+            appState.selectedTab = tabName
+        }
+    }
+}
