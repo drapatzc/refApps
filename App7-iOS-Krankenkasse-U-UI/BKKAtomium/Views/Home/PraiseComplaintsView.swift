@@ -23,10 +23,11 @@ enum FeedbackType: String, CaseIterable {
 }
 
 struct PraiseComplaintsView: View {
+    @Environment(AppState.self) private var appState
     @Environment(\.dismiss) private var dismiss
     @State private var selectedType: FeedbackType = .praise
     @State private var message = ""
-    @State private var showSuccess = false
+    @State private var isSubmitting = false
     @FocusState private var focused: Bool
 
     private var canSend: Bool {
@@ -81,13 +82,33 @@ struct PraiseComplaintsView: View {
 
             Section {
                 Button {
-                    focused = false
-                    showSuccess = true
+                    Task {
+                        focused = false
+                        isSubmitting = true
+                        try? await Task.sleep(for: .milliseconds(800))
+
+                        let isSuccess = Bool.random()
+                        let feedbackMsg = "\(selectedType.rawValue) erfolgreich versendet!"
+                        await appState.showToast(message: feedbackMsg, isSuccess: isSuccess)
+
+                        if isSuccess {
+                            message = ""
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                dismiss()
+                            }
+                        }
+                        isSubmitting = false
+                    }
                 } label: {
-                    Text("Absenden")
-                        .primaryButton()
+                    if isSubmitting {
+                        ProgressView()
+                            .tint(.white)
+                    } else {
+                        Text("Absenden")
+                    }
                 }
-                .disabled(!canSend)
+                .primaryButton()
+                .disabled(!canSend || isSubmitting)
                 .listRowBackground(Color.clear)
                 .listRowInsets(EdgeInsets(top: 4, leading: AppTheme.spacingM, bottom: 4, trailing: AppTheme.spacingM))
             }
@@ -95,11 +116,6 @@ struct PraiseComplaintsView: View {
         .listStyle(.insetGrouped)
         .navigationTitle(String(localized: "contact_praise_complaint_title"))
         .navigationBarTitleDisplayMode(.large)
-        .alert("Vielen Dank!", isPresented: $showSuccess) {
-            Button("OK") { dismiss() }
-        } message: {
-            Text("Wir haben Ihre Rückmeldung erhalten und werden sie sorgfältig prüfen.")
-        }
     }
 }
 

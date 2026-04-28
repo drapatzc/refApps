@@ -1,6 +1,23 @@
 import SwiftUI
 import Observation
 
+/// Represents a toast notification message.
+struct ToastMessage: Identifiable, Equatable {
+    let id: UUID
+    let message: String
+    let isSuccess: Bool
+
+    init(message: String, isSuccess: Bool) {
+        self.id = UUID()
+        self.message = message
+        self.isSuccess = isSuccess
+    }
+
+    static func == (lhs: ToastMessage, rhs: ToastMessage) -> Bool {
+        lhs.id == rhs.id && lhs.message == rhs.message && lhs.isSuccess == rhs.isSuccess
+    }
+}
+
 /// Observable application-level state shared across the entire view hierarchy.
 ///
 /// `AppState` holds authentication status and the currently signed-in user's
@@ -42,6 +59,9 @@ final class AppState {
     /// Currently selected tab in the main tab view.
     var selectedTab: String = "home"
 
+    /// Current toast notification message, or nil if none is displayed.
+    var toastMessage: ToastMessage? = nil
+
     /// Transitions the application into the authenticated state.
     ///
     /// - Parameters:
@@ -59,5 +79,19 @@ final class AppState {
         currentUserName = ""
         currentInsuranceNumber = ""
         errorMessage = nil
+    }
+
+    /// Displays a toast notification message for 3 seconds.
+    ///
+    /// - Parameters:
+    ///   - message: The message to display.
+    ///   - isSuccess: Whether this is a success (green) or error (red) message.
+    @MainActor
+    func showToast(message: String, isSuccess: Bool) {
+        toastMessage = ToastMessage(message: message, isSuccess: isSuccess)
+        Task {
+            try? await Task.sleep(for: .seconds(3))
+            toastMessage = nil
+        }
     }
 }

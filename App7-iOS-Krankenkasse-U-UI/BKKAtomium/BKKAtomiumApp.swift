@@ -79,6 +79,36 @@ struct RootView: View {
         .task {
             await MockDataSeeder.seedIfNeeded(context: modelContext)
         }
+        .overlay(alignment: .top) {
+            if let toast = appState.toastMessage {
+                VStack(spacing: 0) {
+                    HStack(spacing: AppTheme.spacingM) {
+                        Image(systemName: toast.isSuccess ? "checkmark.circle.fill" : "exclamationmark.triangle.fill")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundStyle(.white)
+
+                        Text(toast.message)
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(.white)
+                            .lineLimit(2)
+
+                        Spacer()
+                    }
+                    .padding(AppTheme.spacingM)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(toast.isSuccess ? Color.green : Color.red)
+                    .cornerRadius(AppTheme.cornerRadiusM)
+                    .padding(AppTheme.spacingM)
+
+                    Spacer()
+                }
+                .transition(.asymmetric(
+                    insertion: .move(edge: .top).combined(with: .opacity),
+                    removal: .move(edge: .top).combined(with: .opacity)
+                ))
+            }
+        }
+        .animation(.easeInOut(duration: 0.3), value: appState.toastMessage)
     }
 }
 
