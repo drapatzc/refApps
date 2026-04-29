@@ -10,6 +10,15 @@ struct MainTabView: View {
     /// The currently selected tab.
     @State private var selection: Tab = .home
 
+    /// Steuert das Onboarding (einmalig beim ersten Start nach dem Login).
+    @State private var showOnboarding = false
+
+    /// Steuert das „Was ist neu?"-Sheet (einmalig pro App-Version).
+    @State private var showWhatsNew = false
+
+    private static let onboardingKey = "hasSeenOnboarding_v1"
+    private static let whatsNewKey   = "hasSeenWhatsNew_v1_2"
+
     /// The available tab destinations.
     enum Tab: Hashable {
         /// The home dashboard tab.
@@ -76,6 +85,7 @@ struct MainTabView: View {
                     Label(String(localized: "tab_postfach"), systemImage: "tray.fill")
                 }
                 .tag(Tab.postfach)
+                .badge(3)
         }
         .tint(AppTheme.primary)
         .sensoryFeedback(.selection, trigger: selection)
@@ -87,6 +97,38 @@ struct MainTabView: View {
         }
         .onAppear {
             selection = Tab(stringValue: appState.selectedTab)
+            // Im UI-Test-Modus keine modalen Sheets anzeigen
+            guard !CommandLine.arguments.contains("--uitesting") else { return }
+            // Delay > Login-Transition (0.35 s), sonst verwirft UIKit das fullScreenCover lautlos
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let hasOnboarding = UserDefaults.standard.bool(forKey: Self.onboardingKey)
+                let hasWhatsNew   = UserDefaults.standard.bool(forKey: Self.whatsNewKey)
+                if !hasOnboarding {
+                    showOnboarding = true
+                } else if !hasWhatsNew {
+                    showWhatsNew = true
+                }
+            }
+        }
+        .fullScreenCover(isPresented: $showOnboarding) {
+            OnboardingView {
+                UserDefaults.standard.set(true, forKey: Self.onboardingKey)
+                showOnboarding = false
+                // „Was ist neu?" direkt im Anschluss ans Onboarding anzeigen
+                if !UserDefaults.standard.bool(forKey: Self.whatsNewKey) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                        showWhatsNew = true
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $showWhatsNew) {
+            WhatsNewView {
+                UserDefaults.standard.set(true, forKey: Self.whatsNewKey)
+                showWhatsNew = false
+            }
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
         }
     }
 }

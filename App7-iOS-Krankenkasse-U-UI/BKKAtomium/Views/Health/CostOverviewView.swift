@@ -1,4 +1,11 @@
 import SwiftUI
+import Charts
+
+private struct MonthlySpend: Identifiable {
+    let id = UUID()
+    let month: String
+    let amount: Double
+}
 
 struct CostTransaction: Identifiable {
     let id = UUID()
@@ -13,6 +20,22 @@ struct CostOverviewView: View {
     private let totalCopay: Double = 52.50
     private let copayLimit: Double = 208.00
     private let totalRefund: Double = 0.00
+
+    // Monatliche Ausgaben Mai 2025 – Apr 2026 (alle Kategorien summiert)
+    private let monthlySpending: [MonthlySpend] = [
+        MonthlySpend(month: "Mai",  amount: 125.00),
+        MonthlySpend(month: "Jun",  amount:  55.00),
+        MonthlySpend(month: "Jul",  amount:  32.00),
+        MonthlySpend(month: "Aug",  amount:  48.00),
+        MonthlySpend(month: "Sep",  amount: 120.00),
+        MonthlySpend(month: "Okt",  amount:  85.50),
+        MonthlySpend(month: "Nov",  amount:  22.00),
+        MonthlySpend(month: "Dez",  amount: 355.00),
+        MonthlySpend(month: "Jan",  amount:  10.00),
+        MonthlySpend(month: "Feb",  amount: 110.50),
+        MonthlySpend(month: "Mär",  amount: 335.99),
+        MonthlySpend(month: "Apr",  amount: 165.00),
+    ]
 
     private let transactions: [CostTransaction] = [
         CostTransaction(date: "14.03.2025", description: "Rezeptgebühr – Pantoprazol",    amount: 10.00, isRefund: false),
@@ -69,6 +92,33 @@ struct CostOverviewView: View {
                 }
                 .padding(.vertical, AppTheme.spacingXS)
                 .listRowBackground(AppTheme.primary.opacity(0.04))
+            }
+
+            Section(header: Text("Monatsausgaben (Mai 2025 – Apr 2026)")) {
+                Chart(monthlySpending) { item in
+                    BarMark(
+                        x: .value("Monat", item.month),
+                        y: .value("Betrag", item.amount)
+                    )
+                    .foregroundStyle(
+                        item.amount == monthlySpending.map(\.amount).max()
+                            ? AppTheme.primary
+                            : AppTheme.primary.opacity(0.55)
+                    )
+                    .cornerRadius(4)
+                }
+                .chartYAxis {
+                    AxisMarks(values: .automatic(desiredCount: 4)) { value in
+                        AxisGridLine()
+                        AxisValueLabel {
+                            if let amount = value.as(Double.self) {
+                                Text("\(Int(amount)) €").font(.caption2)
+                            }
+                        }
+                    }
+                }
+                .frame(height: 160)
+                .padding(.vertical, AppTheme.spacingS)
             }
 
             Section(header: Text("Jahresübersicht")) {

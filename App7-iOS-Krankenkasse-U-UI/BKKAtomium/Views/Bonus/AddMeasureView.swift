@@ -4,15 +4,17 @@ struct AddMeasureView: View {
     @Environment(\.dismiss) private var dismiss
     var onAdd: (BonusMeasure) -> Void
 
-    private let availableMeasures: [(title: String, points: Int, icon: String, color: Color)] = [
-        ("Gesundheits-Check-up",      30, "stethoscope",       Color(red: 0.20, green: 0.60, blue: 0.40)),
-        ("Zahnvorsorge",              30, "cross.case.fill",   Color(red: 0.11, green: 0.29, blue: 0.50)),
-        ("Sportabzeichen",            30, "figure.run",        Color(red: 0.80, green: 0.55, blue: 0.15)),
-        ("Fitnessstudio-Nachweis",    25, "dumbbell.fill",     Color(red: 0.55, green: 0.25, blue: 0.75)),
-        ("Schutzimpfung",             20, "syringe.fill",      Color(red: 0.10, green: 0.45, blue: 0.55)),
-        ("Nichtraucherkurs",          30, "nosign",            Color(red: 0.80, green: 0.25, blue: 0.25)),
-        ("Ernährungskurs",            25, "fork.knife",        Color(red: 0.95, green: 0.65, blue: 0.10)),
-        ("Krebsfrüherkennungsnachweis", 30, "magnifyingglass.circle.fill", Color(red: 0.20, green: 0.45, blue: 0.60))
+    private let availableMeasures: [(title: String, category: String, points: Int, icon: String, color: Color)] = [
+        ("Gesundheits-Check-up",        "Vorsorge",        30, "stethoscope",                Color(red: 0.20, green: 0.60, blue: 0.40)),
+        ("Zahnvorsorge",                "Vorsorge",        20, "cross.case.fill",            Color(red: 0.11, green: 0.29, blue: 0.50)),
+        ("Sportabzeichen",              "Sport & Fitness", 30, "figure.run",                 Color(red: 0.80, green: 0.55, blue: 0.15)),
+        ("Fitnessstudio-Nachweis",      "Sport & Fitness", 25, "dumbbell.fill",              Color(red: 0.55, green: 0.25, blue: 0.75)),
+        ("Schutzimpfung",               "Impfung",         20, "syringe.fill",               Color(red: 0.10, green: 0.45, blue: 0.55)),
+        ("Nichtraucherkurs",            "Ernährung",       30, "nosign",                     Color(red: 0.80, green: 0.25, blue: 0.25)),
+        ("Ernährungskurs",              "Ernährung",       25, "fork.knife",                 Color(red: 0.95, green: 0.65, blue: 0.10)),
+        ("Krebsfrüherkennungsnachweis", "Vorsorge",        30, "magnifyingglass.circle.fill", Color(red: 0.20, green: 0.45, blue: 0.60)),
+        ("Blutspende",                  "Soziales",        30, "drop.fill",                  Color(red: 0.80, green: 0.25, blue: 0.25)),
+        ("Stressbewältigungskurs",      "Ernährung",       20, "brain.head.profile",         Color(red: 0.35, green: 0.55, blue: 0.75)),
     ]
 
     @State private var selectedIndex: Int? = nil
@@ -46,7 +48,8 @@ struct AddMeasureView: View {
                                     Text(measure.title)
                                         .font(.subheadline.weight(.semibold))
                                         .foregroundStyle(.primary)
-                                    Text("+\(measure.points) €")
+                                    Text(measure.category).font(.caption2).foregroundStyle(.secondary)
+                    Text("+\(measure.points) €")
                                         .font(.caption.weight(.semibold))
                                         .foregroundStyle(measure.color)
                                 }
@@ -91,6 +94,7 @@ struct AddMeasureView: View {
                         let m = availableMeasures[idx]
                         let newMeasure = BonusMeasure(
                             title: m.title,
+                            category: m.category,
                             points: m.points,
                             date: Date(),
                             icon: m.icon,

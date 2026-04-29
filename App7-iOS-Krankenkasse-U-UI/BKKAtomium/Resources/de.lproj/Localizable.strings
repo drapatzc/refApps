@@ -331,6 +331,16 @@
 "postfach_msg9_body" = "Danke für die Erinnerung, Termin ist vereinbart.";
 "postfach_msg10_subject" = "Neue Zusatzleistung";
 "postfach_msg10_body" = "Ab sofort übernehmen wir weitere Vorsorgeleistungen. Infos in der App.";
+"postfach_msg11_subject" = "Ihre Beitragsanpassung ab 01.07.2026";
+"postfach_msg11_body" = "Aufgrund der Kostensteigerungen im Gesundheitswesen wird Ihr Monatsbeitrag zum 01.07.2026 auf 312,50 € angepasst. Ihr bisheriger Beitrag betrug 298,00 €. Alle Details entnehmen Sie bitte dem beiliegenden Schreiben.";
+"postfach_msg12_subject" = "Frage zur Beitragserhöhung";
+"postfach_msg12_body" = "Guten Tag, ich habe Ihren Brief zur Beitragsanpassung erhalten. Gibt es die Möglichkeit, in ein günstigeres Tarifmodell zu wechseln?";
+"postfach_msg13_subject" = "Tarifwechsel";
+"postfach_msg13_body" = "Vielen Dank für Ihre Nachricht. Wir prüfen gerne Alternativen für Sie. Unser Beraterteam meldet sich innerhalb von 2 Werktagen bei Ihnen. Sie können uns auch direkt unter 0800 111 2222 erreichen.";
+"postfach_msg14_subject" = "Leistungsantrag genehmigt";
+"postfach_msg14_body" = "Ihr Antrag auf Kostenübernahme für orthopädische Schuhe (Antragsnummer 2026-03-HM-0042) wurde genehmigt. Der Betrag von 450,00 € wird innerhalb von 5 Werktagen auf Ihr hinterlegtes Konto überwiesen.";
+"postfach_msg15_subject" = "Ihre Jahresmitteilung 2025 ist verfügbar";
+"postfach_msg15_body" = "Ihre persönliche Jahresmitteilung für das Jahr 2025 steht zum Download bereit. Sie enthält alle Beitragszahlungen, Leistungen und Erstattungen des vergangenen Jahres. Die Mitteilung finden Sie in Ihrem Dokumentenbereich.";
 
 /* Dashboard Destinations Placeholders */
 "placeholder_applications_title" = "Meine Anträge";

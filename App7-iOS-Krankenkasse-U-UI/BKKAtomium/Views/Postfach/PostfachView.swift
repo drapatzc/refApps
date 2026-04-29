@@ -143,7 +143,37 @@ private let mockMessages: [PostfachMessage] = {
             body: String(localized: "postfach_msg10_body"),
             date: daysAgo(2),
             sender: .insurance
-        )
+        ),
+        PostfachMessage(
+            subject: String(localized: "postfach_msg11_subject"),
+            body: String(localized: "postfach_msg11_body"),
+            date: daysAgo(25),
+            sender: .insurance
+        ),
+        PostfachMessage(
+            subject: String(localized: "postfach_msg12_subject"),
+            body: String(localized: "postfach_msg12_body"),
+            date: daysAgo(24),
+            sender: .user
+        ),
+        PostfachMessage(
+            subject: String(localized: "postfach_msg13_subject"),
+            body: String(localized: "postfach_msg13_body"),
+            date: daysAgo(23),
+            sender: .insurance
+        ),
+        PostfachMessage(
+            subject: String(localized: "postfach_msg14_subject"),
+            body: String(localized: "postfach_msg14_body"),
+            date: daysAgo(5),
+            sender: .insurance
+        ),
+        PostfachMessage(
+            subject: String(localized: "postfach_msg15_subject"),
+            body: String(localized: "postfach_msg15_body"),
+            date: daysAgo(1),
+            sender: .insurance
+        ),
     ]
 }()
 

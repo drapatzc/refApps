@@ -43,6 +43,7 @@ struct HomeView: View {
 
     @State private var showProfile = false
     @State private var headerAppeared = false
+    @State private var showNoticeBanner = true
 
     /// Namespace für iOS 18 Zoom-Transitions bei Widget-Karten.
     @Namespace private var zoomNamespace
@@ -349,9 +350,10 @@ struct HomeView: View {
                     // Begrüßung
                     VStack(alignment: .leading, spacing: AppTheme.spacingXS) {
                         HStack(spacing: AppTheme.spacingS) {
-                            let greetingIcon = greeting.contains("morning") ? "sunrise.fill" :
-                                              greeting.contains("afternoon") ? "sun.max.fill" :
-                                              greeting.contains("evening") ? "sunset.fill" : "moon.stars.fill"
+                            let hour = Calendar.current.component(.hour, from: Date())
+                            let greetingIcon = hour >= 5 && hour < 12 ? "sunrise.fill" :
+                                              hour >= 12 && hour < 17 ? "sun.max.fill" :
+                                              hour >= 17 && hour < 22 ? "sunset.fill" : "moon.stars.fill"
 
                             if #available(iOS 17, *) {
                                 Image(systemName: greetingIcon)
@@ -384,6 +386,54 @@ struct HomeView: View {
                     .padding(.horizontal, AppTheme.spacingM)
                     .padding(.top, AppTheme.spacingL)
                     .animation(.spring(duration: 0.5, bounce: 0.2).delay(0.1), value: headerAppeared)
+
+                    // Beitragsanpassungs-Hinweis
+                    if showNoticeBanner {
+                        HStack(spacing: AppTheme.spacingM) {
+                            Image(systemName: "exclamationmark.circle.fill")
+                                .foregroundStyle(Color(red: 0.95, green: 0.65, blue: 0.10))
+                                .font(.system(size: 20))
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Beitragsanpassung ab 01.07.2026")
+                                    .font(.subheadline.weight(.semibold))
+                                Text("Ihr neuer Monatsbeitrag beträgt 312,50 €.")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            Spacer()
+                            Button {
+                                withAnimation(.spring(duration: 0.3)) { showNoticeBanner = false }
+                            } label: {
+                                Image(systemName: "xmark")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        .padding(AppTheme.spacingM)
+                        .background(Color(red: 0.95, green: 0.65, blue: 0.10).opacity(0.12))
+                        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusM))
+                        .overlay(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusM)
+                            .stroke(Color(red: 0.95, green: 0.65, blue: 0.10).opacity(0.30), lineWidth: 1))
+                        .padding(.horizontal, AppTheme.spacingM)
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                    }
+
+                    // Schnellzugriff-Buttons
+                    HStack(spacing: AppTheme.spacingS) {
+                        QuickActionButton(icon: "doc.text.fill", label: "Krankmeldung",
+                                          color: Color(red: 0.20, green: 0.60, blue: 0.40)) {
+                            sheetDestination = .sickNote
+                        }
+                        QuickActionButton(icon: "envelope.fill", label: "Kontakt",
+                                          color: Color(red: 0.55, green: 0.25, blue: 0.75)) {
+                            showContactSheet = true
+                        }
+                        QuickActionButton(icon: "tray.fill", label: "Postfach",
+                                          color: Color(red: 0.11, green: 0.29, blue: 0.50)) {
+                            appState.selectedTab = "postfach"
+                        }
+                    }
+                    .padding(.horizontal, AppTheme.spacingM)
 
                     // Bonusprogramm + Postfach Widgets
                     VStack(spacing: AppTheme.spacingM) {
@@ -1109,6 +1159,47 @@ struct AdvertisementCard: View {
         }
         .frame(width: 160, height: 160)
         .clipped()
+    }
+}
+
+// MARK: - Quick Action Button
+
+/// Ein kompakter vertikaler Schnellzugriff-Button für das Dashboard.
+struct QuickActionButton: View {
+    @Environment(\.colorScheme) private var colorScheme
+    let icon: String
+    let label: String
+    let color: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: AppTheme.spacingXS) {
+                ZStack {
+                    Circle()
+                        .fill(color.opacity(0.15))
+                        .frame(width: 44, height: 44)
+                    Image(systemName: icon)
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(color)
+                }
+                Text(label)
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, AppTheme.spacingS)
+            .background(colorScheme == .dark ? Color(.secondarySystemBackground) : .white)
+            .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusM))
+            .shadow(
+                color: colorScheme == .dark ? .black.opacity(0.20) : .black.opacity(0.05),
+                radius: 6, x: 0, y: 2
+            )
+        }
+        .buttonStyle(.plain)
+        .sensoryFeedback(.impact(weight: .light), trigger: false)
     }
 }
 

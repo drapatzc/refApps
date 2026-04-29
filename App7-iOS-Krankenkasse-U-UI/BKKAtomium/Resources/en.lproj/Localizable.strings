@@ -329,6 +329,16 @@
 "postfach_msg9_body" = "Thanks for the reminder, appointment is booked.";
 "postfach_msg10_subject" = "New additional service";
 "postfach_msg10_body" = "We now cover additional preventive services. More info in the app.";
+"postfach_msg11_subject" = "Your premium adjustment from 01.07.2026";
+"postfach_msg11_body" = "Due to rising healthcare costs, your monthly premium will be adjusted to €312.50 from 01.07.2026. Your current premium is €298.00. Please refer to the enclosed letter for all details.";
+"postfach_msg12_subject" = "Question about premium increase";
+"postfach_msg12_body" = "Hello, I received your letter about the premium adjustment. Is it possible to switch to a lower-cost plan?";
+"postfach_msg13_subject" = "Plan change";
+"postfach_msg13_body" = "Thank you for your message. We are happy to review alternatives for you. Our advisor team will contact you within 2 business days. You can also reach us directly at 0800 111 2222.";
+"postfach_msg14_subject" = "Benefit request approved";
+"postfach_msg14_body" = "Your request for orthopedic shoe coverage (reference 2026-03-HM-0042) has been approved. The amount of €450.00 will be transferred to your registered account within 5 business days.";
+"postfach_msg15_subject" = "Your 2025 annual statement is available";
+"postfach_msg15_body" = "Your personal annual statement for 2025 is ready to download. It includes all contributions, benefits, and reimbursements for the past year. You can find it in your Documents section.";
 
 /* Dashboard Destinations Placeholders */
 "placeholder_applications_title" = "My Applications";

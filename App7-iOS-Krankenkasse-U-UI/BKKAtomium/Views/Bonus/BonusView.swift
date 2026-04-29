@@ -1,51 +1,69 @@
 import SwiftUI
+import Charts
 
 // MARK: - Mock Data
 
 struct BonusMeasure: Identifiable, Hashable {
     let id = UUID()
     let title: String
+    let category: String
     let points: Int
     let date: Date
     let icon: String
     let color: Color
+
+    init(title: String, category: String = "Sonstiges", points: Int, date: Date, icon: String, color: Color) {
+        self.title = title
+        self.category = category
+        self.points = points
+        self.date = date
+        self.icon = icon
+        self.color = color
+    }
 }
 
 @Observable
 final class BonusProgramViewModel {
     let goalEuro: Double = 200
-    var currentEuro: Double = 90
+    var currentEuro: Double = 195
     var year: Int = Calendar.current.component(.year, from: Date())
 
-    var measures: [BonusMeasure] = [
-        BonusMeasure(
-            title: String(localized: "bonus_measure_checkup"),
-            points: 30,
-            date: Calendar.current.date(byAdding: .day, value: -14, to: Date()) ?? Date(),
-            icon: "stethoscope",
-            color: Color(red: 0.20, green: 0.60, blue: 0.40)
-        ),
-        BonusMeasure(
-            title: String(localized: "bonus_measure_dental"),
-            points: 30,
-            date: Calendar.current.date(byAdding: .day, value: -45, to: Date()) ?? Date(),
-            icon: "cross.case.fill",
-            color: Color(red: 0.11, green: 0.29, blue: 0.50)
-        ),
-        BonusMeasure(
-            title: String(localized: "bonus_measure_sport"),
-            points: 30,
-            date: Calendar.current.date(byAdding: .day, value: -90, to: Date()) ?? Date(),
-            icon: "figure.run",
-            color: Color(red: 0.80, green: 0.55, blue: 0.15)
-        )
-    ]
+    var measures: [BonusMeasure] = {
+        let cal = Calendar.current
+        func ago(_ days: Int) -> Date { cal.date(byAdding: .day, value: -days, to: Date()) ?? Date() }
+        return [
+            BonusMeasure(title: String(localized: "bonus_measure_checkup"),    category: "Vorsorge",        points: 30, date: ago(14),  icon: "stethoscope",              color: Color(red: 0.20, green: 0.60, blue: 0.40)),
+            BonusMeasure(title: String(localized: "bonus_measure_dental"),     category: "Vorsorge",        points: 20, date: ago(45),  icon: "cross.case.fill",          color: Color(red: 0.11, green: 0.29, blue: 0.50)),
+            BonusMeasure(title: String(localized: "bonus_measure_sport"),      category: "Sport & Fitness", points: 30, date: ago(90),  icon: "figure.run",               color: Color(red: 0.80, green: 0.55, blue: 0.15)),
+            BonusMeasure(title: String(localized: "bonus_measure_gym"),        category: "Sport & Fitness", points: 25, date: ago(120), icon: "dumbbell.fill",            color: Color(red: 0.55, green: 0.25, blue: 0.75)),
+            BonusMeasure(title: String(localized: "bonus_measure_vaccination"),category: "Impfung",         points: 20, date: ago(150), icon: "syringe.fill",             color: Color(red: 0.10, green: 0.45, blue: 0.55)),
+            BonusMeasure(title: "Ernährungskurs",                              category: "Ernährung",       points: 15, date: ago(180), icon: "leaf.fill",                color: Color(red: 0.95, green: 0.65, blue: 0.10)),
+            BonusMeasure(title: "Blutspende",                                  category: "Soziales",        points: 30, date: ago(210), icon: "drop.fill",                color: Color(red: 0.80, green: 0.25, blue: 0.25)),
+            BonusMeasure(title: "Stressbewältigungskurs",                      category: "Ernährung",       points: 25, date: ago(250), icon: "brain.head.profile",       color: Color(red: 0.35, green: 0.55, blue: 0.75)),
+        ]
+    }()
 
     var completedCount: Int { measures.count }
     var progress: Double { min(currentEuro / goalEuro, 1.0) }
 
     var formattedCurrent: String { formatEuro(currentEuro) }
-    var formattedGoal: String { formatEuro(goalEuro) }
+    var formattedGoal:    String { formatEuro(goalEuro) }
+
+    /// Aggregierte Kategorie-Aufteilung für das Donut-Diagramm.
+    var categoryBreakdown: [(name: String, total: Int, color: Color)] {
+        let palette: [String: Color] = [
+            "Vorsorge":       Color(red: 0.20, green: 0.60, blue: 0.40),
+            "Sport & Fitness":Color(red: 0.11, green: 0.29, blue: 0.50),
+            "Impfung":        Color(red: 0.10, green: 0.45, blue: 0.55),
+            "Ernährung":      Color(red: 0.95, green: 0.65, blue: 0.10),
+            "Soziales":       Color(red: 0.80, green: 0.25, blue: 0.25),
+        ]
+        var dict: [String: Int] = [:]
+        for m in measures { dict[m.category, default: 0] += m.points }
+        return dict
+            .map { (name: $0.key, total: $0.value, color: palette[$0.key] ?? .secondary) }
+            .sorted { $0.total > $1.total }
+    }
 
     private func formatEuro(_ value: Double) -> String {
         let formatter = NumberFormatter()
@@ -70,6 +88,7 @@ struct BonusView: View {
             ScrollView {
                 VStack(spacing: AppTheme.spacingL) {
                     progressCard
+                    categoryChartSection
                     statsRow
                     measuresList
                     actionButtons
@@ -103,14 +122,10 @@ struct BonusView: View {
                 Text("Möchten Sie Ihre Teilnahme am Bonusprogramm wirklich beenden? Gesammelte Punkte verfallen.")
             }
         }
-        // Haptic: Maßnahme erfolgreich hinzugefügt
         .sensoryFeedback(.success, trigger: viewModel.completedCount)
-        // Haptic: Sheet öffnet sich
         .sensoryFeedback(.impact(weight: .medium), trigger: showAddMeasure) { _, new in new }
         .onAppear {
-            withAnimation(AppTheme.animationSmooth) {
-                appeared = true
-            }
+            withAnimation(AppTheme.animationSmooth) { appeared = true }
         }
     }
 
@@ -118,7 +133,6 @@ struct BonusView: View {
 
     private var progressCard: some View {
         VStack(spacing: AppTheme.spacingM) {
-            // Kreisförmiger Fortschrittsring
             ZStack {
                 Circle()
                     .stroke(AppTheme.primary.opacity(0.12), lineWidth: 14)
@@ -160,7 +174,6 @@ struct BonusView: View {
             .frame(width: 220, height: 220)
             .padding(.top, AppTheme.spacingS)
 
-            // Linearer Gauge als sekundäre Fortschrittsanzeige
             Gauge(value: viewModel.progress) {
                 EmptyView()
             } currentValueLabel: {
@@ -187,12 +200,60 @@ struct BonusView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, AppTheme.spacingL)
-        .background(
-            RoundedRectangle(cornerRadius: AppTheme.cornerRadiusXL)
-                .fill(Color(.systemBackground))
-        )
+        .background(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusXL).fill(Color(.systemBackground)))
         .shadow(color: .black.opacity(0.05), radius: 12, x: 0, y: 4)
         .padding(.horizontal, AppTheme.spacingM)
+    }
+
+    // MARK: - Kategorie-Chart
+
+    private var categoryChartSection: some View {
+        VStack(alignment: .leading, spacing: AppTheme.spacingS) {
+            Text("Aufschlüsselung nach Kategorie")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .textCase(.uppercase)
+                .tracking(0.5)
+                .padding(.horizontal, AppTheme.spacingM)
+
+            VStack(spacing: AppTheme.spacingM) {
+                Chart(viewModel.categoryBreakdown, id: \.name) { item in
+                    SectorMark(
+                        angle: .value("Punkte", item.total),
+                        innerRadius: .ratio(0.56),
+                        angularInset: 2.5
+                    )
+                    .foregroundStyle(item.color)
+                    .cornerRadius(5)
+                }
+                .frame(height: 180)
+                .animation(.spring(duration: 0.8, bounce: 0.05), value: appeared)
+
+                // Legende
+                VStack(spacing: 6) {
+                    ForEach(viewModel.categoryBreakdown, id: \.name) { item in
+                        HStack(spacing: AppTheme.spacingS) {
+                            RoundedRectangle(cornerRadius: 3)
+                                .fill(item.color)
+                                .frame(width: 12, height: 12)
+                            Text(item.name)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text("\(item.total) €")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(.primary)
+                        }
+                    }
+                }
+                .padding(.horizontal, AppTheme.spacingM)
+            }
+            .padding(AppTheme.spacingM)
+            .background(Color(.systemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusL))
+            .shadow(color: .black.opacity(0.04), radius: 8, x: 0, y: 2)
+            .padding(.horizontal, AppTheme.spacingM)
+        }
     }
 
     // MARK: - Stats Row
@@ -230,8 +291,7 @@ struct BonusView: View {
                 ForEach(viewModel.measures) { measure in
                     MeasureRow(measure: measure)
                     if measure.id != viewModel.measures.last?.id {
-                        Divider()
-                            .padding(.leading, 70)
+                        Divider().padding(.leading, 70)
                     }
                 }
             }
@@ -246,30 +306,21 @@ struct BonusView: View {
 
     private var actionButtons: some View {
         VStack(spacing: AppTheme.spacingS) {
-            Button {
-                showAddMeasure = true
-            } label: {
-                Text(String(localized: "bonus_action_new_measure"))
-                    .primaryButton()
+            Button { showAddMeasure = true } label: {
+                Text(String(localized: "bonus_action_new_measure")).primaryButton()
             }
 
-            Button {
-                showApplyBonus = true
-            } label: {
-                HStack {
-                    Text(String(localized: "bonus_action_request_reward"))
-                }
-                .font(.headline)
-                .foregroundStyle(AppTheme.primary)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, AppTheme.spacingM)
-                .background(AppTheme.primary.opacity(0.10))
-                .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusM))
+            Button { showApplyBonus = true } label: {
+                Text(String(localized: "bonus_action_request_reward"))
+                    .font(.headline)
+                    .foregroundStyle(AppTheme.primary)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, AppTheme.spacingM)
+                    .background(AppTheme.primary.opacity(0.10))
+                    .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusM))
             }
 
-            Button {
-                showEndParticipation = true
-            } label: {
+            Button { showEndParticipation = true } label: {
                 Text(String(localized: "bonus_action_end_participation"))
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(.secondary)
@@ -297,7 +348,6 @@ private struct StatCard: View {
                 Image(systemName: icon)
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(color)
-                    // Symbol bounced bei jedem Wert-Wechsel (z.B. neue Maßnahme)
                     .symbolEffect(.bounce, value: value)
             }
             Text(value)
@@ -344,7 +394,7 @@ private struct MeasureRow: View {
                 Text(measure.title)
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(.primary)
-                Text(formattedDate)
+                Text(formattedDate + " · " + measure.category)
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }

@@ -121,6 +121,9 @@ struct InvoiceListView: View {
             }
         }
         .listStyle(.insetGrouped)
+        .refreshable {
+            await viewModel.setup(context: modelContext)
+        }
         .navigationTitle("Rechnungen")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
