@@ -21,7 +21,7 @@ final class AppStore {
     init(
         initialState: AppState = AppState(),
         reducer: @escaping (AppState, AppAction) -> AppState = appReducer,
-        persistence: PersistenceProtocol = InMemoryPersistence()
+        persistence: PersistenceProtocol = UserDefaultsPersistence()
     ) {
         self.reducer = reducer
         self.persistence = persistence

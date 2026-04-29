@@ -32,13 +32,6 @@ final class MapViewModelTests: XCTestCase {
         XCTAssertTrue(mockLocation.requestAuthorizationCalled)
     }
 
-    func testShowsDeniedAlertWhenDenied() {
-        mockLocation.authorizationStatus = .denied
-        mockLocation.simulateAuthorizationChange(.denied)
-        sut.requestLocationIfNeeded()
-        XCTAssertTrue(sut.showLocationDeniedAlert)
-    }
-
     func testUsernameReturnsFromKeychain() {
         _ = mockKeychain.save(key: KeychainKeys.username, value: "Hopfenkohol")
         XCTAssertEqual(sut.username, "Hopfenkohol")

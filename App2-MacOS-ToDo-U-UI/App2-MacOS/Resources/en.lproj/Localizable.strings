@@ -8,21 +8,31 @@
 "cancel" = "Cancel";
 "add" = "Add";
 "delete" = "Delete";
+"save" = "Save";
 "show_all" = "Show All";
 "filter" = "Filter";
+"edit_task" = "Edit";
 
 /* Tooltips */
 "delete_task_tooltip" = "Delete task";
 "new_task_tooltip" = "Create new task (⌘N)";
 "filter_tasks_tooltip" = "Filter tasks";
+"sort_menu_tooltip" = "Sort tasks";
+"edit_task_tooltip" = "Edit task";
 
 /* Form Sections */
 "section_title_required" = "Title *";
 "section_description" = "Description";
 "section_priority" = "Priority";
+"section_category" = "Category";
+"section_due_date" = "Due Date";
+"section_tags" = "Tags";
+"section_status" = "Status";
 
 /* Placeholders */
 "task_title_placeholder" = "Enter task title…";
+"tags_placeholder" = "e.g. important, release, review";
+"search_placeholder" = "Search tasks…";
 
 /* Empty States */
 "no_task_selected" = "No Task Selected";
@@ -33,6 +43,9 @@
 /* Detail View */
 "priority_label" = "Priority: %@";
 "created_label" = "Created: %@";
+"due_date_label" = "Due: %@";
+"category_label" = "Category: %@";
+"due_date" = "Due Date";
 "change_status" = "Change Status";
 
 /* Priority */
@@ -44,6 +57,25 @@
 "status_open" = "Open";
 "status_in_progress" = "In Progress";
 "status_done" = "Done";
+
+/* Category */
+"category_general" = "General";
+"category_work" = "Work";
+"category_personal" = "Personal";
+"category_shopping" = "Shopping";
+"category_health" = "Health";
+
+/* Filter */
+"filter_by_status" = "Status";
+"filter_by_category" = "Category";
+"filter_all_categories" = "All Categories";
+
+/* Sort */
+"sort_by" = "Sort";
+"sort_priority" = "Priority";
+"sort_due_date" = "Due Date";
+"sort_title" = "Title";
+"sort_created_at" = "Created";
 
 /* Accessibility */
 "accessibility_task_label" = "%@, Priority %@, %@";

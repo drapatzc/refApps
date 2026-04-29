@@ -11,7 +11,14 @@ struct AppReducerTests {
     @Test("Task is added correctly")
     func taskIsAddedCorrectly() {
         let state = AppState()
-        let action = AppAction.addTask(title: "Neue Aufgabe", description: "Beschreibung", priority: .high)
+        let action = AppAction.addTask(
+            title: "Neue Aufgabe",
+            description: "Beschreibung",
+            priority: .high,
+            dueDate: nil,
+            category: .work,
+            tags: ["tag1"]
+        )
         let newState = appReducer(state: state, action: action)
 
         #expect(newState.tasks.count == 1)
@@ -19,6 +26,8 @@ struct AppReducerTests {
         #expect(newState.tasks.first?.taskDescription == "Beschreibung")
         #expect(newState.tasks.first?.priority == .high)
         #expect(newState.tasks.first?.status == .todo)
+        #expect(newState.tasks.first?.category == .work)
+        #expect(newState.tasks.first?.tags == ["tag1"])
         #expect(newState.isAddTaskPresented == false)
         #expect(newState.errorMessage == nil)
     }
@@ -26,7 +35,10 @@ struct AppReducerTests {
     @Test("Empty title sets error message and no task is added")
     func emptyTitleSetsErrorMessageAndNoTaskAdded() {
         let state = AppState()
-        let action = AppAction.addTask(title: "   ", description: "", priority: .medium)
+        let action = AppAction.addTask(
+            title: "   ", description: "", priority: .medium,
+            dueDate: nil, category: .general, tags: []
+        )
         let newState = appReducer(state: state, action: action)
 
         #expect(newState.tasks.isEmpty)
@@ -36,10 +48,92 @@ struct AppReducerTests {
     @Test("Title is trimmed on add")
     func titleIsTrimmedOnAdd() {
         let state = AppState()
-        let action = AppAction.addTask(title: "  Aufgabe  ", description: "", priority: .low)
+        let action = AppAction.addTask(
+            title: "  Aufgabe  ", description: "", priority: .low,
+            dueDate: nil, category: .general, tags: []
+        )
         let newState = appReducer(state: state, action: action)
 
         #expect(newState.tasks.first?.title == "Aufgabe")
+    }
+
+    @Test("Due date is stored correctly on add")
+    func dueDateIsStoredOnAdd() {
+        let state = AppState()
+        let dueDate = Date()
+        let action = AppAction.addTask(
+            title: "Mit Datum", description: "", priority: .medium,
+            dueDate: dueDate, category: .general, tags: []
+        )
+        let newState = appReducer(state: state, action: action)
+
+        #expect(newState.tasks.first?.dueDate == dueDate)
+    }
+
+    // MARK: - updateTask
+
+    @Test("updateTask updates all fields of an existing task")
+    func updateTaskUpdatesAllFields() {
+        var state = AppState()
+        let task = WorkTask(title: "Alt", priority: .low, status: .todo)
+        state.tasks = [task]
+
+        let newDueDate = Date()
+        let action = AppAction.updateTask(
+            id: task.id,
+            title: "Neu",
+            description: "Neue Beschreibung",
+            priority: .high,
+            status: .done,
+            dueDate: newDueDate,
+            category: .work,
+            tags: ["tag1", "tag2"]
+        )
+        let newState = appReducer(state: state, action: action)
+
+        let updated = newState.tasks.first!
+        #expect(updated.title == "Neu")
+        #expect(updated.taskDescription == "Neue Beschreibung")
+        #expect(updated.priority == .high)
+        #expect(updated.status == .done)
+        #expect(updated.dueDate == newDueDate)
+        #expect(updated.category == .work)
+        #expect(updated.tags == ["tag1", "tag2"])
+        #expect(newState.isEditTaskPresented == false)
+        #expect(newState.editingTaskID == nil)
+    }
+
+    @Test("updateTask with empty title sets error and does not update")
+    func updateTaskWithEmptyTitleSetsError() {
+        var state = AppState()
+        let task = WorkTask(title: "Original")
+        state.tasks = [task]
+
+        let action = AppAction.updateTask(
+            id: task.id, title: "   ", description: "",
+            priority: .medium, status: .todo,
+            dueDate: nil, category: .general, tags: []
+        )
+        let newState = appReducer(state: state, action: action)
+
+        #expect(newState.tasks.first?.title == "Original")
+        #expect(newState.errorMessage != nil)
+    }
+
+    @Test("updateTask on non-existent ID has no effect")
+    func updateTaskNonExistentIDHasNoEffect() {
+        var state = AppState()
+        let task = WorkTask(title: "Vorhanden")
+        state.tasks = [task]
+
+        let action = AppAction.updateTask(
+            id: UUID(), title: "Irgendwas", description: "",
+            priority: .high, status: .done,
+            dueDate: nil, category: .general, tags: []
+        )
+        let newState = appReducer(state: state, action: action)
+
+        #expect(newState.tasks.first?.title == "Vorhanden")
     }
 
     // MARK: - updateTaskStatus
@@ -113,21 +207,52 @@ struct AppReducerTests {
         #expect(newState.selectedTaskID == nil)
     }
 
-    // MARK: - setFilter
+    // MARK: - setFilter / setCategoryFilter
 
-    @Test("Filter is set correctly")
+    @Test("Status filter is set correctly")
     func filterIsSetCorrectly() {
         let state = AppState()
         let newState = appReducer(state: state, action: .setFilter(status: .done))
         #expect(newState.filterStatus == .done)
     }
 
-    @Test("Filter is reset with nil")
+    @Test("Status filter is reset with nil")
     func filterIsResetWithNil() {
         var state = AppState()
         state.filterStatus = .done
         let newState = appReducer(state: state, action: .setFilter(status: nil))
         #expect(newState.filterStatus == nil)
+    }
+
+    @Test("Category filter is set correctly")
+    func categoryFilterIsSetCorrectly() {
+        let state = AppState()
+        let newState = appReducer(state: state, action: .setCategoryFilter(category: .work))
+        #expect(newState.filterCategory == .work)
+    }
+
+    @Test("Category filter is reset with nil")
+    func categoryFilterIsResetWithNil() {
+        var state = AppState()
+        state.filterCategory = .work
+        let newState = appReducer(state: state, action: .setCategoryFilter(category: nil))
+        #expect(newState.filterCategory == nil)
+    }
+
+    // MARK: - setSearchQuery / setSortOrder
+
+    @Test("Search query is updated")
+    func searchQueryIsUpdated() {
+        let state = AppState()
+        let newState = appReducer(state: state, action: .setSearchQuery("Swift"))
+        #expect(newState.searchQuery == "Swift")
+    }
+
+    @Test("Sort order is updated")
+    func sortOrderIsUpdated() {
+        let state = AppState()
+        let newState = appReducer(state: state, action: .setSortOrder(.title))
+        #expect(newState.sortOrder == .title)
     }
 
     // MARK: - showAddTask / hideAddTask
@@ -147,6 +272,27 @@ struct AppReducerTests {
         #expect(newState.isAddTaskPresented == false)
     }
 
+    // MARK: - showEditTask / hideEditTask
+
+    @Test("showEditTask sets editingTaskID and flag")
+    func showEditTaskSetsFlags() {
+        let state = AppState()
+        let taskID = UUID()
+        let newState = appReducer(state: state, action: .showEditTask(id: taskID))
+        #expect(newState.isEditTaskPresented == true)
+        #expect(newState.editingTaskID == taskID)
+    }
+
+    @Test("hideEditTask clears editingTaskID and flag")
+    func hideEditTaskClearsFlags() {
+        var state = AppState()
+        state.isEditTaskPresented = true
+        state.editingTaskID = UUID()
+        let newState = appReducer(state: state, action: .hideEditTask)
+        #expect(newState.isEditTaskPresented == false)
+        #expect(newState.editingTaskID == nil)
+    }
+
     // MARK: - clearError
 
     @Test("clearError removes the error message")
@@ -155,5 +301,30 @@ struct AppReducerTests {
         state.errorMessage = "Ein Fehler ist aufgetreten"
         let newState = appReducer(state: state, action: .clearError)
         #expect(newState.errorMessage == nil)
+    }
+
+    // MARK: - loadSampleData
+
+    @Test("loadSampleData populates the tasks array")
+    func loadSampleDataPopulatesTasks() {
+        let state = AppState()
+        let newState = appReducer(state: state, action: .loadSampleData)
+        #expect(!newState.tasks.isEmpty)
+    }
+
+    @Test("loadSampleData creates tasks with diverse categories")
+    func loadSampleDataCreatesDiverseCategories() {
+        let state = AppState()
+        let newState = appReducer(state: state, action: .loadSampleData)
+        let categories = Set(newState.tasks.map(\.category))
+        #expect(categories.count > 1)
+    }
+
+    @Test("loadSampleData creates tasks with mixed statuses")
+    func loadSampleDataCreatesMixedStatuses() {
+        let state = AppState()
+        let newState = appReducer(state: state, action: .loadSampleData)
+        let statuses = Set(newState.tasks.map(\.status))
+        #expect(statuses.count > 1)
     }
 }

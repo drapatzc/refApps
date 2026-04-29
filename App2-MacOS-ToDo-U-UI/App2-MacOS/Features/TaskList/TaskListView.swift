@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Sidebar of the macOS app: displays all tasks with filter and sort functionality.
+/// Sidebar of the macOS app: displays all tasks with search, filter, and sort functionality.
 struct TaskListView: View {
 
     let store: AppStore
@@ -15,9 +15,21 @@ struct TaskListView: View {
         }
         .listStyle(.sidebar)
         .navigationTitle(String(localized: "tasks_nav_title"))
+        .searchable(
+            text: Binding(
+                get: { store.state.searchQuery },
+                set: { store.dispatch(.setSearchQuery($0)) }
+            ),
+            prompt: String(localized: "search_placeholder")
+        )
         .toolbar {
-            ToolbarItemGroup {
+            ToolbarItem(placement: .automatic) {
+                sortMenuButton
+            }
+            ToolbarItem(placement: .automatic) {
                 filterMenuButton
+            }
+            ToolbarItem(placement: .automatic) {
                 addTaskButton
             }
         }
@@ -41,19 +53,61 @@ struct TaskListView: View {
 
     private var filterMenuButton: some View {
         Menu {
-            Button(String(localized: "show_all")) {
-                store.dispatch(.setFilter(status: nil))
+            Section(String(localized: "filter_by_status")) {
+                Button(String(localized: "show_all")) {
+                    store.dispatch(.setFilter(status: nil))
+                }
+                ForEach(TaskStatus.allCases, id: \.self) { status in
+                    Button {
+                        store.dispatch(.setFilter(status: status))
+                    } label: {
+                        if store.state.filterStatus == status {
+                            Label(status.localizedName, systemImage: "checkmark")
+                        } else {
+                            Text(status.localizedName)
+                        }
+                    }
+                }
             }
-            Divider()
-            ForEach(TaskStatus.allCases, id: \.self) { status in
-                Button(status.localizedName) {
-                    store.dispatch(.setFilter(status: status))
+            Section(String(localized: "filter_by_category")) {
+                Button(String(localized: "filter_all_categories")) {
+                    store.dispatch(.setCategoryFilter(category: nil))
+                }
+                ForEach(TaskCategory.allCases, id: \.self) { category in
+                    Button {
+                        store.dispatch(.setCategoryFilter(category: category))
+                    } label: {
+                        if store.state.filterCategory == category {
+                            Label(category.localizedName, systemImage: "checkmark")
+                        } else {
+                            Label(category.localizedName, systemImage: category.systemImage)
+                        }
+                    }
                 }
             }
         } label: {
             Label(String(localized: "filter"), systemImage: "line.3.horizontal.decrease.circle")
         }
         .help(String(localized: "filter_tasks_tooltip"))
+    }
+
+    private var sortMenuButton: some View {
+        Menu {
+            ForEach(TaskSortOrder.allCases, id: \.self) { order in
+                Button {
+                    store.dispatch(.setSortOrder(order))
+                } label: {
+                    if store.state.sortOrder == order {
+                        Label(order.localizedName, systemImage: "checkmark")
+                    } else {
+                        Text(order.localizedName)
+                    }
+                }
+            }
+        } label: {
+            Label(String(localized: "sort_by"), systemImage: "arrow.up.arrow.down")
+        }
+        .help(String(localized: "sort_menu_tooltip"))
     }
 
     // MARK: - Empty State
@@ -81,25 +135,35 @@ private struct TaskRowView: View {
                 Text(task.title)
                     .font(.headline)
                     .lineLimit(1)
+                Spacer()
+                if let dueDate = task.dueDate {
+                    dueDateBadge(dueDate)
+                }
             }
-            Text(task.status.localizedName)
-                .font(.caption)
-                .foregroundStyle(.secondary)
+            HStack(spacing: 8) {
+                Text(task.status.localizedName)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Label(task.category.localizedName, systemImage: task.category.systemImage)
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                    .labelStyle(.titleAndIcon)
+            }
         }
         .padding(.vertical, 2)
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(
-            String(format: String(localized: "accessibility_task_label"),
-                   task.title,
-                   task.priority.localizedName,
-                   task.status.localizedName)
-        )
     }
 
     private var priorityDot: some View {
         Circle()
             .fill(task.priority.color)
             .frame(width: 8, height: 8)
+    }
+
+    private func dueDateBadge(_ date: Date) -> some View {
+        let isOverdue = date < Date() && task.status != .done
+        return Text(date.formatted(date: .abbreviated, time: .omitted))
+            .font(.caption2)
+            .foregroundStyle(isOverdue ? .red : .secondary)
     }
 }
 

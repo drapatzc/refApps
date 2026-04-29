@@ -21,6 +21,14 @@ struct ContentView: View {
         )) {
             AddTaskView(store: store)
         }
+        .sheet(isPresented: Binding(
+            get: { store.state.isEditTaskPresented },
+            set: { _ in store.dispatch(.hideEditTask) }
+        )) {
+            if let task = store.state.editingTask {
+                EditTaskView(store: store, task: task)
+            }
+        }
         .frame(minWidth: 700, minHeight: 450)
     }
 

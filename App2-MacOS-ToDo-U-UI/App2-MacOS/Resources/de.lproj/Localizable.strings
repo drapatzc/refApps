@@ -8,21 +8,31 @@
 "cancel" = "Abbrechen";
 "add" = "Hinzufügen";
 "delete" = "Löschen";
+"save" = "Speichern";
 "show_all" = "Alle anzeigen";
 "filter" = "Filter";
+"edit_task" = "Bearbeiten";
 
 /* Tooltips */
 "delete_task_tooltip" = "Aufgabe löschen";
 "new_task_tooltip" = "Neue Aufgabe anlegen (⌘N)";
 "filter_tasks_tooltip" = "Aufgaben filtern";
+"sort_menu_tooltip" = "Aufgaben sortieren";
+"edit_task_tooltip" = "Aufgabe bearbeiten";
 
 /* Form Sections */
 "section_title_required" = "Titel *";
 "section_description" = "Beschreibung";
 "section_priority" = "Priorität";
+"section_category" = "Kategorie";
+"section_due_date" = "Fälligkeitsdatum";
+"section_tags" = "Tags";
+"section_status" = "Status";
 
 /* Placeholders */
 "task_title_placeholder" = "Aufgabentitel eingeben…";
+"tags_placeholder" = "z.B. wichtig, release, review";
+"search_placeholder" = "Aufgaben suchen…";
 
 /* Empty States */
 "no_task_selected" = "Keine Aufgabe ausgewählt";
@@ -33,6 +43,9 @@
 /* Detail View */
 "priority_label" = "Priorität: %@";
 "created_label" = "Erstellt: %@";
+"due_date_label" = "Fällig: %@";
+"category_label" = "Kategorie: %@";
+"due_date" = "Fälligkeitsdatum";
 "change_status" = "Status ändern";
 
 /* Priority */
@@ -44,6 +57,25 @@
 "status_open" = "Offen";
 "status_in_progress" = "In Bearbeitung";
 "status_done" = "Erledigt";
+
+/* Category */
+"category_general" = "Allgemein";
+"category_work" = "Arbeit";
+"category_personal" = "Persönlich";
+"category_shopping" = "Einkaufen";
+"category_health" = "Gesundheit";
+
+/* Filter */
+"filter_by_status" = "Status";
+"filter_by_category" = "Kategorie";
+"filter_all_categories" = "Alle Kategorien";
+
+/* Sort */
+"sort_by" = "Sortieren";
+"sort_priority" = "Priorität";
+"sort_due_date" = "Fälligkeitsdatum";
+"sort_title" = "Titel";
+"sort_created_at" = "Erstellt";
 
 /* Accessibility */
 "accessibility_task_label" = "%@, Priorität %@, %@";

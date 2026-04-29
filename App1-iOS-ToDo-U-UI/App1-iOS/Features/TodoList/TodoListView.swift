@@ -13,10 +13,7 @@ struct TodoListView: View {
         @Bindable var bindable = viewModel
         NavigationStack {
             contentView
-                .navigationTitle({
-                    let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
-                    return "\(String(localized: "todo_list_title")) (\(version))"
-                }())
+                .navigationTitle(String(localized: "todo_list_title"))
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Button(action: viewModel.showAddTodo) {

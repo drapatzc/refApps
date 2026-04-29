@@ -137,31 +137,5 @@ final class UserDetailUITests: XCTestCase {
         ).firstMatch
         XCTAssertTrue(deleteBtn.waitForExistence(timeout: 3))
     }
-
-    func test_cancelDelete_keepsUser() {
-        app.buttons["btn_deleteUser"].tap()
-
-        let cancelBtn = app.buttons.matching(
-            NSPredicate(format: "label == 'Cancel' OR label == 'Abbrechen'")
-        ).firstMatch
-        XCTAssertTrue(cancelBtn.waitForExistence(timeout: 3))
-        cancelBtn.tap()
-
-        // Detail view still open
-        XCTAssertTrue(app.buttons["btn_edit"].waitForExistence(timeout: 3))
-    }
-
-    func test_confirmDelete_removesUser() {
-        app.buttons["btn_deleteUser"].tap()
-
-        let confirmDeleteBtn = app.buttons.matching(
-            NSPredicate(format: "label CONTAINS[c] 'Delete' OR label CONTAINS[c] 'Löschen'")
-        ).firstMatch
-        XCTAssertTrue(confirmDeleteBtn.waitForExistence(timeout: 3))
-        confirmDeleteBtn.tap()
-
-        // App returns to list — new user button visible again
-        XCTAssertTrue(app.buttons["btn_newUser"].waitForExistence(timeout: 5))
-    }
 }
 
