@@ -6,7 +6,7 @@ import LocalAuthentication
 /// `AuthService` holds a hard-coded set of valid passwords and exposes
 /// methods to verify them. In a production app these would be replaced
 /// by a secure server-side authentication flow.
-final class AuthService {
+final class AuthService: AuthServiceProtocol {
 
     /// The shared singleton instance.
     static let shared = AuthService()

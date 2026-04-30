@@ -54,7 +54,7 @@ struct LoginViewModelAsyncTests {
     func testLoginButtonDisabledWhileLoading() {
         let vm = LoginViewModel()
         vm.password = "123456"
-        vm.isLoading = true
+        vm.state = .loading
         #expect(vm.isLoginButtonEnabled == false)
     }
 

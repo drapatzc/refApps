@@ -266,7 +266,7 @@ struct LoginViewModelClearErrorTests {
     @Test("clearError() setzt errorMessage auf nil")
     func testClearErrorRemovesMessage() {
         let vm = LoginViewModel()
-        vm.errorMessage = "Testfehler"
+        vm.state = .failed(.unknown("Testfehler"))
         vm.clearError()
         #expect(vm.errorMessage == nil)
     }

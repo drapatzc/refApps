@@ -6,7 +6,7 @@ import Foundation
 /// All mutations validate input via `PhoneValidator` and persist changes by
 /// calling `context.save()`. If a number is marked as primary, all other phone
 /// numbers on the same person are demoted.
-final class PhoneRepository {
+final class PhoneRepository: PhoneRepositoryProtocol {
 
     /// The SwiftData model context used for all persistence operations.
     private let context: ModelContext

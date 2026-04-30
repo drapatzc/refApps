@@ -3,9 +3,11 @@ import SwiftUI
 /// The login screen presented when the user is not authenticated.
 struct LoginView: View {
     @Environment(AppState.self) private var appState
+    @Environment(AppThemeManager.self) private var themeManager
     @Environment(\.modelContext) private var modelContext
     @State private var viewModel = LoginViewModel()
     @State private var showPassword = false
+    @State private var showsDebugSheet = false
     @FocusState private var passwordFocused: Bool
 
     var body: some View {
@@ -36,7 +38,7 @@ struct LoginView: View {
                 VStack(spacing: 0) {
                     Spacer()
 
-                    // Branding
+                    // Branding — 3-Sekunden-Langdruck öffnet das Debug-Theme-Menü
                     VStack(spacing: AppTheme.spacingS) {
                         // iOS 18: .breathe für lebendigen Puls-Effekt
                         // iOS 17: .pulse als Fallback
@@ -45,11 +47,17 @@ struct LoginView: View {
                                 .font(.system(size: 52))
                                 .foregroundStyle(.white)
                                 .symbolEffect(.breathe, options: .repeating)
+                                .onLongPressGesture(minimumDuration: 3) {
+                                    showsDebugSheet = true
+                                }
                         } else {
                             Image(systemName: "cross.circle.fill")
                                 .font(.system(size: 52))
                                 .foregroundStyle(.white)
                                 .symbolEffect(.pulse, options: .repeating)
+                                .onLongPressGesture(minimumDuration: 3) {
+                                    showsDebugSheet = true
+                                }
                         }
 
                         Text("BKK Atomium")
@@ -61,6 +69,9 @@ struct LoginView: View {
                             .foregroundStyle(.white.opacity(0.8))
                     }
                     .padding(.bottom, AppTheme.spacingXXL)
+                    .sheet(isPresented: $showsDebugSheet) {
+                        DebugThemeSheetView(isPresented: $showsDebugSheet)
+                    }
 
                     // Login-Karte
                     LoginCard(

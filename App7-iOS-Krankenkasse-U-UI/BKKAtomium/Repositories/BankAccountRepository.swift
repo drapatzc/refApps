@@ -7,7 +7,7 @@ import Foundation
 /// calling `context.save()`. If an account is marked as primary, all other accounts
 /// on the same person are demoted. IBAN and BIC are normalized to their canonical
 /// forms (no spaces, uppercase) before being stored.
-final class BankAccountRepository {
+final class BankAccountRepository: BankAccountRepositoryProtocol {
 
     /// The SwiftData model context used for all persistence operations.
     private let context: ModelContext

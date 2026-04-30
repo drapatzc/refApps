@@ -1,7 +1,7 @@
 import SwiftData
 import Foundation
 
-final class InvoiceRepository {
+final class InvoiceRepository: InvoiceRepositoryProtocol {
     private let context: ModelContext
 
     init(context: ModelContext) {

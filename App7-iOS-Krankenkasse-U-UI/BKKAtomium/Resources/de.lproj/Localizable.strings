@@ -584,3 +584,30 @@
 "common_delete" = "Löschen";
 "common_edit" = "Bearbeiten";
 "common_back" = "Zurück";
+
+/* Fehlerbehandlung - AppError */
+"error_persistence_prefix" = "Speicherfehler: ";
+"error_theme_loading_prefix" = "Theme-Ladefehler: ";
+"error_unknown_prefix" = "Unbekannter Fehler: ";
+
+/* Fehlerbehandlung - ThemeRepository */
+"error_theme_file_not_found" = "Theme-Datei nicht gefunden";
+"error_theme_decoding_failed" = "Theme-Datei konnte nicht gelesen werden";
+
+/* Fehlerbehandlung - ErrorDialogView */
+"error_dialog_title_generic" = "Fehler aufgetreten";
+"error_dialog_title_validation" = "Eingabe ungültig";
+"error_dialog_title_auth" = "Anmeldung fehlgeschlagen";
+"error_dialog_title_persistence" = "Speicherfehler";
+"error_dialog_title_theme" = "Theme-Fehler";
+"error_dialog_dismiss_button" = "OK";
+
+/* Debug-Theme-Auswahl */
+"debug_theme_title" = "Debug: Theme wählen";
+"debug_theme_close_button" = "Schließen";
+"debug_theme_section_header" = "Verfügbare Themes";
+"debug_theme_section_footer" = "Das Theme wird beim nächsten App-Start vollständig angewendet.";
+"debug_theme_restart_hint" = "Die App muss neu gestartet werden, damit das neue Theme vollständig angewendet wird.";
+"debug_theme_name_default" = "BKK Standard";
+"debug_theme_name_ocean" = "Ozean";
+"debug_theme_name_forest" = "Wald";

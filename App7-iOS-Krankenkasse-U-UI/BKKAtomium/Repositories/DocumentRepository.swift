@@ -1,7 +1,7 @@
 import SwiftData
 import Foundation
 
-final class DocumentRepository {
+final class DocumentRepository: DocumentRepositoryProtocol {
     private let context: ModelContext
 
     init(context: ModelContext) {

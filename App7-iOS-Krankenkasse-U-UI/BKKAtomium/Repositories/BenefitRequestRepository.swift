@@ -1,7 +1,7 @@
 import SwiftData
 import Foundation
 
-final class BenefitRequestRepository {
+final class BenefitRequestRepository: BenefitRequestRepositoryProtocol {
     private let context: ModelContext
 
     init(context: ModelContext) {

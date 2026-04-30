@@ -1,29 +1,28 @@
 import SwiftUI
 
 /// Central design token container for the BKK Atomium app.
+///
+/// Die Farbwerte, Abstände und Eckenradien sind dynamisch: Sie werden aus
+/// `AppTheme.current` berechnet, das von `AppThemeManager` beim Themenwechsel
+/// aktualisiert wird. Alle Views lesen weiterhin `AppTheme.*` — kein View-Code
+/// muss geändert werden. `BKKAtomiumApp` erzwingt per `.id(activeTheme.name)`
+/// einen vollständigen View-Neuaufbau, sobald sich `current` ändert.
 enum AppTheme {
+
+    // MARK: - Aktives Theme (wird von AppThemeManager gesetzt)
+
+    /// Referenz auf das aktuell aktive Theme. Thread-sicher für Lese-/Schreibzugriff
+    /// aus dem Main-Actor-Kontext von AppThemeManager.
+    // swiftlint:disable:next nonisolated_unsafe
+    nonisolated(unsafe) static var current: AppThemeModel = .default
+
     // MARK: - Primärfarben
 
-    static let primary = Color(red: 0.11, green: 0.29, blue: 0.50)
-    static let accent  = Color(red: 0.10, green: 0.38, blue: 0.24)
+    static var primary: Color { current.primaryColor }
+    static var accent:  Color { current.accentColor }
 
-    static let primaryGradient = LinearGradient(
-        colors: [
-            Color(red: 0.08, green: 0.22, blue: 0.42),
-            Color(red: 0.10, green: 0.38, blue: 0.28)
-        ],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
-    )
-
-    static let headerGradient = LinearGradient(
-        colors: [
-            Color(red: 0.06, green: 0.18, blue: 0.36),
-            Color(red: 0.09, green: 0.30, blue: 0.22)
-        ],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
-    )
+    static var primaryGradient: LinearGradient { current.primaryGradient }
+    static var headerGradient:  LinearGradient { current.headerGradient }
 
     static let cardBackground:    Color = Color(.systemBackground)
     static let sectionBackground: Color = Color(.secondarySystemGroupedBackground)
@@ -31,21 +30,21 @@ enum AppTheme {
 
     // MARK: - Abstände
 
-    static let spacingXS:  CGFloat = 4
-    static let spacingS:   CGFloat = 8
-    static let spacingM:   CGFloat = 16
-    static let spacingL:   CGFloat = 24
-    static let spacingXL:  CGFloat = 32
-    static let spacingXXL: CGFloat = 48
+    static var spacingXS:  CGFloat { current.spacingXS }
+    static var spacingS:   CGFloat { current.spacingS }
+    static var spacingM:   CGFloat { current.spacingM }
+    static var spacingL:   CGFloat { current.spacingL }
+    static var spacingXL:  CGFloat { current.spacingXL }
+    static var spacingXXL: CGFloat { current.spacingXXL }
 
     // MARK: - Eckenradien
 
-    static let cornerRadiusS:  CGFloat = 8
-    static let cornerRadiusM:  CGFloat = 12
-    static let cornerRadiusL:  CGFloat = 16
-    static let cornerRadiusXL: CGFloat = 20
+    static var cornerRadiusS:  CGFloat { current.cornerRadiusS }
+    static var cornerRadiusM:  CGFloat { current.cornerRadiusM }
+    static var cornerRadiusL:  CGFloat { current.cornerRadiusL }
+    static var cornerRadiusXL: CGFloat { current.cornerRadiusXL }
 
-    // MARK: - Animationen
+    // MARK: - Animationen (theme-unabhängig)
 
     /// Bouncy spring (0.4 s) — für Karten-Interaktionen und Icon-Erscheinen.
     static let animationBouncy = Animation.bouncy(duration: 0.4)

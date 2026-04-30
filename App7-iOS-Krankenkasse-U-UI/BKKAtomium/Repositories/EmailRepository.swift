@@ -7,7 +7,7 @@ import Foundation
 /// calling `context.save()`. If an address is marked as primary, all other email
 /// addresses on the same person are demoted. Email strings are trimmed and
 /// lowercased before being stored.
-final class EmailRepository {
+final class EmailRepository: EmailRepositoryProtocol {
 
     /// The SwiftData model context used for all persistence operations.
     private let context: ModelContext

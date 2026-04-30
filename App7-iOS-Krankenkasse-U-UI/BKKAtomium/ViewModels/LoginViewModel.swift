@@ -1,58 +1,86 @@
 import SwiftUI
 import Observation
 
-/// Observable view model that drives the login screen.
+/// Observable ViewModel für den Login-Screen.
 ///
-/// `LoginViewModel` coordinates input validation, the asynchronous login flow,
-/// and UI state (loading indicator, error display). It delegates the actual
-/// credential check to `AuthService`.
+/// `LoginViewModel` koordiniert Eingabevalidierung, den asynchronen Login-Ablauf
+/// und den UI-Zustand (Lade-Indikator, Fehleranzeige). Es delegiert die eigentliche
+/// Passwortprüfung an `AuthServiceProtocol` und ist daher vollständig testbar.
+///
+/// **Abhängigkeiten:** `AuthServiceProtocol` — via Dependency Injection initialisiert.
+///
+/// **Testbarkeit:** Mit `MockAuthService` ohne echte Credentials testbar.
+///
+/// **Zustandsmodell:**
+/// - `state == .idle`: Initiale Anzeige
+/// - `state == .loading`: Login-Anfrage läuft
+/// - `state == .loaded(true)`: Login erfolgreich
+/// - `state == .failed(...)`: Login fehlgeschlagen
 @Observable
 final class LoginViewModel {
 
-    /// The plaintext password entered by the user.
+    // MARK: - UI-Eigenschaften
+
+    /// Das vom Nutzer eingegebene Klartext-Passwort.
     var password: String = ""
 
-    /// `true` while the login request is in progress.
-    var isLoading: Bool = false
+    // MARK: - Zustandsmodell
 
-    /// An error message to show in the UI, or `nil` when there is no error.
-    var errorMessage: String? = nil
+    /// Der aktuelle Zustand der Login-Operation.
+    var state: ViewState<Bool> = .idle
 
-    /// Set to `true` after a successful login so the parent view can react.
-    var loginSucceeded: Bool = false
+    // MARK: - Abgeleitete Eigenschaften (Rückwärtskompatibilität mit bestehenden Tests)
 
-    /// The authentication service used to validate credentials.
-    private let authService: AuthService
+    /// `true` während eine Login-Anfrage läuft.
+    var isLoading: Bool { state.isLoading }
 
-    /// Creates a view model with the given authentication service.
-    ///
-    /// - Parameter authService: The service to use for credential validation;
-    ///   defaults to the shared singleton.
-    init(authService: AuthService = .shared) {
-        self.authService = authService
+    /// Die anzuzeigende Fehlermeldung, oder `nil` wenn kein Fehler vorliegt.
+    var errorMessage: String? { state.error?.errorDescription }
+
+    /// `true` nach einem erfolgreichen Login.
+    var loginSucceeded: Bool {
+        if case .loaded(let success) = state { return success }
+        return false
     }
 
-    /// `true` when the login button should be interactive:
-    /// the password field is non-empty and no request is currently in flight.
+    // MARK: - Abgeleitete Eigenschaften
+
+    /// `true` wenn der Login-Button aktiv sein soll: Passwort nicht leer und kein Ladevorgang aktiv.
     var isLoginButtonEnabled: Bool {
         !password.isEmpty && !isLoading
     }
 
-    /// Attempts to log in with the current `password`.
+    // MARK: - Private Eigenschaften
+
+    /// Der Authentifizierungsdienst — austauschbar über DI.
+    private let authService: AuthServiceProtocol
+
+    // MARK: - Initialisierung
+
+    /// Erstellt ein ViewModel mit dem gegebenen Authentifizierungsdienst.
     ///
-    /// Sets `isLoading` to `true`, waits 600 ms (for realistic UX feel), then
-    /// delegates to `authService.login(password:)`. On failure the password field
-    /// is cleared with a spring animation and `errorMessage` is set. On success
-    /// `loginSucceeded` is set to `true`.
+    /// - Parameter authService: Der Dienst für die Passwortprüfung;
+    ///   Standard ist `AuthService.shared`.
+    init(authService: AuthServiceProtocol = AuthService.shared) {
+        self.authService = authService
+    }
+
+    // MARK: - Öffentliche Methoden
+
+    /// Startet den Login-Vorgang mit dem aktuellen `password`.
+    ///
+    /// Setzt `state` auf `.loading`, wartet 600 ms (realistische UX-Verzögerung),
+    /// dann delegiert an `authService.login(password:)`.
+    /// - Bei Fehler: `state = .failed(...)`, Passwort wird mit Spring-Animation geleert.
+    /// - Bei Erfolg: `state = .loaded(true)`.
     @MainActor
     func login() async {
         guard !password.isEmpty else {
-            errorMessage = AuthError.emptyPassword.errorDescription
+            state = .failed(.auth(.emptyPassword))
             return
         }
 
-        isLoading = true
-        errorMessage = nil
+        state = .loading
 
         // Kurze Verzögerung für realistische UX
         try? await Task.sleep(for: .milliseconds(600))
@@ -60,20 +88,21 @@ final class LoginViewModel {
         let success = authService.login(password: password)
 
         if success {
-            loginSucceeded = true
+            state = .loaded(true)
         } else {
-            errorMessage = AuthError.invalidCredentials.errorDescription
-            isLoading = false
+            state = .failed(.auth(.invalidCredentials))
 
-            // Passwort nach Fehler leeren
+            // Passwort nach Fehler mit Animation leeren
             withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
                 password = ""
             }
         }
     }
 
-    /// Clears the current error message.
+    /// Setzt den Fehlerzustand zurück.
     func clearError() {
-        errorMessage = nil
+        if case .failed = state {
+            state = .idle
+        }
     }
 }

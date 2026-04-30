@@ -584,3 +584,30 @@
 "common_delete" = "Delete";
 "common_edit" = "Edit";
 "common_back" = "Back";
+
+/* Error Handling - AppError */
+"error_persistence_prefix" = "Storage error: ";
+"error_theme_loading_prefix" = "Theme loading error: ";
+"error_unknown_prefix" = "Unknown error: ";
+
+/* Error Handling - ThemeRepository */
+"error_theme_file_not_found" = "Theme file not found";
+"error_theme_decoding_failed" = "Theme file could not be read";
+
+/* Error Handling - ErrorDialogView */
+"error_dialog_title_generic" = "An Error Occurred";
+"error_dialog_title_validation" = "Invalid Input";
+"error_dialog_title_auth" = "Login Failed";
+"error_dialog_title_persistence" = "Storage Error";
+"error_dialog_title_theme" = "Theme Error";
+"error_dialog_dismiss_button" = "OK";
+
+/* Debug Theme Selection */
+"debug_theme_title" = "Debug: Select Theme";
+"debug_theme_close_button" = "Close";
+"debug_theme_section_header" = "Available Themes";
+"debug_theme_section_footer" = "The theme will be fully applied on the next app launch.";
+"debug_theme_restart_hint" = "The app must be restarted for the new theme to take full effect.";
+"debug_theme_name_default" = "BKK Standard";
+"debug_theme_name_ocean" = "Ocean";
+"debug_theme_name_forest" = "Forest";

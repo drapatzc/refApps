@@ -13,6 +13,12 @@ struct BKKAtomiumApp: App {
     /// The shared, observable application state injected into every view.
     @State private var appState = AppState()
 
+    /// Der zentrale Theme-Manager, der das aktive Theme verwaltet und bereitstellt.
+    @State private var themeManager = AppThemeManager()
+
+    /// Der Dependency-Injection-Container mit allen App-weiten Abhängigkeiten.
+    @State private var dependencies = AppDependencies()
+
     /// The UIKit application delegate, wired up via `@UIApplicationDelegateAdaptor`.
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
@@ -44,8 +50,14 @@ struct BKKAtomiumApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .id(themeManager.activeTheme.name)
                 .environment(appState)
+                .environment(themeManager)
+                .environment(dependencies)
                 .modelContainer(sharedModelContainer)
+                .task {
+                    await themeManager.loadSavedTheme()
+                }
                 .onAppear {
                     NotificationService.shared.requestAuthorization()
                 }
