@@ -1,0 +1,126 @@
+Incident Identifier: 7F3C91E2-A54B-3D8F-6C12-E489B0A73F15
+Distributor ID:      com.apple.AppStore
+Hardware Model:      iPhone15,3
+Process:             BKKAtomium [2041]
+Path:                /private/var/containers/Bundle/Application/B9F14C72-3DE8-4A01-8C53-6E2F0D7A9B44/BKKAtomium.app/BKKAtomium
+Identifier:          de.bkkatomium.app
+Version:             1.2.0 (3)
+AppStoreTools:       16F7
+AppVariant:          1:iPhone15,3:18
+Code Type:           ARM-64 (Native)
+Role:                Foreground
+Parent Process:      launchd [1]
+Coalition:           de.bkkatomium.app [2281]
+
+Date/Time:           2026-05-08 16:47:03.2241 +0200
+Launch Time:         2026-05-08 16:44:51.8803 +0200
+OS Version:          iPhone OS 26.0 (23A5276g)
+Release Type:        User
+Baseband Version:    3.14.02
+Report Version:      104
+
+Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
+Exception Subtype: KERN_INVALID_ADDRESS at 0x0000000000000028
+VM Region Info: 0x28 is not in any region. Bytes before following region: 4302893992
+      REGION TYPE                 START - END      [ VSIZE] PRT/MAX SHRP  REGION DETAIL
+      UNUSED SPACE AT START
+--->
+      __TEXT                 0102a00000-0102e04000 [ 4112K] r-x/r-x SM=COW  /BKKAtomium.app/BKKAtomium
+Termination Reason: Namespace SIGNAL, Code 11 Segmentation fault: 11
+Terminating Process: exc handler [2041]
+
+Triggered by Thread:  4
+
+Thread 0 name:
+Thread 0:
+0   libsystem_kernel.dylib        	0x000000023b25acd4 mach_msg2_trap + 8 (:-1)
+1   libsystem_kernel.dylib        	0x000000023b25e2f8 mach_msg2_internal + 76 (mach_msg.c:201)
+2   CoreFoundation                	0x00000001904e7868 __CFRunLoopServiceMachPort + 160 (CFRunLoop.c:2650)
+3   CoreFoundation                	0x00000001904be848 __CFRunLoopRun + 1188 (CFRunLoop.c:3035)
+4   CoreFoundation                	0x00000001904bda6c _CFRunLoopRunSpecificWithOptions + 532 (CFRunLoop.c:3462)
+5   GraphicsServices              	0x00000002320ec498 GSEventRunModal + 120 (GSEvent.c:2049)
+6   UIKitCore                     	0x0000000195e96df8 -[UIApplication _run] + 792 (UIApplication.m:3904)
+7   UIKitCore                     	0x0000000195e3fe54 UIApplicationMain + 336 (UIApplication.m:5579)
+8   SwiftUI                       	0x00000001b24c32f0 closure #1 in KitRendererCommon(_:) + 88
+9   BKKAtomium                    	0x0000000102a00dcc main + 40 (BKKAtomiumApp.swift:1)
+10  dyld                          	0x000000018d4aae28 start + 7116 (dyldMain.cpp:1477)
+
+Thread 1 name:  com.apple.uikit.eventfetch-thread
+Thread 1:
+0   libsystem_kernel.dylib        	0x000000023b25acd4 mach_msg2_trap + 8 (:-1)
+1   libsystem_kernel.dylib        	0x000000023b25e2f8 mach_msg2_internal + 76 (mach_msg.c:201)
+2   libsystem_kernel.dylib        	0x000000023b25e05c mach_msg + 24 (mach_msg.c:323)
+3   CoreFoundation                	0x00000001904e7868 __CFRunLoopServiceMachPort + 160 (CFRunLoop.c:2650)
+4   CoreFoundation                	0x00000001904be848 __CFRunLoopRun + 1188 (CFRunLoop.c:3035)
+5   CoreFoundation                	0x00000001904bda6c _CFRunLoopRunSpecificWithOptions + 532 (CFRunLoop.c:3462)
+6   Foundation                    	0x000000018e4b5068 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 212 (NSRunLoop.m:375)
+7   Foundation                    	0x000000018e4b5240 -[NSRunLoop(NSRunLoop) runUntilDate:] + 64 (NSRunLoop.m:422)
+8   UIKitCore                     	0x0000000195e6c094 -[UIEventFetcher threadMain] + 408 (UIEventFetcher.m:1333)
+9   Foundation                    	0x000000018db4e21c __NSThread__start__ + 732 (NSThread.m:997)
+10  libsystem_pthread.dylib       	0x00000001ecd8744c _pthread_start + 136 (pthread.c:931)
+11  libsystem_pthread.dylib       	0x00000001ecd838cc thread_start + 8 (:-1)
+
+Thread 2 name:  com.apple.SwiftData.backgroundQueue
+Thread 2:
+0   libsystem_kernel.dylib        	0x000000023b25acd4 mach_msg2_trap + 8 (:-1)
+1   libsystem_kernel.dylib        	0x000000023b25e2f8 mach_msg2_internal + 76 (mach_msg.c:201)
+2   libsystem_kernel.dylib        	0x000000023b25e05c mach_msg + 24 (mach_msg.c:323)
+3   CoreFoundation                	0x00000001904e7868 __CFRunLoopServiceMachPort + 160 (CFRunLoop.c:2650)
+4   CoreFoundation                	0x00000001904be848 __CFRunLoopRun + 1188 (CFRunLoop.c:3035)
+5   SwiftData                     	0x00000001c7a3f214 ModelContext.backgroundQueue.handler + 192
+6   libdispatch.dylib             	0x00000001c8fc7adc _dispatch_call_block_and_release + 32 (init.c:1575)
+7   libdispatch.dylib             	0x00000001c8fe17fc _dispatch_client_callout + 16 (client_callout.mm:85)
+8   libdispatch.dylib             	0x00000001c8fd6ec8 _dispatch_main_queue_drain + 180 (queue.c:8162)
+9   libsystem_pthread.dylib       	0x00000001ecd8744c _pthread_start + 136 (pthread.c:931)
+10  libsystem_pthread.dylib       	0x00000001ecd838cc thread_start + 8 (:-1)
+
+Thread 3:
+0   libsystem_kernel.dylib        	0x000000023b25acd4 mach_msg2_trap + 8 (:-1)
+1   libdispatch.dylib             	0x00000001c8fe17fc _dispatch_client_callout + 16 (client_callout.mm:85)
+2   libdispatch.dylib             	0x00000001c8fd6ec8 _dispatch_main_queue_drain + 180 (queue.c:8162)
+3   libsystem_pthread.dylib       	0x00000001ecd8744c _pthread_start + 136 (pthread.c:931)
+4   libsystem_pthread.dylib       	0x00000001ecd838cc thread_start + 8 (:-1)
+
+Thread 4 name:  com.apple.NSURLSession-work
+Thread 4 Crashed:
+0   libswiftCore.dylib            	0x00000001a3c84f20 _swift_retain + 28 (HeapObject.cpp:97)
+1   libswiftCore.dylib            	0x00000001a3cb2e14 swift_arrayRetain + 44 (ArrayBuffer.cpp:31)
+2   libswiftCore.dylib            	0x00000001a3cff8a0 Swift._ArrayBuffer.subscript.getter + 64 (ArrayBuffer.swift:318)
+3   BKKAtomium                    	0x0000000102b14c8c closure #1 in BankAccountRepository.fetchAll(for:) + 88 (BankAccountRepository.swift:30)
+4   BKKAtomium                    	0x0000000102b14bc4 BankAccountRepository.fetchAll(for:) + 52 (BankAccountRepository.swift:28)
+5   BKKAtomium                    	0x0000000102b32a10 ProfileViewModel.loadBankAccounts() + 96 (ProfileViewModel.swift:74)
+6   BKKAtomium                    	0x0000000102b331f8 closure #1 in ProfileViewModel.refresh() + 44 (ProfileViewModel.swift:61)
+7   libdispatch.dylib             	0x00000001c8fc7adc _dispatch_call_block_and_release + 32 (init.c:1575)
+8   libdispatch.dylib             	0x00000001c8fe17fc _dispatch_client_callout + 16 (client_callout.mm:85)
+9   libdispatch.dylib             	0x00000001c8ffeb10 _dispatch_main_queue_drain.cold.5 + 812 (queue.c:8181)
+10  libdispatch.dylib             	0x00000001c8fd6ec8 _dispatch_main_queue_drain + 180 (queue.c:8162)
+11  libsystem_pthread.dylib       	0x00000001ecd8744c _pthread_start + 136 (pthread.c:931)
+12  libsystem_pthread.dylib       	0x00000001ecd838cc thread_start + 8 (:-1)
+
+Thread 4 crashed with ARM Thread State (64-bit):
+    x0: 0x0000000000000000   x1: 0x0000000000000028   x2: 0x0000000102c41200   x3: 0x0000000000000003
+    x4: 0x0000000000000000   x5: 0x0000000000000002   x6: 0x0000000000000000   x7: 0x0000000000000001
+    x8: 0x0000000000000028   x9: 0x000000016ee9cb40  x10: 0x0000000000000004  x11: 0x0000000000004400
+   x12: 0x0000000000004400  x13: 0x8c3f21a74e9bd502  x14: 0x0000000102b14000  x15: 0x000000011c00c000
+   x16: 0x00000001a3c84f00  x17: 0x00000001a3cb2df0  x18: 0x0000000000000000  x19: 0x0000000102c3de00
+   x20: 0x0000000102c41200  x21: 0x0000000000000003  x22: 0x000000016ee9cb40  x23: 0x0000000000000000
+   x24: 0x0000000000000002  x25: 0x000000016ee9cc00  x26: 0x00000001fab31ff8  x27: 0x0f00007ffffffff8
+   x28: 0x0000000000000000   fp: 0x000000016ee9c9a0   lr: 0x00000001a3cb2e14
+    sp: 0x000000016ee9c980   pc: 0x00000001a3c84f20 cpsr: 0x60000000
+   esr: 0x92000004 (Data Abort) Translation fault
+
+Binary Images:
+        0x102a00000 -         0x102e03fff BKKAtomium arm64  <7f3c91e2a54b3d8f6c12e489b0a73f15> /var/containers/Bundle/Application/B9F14C72-3DE8-4A01-8C53-6E2F0D7A9B44/BKKAtomium.app/BKKAtomium
+        0x18d424000 -         0x18d475b2f libobjc.A.dylib arm64e  <ee4a4347bd733beda7149cd0b16844a2> /usr/lib/libobjc.A.dylib
+        0x18d4a6000 -         0x18d544b37 dyld arm64e  <a4040d49944638e5842beb8f9c971c22> /usr/lib/dyld
+        0x18daec000 -         0x18e958c5f Foundation arm64e  <df782ac5cc02358ca2f7149703f5f44a> /System/Library/Frameworks/Foundation.framework/Foundation
+        0x1904a1000 -         0x190a2773f CoreFoundation arm64e  <0be54dbe1adc3588bffae7c99e8d8208> /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+        0x195df9000 -         0x198255f3f UIKitCore arm64e  <6519dafb3d753374927610e7ce4f4dc5> /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+        0x1a3c80000 -         0x1a3f9cfff libswiftCore.dylib arm64e  <9c1a832f4e5b37d2a81c0f6e7b2d9a14> /usr/lib/swift/libswiftCore.dylib
+        0x1b2300000 -         0x1b4812fff SwiftUI arm64e  <c3a81f2e907d3d5ab1427c8de9f14b33> /System/Library/Frameworks/SwiftUI.framework/SwiftUI
+        0x1c7a00000 -         0x1c7b4ffff SwiftData arm64e  <2f8a41c3b9e0712d5c3a8f1e4b7d0c92> /System/Library/Frameworks/SwiftData.framework/SwiftData
+        0x1c8fc6000 -         0x1c900c21f libdispatch.dylib arm64e  <11c047c433b339a3ae43bf617cfc7d2c> /usr/lib/system/libdispatch.dylib
+        0x1ecd83000 -         0x1ecd8f44f libsystem_pthread.dylib arm64e  <741c5afb3f30362e9313aab3de2497c9> /usr/lib/system/libsystem_pthread.dylib
+        0x23b25a000 -         0x23b294d2b libsystem_kernel.dylib arm64e  <15e8a2ae4bfd3bb8944e2ec12393c59c> /usr/lib/system/libsystem_kernel.dylib
+
+EOF
